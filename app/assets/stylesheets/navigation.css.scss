@@ -1,0 +1,74 @@
+/*
+Document   : navigation
+Created on : Sep 27, 2011, 4:50:30 PM
+Author     : digi
+Description:
+Purpose of the stylesheet follows.
+*/
+#navigationContainer {
+    /* Node List Group (ul) General [IE/FF] */
+    
+    font-family: "Helvetica", sans-serif;
+    
+    ul#main-navigation {
+        
+        font-size:11px;
+        list-style-type:none;
+        font-weight:normal;
+        border-bottom:dotted 1px #8C8C8C;
+        
+        margin:0px;
+        padding:0px;
+        width:980px;
+        height:15px;
+        
+        position:relative;
+        padding:5px 10px 5px 10px;
+        
+        li {
+            a {
+                font-weight:bold;
+            }
+        }
+    }
+    
+    /* Node List Group (ul) Expanded general */
+    ul#sub-navigation {
+        margin:2px 20px 2px 20px;
+        padding:0;
+        font-size:0.8em;
+        border:none;
+        
+        position:relative;
+        
+        height:14px;
+        width:960px;
+        
+        li a {
+            padding-left:10px;
+            padding-right:10px;
+        }
+    }
+    
+    /* List Item General */
+    ul {
+        li {
+            display:inline;
+            margin:0px;
+            
+            a {
+                color:#8C8C8C;
+                text-decoration:none;
+                padding-left:20px;
+                padding-right:20px;
+                border:0px;
+            }
+            
+            /* Links Hover */
+            a:active, a:hover, a.active
+            {
+                color:#F9F9F9;
+            }
+        }
+    }
+}

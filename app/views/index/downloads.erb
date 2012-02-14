@@ -1,0 +1,48 @@
+<%= heading("Downloads", "Dokumente und Infos zum herunterladen", icon: 'index/downloads/icon_downloads.png') %>
+
+<div class="downloads">
+  <h2>Dokumente im Überblick</h2>
+  
+  <% if !@downloads_aktuelles.blank? %>
+    <h3>Aktuelles</h3>
+    <ul>
+      <% @downloads_aktuelles.each do |f| %>
+        <li class="pdf">
+          <%= link_to File.basename(f), "/downloads/aktuelles/#{File.basename(f)}" %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+  
+  <h3>Jahresprogramm</h3>
+  <ul>
+      <li class="pdf">
+        <%= link_to 'Jahresprogramm Pfadi SMN', jahresprogramm_path %>
+      </li>
+  </ul>
+    
+  <h3>Administratives</h3>
+  <ul>
+    <% @downloads_admin.each do |f| %>
+      <li class="pdf">
+        <%= link_to File.basename(f), "/downloads/administratives/#{File.basename(f)}" %>
+      </li>
+    <% end %>
+  </ul>
+  
+  <h3>Zeitungsartikel</h3>
+   <ul>
+    <% @downloads_press.each do |f| %>
+      <li class="pdf">
+        <%= link_to File.basename(f), "/downloads/press/#{File.basename(f)}" %>
+      </li>
+    <% end %>
+  </ul> 
+  
+</div>
+
+<% content_for :sidebar do %>
+  <h2>Weitere Downloads</h2>
+
+  <p>Die Skautys gibt's hier zum Download: <%= link_to 'Skauty Archiv', pfadilife_skauty_path %></p><br/><p>Viele interessante Downloads gibts auch bei der <%= link_to 'Pfadi Züri', 'http://pfadizueri.ch/downloads.html' %> und bei der <%= link_to 'Pfadibewegung Schweiz', 'http://www5.scout.ch/de/verband/downloads' %>. Reinschauen lohnt sich.</p>
+<% end %>

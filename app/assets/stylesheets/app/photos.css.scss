@@ -1,0 +1,103 @@
+@CHARSET "UTF-8";
+
+.album {
+    margin: 50px 0 0 0;
+    text-align: center;	
+    clear: both;
+    list-style: none;
+    
+    .photo {
+        float: left;
+        height: 200px;
+        width: 200px;
+        vertical-align: middle;
+        
+        a {
+            border: none;
+            text-decoration: none;
+            margin: auto auto;
+        }
+        
+        
+        &.rotate-1 {
+            /* for firefox, safari, chrome, etc. */
+            -webkit-transform: rotate(-9deg);
+            -moz-transform: rotate(-9deg);
+        }
+        
+        &.rotate-2 {
+            /* for firefox, safari, chrome, etc. */
+            -webkit-transform: rotate(8deg);
+            -moz-transform: rotate(8deg);
+        }
+        
+        &.rotate-3 {
+            /* for firefox, safari, chrome, etc. */
+            -webkit-transform: rotate(-2deg);
+            -moz-transform: rotate(-2deg);
+        }
+        
+        &.rotate-4 {
+            /* for firefox, safari, chrome, etc. */
+            -webkit-transform: rotate(6deg);
+            -moz-transform: rotate(6deg);
+        }
+        
+        &.rotate-5 {
+            /* for firefox, safari, chrome, etc. */
+            -webkit-transform: rotate(3deg);
+            -moz-transform: rotate(3deg);
+        }
+        
+        &.rotate-6 {
+            /* for firefox, safari, chrome, etc. */
+            -webkit-transform: rotate(-4deg);
+            -moz-transform: rotate(-4deg);
+        }
+        
+        &.resize-1 a {
+        }
+        
+        &.resize-2 a {
+            
+            zoom: 99%
+        }
+        &.resize-3 a{
+            zoom: 95%
+        }
+        
+        &.resize-4 a {
+            
+            zoom: 93%
+        }
+        &.resize-5 a{
+            zoom: 90%
+        }
+    }
+}
+
+.albums {
+    h2 {
+        border-bottom: 1px dotted #333;
+    }
+    
+    ul {
+        text-align: center;	
+        list-style: none; 
+        
+        li {
+            float: left;
+            height: 200px;
+            width: 200px;
+            margin: 30px;
+            position: relative;
+            
+            a {
+                position: absolute;
+                bottom: 0px;
+                border: none;
+            }
+        }
+        
+    }
+}

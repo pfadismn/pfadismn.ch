@@ -1,0 +1,37 @@
+<%= heading("Pfadistufe", "Jungs und Mädchen von 10 bis 15", quote: "allzeit bereit", icon: 'abteilung/pfadistufe/pfadistufe.png') %>
+
+<h2>Buebepfadi</h2>
+<p>Du bist zwischen 10 und 17 Jahren alt und möchtest am Samstagnachmittag mit Kollegen in deinem Alter etwas
+  unternehmen? Herzlich willkommen bei der Buebepfadi der Pfadi Höngg!</p>
+<p>Bei der Buebepfadi ist Action angesagt: Du bist bei atemberaubenden Geländespielen dabei, löst mysteriöse 
+  Rätsel während Nachtübungen und lieferst dir spannende Verfolgungsjagden mit bösen Gangstern. Gemeinsam mit 
+  Kollegen baust eine Waldhütte an einem geheimen Ort und erlebst lustige Spielnachmittage oder gemütliche 
+  Stimmung am Lagerfeuer. Den Höhepunkt bilden das Pfingstlager und das 2 wöchige Sommerlager, das du bestimmt so 
+  schnell nicht mehr vergessen wirst!</p>
+
+<%= image_tag image_path('abteilung/pfadistufe/collage_pfadistufe.jpg') %>
+
+<h2>Maitlipfadi</h2>
+<p>Du bist zwischen 10 und 17 Jahren alt und möchtest am Samstagnachmittag mit Kolleginnen in deinem Alter etwas 
+  unternehmen? Dann wird es dir bei der Meitlipfadi der Pfadi Höngg gefallen!</p>
+<p>Bei der Meitlipfadi treffen sich aufgestellte Mädchen und unternehmen gemeinsam etwas im Wald, in der Stadt 
+  oder sonst wo. Spannende Verfolgungsjagden und Rätsel, aber auch rasante Postenläufe und gemütliche Lagerfeuer 
+  erwarten dich bei uns. Es gibt immer etwas zu lachen und wir lernen auch interessante Dinge über die Natur, 
+  Erste Hilfe und vieles mehr. An Pfingsten und in den Sommerferien gehen wir in ein Zeltlager und geniessen 
+  gemeinsam eine gute, unvergessliche Zeit!</p>
+
+
+<% content_for :sidebar do %>
+  
+  <h2>Stufenleitung</h2>
+  <% @team.each do |member| %>
+    <%= render partial: 'members/contact', locals: { member: member } %>
+  <% end %>
+  
+  <% @ou.children.each do |sou| %>
+  <% if sou.events.any? %>
+  <h2><%= sou.name %>: Nächster Event</h2>
+  <%= render partial: 'events/sidebar_event', locals: { event: sou.events.upcoming.first } %>
+<% end %>
+<% end %>
+<% end %>

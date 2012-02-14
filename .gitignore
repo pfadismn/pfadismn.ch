@@ -1,0 +1,6 @@
+log/
+log/*
+tmp/
+tmp/*
+/nbproject/private/
+/public/photos/*

@@ -1,0 +1,102 @@
+/* -------------------------------------------------------------------
+// markItUp! Universal MarkUp Engine, JQuery plugin
+// By Jay Salvat - http://markitup.jaysalvat.com/
+// ------------------------------------------------------------------*/
+.markItUp * {
+	margin:0; 
+        padding:0px;
+	outline:none;
+}
+
+div.textile {
+    margin: 0 0 0 225px;
+    width: 675px;
+}
+
+.markItUp a:link,
+.markItUp a:visited {
+	color:#000;
+	text-decoration:none;
+}
+.markItUp  {
+	width:100%;
+	margin:0;
+}
+.markItUpContainer  {
+        width: 500px;
+	padding:0;
+	font:11px Verdana, Arial, Helvetica, sans-serif;
+}
+
+/***************************************************************************************/
+.markItUp .markItUpButton1 a {
+	background-image:image-url('lib/markitup/h1.png');
+}
+.markItUp .markItUpButton2 a {
+	background-image:image-url('lib/markitup/h2.png');
+}
+.markItUp .markItUpButton3 a {
+	background-image:image-url('lib/markitup/h3.png');
+}
+
+.markItUp .markItUpButton4 a {
+	background-image:image-url('lib/markitup/bold.png');
+}
+.markItUp .markItUpButton5 a {
+	background-image:image-url('lib/markitup/italic.png');
+}
+.markItUp .markItUpButton6 a {
+	background-image:image-url('lib/markitup/stroke.png');
+}
+.markItUp .markItUpButton7 a {
+	background-image:image-url('lib/markitup/list-bullet.png'); 
+}
+
+.markItUp .markItUpButton8 a {
+	background-image:image-url('lib/markitup/list-numeric.png');
+}
+.markItUp .markItUpButton9 a {
+	background-image:image-url('lib/markitup/picture.png'); 
+}
+.markItUp .markItUpButton10 a {
+	background-image:image-url('lib/markitup/link.png');
+}
+
+/***************************************************************************************/
+/* first row of buttons */
+.markItUpHeader {
+margin: 12px 0 0 0;    
+}
+.markItUpHeader ul	{
+        
+    li {
+        border: 1px solid #DDD;
+	list-style:none;
+	float:left;
+	position:relative;
+	margin:0 4px 0 0;
+        
+                
+        &:hover {
+            border-color: #666; 
+        }
+        }
+}
+
+.markItUpHeader ul .markItUpSeparator {
+	margin:0 5px;
+	width:3px;
+	height:20px;
+	overflow:hidden;
+        border: none;
+}
+
+.markItUpHeader ul a {
+	display:block;
+	width:16px; height:16px;
+	text-indent:-10000px;
+	background-repeat:no-repeat;
+	padding:3px;
+        border: none;
+        background-position: 3px 3px;
+}

@@ -1,0 +1,33 @@
+<%= semantic_form_for [@member, @contact] do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.inputs t(:general) do %>
+    <%= form_element t(:Member) do %>
+      <%= @member.to_s %>
+    <% end %>
+    <%= f.semantic_fields_for :member_contacts do |a| %>
+      <%= f.input :relation, as: :select, collection: MemberContacts::RELATIONS %>
+    <% end %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+  <% end %>
+
+  <%= f.inputs t(:address) do %>
+    <%= f.semantic_fields_for :address do |a| %>
+      <%= a.input :line1 %>
+      <%= a.input :line2 %>
+      <%= a.inputs 'Zip, Place', class: :doublefield do %>
+          <%= a.input :zip %>
+          <%= a.input :place %>
+        <% end %>
+        <%= a.input :country, as: :string %>
+      <% end %>
+    <% end %>
+    <%= f.inputs t(:phone_number) do %>
+      <%= f.semantic_fields_for :phone_number do |p| %>
+        <%= p.input :phone_type, as: :select, collection: PhoneNumber::PHONE_TYPES %>
+        <%= p.input :number %>
+      <% end %>
+    <% end %>
+    <%= f.buttons %>
+  <% end %>

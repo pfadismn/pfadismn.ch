@@ -1,0 +1,12 @@
+  <h2>Dashboard</h2>
+  <ul>
+    <li><%= link_to 'Member verwalten', members_path %></li>
+    <li><%= link_to 'Events verwalten', events_path %></li>
+    <li><%= link_to 'News verwalten', news_index_path %></li>
+    <li><%= link_to 'Startseite verwalten' %></li>
+  </ul>
+ 
+
+<% content_for :sidebar do %>
+  <%= render partial: 'stickypost' %>
+<% end %>

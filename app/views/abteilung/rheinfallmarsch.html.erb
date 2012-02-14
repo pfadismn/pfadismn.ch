@@ -1,0 +1,29 @@
+<%= heading("Rheinfallmarsch", "Von Höngg an den Rheinfall") %>
+
+<div>
+  <h2>Zu Fuss von Höngg an den Rheinfall</h2>
+  <p>
+    Jeweils im September laufen die Teilnehmer der Pfadistufe und die Leiter über Nacht von Zürich-Höngg an den Rehinfall.
+  </p>
+  <%= image_tag image_path('abteilung/rheinfallmarsch/collage_rheinfallmarsch.jpg') %>
+  <p>
+    Die ganze Strecke ist in fünf Etappen unterteilt, und bei jedem Treffpunkt gibt es zur
+    Stärkung diverse Getränke, Brötchen, Früchte etc. und einmal eine heisse Suppe.
+    Falls jemand unterwegs nicht mehr weiter laufen kann, wird er natürlich per Auto vor
+    die Haustüre gefahren.
+    Am Rheinfall werdet ihr dann mit Gipfeli und Orangensaft zum Frühstück begrüsst. Nach
+    dem Essen reisen wir zusammen im Kollektiv per Bahn wieder zurück nach Zürich. 
+    Natürlich bekommen am Schluss alle neuen „Rheinfallhelden“ das begehrte
+    Rheinfallmarsch-T-Shirt!
+  </p>
+</div>
+
+
+<% content_for :sidebar do %>
+
+  <h2>Nächster Rheinfallmarsch</h2>
+  <p>
+    Das Datum für den nächsten Rheinfallmarsch findest du im 
+    <%= link_to 'Jahresprogramm', jahresprogramm_path %>. Melde dich heute noch an!
+  </p>
+<% end %>

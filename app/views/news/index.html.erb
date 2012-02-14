@@ -1,0 +1,18 @@
+<% if can? :create, News %>
+  <ul class="buttons" style="float: right;">
+    <li><%= link_to 'News erfassen', new_news_path, class: 'new' if can? :create, News %></li>
+    </ul>
+  <% end %>
+
+  <h2>News</h2>
+  <% if @news.empty? %>
+    <p>Keine News vorhanden</p>
+  <% end %>
+
+  <ol class="stories">
+    <%= render partial: 'news', collection: @news %> 
+  </ol>
+
+  <% content_for :sidebar do %>
+    <%= render 'sidebar' %> 
+  <% end %>

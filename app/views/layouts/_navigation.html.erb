@@ -1,0 +1,24 @@
+<ul id="main-navigation">
+  <li><%= link_to "Home", index_path, class: (params[:controller] == 'abteilung' && params[:action] == 'home' ? 'active' : nil)%></li>
+  <li><%= link_to "Abteilung", abteilung_index_path, class: (params[:controller] == 'abteilung' && params[:action] != 'home' ? 'active' : nil) %></li>
+  <li><%= link_to "Pfadi Life", pfadilife_index_path %></li>
+  <% if current_user.present? %>
+    <li><%= link_to "Admin", dashboard_path %></li>
+  <% end %>
+</ul>
+<ul id="sub-navigation">
+  <% if params[:controller] == 'abteilung' && params[:action] != 'home' %>
+    <li><%= link_to "Biberstufe", abteilung_biberstufe_path, class: (params[:action] == 'biberstufe' ? 'active' : nil) %></li>
+    <li><%= link_to "Wolfsstufe", abteilung_wolfsstufe_path, class: (params[:action] == 'wolfsstufe' ? 'active' : nil) %></li>
+    <li><%= link_to "Pfadistufe", abteilung_pfadistufe_path, class: (params[:action] == 'pfadistufe' ? 'active' : nil) %></li>
+    <li><%= link_to "Roverstufe", abteilung_roverstufe_path, class: (params[:action] == 'roverstufe' ? 'active' : nil) %></li>
+    <li><%= link_to "Elternrat", abteilung_elternrat_path, class: (params[:action] == 'elternrat' ? 'active' : nil) %></li>
+    <li><%= link_to "APV", abteilung_apv_path, class: (params[:action] == 'apv' ? 'active' : nil) %></li>
+  <% end %>
+    
+  <% if (params[:controller] == 'pfadilife' ||  params[:controller] == 'photos')  && params[:action] != 'home' %>
+    <li><%= link_to "Fotos", photos_path, class: (params[:controller] == 'photos' ? 'active' : nil) %></li>
+    <li><%= link_to "Videos", pfadilife_videos_path, class: (params[:action] == 'videos' ? 'active' : nil) %></li>
+    <li><%= link_to "Skauty", pfadilife_skauty_path, class: (params[:action] == 'skauty' ? 'active' : nil) %></li>
+  <% end %>
+</ul>

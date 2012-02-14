@@ -1,0 +1,7 @@
+<div class="contact-businesscard">
+  <%= image_tag avatar_member_path(member, size: :thumb) %>
+  <%= contact_name member %>
+  <div class="courses">Kurse: <%= member.last_education(3).to_sentence %></div>
+  <div class="since">Dabei seit: <%= member.member_since.try(:year) %></div>
+  <%= clearer %>
+</div>

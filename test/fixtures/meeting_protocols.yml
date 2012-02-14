@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  participants: 
+  organisational_unit: 
+  content: MyText
+
+two:
+  participants: 
+  organisational_unit: 
+  content: MyText

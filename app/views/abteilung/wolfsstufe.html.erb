@@ -1,0 +1,29 @@
+<%= heading("Wolfsstufe", "Jungs und Mädchen von 7 bis 10", quote: "euses bescht", icon: 'abteilung/wolfsstufe/wolfsstufe.png') %>
+
+<div>
+  <h2>Bienli</h2>
+  <p>Du bist zwischen 7 und 10 Jahren alt und möchtest am Samstagnachmittag mit Mädchen in deinem Alter etwas
+    unternehmen? Dann wird es dir bei den Bienli der Pfadi Höngg gefallen!</p>
+  <p>Bei den Bienli kannst du gemeinsam mit deinen Kolleginnen die Welt entdecken, spannende Geschichten hören,
+    etwas basteln oder malen. Du kannst die Natur erforschen, Rätsel lösen wie eine Detektivin oder an einem 
+    gemtülichen Lagerfeuer gemeinsam plaudern. Und im einwöchigen Herbst- oder Sommerlager erwarten dich unvergesslich schöne 
+    Erlebnisse!</p>
+  <%= image_tag image_path('abteilung/wolfsstufe/collage_wolfsstufe.jpg') %>
+  <h2>Wölfe</h2>
+  <p>Du bist zwischen 7 und 11 Jahren alt und möchtest am Samstagnachmittag mit Buben in deinem Alter etwas 
+    unternehmen? Dann bist du bei den Wölfen der Pfadi Höngg genau richtig!</p>
+  <p>Die Wölfe erleben gemeinsam spannende Abenteuer, erforschen den Wald und bauen eine richtige Waldhütte. 
+    Mit den Wölfen löst du als Detektiv geheimnisvolle Rätsel und verfolgst böse Gangster auf ihrer Flucht. 
+    Bei den Wölfen lernst du auch ein Feuer zu machen, Tierspuren zu lesen oder ein eigenes Werkzeug zu 
+    schnitzen. Im einwöchigen Herbst- oder Sommerlager und auch im Chlausweekend erwarten dich einmalige Erlebnisse!</p>
+</div>
+
+<% content_for :sidebar do %>
+  <h2>Stufenleitung</h2>
+  <% @team.each do |member| %>
+    <%= render partial: 'members/contact', locals: { member: member } %>
+  <% end %>
+  
+  <h2>Nächster Event</h2>
+  <%= render partial: 'events/sidebar_event', locals: { event: @ou.events.upcoming.first } %>
+<% end %>

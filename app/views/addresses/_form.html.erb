@@ -1,0 +1,16 @@
+<%= semantic_form_for [@addressable, @address] do |f| %>
+  <%= f.error_messages %>
+  <%= f.inputs t(:general) do %>
+    <%= form_element t(:address) do %>
+      <%= @addressable.to_s %>
+    <% end %>
+    <%= f.input :line1 %>
+    <%= f.input :line2 %>
+    <%= f.inputs 'Zip, Place', class: :doublefield do %>
+      <%= f.input :zip %>
+      <%= f.input :place %>
+    <% end %>
+    <%= f.input :country, as: :string %>
+  <% end %>
+  <%= f.buttons %>
+<% end %>

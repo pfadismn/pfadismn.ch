@@ -1,0 +1,22 @@
+<%= heading("Roverstufe", "Leiter und Pfadis über 18", quote: "bewusst handeln") %>
+
+<div>
+  <h2>Rovers</h2>
+  <p>Die Roverstufe besteht hauptsächlich aus aktiven und ehemaligen Leitern. Man trifft sich zu freizeitlichen Anlässen und unterstützt aktive Pfadis, so zum Beispiel beim Lageraufbau oder sonstigen Grossanlässen.</p>
+  <%= image_tag 'abteilung/roverstufe/collage_roverstufe.jpg' %>
+  <p>Mit "bewusst handeln" hat die Stufe ein Motto, das symbolisch für die Verantwortung und die Vorbildfunktion der Rovers steht. Sie sind ein wichtiger Bestandteil der Abteilung und leisten mit Ihrem Einsatz und Know-How einen grossen Beitrag an den Pfadibetrieb.</p>
+</div>
+
+<% content_for :sidebar do %>
+  <h2>Nächster Event</h2>
+  <%= render partial: 'events/sidebar_event', locals: { event: @ou.events.upcoming.first } %>
+  <h2>Rover Rotten</h2>
+  <p>
+    Folgende Rover Rotten gibt es z.Z. in der Abteilung:
+  <ul>
+    <li>Rotte Alte (T)Rotte</li>
+    <li>Rotte Punkt</li>
+    <li>Rotte Volkorn</li>
+  </ul>
+  </p>
+<% end %>

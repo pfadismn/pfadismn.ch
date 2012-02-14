@@ -1,0 +1,58 @@
+<%= semantic_form_for @member do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.inputs t(:general) do %>
+    <%= image_tag avatar_member_path(@member, size: :thumb), class: :avatar unless @member.new_record? %>
+    <%= f.inputs 'Firstname, Lastname', class: :doublefield do %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+    <% end %>
+    <%= f.input :scout_name %>
+    <%= f.input :birthdate, start_year: Time.now.year - 30, end_year: Time.now.year %>
+    <%= f.input :nationality %>
+    <%= f.input :gender, :as => :radio, collection: Member::GENDERS %>
+    <%= f.input :avatar %>
+  <% end %>
+
+  <%= f.inputs t :contact_information do %>
+    <%= f.input :email %>
+    <% unless @member.new_record? %>
+      <%= form_element t(:phone_numbers) do %>
+        <% @member.phone_numbers.each do |p| %>
+          <%= link_to t(:remove_phone_number), member_phone_number_path(@member, p), method: :delete, confirm: :really_delete? %>
+          <%= formatted_phone_number p %>
+        <% end %>
+        <%= link_to t(:add_phone_number), new_member_phone_number_path(@member) %>
+      <% end %>
+      <%= form_element t(:addresses) do %>
+        <% @member.addresses.each do |a| %>
+          <%= link_to t(:remove_address), member_address_path(@member, a), method: :delete, confirm: :really_delete? %>
+          <%= formatted_address a %>
+        <% end %>
+        <%= link_to t(:add_address), new_member_address_path(@member) %>
+      <% end %>
+      <%= form_element t(:contacts) do %>
+        <% @member.contacts.each do |a| %>
+          <%= link_to t(:remove_address), member_contact_path(@member, a), method: :delete, confirm: :really_delete? %>
+          <%= formatted_address a %>
+        <% end %>
+        <%= link_to t(:add_address), new_member_contact_path(@member) %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= f.inputs t :scout do %>
+    <%= f.input :organisational_unit, as: :select, input_html: { class: 'chosen-select' }, wrapper_html: { class: 'chosen' }, collection: OrganisationalUnit.all, member_label: :to_s, include_blank: false %>
+    <%= f.input :functions, as: :hidden, input_html: { name:'member[functions][]', value: 0 } %>
+    <%= f.input :functions, as: :select, input_html: { multiple: true, class: 'chosen-select',  name:'member[functions][]', value: @member.functions }, wrapper_html: { class: 'chosen' }, collection: Member::FUNCTIONS.map{ |f| [t(f), f] }, include_blank: false %>
+    <%= f.input :education %>
+    <%= f.input :member_since, start_year: Time.now.year - 30, end_year: Time.now.year%>
+  <% end %>
+
+  <%= f.inputs t :additional_info do %>
+    <%= f.input :remarks %>
+    <%= f.input :vegetarian %>
+  <% end %>
+
+  <%= f.buttons %>
+<% end %>

@@ -1,0 +1,45 @@
+<div class="stickypost-container">
+  <div class="stickypost-top"></div>
+
+  <% if current_user.present? %>
+    <%= stickyposter(:paper, 1) do %>
+      <h2>Willkommen <%= current_user.member.scout_name %>!</h2>
+      <p>Was möchtest du tun?</p>
+      <ul>
+        <li><%= link_to "Neuer Event", new_event_path %></li>
+        <li><%= link_to "Meine Gruppe verwalten", organisational_unit_path(current_user.member.organisational_unit) %></li>
+        <li><%= link_to "Logout", logout_path %></li>
+      </ul>
+    <% end %>
+  <% else %>
+    <%= stickyposter(:paper) do %>
+      <h2>Mitmachen?</h2>
+      <p>Dann melde dich unter <%= link_to 'pfadi@pfadismn.ch', 'mailto:pfadi@pfadismn.ch' %> und erhalte unverbindlich Infos!</p>
+    <% end %>
+  <% end %>
+
+  <%= stickyposter(:plain) do %>
+    <%= link_to image_tag('index/post/collage_post.png'), photos_path, style: 'border:none;' %>
+  <% end %>
+
+  <%= stickyposter(:paper, 0) do %>
+    <h2>Quicklinks</h2>
+    <ul>
+      <li><%= link_to 'Events', [Event] %></li>
+      <li><%= link_to 'Jahresprogramm', jahresprogramm_path %></li>
+      <li><%= link_to 'Skauty', pfadilife_skauty_path %></li>
+      <li><%= link_to 'Downloads', downloads_path %></li>
+      <% if !current_user.present? %>
+        <li><%= link_to 'Login', login_path %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= stickyposter(:paper, 2) do %>
+    <%= link_to image_tag('index/post/fb.png', style: 'width: 60px;'), 'http://www.facebook.com/group.php?gid=55412060219', style: 'border:none; padding: 25px; float: left;', target: '_blank' %>
+    <%= link_to image_tag('index/post/yt.png', style: 'width: 60px;'), 'http://www.youtube.com/user/pfadismn', style: 'border:none; padding: 25px; float: left;', target: '_blank' %>
+    <div class="clear"></div>
+  <% end %>
+
+  <div class="stickypost-bottom"></div>
+</div>

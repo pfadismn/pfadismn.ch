@@ -1,0 +1,9 @@
+<%= semantic_form_for @news do |f| %>
+  <%= f.inputs :general do %>
+    <%= f.input :title %>
+    <%= f.input :body %>
+    <%= f.input :published_at %>
+  <% end %>
+
+  <%= f.buttons %>
+<% end %>

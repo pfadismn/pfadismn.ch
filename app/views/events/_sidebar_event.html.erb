@@ -1,0 +1,28 @@
+<div class="sidebar-event">
+  <% if event.present? %>
+    <h3><%= link_to event.name, event %></h3>
+    <div class="meetup">Beginn: <%= l event.start_time, format: :short %>  (<%= link_to event.start_place, event.start_place %>)</div>
+    <div class="meetup">Ende: <%= l event.end_time, format: :short %>  (<%= link_to event.end_place, event.end_place %>)</div>
+
+    <h4>Mitnehmen</h4>
+    <ul>
+      <% event.take_along.each_line do |line| %>
+        <li><%= line %></li>
+      <% end %>
+    </ul>
+
+    <h4>Zusätzliche Infos</h4>
+    <%= RedCloth.new(event.description).to_html.html_safe %>
+
+    <% if event.creator %>
+      <h4>Rückfragen & Abmeldungen</h4>
+      <p>
+        <%= contact_name event.creator.member  %>
+      </p>
+    <% end %>
+  <% else %>
+    <p class="no-event">
+      Keine Informationen verfügbar.
+    </p>
+  <% end %>
+</div>

@@ -1,0 +1,175 @@
+gulli:
+  id: 1
+  member_id: 1
+  email: gulli@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 1
+  
+prometheus:
+  id: 2
+  member_id: 2
+  email: prometheus@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 2
+  
+chaja:
+  id: 3
+  member_id: 3
+  email: chaja@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 2
+  
+filou:
+  id: 4
+  member_id: 4
+  email: filou@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 1
+  
+foxy:
+  id: 5
+  member_id: 5
+  email: foxy@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+kondor:
+  id: 6
+  member_id: 6
+  email: kondor@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+panther:
+  id: 7
+  member_id: 7
+  email: panther@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+stromboli:
+  id: 8
+  member_id: 8
+  email: stromboli@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+fiumina:
+  id: 9
+  member_id: 9
+  email: fiumina@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+fairy:
+  id: 10
+  member_id: 10
+  email: fairy@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+koschka:
+  id: 11
+  member_id: 11
+  email: koschka@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+baloo:
+  id: 12
+  member_id: 12
+  email: baloo@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+manitu:
+  id: 13
+  member_id: 13
+  email: manitu@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+luchs:
+  id: 14
+  member_id: 14
+  email: luchs@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+baracuda:
+  id: 15
+  member_id: 15
+  email: baracuda@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+milou:
+  id: 16
+  member_id: 16
+  email: milou@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+chili:
+  id: 17
+  member_id: 17
+  email: chili@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+surrli:
+  id: 18
+  member_id: 18
+  email: surrli@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+pelea:
+  id: 19
+  member_id: 19
+  email: pelea@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+muck:
+  id: 20
+  member_id: 20
+  email: muck@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+trick:
+  id: 21
+  member_id: 21
+  email: trick@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4
+  
+lupin:
+  id: 22
+  member_id: 22
+  email: lupin@pfadismn.ch
+  crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
+  password_salt: vFLfqNTA0dd9wYwznME
+  roles_mask: 4

@@ -1,0 +1,9 @@
+<h2><%= @place.name %></h2>
+<iframe width="606" height="408" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?q=<%= @place.coordinates %>&amp;num=1&amp;t=m&amp;vpsrc=6&amp;ie=UTF8&amp;ll=<%= @place.coordinates %>&amp;spn=0.011624,0.025706&amp;z=15&amp;output=embed"></iframe>
+
+<% content_for :sidebar do %>
+  <h2>Beschreibung</h2>
+  <p><%= RedCloth.new(@place.description).to_html.html_safe %></p>
+  <h2>Adresse</h2>
+  <%= formatted_address @place.address %>
+<% end %>

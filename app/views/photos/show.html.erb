@@ -1,0 +1,10 @@
+<%= heading(@album.name, @album.place, icon: 'pfadilife/photos/icon_gallery.png') %>
+
+<% if @album.caption %>
+  <p><%= @album.caption %></p>
+<%  end %>
+
+<ul class="album">
+  <%= render partial: 'photo', collection: @album.photos %>
+</ul>
+<div class="clear"></div>

@@ -1,0 +1,43 @@
+<%= crud_navigation @member do %>
+  <%  if current_user.has_role? [:manager, :admin] %>
+    <ul class="buttons">
+      <% if @member.user.present? %>
+        <li><%= link_to "Login bearbeiten", edit_user_path(@member.user), class: 'edit with-text' %></li><li>
+            <%= link_to "Login löschen", user_path(@member.user), method: :delete, confirm: t(:really_delete?), class: 'delete with-text' %>
+            <%= link_to "Passwort setzen", edit_password_user_path(@member.user) %></li><li>
+        </li>
+      <% else %>
+        <li><%= link_to "Login anlegen", new_user_path(member: @member), class: 'new with-text'  %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
+<div class="show-container">
+  <%= image_tag avatar_member_path(@member, size: :thumb), class: :avatar %>
+
+    <%= show_section :allgemein do %>
+      <%= show_field :name, @member %>
+      <%= show_field :addresses, @member do %>
+        <% @member.addresses.each do |a| %>
+          <%= formatted_address a %>
+        <% end %>
+      <% end %>
+      <%= show_field :birthdate, @member %>
+      <%= show_field :nationality, @member %>
+    <% end %>
+    <%= show_section "Kontakt" do %>
+      <%= show_field :email, @member %>
+      <%= show_field :phone_numbers, @member do %>
+        <% @member.phone_numbers.each do |p| %>
+          <%= formatted_phone_number p %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+    <%= show_section "Pfadi" do %>
+      <%= show_field :organisational_unit, @member %>
+      <%= show_field :functions, @member %>
+      <%= show_field :education, @member %>
+    <% end %>
+  </div>

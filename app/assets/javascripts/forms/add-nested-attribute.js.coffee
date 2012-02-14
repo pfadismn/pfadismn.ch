@@ -1,0 +1,2 @@
+$ ->
+    $(".add-nested-attribute").hide()

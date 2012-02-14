@@ -1,0 +1,93 @@
+.formtastic {
+    .inputs {
+        
+        position: relative;
+        
+        .avatar {
+            box-shadow:2px 2px 10px #333333;
+            position: absolute;
+            top: 50px;
+            right: 65px;
+            width: 150px;
+        }
+        
+    }
+    
+    #member_functions_input {
+        .chzn-choices li.search-choice {
+            /* Neumitglied */
+            &#member_functions_chzn_c_0 {
+                border-color:#CCC;
+            }
+            
+            /* Mitglied */
+            &#member_functions_chzn_c_1 {
+                border-color:#666;
+            }
+            
+            /* Gruppenleiter */
+            &#member_functions_chzn_c_2 {
+                border-color:#999;
+            }
+            
+            /* Stammleiter */
+            &#member_functions_chzn_c_3 {
+                border-color:#ffc208;
+            }
+            
+            /* Stufenleiter */
+            &#member_functions_chzn_c_4 {
+                border-color:#ed2828;
+            }
+            
+            /* AL */
+            &#member_functions_chzn_c_5 {
+                border-color:#ca27ff;
+            }
+            
+            /* Skauty */
+            &#member_functions_chzn_c_6 {
+                border-color:#f6ff08;
+            }
+        }
+    }
+}
+
+.show-container {
+    position: relative;
+    .avatar {
+        box-shadow:2px 2px 10px #333333;
+        position: absolute;
+        top: 50px;
+        right: 65px;
+        width: 150px;
+        z-index: 100;
+    }
+}
+
+.contact-businesscard {
+    clear: both;
+    font-size: 0.9em;
+    margin: 0 0 30px 0;
+    
+    img {
+        float: left;
+        width: 65px;
+        margin: 0 10px 10px 0;
+    }
+    
+    & > div {
+        display: block;
+        margin: 10px 0 0 75px;
+    }
+}
+
+.contact-name {
+    .name {
+        font-weight: bold;
+    }
+    .email {
+        &:before { content: "("; }
+        &:after { content: ")"; }
+    }
+}

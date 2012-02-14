@@ -1,0 +1,9 @@
+<li>
+  <div class="story">
+    <h3><%= news.title %></h3>
+    <span class="meta"><%= l news.published_at %> von <%= news.creator.try(:member) || "?" %></span>
+    <div><%= news.to_html %></div>
+
+    <%= link_to "Anzeigen »", news_path(news) %>
+  </div>
+</li>
