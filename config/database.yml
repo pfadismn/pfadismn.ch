@@ -43,6 +43,6 @@ production:
   reconnect: false
   database: pfadismn_production
   pool: 5
-  username: root@
+  username: root
   password:
   host: localhost
