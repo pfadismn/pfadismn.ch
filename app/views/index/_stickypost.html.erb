@@ -6,8 +6,8 @@
       <h2>Willkommen <%= current_user.member.scout_name %>!</h2>
       <p>Was möchtest du tun?</p>
       <ul>
-        <li><%#= link_to "Neuer Event", new_ou_event_path(current_user.member.organisational_unit) %></li>
-        <li><%= link_to "Meine Gruppe verwalten", ou_path('1') %></li>
+        <li><%= link_to "Neuer Event", new_ou_event_path(current_user.member.organisational_unit) %></li>
+        <li><%= link_to "Meine Gruppe verwalten", organisational_unit_path(current_user.member.organisational_unit) %></li>
         <li><%= link_to "Logout", logout_path %></li>
       </ul>
     <% end %>
