@@ -1,7 +1,7 @@
 # encoding: UTF-8
 ou = {}
 ou[:abteilung] = OrganisationalUnit.create!(name: 'Abteilung', responsible_function: 'al')
-ou[:biberstufe] = OrganisationalUnit.create!(name: 'Biberstufe', caption: 'Die Pfadi St. Mauritius Nansen', responsible_function: 'stufenleiter', parent: ou[:abteilung])
+ou[:biberstufe] = OrganisationalUnit.create!(name: 'Biberstufe', caption: 'Die Pfadi St. Mauritius Nansen', motto: 'Immer däbii', responsible_function: 'stufenleiter', parent: ou[:abteilung])
 ou[:wolfsstufe] = OrganisationalUnit.create!(name: 'Wolfsstufe', caption: 'Jungs und Mädchen von 7 bis 10', motto: 'Euses Bescht', responsible_function: 'stufenleiter', parent: ou[:abteilung])
 ou[:pfadistufe] = OrganisationalUnit.create!(name: 'Pfadistufe', caption: 'Jungs und Mädchen von 10 bis 15', motto: 'Allzeit Bereit', responsible_function: 'stufenleiter', parent: ou[:abteilung])
 ou[:piostufe] = OrganisationalUnit.create!(name: 'Piostufe', caption: 'Angehenden Leiter und Leiterinnen von 15 bis 17', motto: 'Zäme witercho', responsible_function: 'stufenleiter', parent: ou[:abteilung])

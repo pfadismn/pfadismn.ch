@@ -1,0 +1,20 @@
+@media print {
+    
+    body
+    {
+        font-size:14px;
+        font-family: serif !important;
+    }
+
+    p {
+        line-height: 1.5em;
+        margin: 0.3em 0;
+        text-align: justify;
+    }
+
+    h1 {
+        font-size: 1.9em;
+        margin-bottom: 0.5em;
+        color: #111;
+    }
+}

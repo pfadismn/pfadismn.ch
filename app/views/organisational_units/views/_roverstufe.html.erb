@@ -9,6 +9,7 @@
 <% content_for :sidebar do %>
  <h2>Nächster Event</h2>
   <%= render partial: 'events/sidebar_event', locals: { event: @ou.events.upcoming.first } %>
+  <p><%= link_to "Alle Events »", organisational_unit_events_path(@ou) %></p>
   
   <h2>Rover Rotten</h2>
   <p>

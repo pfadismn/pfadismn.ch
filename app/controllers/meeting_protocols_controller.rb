@@ -12,6 +12,7 @@ class MeetingProtocolsController < ApplicationController
       format.html # index.html.erb
       format.pdf {
         pdf_renderer = PDFKit.new(@meeting_protocol.to_html)
+        pdf_renderer.stylesheets << "#{Rails.root}/app/assets/stylesheets/pdf.css"
         send_data(pdf_renderer.to_pdf, filename: "protocol.pdf", type: 'application/pdf')
       }
     end

@@ -1,0 +1,132 @@
+<style>
+  h1 {
+    margin: 40px 0 20px 0;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.9em;
+  }
+  
+  td {
+    border: 1px solid gray;
+    padding: 3px;
+  }
+  
+  th {
+    text-align: left;
+    border: 1px solid gray;
+    padding: 3px;
+    background: lightgray;
+  }
+  
+  td h2 {
+    margin: 0;
+  }
+  
+  td.title {
+    border:none;
+  }
+  
+  td.time, th.time {
+    width: 40px;
+    text-align: right; 
+    border-right: none;
+  }
+  
+  td.place, th.place {
+    width: 100px;
+    border-left: none;
+  }
+  
+  td.take-along {
+    width: 50%;
+  }
+  
+  td.description {
+    width: 50%;
+  }
+  
+  tr.upper td.time, tr.upper td.place {
+    border-bottom: none;
+  }
+  
+  tr.lower td.time, tr.lower td.place {
+    border-top: none;
+  }
+  
+  td.spacer {
+    border:none;
+    height: 1.5em;
+  }
+  
+  blockquote {
+    margin-top: 3em;
+    font-style: italic;
+  }
+  
+  p.team {
+    margin-left: 40px;
+  }
+</style>
+
+<h1>Quartalsprogramm <%= @ou.name %></h1>
+  
+<table>
+  <thead>
+    <tr>
+      <th class="time">Zeit</th>
+      <th class="place">Ort</th>
+      <th class="take-along">Mitnehmen</th>
+      <th class="description">Beschreibung</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @events.each do |event| %>
+    <tr>
+      <td colspan="4" class="spacer"></td>
+    </tr>
+    <tr>
+      <td colspan="4" class="title"><h2><%= l event.start_time.to_date, format: :long %>: <%= event.name %></h2></td>
+    </tr>
+    <tr class="upper">
+      <td class="time"><%= l event.start_time.to_time, format: :time_only %></td>
+      <td class="place"><%= link_to event.start_place, event.start_place %></td>
+      <td class="take-along" rowspan="2">
+          <%= event.take_along.lines.to_a.join(', ') %>
+      </td>
+      <td class="take-along" rowspan="2">
+         <%= RedCloth.new(event.description).to_html.html_safe %>
+      </td>
+    </tr>
+    <tr class="lower">
+      <td class="time"><%= l event.end_time, format: :time_only %></td>
+      <td class="place"><%= link_to event.end_place, event.start_place %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<h1>Allgemeine Hinweise</h1>
+<h2>Kleidung</h2>
+<p>Da wir viel im draussen unterwegs sein werden, sollte die Kleidung immer der Witterung angepasst sein.
+Leider ist auch dieses Jahr die Zeckengefahr im Kanton Zürich sehr gross. Deswegen sollten Kurze Hosen
+und T-Shorts möglichst gemieden werden. Auf dieser Website können Sie sich nähere Informationen
+erhalten (www.sprechzimmer.ch).</p>
+
+<h2>Busbillet</h2>
+<p>An manchen Samstagnachmittagen muss ein Busbillett (Tageskarte Zone 10) mitgenommen werden.
+  Dieses gilt nur für Kinder ab 6 Jahre.</p>
+
+<h2>Abmeldung</h2>
+<p>Damit wir unsere Zusammentreffen genau planen können, würden wir es sehr begrüssen, wenn allfällige
+Abmeldungen bis spätestens 2 Tage im Vorhinein per Email oder SMS bekannt gegeben werden.
+Für weitere Infos sowie News und Fotos besuchen sie uns auf www.pfadismn.ch.</p>
+
+<blockquote><%= @ou.motto %></blockquote>
+<p class="team">
+  <% @ou.team.each do |member| %>
+    <%= member.name %><br />
+  <% end %>  
+</p>

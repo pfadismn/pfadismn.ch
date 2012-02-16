@@ -21,7 +21,11 @@ Pfadismn::Application.routes.draw do
   match 'photos/:year/:id' => 'photos#show', as: :photo_album
   
   resources :organisational_units, path: :abteilung do
-    resources :events
+    resources :events do
+      collection do
+        get :quartalsprogramm
+      end
+    end
   end
   
   resources :places

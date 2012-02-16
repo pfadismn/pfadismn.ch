@@ -67,6 +67,7 @@ de:
       long: "%A, %d. %B %Y, %H:%M Uhr"
       default: "%d. %B, %H:%M Uhr"
       short: "%d.%m.%Y %H:%M"
+      time_only: "%H:%M"
       very_long: "%A, %d. %B %Y, %H:%M Uhr"
     am: "vormittags"
     pm: "nachmittags"
