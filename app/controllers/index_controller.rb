@@ -4,18 +4,21 @@ class IndexController < ApplicationController
   end
   
   def dashboard
-    
   end
 
   def impressum
-    
   end
   
   def jahresprogramm
     send_file "#{Rails.root}/public/jahresprogramm.pdf", type: 'application/pdf', disposition: 'inline'
   end
+
+  def chronik
+  end
+
+  def rheinfallmarsch
+  end
   
-    
   def downloads
     @downloads_aktuelles = Dir.glob("#{Rails.root}/public/downloads/aktuelles/*.pdf")
     @downloads_admin = Dir.glob("#{Rails.root}/public/downloads/administratives/*.pdf")

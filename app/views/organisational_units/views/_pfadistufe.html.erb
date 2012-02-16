@@ -1,5 +1,3 @@
-<%= heading("Pfadistufe", "Jungs und Mädchen von 10 bis 15", quote: "allzeit bereit", icon: 'abteilung/pfadistufe/pfadistufe.png') %>
-
 <h2>Buebepfadi</h2>
 <p>Du bist zwischen 10 und 17 Jahren alt und möchtest am Samstagnachmittag mit Kollegen in deinem Alter etwas
   unternehmen? Herzlich willkommen bei der Buebepfadi der Pfadi Höngg!</p>
@@ -22,16 +20,11 @@
 
 
 <% content_for :sidebar do %>
-  
   <h2>Stufenleitung</h2>
-  <% @team.each do |member| %>
+  <% @ou.team.each do |member| %>
     <%= render partial: 'members/contact', locals: { member: member } %>
   <% end %>
   
-  <% @ou.children.each do |sou| %>
-  <% if sou.events.any? %>
-  <h2><%= sou.name %>: Nächster Event</h2>
-  <%= render partial: 'events/sidebar_event', locals: { event: sou.events.upcoming.first } %>
-<% end %>
-<% end %>
+  <h2>Nächster Event</h2>
+  <%= render partial: 'events/sidebar_event', locals: { event: @ou.events.upcoming.first } %>
 <% end %>

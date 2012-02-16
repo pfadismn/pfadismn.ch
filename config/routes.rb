@@ -1,16 +1,4 @@
 Pfadismn::Application.routes.draw do
-
-  
-  get 'abteilung/biberstufe'
-  get 'abteilung/wolfsstufe'
-  get 'abteilung/pfadistufe'
-  get 'abteilung/roverstufe'
-  get 'abteilung/elternrat'
-  get 'abteilung/apv'
-  get 'abteilung/chronik'
-  get 'abteilung/rheinfallmarsch'
-  get 'abteilung/', action: :index, controller: :abteilung, as: :abteilung_index
-  
   get 'pfadilife/videos', as: :pfadilife_videos
   get 'pfadilife/skauty', as: :pfadilife_skauty
   get 'pfadilife/', action: :index, controller: :pfadilife, as: :pfadilife_index
@@ -19,6 +7,8 @@ Pfadismn::Application.routes.draw do
   get 'downloads', action: :downloads, controller: :index, as: :downloads
   get 'jahresprogramm', action: :jahresprogramm, controller: :index, as: :jahresprogramm
   get 'impressum', action: :impressum, controller: :index, as: :impressum
+  get 'rheinfallmarsch', action: :rheinfallmarsch, controller: :index, as: :rheinfallmarsch
+  get 'chronik', action: :chronik, controller: :index, as: :chronik
 
   match 'login' => 'user_sessions#new', as: :login
   match 'logout' => 'user_sessions#destroy', as: :logout
@@ -30,10 +20,7 @@ Pfadismn::Application.routes.draw do
   match 'photos/:year' => 'photos#index' , as: :photo_year
   match 'photos/:year/:id' => 'photos#show', as: :photo_album
   
-  #  match 'ou(/:organisational_unit)' => 'members#index'
-  #  match 'organisational_unit(/:organisational_unit_id)(/:organisational_unit_name)' => 'members#index', as: :organisational_unit, constraints: { organisational_unit_id: /\d+/ }
-
-  resources :organisational_units, path: :ou do
+  resources :organisational_units, path: :abteilung do
     resources :events
   end
   

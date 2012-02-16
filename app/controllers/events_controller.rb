@@ -36,6 +36,7 @@ class EventsController < ApplicationController
 Pfadihemd
 Kravatte
     tl
+    @event.organisational_unit = @ou
     
     @event.published_at ||= Time.now
     @event.start_time ||= Time.now + (5*24*60*60)
@@ -47,7 +48,7 @@ Kravatte
   end
 
   def create
-    @event.organisational_unit = @ou
+    @event.organisational_unit = @ou unless current_user.has_role?(:admin | :manager)
     @event.creator = current_user
     
     respond_to do |format|

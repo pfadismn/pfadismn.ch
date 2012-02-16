@@ -1,6 +1,6 @@
 <div class="sidebar-event">
   <% if event.present? %>
-    <h3><%= link_to event.name, event %></h3>
+    <h3><%= link_to event.name, [@ou, event] %></h3>
     <div class="meetup">Beginn: <%= l event.start_time, format: :short %>  (<%= link_to event.start_place, event.start_place %>)</div>
     <div class="meetup">Ende: <%= l event.end_time, format: :short %>  (<%= link_to event.end_place, event.end_place %>)</div>
 

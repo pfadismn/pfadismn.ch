@@ -116,6 +116,9 @@ ActiveRecord::Schema.define(:version => 20120118191214) do
 
   create_table "organisational_units", :force => true do |t|
     t.string   "name"
+    t.string   "motto"
+    t.string   "caption"
+    t.string   "responsible_function"
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"

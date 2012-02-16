@@ -28,7 +28,7 @@ module ApplicationHelper
   
   def heading(t, subtitle=nil, options={})
     icon = options[:icon]
-    icon ||= 'stufen/logo_bw.png'
+    icon ||= 'abteilung/heading.png'
     quote = options[:quote]
     title t
             

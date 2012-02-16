@@ -1,6 +1,6 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
+<%= heading(@ou.name, @ou.caption, quote: @ou.motto, icon: "abteilung/#{@ou.to_param}/heading.png") %>
 
-<%= "show.html.erb" %>
+<%= render "organisational_units/views/#{@ou.to_param}" %>
+
+<% content_for :sidebar do %>
+<% end %>

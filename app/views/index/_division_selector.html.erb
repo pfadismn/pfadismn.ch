@@ -1,7 +1,7 @@
 <div class="division-selector">
   <% divisions = { biberstufe: '5 bis 7 Jahre', wolfsstufe: '8 bis 10 Jahre', pfadistufe: '11 bis 15 Jahre' } %>
   <% divisions.each do |division, description| %>
-    <% path = send("abteilung_#{division}_path") %>
+    <% path = organisational_unit_path(division) %>
     <div class="division <%= division %>">
       <%= link_to(image_tag("stufen/#{division}.png"), path) %>
       <div class="name">

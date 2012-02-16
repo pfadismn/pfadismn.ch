@@ -1,5 +1,3 @@
-<%= heading("Wolfsstufe", "Jungs und Mädchen von 7 bis 10", quote: "euses bescht", icon: 'abteilung/wolfsstufe/wolfsstufe.png') %>
-
 <div>
   <h2>Bienli</h2>
   <p>Du bist zwischen 7 und 10 Jahren alt und möchtest am Samstagnachmittag mit Mädchen in deinem Alter etwas
@@ -18,9 +16,10 @@
     schnitzen. Im einwöchigen Herbst- oder Sommerlager und auch im Chlausweekend erwarten dich einmalige Erlebnisse!</p>
 </div>
 
+
 <% content_for :sidebar do %>
   <h2>Stufenleitung</h2>
-  <% @team.each do |member| %>
+  <% @ou.team.each do |member| %>
     <%= render partial: 'members/contact', locals: { member: member } %>
   <% end %>
   

@@ -1,16 +1,20 @@
 # encoding: UTF-8
 ou = {}
-ou[:abteilung] = OrganisationalUnit.create!(name: 'Abteilung')
-ou[:biberstufe] = OrganisationalUnit.create!(name: 'Biberstufe', parent: ou[:abteilung])
-ou[:wolfsstufe] = OrganisationalUnit.create!(name: 'Wolfsstufe', parent: ou[:abteilung])
-ou[:pfadistufe] = OrganisationalUnit.create!(name: 'Pfadistufe', parent: ou[:abteilung])
-ou[:piostufe] = OrganisationalUnit.create!(name: 'Piostufe', parent: ou[:abteilung])
-ou[:roverstufe] = OrganisationalUnit.create!(name: 'Roverstufe', parent: ou[:abteilung])
-ou[:vampir] = OrganisationalUnit.create!(name: 'Vampir', parent: ou[:pfadistufe])
-ou[:troja] = OrganisationalUnit.create!(name: 'Troja', parent: ou[:pfadistufe])
-ou[:puma] = OrganisationalUnit.create!(name: 'Puma', parent: ou[:pfadistufe])
-ou[:auriga] = OrganisationalUnit.create!(name: 'Auriga', parent: ou[:pfadistufe])
-ou[:orion] = OrganisationalUnit.create!(name: 'Orion', parent: ou[:pfadistufe])
+ou[:abteilung] = OrganisationalUnit.create!(name: 'Abteilung', responsible_function: 'al')
+ou[:biberstufe] = OrganisationalUnit.create!(name: 'Biberstufe', caption: 'Die Pfadi St. Mauritius Nansen', responsible_function: 'stufenleiter', parent: ou[:abteilung])
+ou[:wolfsstufe] = OrganisationalUnit.create!(name: 'Wolfsstufe', caption: 'Jungs und Mädchen von 7 bis 10', motto: 'Euses Bescht', responsible_function: 'stufenleiter', parent: ou[:abteilung])
+ou[:pfadistufe] = OrganisationalUnit.create!(name: 'Pfadistufe', caption: 'Jungs und Mädchen von 10 bis 15', motto: 'Allzeit Bereit', responsible_function: 'stufenleiter', parent: ou[:abteilung])
+ou[:piostufe] = OrganisationalUnit.create!(name: 'Piostufe', caption: 'Angehenden Leiter und Leiterinnen von 15 bis 17', motto: 'Zäme witercho', responsible_function: 'stufenleiter', parent: ou[:abteilung])
+ou[:roverstufe] = OrganisationalUnit.create!(name: 'Roverstufe', caption: 'Leiter und Pfadis über 18', motto: 'Bewusst handeln', responsible_function: 'stufenleiter', parent: ou[:abteilung])
+ou[:vampir] = OrganisationalUnit.create!(name: 'Vampir', responsible_function: 'gruppenleiter', parent: ou[:pfadistufe])
+ou[:troja] = OrganisationalUnit.create!(name: 'Troja', responsible_function: 'gruppenleiter', parent: ou[:pfadistufe])
+ou[:puma] = OrganisationalUnit.create!(name: 'Puma', responsible_function: 'gruppenleiter', parent: ou[:pfadistufe])
+ou[:auriga] = OrganisationalUnit.create!(name: 'Auriga', responsible_function: 'gruppenleiter', parent: ou[:pfadistufe])
+ou[:orion] = OrganisationalUnit.create!(name: 'Orion', responsible_function: 'gruppenleiter', parent: ou[:pfadistufe])
+
+ou[:apv] = OrganisationalUnit.create!(name: 'APV', caption: 'Verein der Ehemaligen der Pfadi SMN', parent: ou[:abteilung])
+ou[:elternrat] = OrganisationalUnit.create!(name: 'Elternrat', caption: 'Die Elternvertretung in der Pfadi SMN', parent: ou[:abteilung])
+
 
 filou = Member.create!(first_name: 'Diego', last_name: 'Steiner', scout_name: 'Filou', email: 'filou@pfadismn.ch', birthdate: 23.years.ago, gender: 0, member_since: 14.years.ago, education: "Pano (2010)")
 gulli = Member.create!(first_name: 'André', last_name: 'Bürkler', scout_name: 'Gulli', email: 'gulli@pfadismn.ch', birthdate: 24.years.ago, gender: 0)

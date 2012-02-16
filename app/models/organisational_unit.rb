@@ -20,6 +20,10 @@ class OrganisationalUnit < ActiveRecord::Base
   def events
     Event.where(organisational_unit_id: self_and_descendants.collect { |ou| ou.id } )
   end
+  
+  def team
+    members.by_function(responsible_function.to_sym) if Member::FUNCTIONS.index(responsible_function.to_sym)
+  end
 
   def to_s
     return [parent.to_s, name].delete_if { |o| o.blank? }.join(" / ")

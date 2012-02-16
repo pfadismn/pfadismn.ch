@@ -1,5 +1,13 @@
-  <h2>Weitere Anlässe</h2>
-  <p>
-    Die Pfadi macht das ganze Jahr durch immer ein spannendes Programm. Für eine Übersicht lade das <%= link_to 'Jahresprogramm', jahresprogramm_path %> herunter.
-    Weitere Events gibt es bei der <%= link_to 'Pfadi Züri', 'http://www.pfadizueri.ch' %>
-  </p>
+<h1>Quartalsprogramm</h1>
+
+<table class="events">
+  <% @events.each do |event| %>
+    <tr>
+      <td><%= l event.start_time %></td>
+      <td><%= link_to event.start_place, event.start_place %></td>
+      <td><%= event.organisational_unit.name %></td>
+      <td><%= event.name %></td>
+      <td><%= link_to "Details »", event %></td>
+    </tr>
+  <% end %>
+</table>

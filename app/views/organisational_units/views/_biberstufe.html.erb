@@ -1,5 +1,3 @@
-<%= heading("Biberstufe", "Jungs und Mädchen von 5 bis 7", quote: "immer debii", icon: 'abteilung/biberstufe/biberstufe.png') %>
-
 <h2>Biberstufe</h2>
 <p>"Immer debi", so lautet das Motto der Biber der Pfadi SMN. 
 Die Biberstufe richtet sich an Kinder zwischen 5 und 7 Jahren (1. oder 2. Kindergarten).</p>
@@ -11,14 +9,12 @@ Biber verbringen den Samstag Nachmittag im Wald und entdecken dabei spielerisch 
 In der Biberstufe finden keine Lager statt. Alle Leiter haben Leiterkurse besucht und sind mindestens 18 Jahre alt.
 </p>
 <%= image_tag image_path('abteilung/biberstufe/collage_biberstufe.jpg') %>
-<h3>Das Bibergesetz:</h3>
+<h3>Das Bibergesetz</h3>
 <p>"Mir sind Biber und wänd anderi i de Gruppe kennelernä und zämä spielä, Neus entdecke und lernä, oisne Leiterinne und Leiter zulosä und de Natur sorgträgä."</p>
-
-<div class="clear"></div>
 
 <% content_for :sidebar do %>
   <h2>Stufenleitung</h2>
-  <% @team.each do |member| %>
+  <% @ou.team.each do |member| %>
     <%= render partial: 'members/contact', locals: { member: member } %>
   <% end %>
   

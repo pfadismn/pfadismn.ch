@@ -1,10 +1,8 @@
-<%= heading("Abteilung", "Die Pfadi St. Mauritius Nansen") %>
-
 <h2>Über die Pfadi SMN</h2>
 <p>Die Pfadiabteilung St. Mauritius-Nansen ist eine der grössten Jugendorganisationen in Höngg und engagiert sich seit über 60 Jahren in diesem Quartier. Motivierte und zuverlässige Leiter sorgen Samstag für Samstag für spannende und unvergessliche Übungen.
   Meitli und Buben jeden Alters erleben in unserer Pfadi ein abwechslungsreiches, lustiges und wertvolles Programm sowohl in der Natur wie auch im Dorf und der Stadt.</p>
 <p>Freundschaft, Gemeinschaft und das Entdecken der Umwelt sind uns dabei wichtig, wobei das Programm von jungen Menschen für junge Menschen gestaltet wird.</p>
-<%= image_tag image_path('abteilung/index/collage_abteilung.jpg') %>
+<%= image_tag image_path('abteilung/abteilung/collage_abteilung.jpg') %>
 
 <h2>Geschichte der Abteilung</h2>
 <p>Die Pfadi St. Mauritius Nansen wurde 1944 gegründet. Anlässlich des 50-Jahr Jubiläums der Pfadi SMN wurde eine Chronik erstellt, welche hier zu finden ist:<br/><br/>
@@ -20,9 +18,10 @@
 
 <% content_for :sidebar do %>
   <h2>Abteilungsleitung</h2>
-  <% @team.each do |member| %>
+  <% @ou.team.each do |member| %>
     <%= render partial: 'members/contact', locals: { member: member } %>
   <% end %>
+
   <h2>Dachorganisationenen</h2>
   <p>Die Pfadi SMN gehört den folgenden Dachorganisationen an:</p>
   <p
