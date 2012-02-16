@@ -6,8 +6,8 @@
       <h2>Willkommen <%= current_user.member.scout_name %>!</h2>
       <p>Was möchtest du tun?</p>
       <ul>
-        <li><%= link_to "Neuer Event", new_event_path %></li>
-        <li><%= link_to "Meine Gruppe verwalten", organisational_unit_path(current_user.member.organisational_unit) %></li>
+        <li><%#= link_to "Neuer Event", new_ou_event_path(current_user.member.organisational_unit) %></li>
+        <li><%= link_to "Meine Gruppe verwalten", ou_path('1') %></li>
         <li><%= link_to "Logout", logout_path %></li>
       </ul>
     <% end %>
@@ -25,7 +25,6 @@
   <%= stickyposter(:paper, 0) do %>
     <h2>Quicklinks</h2>
     <ul>
-      <li><%= link_to 'Events', [Event] %></li>
       <li><%= link_to 'Jahresprogramm', jahresprogramm_path %></li>
       <li><%= link_to 'Skauty', pfadilife_skauty_path %></li>
       <li><%= link_to 'Downloads', downloads_path %></li>

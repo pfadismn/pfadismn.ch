@@ -1,20 +1,24 @@
 # encoding: UTF-8
-
 class EventsController < ApplicationController
   before_filter :inject_publish, only: [ :create, :update ]
+  before_filter :load_parent_resource
   load_and_authorize_resource except: [:show]
   
   def index
-    @events = @events.active.upcoming
+    @events = @ou.events.accessible_by(current_ability).active.upcoming
     
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
     end
   end
+  
+  def qp
+    
+  end
 
   def show
-    @event = Event.where(id: params[:id]).first
+    @event = Event.find(params[:id])
     @event ||= Event.active.upcoming.where(name: params[:id]).first unless @event || params[:id].blank?
     
     respond_to do |format|
@@ -43,7 +47,7 @@ Kravatte
   end
 
   def create
-    @event.organisational_unit = current_user.member.organisational_unit unless current_user.has_role?( :admin || :manager )
+    @event.organisational_unit = @ou
     @event.creator = current_user
     
     respond_to do |format|
@@ -60,7 +64,7 @@ Kravatte
   def update
     respond_to do |format|
       if @event.update_attributes(params[:event])
-        format.html { redirect_to @event, notice: 'Planned activity was successfully updated.' }
+        format.html { redirect_to [@ou, @event], notice: 'Planned activity was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
@@ -72,7 +76,7 @@ Kravatte
     @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to events_url }
+      format.html { redirect_to ou_events_path(@ou) }
       format.json { head :ok }
     end
   end
@@ -87,5 +91,9 @@ Kravatte
       end
       params[:event].delete :published
     end
+  end
+  
+  def load_parent_resource
+    @ou = OrganisationalUnit.find_by_name(params[:organisational_unit_id])
   end
 end

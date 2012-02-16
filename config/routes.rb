@@ -30,10 +30,13 @@ Pfadismn::Application.routes.draw do
   match 'photos/:year' => 'photos#index' , as: :photo_year
   match 'photos/:year/:id' => 'photos#show', as: :photo_album
   
-#  match 'ou(/:organisational_unit)' => 'members#index'
-  match 'organisational_unit(/:organisational_unit_id)(/:organisational_unit_name)' => 'members#index', as: :organisational_unit, constraints: { organisational_unit_id: /\d+/ }
+  #  match 'ou(/:organisational_unit)' => 'members#index'
+  #  match 'organisational_unit(/:organisational_unit_id)(/:organisational_unit_name)' => 'members#index', as: :organisational_unit, constraints: { organisational_unit_id: /\d+/ }
 
-  resources :events
+  resources :organisational_units, path: :ou do
+    resources :events
+  end
+  
   resources :places
   resources :news
   resources :user_sessions

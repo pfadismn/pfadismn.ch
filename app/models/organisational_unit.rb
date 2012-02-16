@@ -5,9 +5,13 @@ class OrganisationalUnit < ActiveRecord::Base
   acts_as_nested_set
 
   #Validations
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
   
   # Scopes
+  
+  def to_param
+    "#{name.gsub(/[^a-z0-9]+/i, '_')}".downcase
+  end
   
   def members
     Member.where(organisational_unit_id: self_and_descendants.collect { |ou| ou.id } )

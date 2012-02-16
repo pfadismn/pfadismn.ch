@@ -45,6 +45,7 @@ module CrudHelper
   
   def crud_links modcord, options={}
     options[:except] ||= []
+    options[:parent_resource] ||= nil
     
     if modcord.is_a? Class
       model = modcord
@@ -54,13 +55,13 @@ module CrudHelper
     end
     
     content_tag :ul, class: 'buttons' do
-       concat content_tag(:li, link_to("Übersicht", [model], class: 'index'))
+        concat content_tag(:li, link_to("Übersicht", [options[:parent_resource], model].compact, class: 'index'))
        if record.present? && !record.new_record?
-         concat content_tag(:li, link_to("Anzeigen", [record], class: 'show', title: 'Anzeigen')) if !options[:except].include? :show && can?(:read, record)
-         concat content_tag(:li, link_to("Bearbeiten", [:edit, record], class: 'edit', title: 'Bearbeiten')) if !options[:except].include?(:edit) && can?(:update, record)
-         concat content_tag(:li, link_to("Löschen", [record], method: :delete, confirm: t(:really_delete?), class: 'delete', title: 'Löschen')) if !options[:except].include? :destroy && can?(:destroy, record)
+         concat content_tag(:li, link_to("Anzeigen", [options[:parent_resource], record].compact, class: 'show', title: 'Anzeigen')) if !options[:except].include? :show && can?(:read, record)
+         concat content_tag(:li, link_to("Bearbeiten", [:edit, options[:parent_resource], record].compact, class: 'edit', title: 'Bearbeiten')) if !options[:except].include?(:edit) && can?(:update, record)
+         concat content_tag(:li, link_to("Löschen", [options[:parent_resource], record].compact, method: :delete, confirm: t(:really_delete?), class: 'delete', title: 'Löschen')) if !options[:except].include? :destroy && can?(:destroy, record)
       end
-       concat content_tag(:li, link_to("Neu", [:new, model.model_name.singularize.underscore], class: 'new', title: 'Löschen')) if !options[:except].include? :new && !record.try(:new_record?) && can?(:create, record)
+       concat content_tag(:li, link_to("Neu", [:new, options[:parent_resource], model.model_name.singularize.underscore].compact, class: 'new', title: 'Löschen')) if !options[:except].include? :new && !record.try(:new_record?) && can?(:create, record)
     end
   end
   
