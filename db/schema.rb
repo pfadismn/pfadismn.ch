@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120118191214) do
+ActiveRecord::Schema.define(:version => 20120217145426) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "addressable_id"
@@ -48,6 +48,10 @@ ActiveRecord::Schema.define(:version => 20120118191214) do
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "content_image_file_name"
+    t.string   "content_image_content_type"
+    t.integer  "content_image_file_size"
+    t.datetime "content_image_updated_at"
   end
 
   add_index "events", ["creator_id"], :name => "index_events_on_creator_id"
