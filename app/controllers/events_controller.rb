@@ -87,7 +87,7 @@ Kravatte
     @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to ou_events_path(@ou) }
+      format.html { redirect_to organisational_unit_events_path(@ou) }
       format.json { head :ok }
     end
   end
