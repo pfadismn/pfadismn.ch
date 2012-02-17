@@ -58,7 +58,7 @@ Kravatte
   end
 
   def create
-    @event.organisational_unit = @ou unless current_user.has_role?(:admin | :manager)
+    @event.organisational_unit = @ou unless current_user.has_role?(:admin || :manager)
     @event.creator = current_user
     
     respond_to do |format|

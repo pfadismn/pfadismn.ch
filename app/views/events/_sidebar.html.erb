@@ -1,9 +1,13 @@
 <h2>Quartalsprogramm</h2>
-<ul>
-  <li>
-    <%= link_to "Quartalsprogramm als PDF", quartalsprogramm_organisational_unit_events_path(format: :pdf) %>
-  </li>
-</ul>
+<% if @ou.events.upcoming.any? %>
+  <ul>
+    <li>
+      <%= link_to "Quartalsprogramm als PDF", quartalsprogramm_organisational_unit_events_path(@ou, format: :pdf) %>
+    </li>
+  </ul>
+<% else %>
+  <i>Keine Informationen vorhanden!</i>
+<% end %>
 
 <h2>Weitere Anlässe</h2>
 <p>
