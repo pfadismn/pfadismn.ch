@@ -7,13 +7,13 @@
   <% end %>
 </ul>
 <ul id="sub-navigation">
-  <% if params[:controller] == 'organisational_units' %>
-    <li><%= link_to "Biberstufe", organisational_unit_path('biberstufe'), class: (params[:id].downcase == 'biberstufe' ? 'active' : nil) %></li>
-    <li><%= link_to "Wolfsstufe", organisational_unit_path('wolfsstufe'), class: (params[:id].downcase == 'wolfsstufe' ? 'active' : nil) %></li>
-    <li><%= link_to "Pfadistufe", organisational_unit_path('pfadistufe'), class: (params[:id].downcase == 'pfadistufe' ? 'active' : nil) %></li>
-    <li><%= link_to "Roverstufe", organisational_unit_path('roverstufe'), class: (params[:id].downcase == 'roverstufe' ? 'active' : nil) %></li>
-    <li><%= link_to "Elternrat", organisational_unit_path('elternrat'), class: (params[:id].downcase == 'elternrat' ? 'active' : nil) %></li>
-    <li><%= link_to "APV", organisational_unit_path('apv'), class: (params[:id].downcase == 'apv' ? 'active' : nil) %></li>
+  <% if params[:controller] == 'organisational_units' || params[:controller] == 'events' %>
+    <li><%= link_to "Biberstufe", organisational_unit_path('biberstufe'), class: (params[:id].try(:downcase) == 'biberstufe' ? 'active' : nil) %></li>
+    <li><%= link_to "Wolfsstufe", organisational_unit_path('wolfsstufe'), class: (params[:id].try(:downcase) == 'wolfsstufe' ? 'active' : nil) %></li>
+    <li><%= link_to "Pfadistufe", organisational_unit_path('pfadistufe'), class: (params[:id].try(:downcase) == 'pfadistufe' ? 'active' : nil) %></li>
+    <li><%= link_to "Roverstufe", organisational_unit_path('roverstufe'), class: (params[:id].try(:downcase) == 'roverstufe' ? 'active' : nil) %></li>
+    <li><%= link_to "Elternrat", organisational_unit_path('elternrat'), class: (params[:id].try(:downcase) == 'elternrat' ? 'active' : nil) %></li>
+    <li><%= link_to "APV", organisational_unit_path('apv'), class: (params[:id].try(:downcase) == 'apv' ? 'active' : nil) %></li>
   <% end %>
     
   <% if (params[:controller] == 'pfadilife' ||  params[:controller] == 'photos') %>
