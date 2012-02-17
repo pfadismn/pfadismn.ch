@@ -36,7 +36,7 @@ class EventsController < ApplicationController
         format.html # show.html.erb
         format.json { render json: @event }
       else
-        format.html { redirect_to events_path }
+        format.html { redirect_to organisational_unit_events_path(@ou) }
       end
     end
   end
@@ -63,8 +63,8 @@ Kravatte
     
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Planned activity was successfully created.' }
-        format.json { render json: @event, status: :created, location: @event }
+        format.html { redirect_to [@ou, @event], notice: 'Planned activity was successfully created.' }
+        format.json { render json: [@ou, @event], status: :created, location: @event }
       else
         format.html { render action: "new" }
         format.json { render json: @event.errors, status: :unprocessable_entity }
