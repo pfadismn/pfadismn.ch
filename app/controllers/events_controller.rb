@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   load_and_authorize_resource
   
   def index
-    @events = @ou.events.upcoming
+    @events = @ou.events.active.upcoming
     
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   end
   
   def quartalsprogramm
-    @events = @ou.events.upcoming.limit(10)
+    @events = @ou.events.active.upcoming.limit(10)
     
     respond_to do |format|
 #      format.html # index.html.erb
