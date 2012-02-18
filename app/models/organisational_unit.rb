@@ -18,7 +18,9 @@ class OrganisationalUnit < ActiveRecord::Base
   end
   
   def events
-      Event.where(organisational_unit_id: self_and_descendants.collect { |ou| ou.id } )
+      events = Event.where(organisational_unit_id: self_and_descendants.collect { |ou| ou.id } )
+      events.reload
+      events
   end
   
   def team
