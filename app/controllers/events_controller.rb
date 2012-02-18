@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   load_and_authorize_resource except: [:show, :index, :quartalsprogramm]
   
   def index
-    @events = @ou.events.accessible_by(current_ability).active.upcoming
+    @events = @ou.events.active.upcoming
     
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class EventsController < ApplicationController
   end
   
   def quartalsprogramm
-    @events = @ou.events.accessible_by(current_ability).active.upcoming.limit(10)
+    @events = @ou.events.active.upcoming.limit(10)
     
     respond_to do |format|
 #      format.html # index.html.erb
