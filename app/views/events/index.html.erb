@@ -8,7 +8,7 @@
 
   <h2>Übersicht der Events</h2>
 
-  <% if @ou.events.upcoming.any? %>
+  <% if @events.any? %>
     <table class="events">
       <% @events.each do |event| %>
         <tr>
