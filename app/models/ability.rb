@@ -37,7 +37,9 @@ class Ability
 
   def anonymous_privileges
     can :read, News
-    can :read, Event
+    can :read, Event do |event|
+      event.published_at >= Time.now
+    end
     can :read, Place
     can :create, UserSession
   end
