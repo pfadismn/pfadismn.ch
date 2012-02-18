@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   load_and_authorize_resource except: [:show, :index, :quartalsprogramm]
   
   def index
-    @events = @ou.events.active.upcoming
+    @events = @ou.direct_events.active.upcoming
     
     respond_to do |format|
       format.html # index.html.erb
@@ -63,7 +63,7 @@ Kravatte
     
     respond_to do |format|
       if @event.save
-        format.html { redirect_to [@ou, @event], notice: 'Planned activity was successfully created.' }
+        format.html { redirect_to [@ou, @event], notice: 'Event was successfully created.' }
         format.json { render json: [@ou, @event], status: :created, location: @event }
       else
         format.html { render action: "new" }
