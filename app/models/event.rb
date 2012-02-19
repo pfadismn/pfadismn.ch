@@ -18,10 +18,10 @@ class Event < ActiveRecord::Base
   
   # Scopes
   default_scope order('start_time ASC')
-  scope :active, where('published_at <= ?', Time.current)
-  scope :upcoming, where('start_time >= ?', Time.current)
+  scope :active, where('published_at <= NOW()')
+  scope :upcoming, where('start_time >= NOW()')
   
   def published
-    published_at.present? && published_at <= Time.now
+    published_at.present? && published_at <= Time.current
   end
 end
