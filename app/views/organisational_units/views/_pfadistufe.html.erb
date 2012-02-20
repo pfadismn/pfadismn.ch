@@ -27,11 +27,13 @@
 
   <h2>Events</h2>
   <ul>
-    <li><%= link_to "Alle Events »", organisational_unit_events_path(@ou) %></li>
     <% if @ou.events.upcoming.any? %>
-      <li><%= link_to "Quartalsprogramm als PDF", quartalsprogramm_organisational_unit_events_path(@ou, format: :pdf) %></li>
+      <li><%= link_to "Alle Events »", organisational_unit_events_path(@ou) %></li>
+      <% @ou.children.active.each do |ou| %>
+        <li><%= link_to "Events von #{ou.name} »", organisational_unit_events_path(ou) %></li>
+      <% end %>
     <% end %>
   </ul>
 
-  <%= render partial: 'events/sidebar_event', locals: { event: @ou.events.upcoming.first } %>
+  <%#= render partial: 'events/sidebar_event', locals: { event: @ou.events.upcoming.first } %>
 <% end %>

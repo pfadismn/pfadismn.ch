@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120217145426) do
+ActiveRecord::Schema.define(:version => 20120220155321) do
 
   create_table "addresses", :force => true do |t|
     t.integer  "addressable_id"
@@ -128,6 +128,7 @@ ActiveRecord::Schema.define(:version => 20120217145426) do
     t.integer  "rgt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active",               :default => true
   end
 
   add_index "organisational_units", ["parent_id"], :name => "index_organisational_units_on_parent_id"
