@@ -5,7 +5,7 @@
     <div class="division <%= division %>">
       <%= link_to(image_tag("stufen/#{ou}.png"), path) %>
       <div class="name">
-        <%= link_to division.to_s.capitalize, path %>
+        <%= link_to ou, path %>
       </div>
       <div class="description">
         <%= link_to description, path %>
