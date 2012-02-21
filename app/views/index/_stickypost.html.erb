@@ -7,7 +7,7 @@
       <p>Was möchtest du tun?</p>
       <ul>
         <li><%= link_to "Neuer Event", new_organisational_unit_event_path(current_user.member.organisational_unit) %></li>
-        <li><%= link_to "Meine Gruppe verwalten", organisational_unit_path(current_user.member.organisational_unit) %></li>
+        <li><%= link_to "Meine Gruppe verwalten", organisational_unit_members_path(current_user.member.organisational_unit) %></li>
         <li><%= link_to "Logout", logout_path %></li>
       </ul>
     <% end %>

@@ -1,9 +1,9 @@
 <div class="division-selector">
   <% divisions = { biberstufe: '5 bis 7 Jahre', wolfsstufe: '8 bis 10 Jahre', pfadistufe: '11 bis 15 Jahre' } %>
-  <% divisions.each do |division, description| %>
-    <% path = organisational_unit_path(division) %>
+  <% divisions.each do |ou, description| %>
+    <% path = organisational_unit_path(ou) %>
     <div class="division <%= division %>">
-      <%= link_to(image_tag("stufen/#{division}.png"), path) %>
+      <%= link_to(image_tag("stufen/#{ou}.png"), path) %>
       <div class="name">
         <%= link_to division.to_s.capitalize, path %>
       </div>
