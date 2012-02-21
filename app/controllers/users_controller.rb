@@ -3,7 +3,7 @@
 class UsersController < ApplicationController
   load_resource
   authorize_resource only: [:new, :edit, :create, :update, :destroy]
-
+  
   def new
     @user.member = Member.find(params[:member]) if params[:member].present?
     

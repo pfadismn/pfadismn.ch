@@ -1,6 +1,6 @@
-<%= index Member, @members do |builder| %>
+<%= index [@ou, Member], @members do |builder| %>
   <% builder.column :name do |r| %>
-    <%= link_to r.name, member_path(r) %>
+    <%= link_to r.name, [@ou, r] %>
   <% end %>
   <% builder.column :email %>
   <% builder.column :organisational_unit %>

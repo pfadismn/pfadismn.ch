@@ -1,6 +1,10 @@
 class AddressesController < ApplicationController
-  before_filter :set_addressable
   load_and_authorize_resource
+  before_filter :load_parent_resource
+  
+  def index
+    redirect_to_parent
+  end
 
   def show
     respond_to do |format|
@@ -50,13 +54,13 @@ class AddressesController < ApplicationController
   end
 
   private
-  def set_addressable
+  def load_parent_resource
+    @ou = OrganisationalUnit.find_by_name(params[:organisational_unit_id])
     @addressable = Member.find(params[:member_id]) if params[:member_id]
     @addressable = Contact.find(params[:contact_id]) if params[:contact_id]
   end
 
   def redirect_to_parent options={}
-    redirect_to edit_member_path(@addressable), options if @addressable.class == Member
-    redirect_to edit_contact_path(@addressable), options if @addressable.class == Contact
+    redirect_to [:edit, @ou, @addressable]
   end
 end

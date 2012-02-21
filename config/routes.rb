@@ -26,6 +26,14 @@ Pfadismn::Application.routes.draw do
         get :quartalsprogramm
       end
     end
+    resources :members do
+      resources :addresses
+      resources :phone_numbers
+      resources :contacts
+      member do
+        get 'avatar(/:size)(.:format)', action: :avatar, default: { size: :medium }, as: :avatar
+      end
+    end
   end
   
   resources :places
@@ -42,14 +50,6 @@ Pfadismn::Application.routes.draw do
     end
   end
   
-  resources :members do
-    resources :addresses
-    resources :phone_numbers
-    resources :contacts
-    member do
-      get 'avatar(/:size)(.:format)', action: :avatar, default: { size: :medium }, as: :avatar
-    end
-  end
 
   root to: 'index#index', as: :index
   # The priority is based upon order of creation:

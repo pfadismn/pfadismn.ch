@@ -1,11 +1,10 @@
 class MembersController < ApplicationController
+  before_filter :load_parent_resource
   load_resource
   authorize_resource except: [:avatar]
 
   def index
-    @organisational_unit ||= OrganisationalUnit.find(params[:organisational_unit_id]) if params[:organisational_unit_id]
-    @organisational_unit ||= OrganisationalUnit.where(name: params[:organisational_unit_name]).first if params[:organisational_unit_name]
-    @members = @organisational_unit.members.accessible_by(current_ability) if @organisational_unit.present?
+    @members = @ou.members.accessible_by(current_ability)
     
     respond_to do |format|
       format.html { }
@@ -43,7 +42,7 @@ class MembersController < ApplicationController
   def create
     respond_to do |format|
       if @member.save
-        format.html { redirect_to @member, notice: 'Member was successfully created.' }
+        format.html { redirect_to [@ou, @member], notice: 'Member was successfully created.' }
       else
         format.html { render action: "new" }
       end
@@ -53,7 +52,7 @@ class MembersController < ApplicationController
   def update
     respond_to do |format|
       if @member.update_attributes(params[:member])
-        format.html { redirect_to @member, notice: 'Member was successfully updated.' }
+        format.html { redirect_to [@ou, @member], notice: 'Member was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
@@ -64,7 +63,12 @@ class MembersController < ApplicationController
     @member.destroy
 
     respond_to do |format|
-      format.html { redirect_to members_url }
+      format.html { redirect_to [@ou, Member] }
     end
+  end
+  
+  private
+  def load_parent_resource
+    @ou = OrganisationalUnit.find_by_name(params[:organisational_unit_id])
   end
 end

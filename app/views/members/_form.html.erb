@@ -1,8 +1,8 @@
-<%= semantic_form_for @member do |f| %>
+<%= semantic_form_for [@ou, @member] do |f| %>
   <%= f.error_messages %>
 
   <%= f.inputs t(:general) do %>
-    <%= image_tag avatar_member_path(@member, size: :thumb), class: :avatar unless @member.new_record? %>
+    <%= image_tag avatar_organisational_unit_member_path(@ou, @member, size: :thumb), class: :avatar unless @member.new_record? %>
     <%= f.inputs 'Firstname, Lastname', class: :doublefield do %>
       <%= f.input :first_name %>
       <%= f.input :last_name %>
@@ -19,24 +19,24 @@
     <% unless @member.new_record? %>
       <%= form_element t(:phone_numbers) do %>
         <% @member.phone_numbers.each do |p| %>
-          <%= link_to t(:remove_phone_number), member_phone_number_path(@member, p), method: :delete, confirm: :really_delete? %>
+          <%= link_to t(:remove_phone_number), [@ou, @member, p], method: :delete, confirm: :really_delete? %>
           <%= formatted_phone_number p %>
         <% end %>
-        <%= link_to t(:add_phone_number), new_member_phone_number_path(@member) %>
+        <%= link_to t(:add_phone_number), [:new, @ou, @member, PhoneNumber.model_name.underscore] %>
       <% end %>
       <%= form_element t(:addresses) do %>
         <% @member.addresses.each do |a| %>
-          <%= link_to t(:remove_address), member_address_path(@member, a), method: :delete, confirm: :really_delete? %>
+          <%= link_to t(:remove_address), [@ou, @member, a], method: :delete, confirm: :really_delete? %>
           <%= formatted_address a %>
         <% end %>
-        <%= link_to t(:add_address), new_member_address_path(@member) %>
+        <%= link_to t(:add_address), [:new, @ou, @member, Address.model_name.underscore] %>
       <% end %>
       <%= form_element t(:contacts) do %>
-        <% @member.contacts.each do |a| %>
-          <%= link_to t(:remove_address), member_contact_path(@member, a), method: :delete, confirm: :really_delete? %>
-          <%= formatted_address a %>
+        <% @member.contacts.each do |c| %>
+          <%= link_to t(:remove_contact), [@ou, @member, c], method: :delete, confirm: :really_delete? %>
+          <%= link_to c %>
         <% end %>
-        <%= link_to t(:add_address), new_member_contact_path(@member) %>
+        <%= link_to t(:add_contact), [:new, @ou, @member, Contact.model_name.underscore] %>
       <% end %>
     <% end %>
   <% end %>

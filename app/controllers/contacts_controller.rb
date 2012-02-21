@@ -1,7 +1,11 @@
 class ContactsController < ApplicationController
   load_and_authorize_resource
-  before_filter :set_member
+  before_filter :load_parent_resource
 
+  def index
+    redirect_to [@ou, @member]
+  end
+  
   def show
     respond_to do |format|
       format.json { render json: @contact }
@@ -49,11 +53,12 @@ class ContactsController < ApplicationController
   end
 
   private
-  def set_member
-    @member = Member.find(params[:member_id]) if params[:member_id]
-  end
-
   def redirect_to_parent options={}
-    redirect_to edit_member_path(@member), options if @member
+    redirect_to [:edit, @ou, @member], options if @member
+  end
+  
+  def load_parent_resource
+    @ou = OrganisationalUnit.find_by_name(params[:organisational_unit_id])
+    @member = Member.find(params[:member_id]) if params[:member_id]
   end
 end

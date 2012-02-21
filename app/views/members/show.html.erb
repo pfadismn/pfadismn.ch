@@ -1,4 +1,4 @@
-<%= crud_navigation @member do %>
+<%= crud_navigation [@ou, @member] do %>
   <%  if current_user.has_role? [:manager, :admin] %>
     <ul class="buttons">
       <% if @member.user.present? %>
@@ -14,7 +14,7 @@
 <% end %>
 
 <div class="show-container">
-  <%= image_tag avatar_member_path(@member, size: :thumb), class: :avatar %>
+  <%= image_tag avatar_organisational_unit_member_path(@member, size: :thumb), class: :avatar %>
 
     <%= show_section :allgemein do %>
       <%= show_field :name, @member %>
