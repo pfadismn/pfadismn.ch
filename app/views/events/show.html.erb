@@ -8,8 +8,8 @@
 <h2><%= @event.name %></h2>
 
 <h3><%= @event.organisational_unit %></h3>
-<div>Beginn: <%= l @event.start_time %>  (<%= link_to @event.start_place, @event.start_place %>)</div>
-<div>Ende: <%= l @event.end_time %>  (<%= link_to @event.end_place, @event.end_place %>)</div>
+<div>Beginn: <%= l @event.start_time %>  <%= "(#{link_to @event.start_place})".html_safe if @event.start_place %></div>
+<div>Ende: <%= l @event.end_time %>  <%= "(#{link_to @event.end_place})".html_safe if @event.end_place %></div>
 
 <div>
   <%= RedCloth.new(@event.content).to_html.html_safe if @event.content.present? %>
