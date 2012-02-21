@@ -20,7 +20,7 @@
 <% content_for :sidebar do %>
   <h2>Stufenleitung</h2>
   <% @ou.team.each do |member| %>
-    <%= render partial: 'members/contact', locals: { ou: @ou, member: member } %>
+    <%= render partial: 'members/contact', locals: { member: member } %>
   <% end %>
 
   <h2>Events</h2>
