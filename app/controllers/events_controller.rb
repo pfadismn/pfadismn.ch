@@ -2,8 +2,8 @@
 class EventsController < ApplicationController
   before_filter :inject_publish, only: [ :create, :update ]
   before_filter :load_parent_resource
-#  load_and_authorize_resource except: [:show, :index, :quartalsprogramm]
-  load_and_authorize_resource
+  load_and_authorize_resource except: [:show, :index, :quartalsprogramm]
+#  load_and_authorize_resource
   
   def index
     @events = @ou.events.active.upcoming
