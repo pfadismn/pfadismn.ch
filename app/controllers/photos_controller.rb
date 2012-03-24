@@ -2,6 +2,9 @@ class PhotosController < ApplicationController
   include PhotoCollection
   caches_page :index
  
+  def cacheable?
+    current_user.blank?
+  end
   
   def index
     @album_years = AlbumFactory.list_years

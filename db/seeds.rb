@@ -11,6 +11,8 @@ ou[:troja] = OrganisationalUnit.create!(name: 'Troja', responsible_function: 'gr
 ou[:puma] = OrganisationalUnit.create!(name: 'Puma', responsible_function: 'gruppenleiter', parent: ou[:pfadistufe])
 ou[:auriga] = OrganisationalUnit.create!(name: 'Auriga', responsible_function: 'gruppenleiter', parent: ou[:pfadistufe])
 ou[:orion] = OrganisationalUnit.create!(name: 'Orion', responsible_function: 'gruppenleiter', parent: ou[:pfadistufe])
+ou[:bubenwoelfe] = OrganisationalUnit.create!(name: 'Bubenwoelfe', responsible_function: 'gruppenleiter', parent: ou[:wolfsstufe])
+ou[:maitliwoelfe] = OrganisationalUnit.create!(name: 'Maitliwoelfe', responsible_function: 'gruppenleiter', parent: ou[:wolfsstufe])
 
 ou[:apv] = OrganisationalUnit.create!(name: 'APV', caption: 'Verein der Ehemaligen der Pfadi SMN', parent: ou[:abteilung])
 ou[:elternrat] = OrganisationalUnit.create!(name: 'Elternrat', caption: 'Die Elternvertretung in der Pfadi SMN', parent: ou[:abteilung])
