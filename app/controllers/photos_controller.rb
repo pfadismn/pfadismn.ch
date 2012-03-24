@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   include PhotoCollection
-  caches_page :index
+  caches_action :index, if: ->() { cacheable? }
  
   def cacheable?
     current_user.blank?
