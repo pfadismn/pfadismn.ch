@@ -23,7 +23,7 @@ class PhotosController < ApplicationController
   
   def create
     authorize! :create, AlbumUpload
-    expire_page action: :index
+    expire_action action: :index
     @album = AlbumUpload.new(params["photo_collection_album_upload"])
     
     respond_to do |format|
