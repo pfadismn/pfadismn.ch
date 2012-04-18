@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Event < ActiveRecord::Base
   # Relations
   belongs_to :organisational_unit
@@ -19,7 +20,7 @@ class Event < ActiveRecord::Base
   # Scopes
   default_scope order('start_time ASC')
   scope :active, where('published_at <= NOW()')
-  scope :upcoming, where('start_time >= NOW()')
+  scope :upcoming, where('end_time >= NOW()')
   
   def published
     published_at.present? && published_at <= Time.current
