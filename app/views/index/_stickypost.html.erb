@@ -6,8 +6,9 @@
       <h2>Willkommen <%= current_user.member.scout_name %>!</h2>
       <p>Was möchtest du tun?</p>
       <ul>
-        <li><%= link_to "Neuer Event", new_organisational_unit_event_path(current_user.member.organisational_unit) %></li>
-        <li><%= link_to "Meine Gruppe verwalten", organisational_unit_members_path(current_user.member.organisational_unit) %></li>
+        <%= content_tag :li, link_to("Neuen Event erstellen", new_organisational_unit_event_path(current_user.member.organisational_unit)) if can? :create, Event %>
+        <%= content_tag :li, link_to("Meine Gruppe verwalten", organisational_unit_members_path(current_user.member.organisational_unit)) if can? :create, Member %>
+        <%= content_tag :li, link_to("Meine Infos anpassen", organisational_unit_member_path(current_user.member.organisational_unit, current_user.member)) %>
         <li><%= link_to "Logout", logout_path %></li>
       </ul>
     <% end %>
@@ -36,7 +37,7 @@
   <% end %>
 
   <%= stickyposter(:paper, 2) do %>
-    <%= link_to image_tag('index/post/fb.png', style: 'width: 60px;'), 'http://www.facebook.com/group.php?gid=55412060219', style: 'border:none; padding: 25px; float: left;', target: '_blank' %>
+    <%= link_to image_tag('index/post/fb.png', style: 'width: 60px;'), 'http://www.facebook.com/pfadismn', style: 'border:none; padding: 25px; float: left;', target: '_blank' %>
     <%= link_to image_tag('index/post/yt.png', style: 'width: 60px;'), 'http://www.youtube.com/user/pfadismn', style: 'border:none; padding: 25px; float: left;', target: '_blank' %>
     <div class="clear"></div>
   <% end %>

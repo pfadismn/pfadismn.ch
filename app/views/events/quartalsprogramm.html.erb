@@ -104,7 +104,7 @@
       <td colspan="4" class="title"><h2><%= l event.start_time.to_date, format: :long %>: <%= event.name %></h2></td>
     </tr>
     <tr class="upper">
-      <td class="time"><%= l event.start_time.to_time, format: :time_only %></td>
+      <td class="time"><%= l event.start_time, format: :time_only %></td>
       <td class="place"><%= link_to event.start_place, event.start_place %></td>
       <td class="take-along" rowspan="2">
           <%= event.take_along.lines.to_a.join(', ') %>

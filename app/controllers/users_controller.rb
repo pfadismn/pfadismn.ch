@@ -20,6 +20,8 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(params[:user], as: :admin)
+    
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user.member, notice: 'User was successfully created.' }
@@ -31,7 +33,7 @@ class UsersController < ApplicationController
 
   def update
     respond_to do |format|
-      if @user.update_attributes(params[:user])
+      if @user.update_attributes(params[:user], as: :admin)
         format.html { redirect_to @user.member, notice: 'User was successfully updated.' }
       else
         format.html { render action: "edit" }
