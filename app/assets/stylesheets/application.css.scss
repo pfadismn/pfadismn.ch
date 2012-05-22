@@ -6,8 +6,9 @@
 *= require formtastic
 *= require index_helper
 *= require_tree .
+*= require_tree ./skeleton
 *= require_tree ./lib
 *= require_tree ./forms
-*= require_tree ./app
+*= require_tree ./views
 */
 

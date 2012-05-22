@@ -4,6 +4,7 @@ source 'http://rubygems.org'
 gem 'rails'
 #gem 'arel', git: 'https://github.com/rails/arel.git' # 
 #gem 'journey', git: 'https://github.com/rails/journey.git' #
+gem 'newrelic_rpm'
 
 # Authentication & authorisation
 gem 'cancan'
@@ -22,6 +23,7 @@ gem 'kaminari'
 gem 'nokogiri'
 gem 'RedCloth'
 gem 'pdfkit'
+gem 'skeleton-rails'
 
 # Tools
 gem 'rubyzip'
