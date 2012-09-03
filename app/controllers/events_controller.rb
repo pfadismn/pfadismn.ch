@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @events = @ou.events.active.upcoming.limit(10)
     
     respond_to do |format|
-#      format.html # index.html.erb
+      format.html # index.html.erb
       format.json { render json: @events }
       format.pdf {
         pdf_renderer = PDFKit.new(render_to_string(:layout => false , :action => "quartalsprogramm.html.erb"))
