@@ -4,3 +4,5 @@ tmp/
 tmp/*
 /nbproject/private/
 /public/photos/*
+Gemfile.lock
+db/schema.rb
