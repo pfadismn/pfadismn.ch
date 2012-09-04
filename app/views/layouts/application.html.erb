@@ -1,11 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="de"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="de"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="de"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]>
-<!-->
-<html lang="de">
-  <!--<![endif]-->
+<html>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -15,53 +9,62 @@
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta property="og:site_name" content="Pfadi St. Mauritius Nansen"/>
     <meta property="og:title" content="<%= yield :title %>"/>
-
+    
     <title>Pfadi SMN :: <%= yield :title %></title>
-
+    
     <%= stylesheet_link_tag "application", :debug => Rails.env.development? %>
     <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Habibi" %>
     <!--[if IE 6]><%= stylesheet_link_tag 'ie6' %><![endif]-->
     <!--[if IE 7]><%= stylesheet_link_tag 'ie7' %><![endif]-->
-    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
     <%= javascript_include_tag "application", :debug => Rails.env.development?, :charset => "utf-8" %>
     <%= render '/layouts/google_analytics' %>
     <%= favicon_link_tag %>
     <%= csrf_meta_tag %>
-
   </head>
   <body>
-    <div class="container">
-      <div id="headContainer" class="sixteen columns">
+
+    <div id="rootContainer" class="container">
+      <div id="headContainer" class="container">
         <h2>Pfadiabteilung</h2>
         <h1>St. Mauritius Nansen</h1>
         <h3>Höngg, 8049 Zürich</h3>
-
-        <nav id="navigationContainer">
-          <%= render partial: 'layouts/navigation' %>
-        </nav>
       </div>
 
-      <div id="contentContainer" class="two-thirds column">
-        <%= render partial: 'layouts/flashes', locals: { flash: flash} %>
+      <div id="navigationContainer" class="container">
+        <%= render partial: 'layouts/navigation' %>
+      </div>
 
-        <% if content_for? :heading %>
-          <div id="heading">
+      <div id="contentContainer" class="container">
+        <%= render partial: 'layouts/flashes', locals: { flash: flash} %>
+         <% if content_for? :heading %>
+          <div id="heading" class="container">
             <%= yield :heading %>
           </div>
         <% end %>
-
-        <div id="mainContent">
-          <%= yield %>
-        </div>
+        <% if content_for? :sidebar %>
+          <div id="mainContent" class="container">
+            <%= yield %>
+          </div>
+          <div id="sidebarContent" class="container">
+            <%= yield :sidebar %>
+          </div>
+         <div class="clear"></div>
+        <% else %>
+          <div id="content" class="container">
+            <%= yield %>
+          </div>
+        <% end %>
       </div>
-
-      <div id="sidebarContent" class="one-third column">
-        <%= yield :sidebar %>
-      </div>
-      <footer id="footContainer" >
+      <div id="footContainer" class="container">
         &copy; <%= Time.now.try(:year) %>  by Gulli & Filou | Pfadi SMN Zürich-Höngg | <%= link_to 'Impressum', impressum_path, :style => 'color: #7C7C7C; border-bottom: none;' %>
-      </footer>
+      </div>
     </div>
   </body>
 </html>
+
+
+
+
+
+
+

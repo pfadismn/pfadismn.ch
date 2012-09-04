@@ -13,8 +13,7 @@ div.cb, div.clear
 {
     clear: both;
 }
-/*
-** Containers **
+
 .container
 {
     border:none;
@@ -57,7 +56,7 @@ div.cb, div.clear
     
     font-size:0.8em;
     text-align:center;
-
+    
     color:#7C7C7C;
     
     background: image-url('layouts/pfadiischseil.png') no-repeat;
@@ -83,11 +82,10 @@ div.cb, div.clear
     clear:both;
     
     font-size: 1em;
-    color:#111111;
-        background: image-url(content.png) no-repeat top;
+    color: #111111;
+    background: image-url('content.png') no-repeat top;
 }
 
- Single Columnt Content 
 #content
 {
     width: 920px;
@@ -110,4 +108,4 @@ div.cb, div.clear
     padding: 15px 40px 15px 20px;
     
     float: left;
-}*/
+}
