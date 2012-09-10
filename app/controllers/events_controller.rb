@@ -6,7 +6,7 @@ class EventsController < ApplicationController
 #  load_and_authorize_resource
   
   def index
-    @events = @ou.events.active.upcoming
+    @events = @ou.events.upcoming.active
     
     respond_to do |format|
       format.html # index.html.erb

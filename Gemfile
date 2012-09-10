@@ -1,10 +1,10 @@
 source 'http://rubygems.org'
 
-# Bundle edge Rails instead:
 gem 'rails'
 #gem 'arel', git: 'https://github.com/rails/arel.git' # 
 #gem 'journey', git: 'https://github.com/rails/journey.git' #
 gem 'newrelic_rpm'
+gem 'mina', git: 'https://github.com/nadarei/mina.git'
 
 # Authentication & authorisation
 gem 'cancan'
@@ -23,7 +23,9 @@ gem 'kaminari'
 gem 'nokogiri'
 gem 'RedCloth'
 gem 'pdfkit'
-gem 'skeleton-rails'
+
+
+
 
 # Tools
 gem 'rubyzip'
@@ -36,16 +38,6 @@ group :assets do
   gem 'jquery-rails'
   gem 'uglifier'
 end
-
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-#gem 'capistrano'
-
-# To use debugger
-#gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
   # Pretty printed test output
