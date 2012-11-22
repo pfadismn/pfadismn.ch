@@ -12,14 +12,14 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 set :domain, 'pfadismn.ch'
 set :deploy_to, '/srv/www/pfadismn.ch.git'
 set :repository, 'file:///srv/git/pfadismn.ch.git'
-#set :branch, 'master'
-set :user, 'root'
-#set :password, '4UWeswumUY3B'
+set :branch, 'master'
+set :user, 'deploy'
+set :password, '4UWeswumUY3B'
 set :rvm_path, '/usr/local/rvm/scripts/rvm'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'config/email.yml', 'log', 'public/photos']
+set :shared_paths, ['config/database.yml', 'config/email.yml', 'log', 'public/photos', 'var']
 
 
 # This task is the environment that is loaded for most commands, such as
