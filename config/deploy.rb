@@ -13,13 +13,13 @@ set :domain, 'pfadismn.ch'
 set :deploy_to, '/srv/www/pfadismn.ch.git'
 set :repository, 'file:///srv/git/pfadismn.ch.git'
 #set :branch, 'master'
-set :user, 'deploy'
-set :password, '4UWeswumUY3B'
+set :user, 'root'
+#set :password, '4UWeswumUY3B'
 set :rvm_path, '/usr/local/rvm/scripts/rvm'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'config/email.yml', 'log']
+set :shared_paths, ['config/database.yml', 'config/email.yml', 'log', 'public/photos']
 
 
 # This task is the environment that is loaded for most commands, such as
@@ -56,7 +56,7 @@ namespace :filesystem do
   task :'cleanup' do
     queue %{
       echo "-----> Resetting Permissions tmp/"
-      %[chown -R :www-data .]
+      chown -R :www-data .
     }
   end
 end
@@ -66,16 +66,12 @@ task :deploy => :environment do
   deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
-    queue %{
-      echo "-----> Debugging"
-      pwd
-    }
-
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
-    invoke :'rails:assets_precompile'
+    queue 'RAILS_ENV="production" bundle exec rake assets:precompile'
+    #invoke :'rails:assets_precompile'
     invoke :'rails:tmp_create'
     invoke :'filesystem:cleanup'
 

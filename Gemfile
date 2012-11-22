@@ -24,9 +24,6 @@ gem 'nokogiri'
 gem 'RedCloth'
 gem 'pdfkit'
 
-
-
-
 # Tools
 gem 'rubyzip'
 
