@@ -15,7 +15,7 @@ development:
   database: pfadismn_development
   pool: 5
   username: root
-  password: 
+  password: spasstotal
   host: localhost
 
 # Warning: The database defined as "test" will be erased and

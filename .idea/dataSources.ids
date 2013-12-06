@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails pfadismn.ch: staging" uuid="49123981-1e23-4fb4-93e1-eb43edd0b149">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails pfadismn.ch: development" uuid="90f6d144-429b-446f-be0a-d9d4441068a7">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails pfadismn.ch: production" uuid="289764c0-df5c-4e78-b37a-fa1dcdcb95e1">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
