@@ -13,7 +13,6 @@
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1/pfadismn_development</jdbc-url>
       <user-name>root</user-name>
-      <user-password>dfd9dfdadfcbdfd9dfd9dfdedfc5dfdedfcbdfc6</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails pfadismn.ch: production" uuid="289764c0-df5c-4e78-b37a-fa1dcdcb95e1">
