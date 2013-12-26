@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails'
+gem 'rails', '~> 3.1'
 #gem 'arel', git: 'https://github.com/rails/arel.git' # 
 #gem 'journey', git: 'https://github.com/rails/journey.git' #
 gem 'newrelic_rpm'
@@ -33,6 +33,7 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'jquery-rails'
+  gem 'jquery-ui-rails'
   gem 'uglifier'
 end
 

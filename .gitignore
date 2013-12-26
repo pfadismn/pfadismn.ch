@@ -5,4 +5,5 @@ tmp/*
 /nbproject/private/
 /public/photos/*
 db/schema.rb
+config/database.yml
 .idea/
