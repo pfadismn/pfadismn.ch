@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '~> 3.1'
+gem 'newrelic_rpm'
 gem 'mina', git: 'https://github.com/nadarei/mina.git'
 
 # Authentication & authorisation

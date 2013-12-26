@@ -43,7 +43,6 @@ GEM
     activesupport (3.2.16)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
-    ansi (1.4.3)
     arel (3.0.3)
     authlogic (3.3.0)
       activerecord (>= 3.2)
@@ -91,7 +90,6 @@ GEM
     nested_set (1.7.1)
       activerecord (>= 3.0.0)
       railties (>= 3.0.0)
-    newrelic_rpm (3.7.0.177)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     open4 (1.3.0)
@@ -143,8 +141,6 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turn (0.9.6)
-      ansi
     tzinfo (0.3.38)
     uglifier (2.3.2)
       execjs (>= 0.3.0)
@@ -168,12 +164,10 @@ DEPENDENCIES
   mina!
   mysql2
   nested_set
-  newrelic_rpm
   nokogiri
   paperclip
   pdfkit
   rails (~> 3.1)
   rubyzip
   sass-rails
-  turn
   uglifier
