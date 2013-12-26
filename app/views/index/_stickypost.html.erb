@@ -6,9 +6,9 @@
       <h2>Willkommen <%= current_user.member.scout_name %>!</h2>
       <p>Was möchtest du tun?</p>
       <ul>
-        <%= content_tag :li, link_to("Neuen Event erstellen", new_organisational_unit_event_path(current_user.member.organisational_unit)) if can? :create, Event %>
-        <%= content_tag :li, link_to("Meine Gruppe verwalten", organisational_unit_members_path(current_user.member.organisational_unit)) if can? :create, Member %>
-        <%= content_tag :li, link_to("Meine Infos anpassen", organisational_unit_member_path(current_user.member.organisational_unit, current_user.member)) %>
+        <%#= content_tag :li, link_to("Neuen Event erstellen", new_organisational_unit_event_path(current_user.member.organisational_unit)) if can? :create, Event %>
+        <%#= content_tag :li, link_to("Meine Gruppe verwalten", organisational_unit_members_path(current_user.member.organisational_unit)) if can? :create, Member %>
+        <%#= content_tag :li, link_to("Meine Infos anpassen", organisational_unit_member_path(current_user.member.organisational_unit, current_user.member)) %>
         <li><%= link_to "Logout", logout_path %></li>
       </ul>
     <% end %>
@@ -19,8 +19,9 @@
     <% end %>
   <% end %>
 
-  <%= stickyposter(:plain, 1) do %>
-    <%= link_to image_tag('index/post/calendar.png'), photos_path, style: 'border:none;' %>
+  <%= stickyposter(:calendar, 3) do %>
+    <h2>Events</h2>
+    <p>De Gulli isch en Tubbel</p>
   <% end %>
 
   <%= stickyposter(:plain) do %>

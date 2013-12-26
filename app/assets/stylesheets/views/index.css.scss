@@ -1,114 +1,118 @@
 
 .division-selector {
-    
-    .division {
-        
-        display: inline-block;
-        text-align: center;
-        font-size: 1.5em;
-        
-        img {
-            opacity: 0.75;
-            filter:alpha(opacity=75);
-            width: 100%;
-        }
-        
-        a {
-            text-decoration: none;
-            border: none;
-            color: #666;
-        }
-        
-        .description, .description a
-        {
-            font-size:0.7em;
-            font-weight:normal;
-            color:#777777;
-            margin-top:0;
-        }
-        
-        &.biberstufe {
-            width: 29%;
-        }
-        &.wolfsstufe {
-            width: 29%;
-        }
-        &.pfadistufe {
-            width: 40%;
-        }
-        
-        &:hover {
-            
-            a {
-                color: #111;
-            }
-            
-            img
-            {
-                opacity:1;
-                filter:alpha(opacity=100);
-            }
-        }
+
+  .division {
+
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5em;
+
+    img {
+      opacity: 0.75;
+      filter: alpha(opacity=75);
+      width: 100%;
     }
+
+    a {
+      text-decoration: none;
+      border: none;
+      color: #666;
+    }
+
+    .description, .description a {
+      font-size: 0.7em;
+      font-weight: normal;
+      color: #777777;
+      margin-top: 0;
+    }
+
+    &.biberstufe {
+      width: 29%;
+    }
+    &.wolfsstufe {
+      width: 29%;
+    }
+    &.pfadistufe {
+      width: 40%;
+    }
+
+    &:hover {
+
+      a {
+        color: #111;
+      }
+
+      img {
+        opacity: 1;
+        filter: alpha(opacity=100);
+      }
+    }
+  }
 }
 
 .stickypost-container {
-    background: image-url('index/post/stickypost-narrow.jpg') top center repeat-y;
-    padding: 0 0 180px 0;
-    position: relative;
-    
-    
-    .stickypost-top {
-        background: image-url('index/post/stickypost-top.jpg') top center no-repeat;
-        height: 75px;
-        width: 100%;
+  background: image-url('index/post/stickypost-narrow.jpg') top center repeat-y;
+  padding: 0 0 180px 0;
+  position: relative;
+
+  .stickypost-top {
+    background: image-url('index/post/stickypost-top.jpg') top center no-repeat;
+    height: 75px;
+    width: 100%;
+  }
+
+  .stickypost-bottom {
+    background: image-url('index/post/stickypost-bottom.png') bottom center no-repeat;
+    height: 75px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+  }
+
+  .stickyposter {
+    margin: 25px auto 25px auto;
+
+    p {
+      text-align: left;
     }
-    
-    .stickypost-bottom {
-        background: image-url('index/post/stickypost-bottom.png') bottom center no-repeat;
-        height: 75px;
-        width: 100%;
-        position: absolute;
-        bottom: 0px;
+
+    &.paper {
+      width: 220px;
+      padding: 10px 10px 15px 10px;
+      box-shadow: 5px 5px 10px -5px #000;
+      background: image-url('index/post/paperwithnail.jpg') no-repeat top center;
     }
-    
-    .stickyposter {
-        margin: 25px auto 25px auto;
-        
-        p {
-            text-align: left;
-        }
-        
-        &.paper {
-            width: 220px;
-            padding: 10px 10px 15px 10px;
-            box-shadow: 5px 5px 10px -5px #000;
-            background: image-url('index/post/paperwithnail.jpg') no-repeat top center;
-        }
-        
-        &.plain {
-            
-        }
-        
-        &.variant_0 {
-            -webkit-transform: rotate(3deg); 
-            -moz-transform: rotate(3deg);	
-        }
-        
-        &.variant_1 {
-            -webkit-transform: rotate(-1deg); 
-            -moz-transform: rotate(-1deg);	
-        }
-        
-        &.variant_2 {
-            -webkit-transform: rotate(-2deg); 
-            -moz-transform: rotate(-2deg);	
-        }
-        
-        
-        &.variant_3 {
-            -webkit-transform: rotate(1deg); 
-            -moz-transform: rotate(1deg);	
-        }
+
+    &.calendar {
+      width: 200px;
+      height: 160px;
+      padding: 20px;
+      background: image-url('index/post/calendarwithnail.png') no-repeat top center;
+      background-size: contain;
     }
+
+    &.plain {
+
+    }
+
+    &.variant_0 {
+      -webkit-transform: rotate(3deg);
+      -moz-transform: rotate(3deg);
+    }
+
+    &.variant_1 {
+      -webkit-transform: rotate(-1deg);
+      -moz-transform: rotate(-1deg);
+    }
+
+    &.variant_2 {
+      -webkit-transform: rotate(-2deg);
+      -moz-transform: rotate(-2deg);
+    }
+
+    &.variant_3 {
+      -webkit-transform: rotate(1deg);
+      -moz-transform: rotate(1deg);
+    }
+  }
 }
