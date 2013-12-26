@@ -20,8 +20,13 @@
   <% end %>
 
   <%= stickyposter(:calendar, 3) do %>
-    <h2>Events</h2>
-    <p>De Gulli isch en Tubbel</p>
+    <h2>Nächste Events</h2>
+    <ul>
+        <li><%= link_to "Biberstufe »", organisational_unit_events_path('biberstufe') %></li>
+        <li><%= link_to "Wolfsstufe »", organisational_unit_events_path('wolfsstufe') %></li>
+        <li><%= link_to "Pfadistufe »", organisational_unit_events_path('pfadistufe') %></li>
+        <li><%= link_to "Abteilung »", organisational_unit_events_path('abteilung') %></li>
+    </ul>
   <% end %>
 
   <%= stickyposter(:plain) do %>
