@@ -19,9 +19,14 @@
     <% end %>
   <% end %>
 
-  <%= stickyposter(:plain) do %>
-    <%= link_to image_tag('index/post/collage_post.png'), photos_path, style: 'border:none;' %>
+  <%= stickyposter(:plain, 1) do %>
+    <%= link_to image_tag('index/post/calendar.png'), photos_path, style: 'border:none;' %>
   <% end %>
+
+  <%= stickyposter(:plain) do %>
+      <%= link_to image_tag('index/post/collage_post.png'), photos_path, style: 'border:none;' %>
+  <% end %>
+
 
   <%= stickyposter(:paper, 0) do %>
     <h2>Quicklinks</h2>
