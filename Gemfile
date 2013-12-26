@@ -3,7 +3,6 @@ source 'http://rubygems.org'
 gem 'rails', '~> 3.1'
 #gem 'arel', git: 'https://github.com/rails/arel.git' # 
 #gem 'journey', git: 'https://github.com/rails/journey.git' #
-gem 'newrelic_rpm'
 gem 'mina', git: 'https://github.com/nadarei/mina.git'
 
 # Authentication & authorisation
@@ -39,7 +38,6 @@ end
 
 group :test do
   # Pretty printed test output
-  gem 'turn', :require => false
 end
 
 group :production do

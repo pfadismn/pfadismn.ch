@@ -239,9 +239,14 @@ de:
   formtastic:
     titles:
     labels:
+      album_upload:
+        year: Jahr
+        file: Datei
     hints:
       member:
         education: "Ein Kurs pro Linie"
+      album_upload:
+        file: "Mit Picasa erstellte .zip Datei mit den Fotos"
     actions:
       user_session:
         create: "Login"

@@ -1,4 +1,4 @@
-require 'zip/zip'
+require 'zip'
 
 module PhotoCollection
   BASE_PATH = "#{Rails.root}/public/photos"
@@ -204,7 +204,7 @@ module PhotoCollection
     
     def save
       return false unless valid?
-        Zip::ZipFile.open(file.path) { |zip|
+        Zip::File.open(file.path) { |zip|
           zip.each { |f|
             destination_path = File.join(path, f.name)
             FileUtils.mkdir_p File.dirname destination_path
