@@ -42,4 +42,5 @@ end
 
 group :production do
   gem 'exception_notification'
+  gem 'puma'
 end
