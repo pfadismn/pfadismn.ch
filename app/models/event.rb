@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
   belongs_to :end_place, class_name: 'Place'
 
   # Attachment
-  has_attached_file :content_image, styles: {large: "600x800>", medium: "300x400>", small: "150x200>"}, path: ':rails_root/var/attachments/:model/:attachment/:id/:style/:filename'
+  has_attached_file :content_image, styles: {large: "610x800>", medium: "305x400>", small: "150x200>"}, path: ':rails_root/var/attachments/:class/:attachment/:id/:style/:filename'
 
   # Validations
   validates :name, :start_time, :end_time, :organisational_unit, presence: true

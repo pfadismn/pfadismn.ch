@@ -25,6 +25,9 @@ Pfadismn::Application.routes.draw do
       collection do
         get :quartalsprogramm
       end
+      member do
+        get 'image(/:size)(.:format)', action: :image, default: { size: :large }, as: :image
+      end
     end
     resources :members do
       resources :addresses
