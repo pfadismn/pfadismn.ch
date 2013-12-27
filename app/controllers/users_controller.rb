@@ -63,7 +63,7 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to members_url }
+      format.html { redirect_to organisational_unit_member_path(@user.member.organisational_unit, @user.member) }
     end
   end
 end
