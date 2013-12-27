@@ -205,6 +205,9 @@ de:
         content_image: Anzeigebild
       member:
         first_name: Vorname
+      user:
+        password: Neues Passwort
+        password_confirmation: Passwort wiederholen
     errors:
       format: "%{attribute} %{message}"
 
