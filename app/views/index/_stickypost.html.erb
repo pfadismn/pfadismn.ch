@@ -6,9 +6,9 @@
       <h2>Willkommen <%= current_user.member.scout_name %>!</h2>
       <p>Was möchtest du tun?</p>
       <ul>
-        <%= content_tag :li, link_to("Neuen Event erstellen", new_organisational_unit_event_path(current_user.member.organisational_unit)) if can? :create, Event %>
-        <%= content_tag :li, link_to("Meine Gruppe verwalten", organisational_unit_members_path(current_user.member.organisational_unit)) if can? :create, Member %>
-        <%= content_tag :li, link_to("Meine Infos anpassen", organisational_unit_member_path(current_user.member.organisational_unit, current_user.member)) %>
+        <%#= content_tag :li, link_to("Neuen Event erstellen", new_organisational_unit_event_path(current_user.member.organisational_unit)) if can? :create, Event %>
+        <%#= content_tag :li, link_to("Meine Gruppe verwalten", organisational_unit_members_path(current_user.member.organisational_unit)) if can? :create, Member %>
+        <%#= content_tag :li, link_to("Meine Infos anpassen", organisational_unit_member_path(current_user.member.organisational_unit, current_user.member)) %>
         <li><%= link_to "Logout", logout_path %></li>
       </ul>
     <% end %>
@@ -19,14 +19,24 @@
     <% end %>
   <% end %>
 
-  <%= stickyposter(:plain) do %>
-    <%= link_to image_tag('index/post/collage_post.png'), photos_path, style: 'border:none;' %>
+  <%= stickyposter(:calendar, 3) do %>
+    <h2>Nächste Events</h2>
+    <ul>
+        <li><%= link_to "Biberstufe »", organisational_unit_events_path('biberstufe') %></li>
+        <li><%= link_to "Wolfsstufe »", organisational_unit_events_path('wolfsstufe') %></li>
+        <li><%= link_to "Pfadistufe »", organisational_unit_events_path('pfadistufe') %></li>
+        <li><%= link_to "Abteilung »", organisational_unit_events_path('abteilung') %></li>
+    </ul>
   <% end %>
+
+  <%= stickyposter(:plain) do %>
+      <%= link_to image_tag('index/post/collage_post.png'), photos_path, style: 'border:none;' %>
+  <% end %>
+
 
   <%= stickyposter(:paper, 0) do %>
     <h2>Quicklinks</h2>
     <ul>
-      <li><%= link_to 'Events', organisational_unit_events_path(OrganisationalUnit.find_by_name("Abteilung")) %></li>
       <li><%= link_to 'Jahresprogramm', jahresprogramm_path %></li>
       <li><%= link_to 'Skauty', pfadilife_skauty_path %></li>
       <li><%= link_to 'Downloads', downloads_path %></li>
