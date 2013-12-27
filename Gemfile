@@ -1,8 +1,8 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'rails', '~> 3.1'
-gem 'newrelic_rpm'
+gem 'rails', '~> 3.2'
 gem 'mina', git: 'https://github.com/nadarei/mina.git'
+gem 'strong_parameters'
 
 # Authentication & authorisation
 gem 'cancan'
@@ -33,6 +33,7 @@ group :assets do
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
   gem 'uglifier'
+  gem 'quiet_assets'
 end
 
 group :test do
