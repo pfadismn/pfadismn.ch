@@ -20,7 +20,7 @@ class Member < ActiveRecord::Base
   # Validations
   validates :email, uniqueness: true, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }, if: Proc.new { |m| m.email.present? }
   validates :first_name, :last_name, presence: true
-  validates :birthdate, presence: true
+  validates :birthdate, :organisational_unit, presence: true
   
   # Scopes
   scope :by_function, ->(function) { where('functions_mask & ? > 0', 2**FUNCTIONS.index(function)) }
