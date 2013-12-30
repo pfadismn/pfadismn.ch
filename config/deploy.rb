@@ -12,12 +12,12 @@ require 'mina/rbenv'
 set :domain, 'lvps87-230-19-26.dedicated.hosteurope.de'
 set :deploy_to, '/home/rails/pfadismn.ch'
 set :repository, 'ssh://git@git.unimatrix041.ch:11022/pfadi/pfadismn.git'
-set :branch, 'master'
+set :branch, '26-emails'
 set :user, 'rails'
 set :rails_env, 'production'
 
-set :pid_file, "#{deploy_to}/tmp/pids/#{rails_env}.pid"
-set :socket, "unix:///tmp/run/pfadismn.sock"
+set :pid_file, lambda { "#{deploy_to}/run/#{rails_env}.pid" }
+set :socket, lambda { "unix:///#{deploy_to}/run/#{rails_env}.sock" }
 set :app_path, lambda { "#{deploy_to}/#{current_path}" }
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
@@ -76,7 +76,7 @@ task :deploy => :environment do
     invoke :'filesystem:cleanup'
 
     to :launch do
-      invoke :start
+      invoke :restart
     end
   end
 end
@@ -93,6 +93,6 @@ end
 
 desc 'Restarts the application'
 task :restart => :environment do
-  invoke :stop
+  queue %[kill -9 `cat #{pid_file}` || true]
   invoke :start
 end
