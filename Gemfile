@@ -1,8 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.1'
-gem 'newrelic_rpm'
-gem 'mina', git: 'https://github.com/nadarei/mina.git'
+gem 'rails', '~> 3.2'
 
 # Authentication & authorisation
 gem 'cancan'
@@ -33,6 +31,11 @@ group :assets do
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
   gem 'uglifier'
+  gem 'therubyracer', platforms: :ruby
+end
+
+group :development do
+  gem 'mina', git: 'https://github.com/nadarei/mina.git'
 end
 
 group :test do
