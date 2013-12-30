@@ -1,6 +1,5 @@
 class Member < ActiveRecord::Base
   GENDERS = [[:male, 0], [:female, 1]]
-  FUNCTIONS = [:neumitglied, :mitglied, :gruppenleiter, :stammleiter,  :stufenleiter, :al, :skauty, :webmaster, :matchef, :coach]
 
   # Relations
   belongs_to :organisational_unit
@@ -21,7 +20,7 @@ class Member < ActiveRecord::Base
   validates :birthdate, :organisational_unit, presence: true
   
   # Scopes
-  scope :by_function, ->(function) { where('functions_mask & ? > 0', 2**FUNCTIONS.index(function)) }
+  scope :by_function, ->(function) { where('functions_mask & ? > 0', 2**MemberFunction::FUNCTIONS.index(function)) }
   
   # Hooks
   after_save do
@@ -38,12 +37,12 @@ class Member < ActiveRecord::Base
 
   def functions=(fs)
     fs = fs.map { |f| f.is_a?(String) ? f.to_sym : f }
-    self.functions_mask = (fs & FUNCTIONS).map { |f| 2**FUNCTIONS.index(f) }.sum
+    self.functions_mask = (fs & MemberFunction::FUNCTIONS).map { |f| 2**MemberFunction::FUNCTIONS.index(f) }.sum
   end
 
   def functions
-    FUNCTIONS.reject do |f|
-      ((functions_mask || 0) & 2**FUNCTIONS.index(f)).zero?
+    MemberFunction::FUNCTIONS.reject do |f|
+      ((functions_mask || 0) & 2**MemberFunction::FUNCTIONS.index(f)).zero?
     end
   end
 
