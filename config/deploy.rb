@@ -12,12 +12,12 @@ require 'mina/rbenv'
 set :domain, 'lvps87-230-19-26.dedicated.hosteurope.de'
 set :deploy_to, '/home/rails/pfadismn.ch'
 set :repository, 'ssh://git@git.unimatrix041.ch:11022/pfadi/pfadismn.git'
-set :branch, '25-server'
+set :branch, 'master'
 set :user, 'rails'
 set :rails_env, 'production'
 
-set :pid_file, "#{deploy_to}/shared/tmp/pids/#{rails_env}.pid"
-set :socket, "unix:///var/run/pfadismn.sock"
+set :pid_file, "#{deploy_to}/tmp/pids/#{rails_env}.pid"
+set :socket, "unix:///tmp/run/pfadismn.sock"
 set :app_path, lambda { "#{deploy_to}/#{current_path}" }
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
@@ -76,14 +76,14 @@ task :deploy => :environment do
     invoke :'filesystem:cleanup'
 
     to :launch do
-      invoke :restart
+      invoke :start
     end
   end
 end
 
 desc 'Starts the application'
 task :start => :environment do
-  queue "cd #{app_path} ; bundle exec rackup -s puma -b #{socket} -P #{pid_file} -E #{rails_env} -D"
+  queue "cd #{app_path} ; bundle exec puma -e #{rails_env} -d -b #{socket} --pidfile #{pid_file}"
 end
 
 desc 'Stops the application'
