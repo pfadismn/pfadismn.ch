@@ -1,4 +1,4 @@
-<%= index MailAlias, @members do |builder| %>
+<%= index MailAlias, @mail_aliases, pagination: false do |builder| %>
     <% builder.column :email %>
     <% builder.column :alias %>
 <% end %>

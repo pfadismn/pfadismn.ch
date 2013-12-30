@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/diegosteiner/index_helper.git
-  revision: 9703d1e4c2457c26afc74d38a48039dc21130c9e
+  revision: 626f8160263e76b806c579df737c37bb9634f524
   specs:
     index_helper (0.0.2)
 
