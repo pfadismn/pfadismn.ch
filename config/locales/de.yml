@@ -242,6 +242,11 @@ de:
       album_upload:
         year: Jahr
         file: Datei
+      contact_form:
+        name: Name
+        email: E-Mail Adresse
+        phone: Telefon-/Natelnummer
+        message: Mitteilung
     hints:
       member:
         education: "Ein Kurs pro Linie"

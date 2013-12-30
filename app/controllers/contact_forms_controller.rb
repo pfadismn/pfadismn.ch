@@ -1,6 +1,10 @@
 class ContactFormsController < ApplicationController
   before_filter :load_parent_resource
-  
+
+  def index
+    redirect_to action: 'new'
+  end
+
   def new
     @contact_form = ContactForm.new
   end
@@ -13,7 +17,7 @@ class ContactFormsController < ApplicationController
       if @contact_form.save
         format.html { redirect_to organisational_unit_path(@ou), notice: 'Anfrage abgeschickt, herzlichen Dank.' }
       else
-        format.html { render action: "new" }
+        format.html { render action: "new", notice: 'Bitte alle Felder ausfüllen.' }
       end
     end
 
@@ -24,9 +28,8 @@ class ContactFormsController < ApplicationController
   # since you'll be able to reuse the same permit list between create and update. Also, you
   # can specialize this method with per-user checking of permissible attributes.
   def contact_form_params
-    params.require(:contact_form).permit(:name)
+    params.require(:contact_form).permit(:name, :email, :phone, :message)
   end
-
   def load_parent_resource
     @ou = OrganisationalUnit.find_by_name(params[:organisational_unit_id])
   end
