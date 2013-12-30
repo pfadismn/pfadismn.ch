@@ -15,6 +15,7 @@
   <% end %>
 
   <%= f.inputs t :contact_information do %>
+    <%= f.input :login %>
     <%= f.input :email %>
     <% unless @member.new_record? %>
       <%= form_element t(:phone_numbers) do %>

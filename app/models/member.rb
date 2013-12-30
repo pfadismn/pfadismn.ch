@@ -14,11 +14,9 @@ class Member < ActiveRecord::Base
   has_attached_file :avatar, styles: { medium: "300x400>", thumb: "150x200>" }, path: ':rails_root/var/attachments/:class/:attachment/:id/:style/:filename'
   accepts_nested_attributes_for :addresses, :phone_numbers
 
-  # Hooks
-  before_save { user.update_attribute(:email, email) if user }
-
   # Validations
-  validates :email, uniqueness: true, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }, if: Proc.new { |m| m.email.present? }
+  validates :login, uniqueness: true, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }, if: Proc.new { |m| m.email.present? }
+  validates :email, uniqueness: true, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }, if: Proc.new { |m| m.email.present? || m.login.present? }
   validates :first_name, :last_name, presence: true
   validates :birthdate, :organisational_unit, presence: true
   
@@ -27,7 +25,7 @@ class Member < ActiveRecord::Base
   
   # Hooks
   after_save do
-    user.update_attribute(:email, email) if user.present?
+    user.update_attribute(:email, login) if user.present?
   end  
     
   def to_s
