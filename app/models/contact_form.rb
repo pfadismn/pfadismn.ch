@@ -25,13 +25,8 @@ class ContactForm
 
   def save
     return false unless valid?
-
-    @organisational_unit.team.each do |team_member|
-
-      next unless team_member.user.present?
-
-      UserMailer.contact_form_notification(team_member.user, self).deliver
-    end
+    UserMailer.contact_form_notification(self).deliver
+    @sent = true
   end
 
 end

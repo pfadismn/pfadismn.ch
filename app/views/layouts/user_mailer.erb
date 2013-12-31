@@ -72,6 +72,7 @@
       .header-content a { font-weight: bold; color: #ffffff; text-decoration: none; }
       #headline p { color: #444444; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; font-size: 36px; text-align: center; margin-top:0px; margin-bottom:30px; }
       #headline p a { color: #444444; text-decoration: none; }
+      #headline {  background-image:url(<%= image_path("layouts/banner/usermailer.jpg") %>);  background-repeat:no-repeat; background-size:contain; background-position:center; height: 171px}
       .article-title { font-size: 18px; line-height:24px; color: #b0b0b0; font-weight:bold; margin-top:0px; margin-bottom:18px; font-family: 'Helvetica Neue', Arial, Helvetica, Geneva, sans-serif; }
       .article-title a { color: #b0b0b0; text-decoration: none; }
       .article-title.with-meta {margin-bottom: 0;}
@@ -151,9 +152,7 @@
         <td class="w30" width="30"></td>
         <td class="w580" width="580">
           <div align="center" id="headline">
-            <p>
-              <h1><strong><a href="http://pfadismn.ch"><singleline label="Title">Pfadi St. Mauritius Nansen</singleline></a></strong></h1>
-            </p>
+                <%= image_tag("layouts/banner/usermailer.jpg", width: '100%') %>
           </div>
         </td>
         <td class="w30" width="30"></td>

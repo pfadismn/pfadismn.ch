@@ -38,6 +38,7 @@ end
 
 group :development do
   gem 'mina', git: 'https://github.com/nadarei/mina.git'
+  gem 'quiet_assets'
 end
 
 group :test do
