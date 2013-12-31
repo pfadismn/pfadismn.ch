@@ -2,7 +2,7 @@ class MailAliasesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @mail_aliases = MailAlias.generic
+    @mail_aliases = MailAlias.all.to_a + MailAlias.generic
 
     respond_to do |format|
       format.html # index.html.erb
