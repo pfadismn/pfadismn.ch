@@ -14,8 +14,8 @@ class Member < ActiveRecord::Base
   accepts_nested_attributes_for :addresses, :phone_numbers
 
   # Validations
-  validates :login, uniqueness: true, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }, if: Proc.new { |m| m.email.present? }
-  validates :email, uniqueness: true, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }, if: Proc.new { |m| m.email.present? || m.login.present? }
+  validates :alias, uniqueness: true, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }, if: Proc.new { |m| m.email.present? }
+  validates :email, uniqueness: true, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }, if: Proc.new { |m| m.email.present? || m.alias.present? }
   validates :first_name, :last_name, presence: true
   validates :birthdate, :organisational_unit, presence: true
   
@@ -24,7 +24,7 @@ class Member < ActiveRecord::Base
   
   # Hooks
   after_save do
-    user.update_attribute(:email, login) if user.present?
+    user.update_attribute(:email, self.alias) if user.present?
   end  
     
   def to_s

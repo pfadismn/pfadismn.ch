@@ -27,7 +27,7 @@
       <%= show_field :nationality, @member %>
     <% end %>
     <%= show_section "Kontakt" do %>
-      <%= show_field :login, @member %>
+      <%= show_field :alias, @member %>
       <%= show_field :email, @member %>
       <%= show_field :phone_numbers, @member do %>
         <% @member.phone_numbers.each do |p| %>
