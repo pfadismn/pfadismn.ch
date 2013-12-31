@@ -675,3 +675,13 @@ get_side_border_padding = (elmt) ->
   side_border_padding = elmt.outerWidth() - elmt.width()
 
 root.get_side_border_padding = get_side_border_padding
+
+
+jQuery.browser = {}
+(->
+  jQuery.browser.msie = false
+  jQuery.browser.version = 0
+  if navigator.userAgent.match(/MSIE ([0-9]+)\./)
+    jQuery.browser.msie = true
+    jQuery.browser.version = RegExp.$1
+)()

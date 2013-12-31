@@ -195,15 +195,19 @@ de:
         other: Mitglieder
     attributes:
       event:
-        start_time: Start-Zeit
-        end_time: End-Zeit
-        start_place: Start-Ort
-        end_place: End-Ort
+        start_time: Start (Zeit)
+        end_time: Ende (Zeit)
+        start_place: Start (Ort)
+        end_place: End (Ort)
         description: Beschreibung
         take_along: Mitnehmen
         published: Veröffentlicht
+        content_image: Anzeigebild
       member:
         first_name: Vorname
+      user:
+        password: Neues Passwort
+        password_confirmation: Passwort wiederholen
     errors:
       format: "%{attribute} %{message}"
 

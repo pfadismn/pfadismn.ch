@@ -1,7 +1,7 @@
 require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
-require 'mina/rvm'    # for rvm support. (http://rvm.io)
+require 'mina/rbenv'
 
 # Basic settings:
 #   domain       - The hostname to SSH to.
@@ -9,13 +9,16 @@ require 'mina/rvm'    # for rvm support. (http://rvm.io)
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, 'pfadismn.ch'
-set :deploy_to, '/srv/www/pfadismn.ch.git'
-set :repository, 'file:///srv/git/pfadismn.ch.git'
-set :branch, 'master'
-set :user, 'deploy'
-set :password, '4UWeswumUY3B'
-set :rvm_path, '/usr/local/rvm/scripts/rvm'
+set :domain, 'lvps87-230-19-26.dedicated.hosteurope.de'
+set :deploy_to, '/home/rails/pfadismn.ch'
+set :repository, 'ssh://git@git.unimatrix041.ch:11022/pfadi/pfadismn.git'
+set :branch, '26-emails'
+set :user, 'rails'
+set :rails_env, 'production'
+
+set :pid_file, lambda { "#{deploy_to}/run/#{rails_env}.pid" }
+set :socket, lambda { "unix:///#{deploy_to}/run/#{rails_env}.sock" }
+set :app_path, lambda { "#{deploy_to}/#{current_path}" }
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
@@ -25,9 +28,7 @@ set :shared_paths, ['config/database.yml', 'config/email.yml', 'log', 'public/ph
 # This task is the environment that is loaded for most commands, such as
 # `mina deploy` or `mina rake`.
 task :environment do
-
-  # For those using RVM, use this to load an RVM version@gemset.
-  invoke :'rvm:use[ruby-1.9.3]'
+  invoke :'rbenv:load'
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.
@@ -56,35 +57,42 @@ namespace :filesystem do
   task :'cleanup' do
     queue %{
       echo "-----> Resetting Permissions tmp/"
-      chown -R :www-data .
+      chown -R rails:rails .
     }
   end
 end
 
-desc "Deploys the current version to the server."
 task :deploy => :environment do
   deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
+    queue   'export RAILS_ENV="production"'
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
-    queue 'RAILS_ENV="production" bundle exec rake assets:precompile'
-    #invoke :'rails:assets_precompile'
+    queue   'bundle exec rake assets:precompile'
     invoke :'rails:tmp_create'
     invoke :'filesystem:cleanup'
 
     to :launch do
-      queue 'touch tmp/restart.txt'
+      invoke :restart
     end
   end
 end
 
-# For help in making your deploy script, see the Mina documentation:
-#
-#  - http://nadarei.co/mina
-#  - http://nadarei.co/mina/tasks
-#  - http://nadarei.co/mina/settings
-#  - http://nadarei.co/mina/helpers
+desc 'Starts the application'
+task :start => :environment do
+  queue "cd #{app_path} ; bundle exec puma -e #{rails_env} -d -b #{socket} --pidfile #{pid_file}"
+end
 
+desc 'Stops the application'
+task :stop => :environment do
+  queue %[kill -9 `cat #{pid_file}`]
+end
+
+desc 'Restarts the application'
+task :restart => :environment do
+  queue %[kill -9 `cat #{pid_file}` || true]
+  invoke :start
+end

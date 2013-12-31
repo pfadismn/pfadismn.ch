@@ -70,6 +70,7 @@ class Ability
     can :manage, Contact
     can :manage, PhoneNumber
     can :manage, PhotoCollection::AlbumUpload
+    can :manage, MailAlias
   end
 
   def admin_privileges user

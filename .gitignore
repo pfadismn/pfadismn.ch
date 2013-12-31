@@ -2,9 +2,10 @@ log/
 log/*
 tmp/
 tmp/*
-/nbproject/private/
+/nbproject/
 /public/photos/*
 db/schema.rb
 config/database.yml
 config/email.yml
 .idea/
+/var

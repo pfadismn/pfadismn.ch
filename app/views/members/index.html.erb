@@ -7,4 +7,7 @@
   <% builder.column :birthdate do |r| %>
     <%= l r.birthdate %>
   <% end %>
+    <% builder.button do %>
+        <%= link_to "Neues Mitglied", new_organisational_unit_member_path(@ou) %>
+    <% end %>
 <% end %>

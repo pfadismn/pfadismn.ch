@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/diegosteiner/index_helper.git
-  revision: 9703d1e4c2457c26afc74d38a48039dc21130c9e
+  revision: 7459d4285b1de8bf61d22bf7405e5c4a77009c9d
   specs:
     index_helper (0.0.2)
 
@@ -13,7 +13,7 @@ GIT
       rake
 
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     RedCloth (4.2.9)
     actionmailer (3.2.16)
@@ -54,9 +54,9 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.3)
       climate_control (>= 0.0.3, < 1.0)
-    coffee-rails (3.2.2)
+    coffee-rails (3.2.1)
       coffee-script (>= 2.2.0)
-      railties (~> 3.2.0)
+      railties (~> 3.2.0.beta)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -81,6 +81,7 @@ GEM
     kaminari (0.15.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -101,8 +102,8 @@ GEM
       mime-types
     pdfkit (0.5.4)
     polyglot (0.3.3)
-    quiet_assets (1.0.2)
-      railties (>= 3.1, < 5.0)
+    puma (2.7.1)
+      rack (>= 1.1, < 2.0)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -128,6 +129,7 @@ GEM
     rake (10.1.1)
     rdoc (3.12.2)
       json (~> 1.4)
+    ref (1.0.5)
     rubyzip (1.1.0)
     sass (3.2.13)
     sass-rails (3.2.6)
@@ -143,6 +145,9 @@ GEM
       actionpack (~> 3.0)
       activemodel (~> 3.0)
       railties (~> 3.0)
+    therubyracer (0.12.0)
+      libv8 (~> 3.16.14.0)
+      ref
     thor (0.18.1)
     tilt (1.4.1)
     treetop (1.4.15)
@@ -176,10 +181,11 @@ DEPENDENCIES
   nokogiri
   paperclip
   pdfkit
-  quiet_assets
+  puma
   rails (~> 3.2)
   rubyzip
   sass-rails
   strong_parameters
+  therubyracer
   turn
   uglifier

@@ -2,7 +2,7 @@
 class EventsController < ApplicationController
   before_filter :inject_publish, only: [ :create, :update ]
   before_filter :load_parent_resource
-  load_and_authorize_resource except: [:show, :index, :quartalsprogramm]
+  load_and_authorize_resource except: [:show, :index, :quartalsprogramm, :image]
 #  load_and_authorize_resource
   
   def index
@@ -40,6 +40,13 @@ class EventsController < ApplicationController
         format.html { redirect_to organisational_unit_events_path(@ou) }
       end
     end
+  end
+
+  def image
+    @event = Event.find(params[:id])
+    size = params[:size] || :large
+
+    send_file @event.content_image.path(size), type: @event.content_image.content_type, disposition: :inline
   end
 
   def new
