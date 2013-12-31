@@ -1,15 +1,16 @@
 GIT
+  remote: https://github.com/diegosteiner/index_helper.git
+  revision: 7459d4285b1de8bf61d22bf7405e5c4a77009c9d
+  specs:
+    index_helper (0.0.2)
+
+GIT
   remote: https://github.com/nadarei/mina.git
   revision: d6d68624cb57aa8378e86a31dedc104418b868b5
   specs:
     mina (0.3.0)
       open4
       rake
-
-PATH
-  remote: /home/digi/workspaces/private/Gems/index_helper
-  specs:
-    index_helper (0.0.2)
 
 GEM
   remote: http://rubygems.org/
