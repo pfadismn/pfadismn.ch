@@ -12,8 +12,8 @@ gem 'nested_set'
 gem 'paperclip'
 
 # Show
-#gem 'index_helper', git: 'https://github.com/diegosteiner/index_helper.git'
-gem 'index_helper', path: '/home/digi/workspaces/private/Gems/index_helper'
+gem 'index_helper', git: 'https://github.com/diegosteiner/index_helper.git'
+#gem 'index_helper', path: '/home/digi/workspaces/private/Gems/index_helper'
 gem 'formtastic'
 gem 'dynamic_form'
 gem 'kaminari'
