@@ -23,7 +23,7 @@ class OrganisationalUnit < ActiveRecord::Base
   end
   
   def team
-    members.by_function(responsible_function.to_sym) if Member::FUNCTIONS.index(responsible_function.to_sym)
+    members.by_function(responsible_function.to_sym) if MemberFunction::FUNCTIONS.index(responsible_function.to_sym)
   end
 
   def to_s

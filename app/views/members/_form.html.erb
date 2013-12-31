@@ -15,6 +15,7 @@
   <% end %>
 
   <%= f.inputs t :contact_information do %>
+    <%= f.input :alias %>
     <%= f.input :email %>
     <% unless @member.new_record? %>
       <%= form_element t(:phone_numbers) do %>
@@ -44,7 +45,7 @@
   <%= f.inputs t :scout do %>
     <%= f.input :organisational_unit, as: :select, input_html: { class: 'chosen-select' }, wrapper_html: { class: 'chosen' }, collection: OrganisationalUnit.all, member_label: :to_s, include_blank: false %>
     <%= f.input :functions, as: :hidden, input_html: { name:'member[functions][]', value: 0 } %>
-    <%= f.input :functions, as: :select, input_html: { multiple: true, class: 'chosen-select',  name:'member[functions][]', value: @member.functions }, wrapper_html: { class: 'chosen' }, collection: Member::FUNCTIONS.map{ |f| [t(f), f] }, include_blank: false %>
+    <%= f.input :functions, as: :select, input_html: { multiple: true, class: 'chosen-select',  name:'member[functions][]', value: @member.functions }, wrapper_html: { class: 'chosen' }, collection: MemberFunction::FUNCTIONS.map{ |f| [t(f), f] }, include_blank: false %>
     <%= f.input :education %>
     <%= f.input :member_since, start_year: Time.now.year - 30, end_year: Time.now.year%>
   <% end %>

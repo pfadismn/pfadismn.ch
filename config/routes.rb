@@ -1,4 +1,5 @@
 Pfadismn::Application.routes.draw do
+
   get 'pfadilife/videos', as: :pfadilife_videos
   get 'pfadilife/skauty', as: :pfadilife_skauty
   get 'pfadilife/', action: :index, controller: :pfadilife, as: :pfadilife_index
@@ -45,6 +46,7 @@ Pfadismn::Application.routes.draw do
   resources :password_resets
   resources :photos
   resources :meeting_protocols
+  resources :mail_aliases
   
   resources :users do
     member do
