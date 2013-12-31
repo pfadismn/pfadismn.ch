@@ -1,4 +1,7 @@
 <%= index MailAlias, @mail_aliases, pagination: false do |builder| %>
     <% builder.column :email %>
     <% builder.column :alias %>
+    <% builder.button do %>
+        <%= link_to "Neuer Alias", new_mail_alias_path %>
+    <% end %>
 <% end %>

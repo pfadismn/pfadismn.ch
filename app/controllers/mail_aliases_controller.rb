@@ -9,9 +9,6 @@ class MailAliasesController < ApplicationController
     end
   end
 
-  def show
-  end
-
   def new
   end
 
@@ -21,7 +18,7 @@ class MailAliasesController < ApplicationController
   def create
     respond_to do |format|
       if @mail_alias.save
-        format.html { redirect_to @mail_alias, notice: 'Mail alias was successfully created.' }
+        format.html { redirect_to mail_aliases_path, notice: 'Mail alias was successfully created.' }
       else
         format.html { render action: "new" }
       end
@@ -31,7 +28,7 @@ class MailAliasesController < ApplicationController
   def update
     respond_to do |format|
       if @mail_alias.update_attributes(params[:mail_alias])
-        format.html { redirect_to @mail_alias, notice: 'Mail alias was successfully updated.' }
+        format.html { redirect_to mail_aliases_path, notice: 'Mail alias was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
