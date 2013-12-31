@@ -3,6 +3,8 @@
     <li><%= link_to 'Mitglieder verwalten', organisational_unit_members_path(current_user.member.organisational_unit) %></li>
     <li><%= link_to 'Events verwalten', organisational_unit_events_path(current_user.member.organisational_unit) %></li>
     <li><%= link_to 'News verwalten', news_index_path %></li>
+    <li><%= link_to 'Protokolle verwalten', meeting_protocols_path %></li>
+    <li><%= link_to 'Mail Aliase verwalten', mail_aliases_path %></li>
   </ul>
  
 <% content_for :sidebar do %>
