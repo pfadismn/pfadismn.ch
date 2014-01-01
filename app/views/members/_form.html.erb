@@ -8,7 +8,7 @@
       <%= f.input :last_name %>
     <% end %>
     <%= f.input :scout_name %>
-    <%= f.input :birthdate, start_year: Time.now.year - 30, end_year: Time.now.year %>
+    <%= f.input :birthdate, start_year: Time.now.year - 40, end_year: Time.now.year %>
     <%= f.input :nationality %>
     <%= f.input :gender, :as => :radio, collection: Member::GENDERS %>
     <%= f.input :avatar %>
