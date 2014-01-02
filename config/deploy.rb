@@ -74,6 +74,7 @@ task :deploy => :environment do
     queue   'bundle exec rake assets:precompile'
     invoke :'rails:tmp_create'
     invoke :'filesystem:cleanup'
+    invoke :'deploy:cleanup'
 
     to :launch do
       invoke :restart
