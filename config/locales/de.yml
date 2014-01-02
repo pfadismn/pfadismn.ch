@@ -187,12 +187,14 @@ de:
       update: '%{model} aktualisieren'
       submit: '%{model} speichern'
 
-      
   activerecord:
     models:
       member: 
         one: Mitglied
         other: Mitglieder
+      contact_form:
+        one: Kontaktformular
+        other: Kontaktformulare
     attributes:
       event:
         start_time: Start (Zeit)

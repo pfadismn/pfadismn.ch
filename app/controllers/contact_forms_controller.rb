@@ -15,9 +15,9 @@ class ContactFormsController < ApplicationController
 
     respond_to do |format|
       if @contact_form.save
-        format.html { redirect_to organisational_unit_path(@ou), notice: 'Anfrage abgeschickt, herzlichen Dank.' }
+        format.html { redirect_to organisational_unit_path(@ou), notice: 'Ihre Nachricht wurde abgesendet. Vielen Dank für ihre Anfrage.' }
       else
-        format.html { render action: "new", notice: 'Bitte alle Felder ausfüllen.' }
+        format.html { render action: "new", notice: 'Bitte alle benötigten Felder ausfüllen.' }
       end
     end
 

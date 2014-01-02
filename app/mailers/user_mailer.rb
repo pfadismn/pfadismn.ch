@@ -8,7 +8,7 @@ class UserMailer < ActionMailer::Base
     attachments.inline['header.jpg'] = File.read("#{Rails.root}/app/assets/images/layouts/banner/usermailer.jpg")
     @contact_form = contact_form
 
-    mail(to: 'diego.steiner@u041.ch', subject: 'Kontaktanfrage')
+    mail(to: 'andre.buerkler@u041.ch', subject: 'Kontaktanfrage pfadismn.ch')
   end
 
 end
