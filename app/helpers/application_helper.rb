@@ -26,10 +26,6 @@ module ApplicationHelper
     end
   end
 
-  def image_url(file)
-    request.protocol + request.host_with_port + path_to_image(file)
-  end
-
   def heading(t, subtitle=nil, options={})
     icon = options[:icon]
     icon ||= 'abteilung/heading.png'
