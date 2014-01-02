@@ -1,32 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Der Weg geht hier nicht weiter.</title>
-  <style type="text/css">
-    body { color: #666; text-align: center; font-family: arial, sans-serif;}
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 2.5em auto 0 auto;
-      border: 0px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-      font-size: 115%;
-    }
-    h1 { font-size: 240%; }
-    h2 { font-size: 130%; color: #f00; line-height: 1.5em; }
-  </style>
+    <title>Der Weg geht hier nicht weiter.</title>
+    <link href='http://fonts.googleapis.com/css?family=Habibi' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+        html {
+            height: 100%;
+            /*background-size: contain;*/
+        }
+
+        #outer {
+            position: absolute;
+            top: 50%;
+            margin-top: -200px;/* half of #content height*/
+            left: 0;
+            width: 100%;
+        }
+
+        #inner {
+            margin: 0 auto;
+            font-family: 'Habibi', serif;
+            text-shadow: 0 0 15px #000000;
+            font-size: 2em;
+            color: white;
+            width: 100%;
+            height: 150px;
+            text-align: center;
+        }
+
+        body {
+            box-sizing: border-box;
+            background: url('error.png') no-repeat center center;
+            background-size: contain;
+            background-color: #000;
+            margin: 3em;
+        }
+    </style>
 </head>
 
 <body>
-  <!-- This file lives in public/404.html -->
-  <h1>www.pfadismn.ch</h1>
-  <div class="dialog">
+<div id="outer">
+    <div id="inner">
+        <h1>404</h1>
 
-    <img src="/assets/error/bad_trail_sign.png" alt="kein Weg" height="200px">
-    <br><br>
-    <h2>Der Weg geht hier nicht weiter.</h2>
-    <p>Die angeforderte Seite wurde nicht gefunden.</p><p> Zur&uuml;ck zur <a href="/">Hauptseite!</a></p>
-  </div>
+        <h2>Seite nicht gefunden!</h2>
+    </div>
+</div>
 </body>
 </html>
