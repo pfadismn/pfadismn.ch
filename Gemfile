@@ -10,6 +10,8 @@ gem 'authlogic'
 gem 'mysql2'
 gem 'nested_set'
 gem 'paperclip'
+gem 'strong_parameters'
+gem 'delayed_job_active_record'
 
 # Show
 gem 'index_helper', git: 'https://github.com/diegosteiner/index_helper.git'
@@ -24,19 +26,17 @@ gem 'pdfkit'
 # Tools
 gem 'rubyzip'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'jquery-rails'
-  gem 'jquery-ui-rails'
-  gem 'uglifier'
-  gem 'therubyracer', platforms: :ruby
-end
+# Assets
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'uglifier'
+gem 'therubyracer', platforms: :ruby
 
 group :development do
   gem 'mina', git: 'https://github.com/nadarei/mina.git'
+  gem 'quiet_assets'
 end
 
 group :test do
