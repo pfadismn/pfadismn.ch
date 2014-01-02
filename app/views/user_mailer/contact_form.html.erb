@@ -1,0 +1,8 @@
+<h1>Kontaktanfrage</h1>
+<h3>Kontaktdaten</h3>
+<table border="0">
+    <tr><td width="55">Name:</td> <td><%= @contact_form.name %></td></tr>
+    <tr><td width="55">E-Mail:</td> <td><%= @contact_form.email %></td></tr>
+    <tr><td width="55">Telefon:</td> <td><%= @contact_form.phone %></td></tr>
+</table>
+<h3>Nachricht</h3><%= simple_format(@contact_form.message) %>

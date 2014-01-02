@@ -8,4 +8,4 @@ db/schema.rb
 config/database.yml
 config/email.yml
 .idea/
-/var
+/var/attachments/*

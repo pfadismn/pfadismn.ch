@@ -187,16 +187,17 @@ de:
       update: '%{model} aktualisieren'
       submit: '%{model} speichern'
 
-      
   activerecord:
     models:
       member: 
         one: Mitglied
         other: Mitglieder
-        birthdate: Geburtsdatum
       organisational_unit:
         one: Gruppe
         other: Gruppen
+      contact_form:
+        one: Kontaktformular
+        other: Kontaktformulare
     attributes:
       event:
         organisational_unit: Gruppe
@@ -278,6 +279,11 @@ de:
       album_upload:
         year: Jahr
         file: Datei
+      contact_form:
+        name: Name
+        email: E-Mail Adresse
+        phone: Telefon-/Natelnummer
+        message: Mitteilung
     hints:
       member:
         education: "Ein Kurs pro Linie"
