@@ -6,9 +6,11 @@
       <h2>Willkommen <%= current_user.member.scout_name %>!</h2>
       <p>Was möchtest du tun?</p>
       <ul>
-        <%= content_tag :li, link_to("Neuen Event erstellen", new_organisational_unit_event_path(current_user.member.organisational_unit)) if can? :create, Event %>
-        <%= content_tag :li, link_to("Meine Gruppe verwalten", organisational_unit_members_path(current_user.member.organisational_unit)) if can? :create, Member %>
-        <%= content_tag :li, link_to("Meine Infos anpassen", organisational_unit_member_path(current_user.member.organisational_unit, current_user.member)) %>
+        <% if !current_user.member.organisational_unit.nil? %>
+            <%= content_tag :li, link_to("Neuen Event erstellen", new_organisational_unit_event_path(current_user.member.organisational_unit)) if can? :create, Event %>
+            <%= content_tag :li, link_to("Meine Gruppe verwalten", organisational_unit_members_path(current_user.member.organisational_unit)) if can? :create, Member%>
+            <%= content_tag :li, link_to("Meine Infos anpassen", organisational_unit_member_path(current_user.member.organisational_unit, current_user.member)) %>
+        <% end %>
         <%= content_tag :li, link_to("Mein Passwort ändern", edit_password_user_path(current_user)) %>
         <li><%= link_to "Logout", logout_path %></li>
       </ul>
