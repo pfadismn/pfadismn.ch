@@ -13,7 +13,7 @@
     <%= f.input :take_along %>
     <%= f.input :published, as: :boolean %>
   <% end %>
-  <%= f.inputs t(:Content) do %>
+  <%= f.inputs t(:Bild) do %>
     <%= f.input :content_image, as: :file %>
   <% end if current_user.has_role? [:manager, :admin] %>
   <%= f.actions %>

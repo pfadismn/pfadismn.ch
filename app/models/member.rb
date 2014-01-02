@@ -1,5 +1,5 @@
 class Member < ActiveRecord::Base
-  GENDERS = [[:male, 0], [:female, 1]]
+  GENDERS = [:male,:female]
 
   # Relations
   belongs_to :organisational_unit
@@ -10,7 +10,7 @@ class Member < ActiveRecord::Base
   has_one :user, dependent: :delete
 
   # Attachment
-  has_attached_file :avatar, styles: { medium: "300x400>", thumb: "150x200>" }, path: ':rails_root/var/attachments/:class/:attachment/:id/:style/:filename'
+  has_attached_file :avatar, styles: { medium: '300x400>', thumb: '150x200>' }, path: ':rails_root/var/attachments/:class/:attachment/:id/:style/:filename'
   accepts_nested_attributes_for :addresses, :phone_numbers
 
   # Validations

@@ -193,8 +193,13 @@ de:
       member: 
         one: Mitglied
         other: Mitglieder
+        birthdate: Geburtsdatum
+      organisational_unit:
+        one: Gruppe
+        other: Gruppen
     attributes:
       event:
+        organisational_unit: Gruppe
         start_time: Start (Zeit)
         end_time: Ende (Zeit)
         start_place: Start (Ort)
@@ -205,9 +210,36 @@ de:
         content_image: Anzeigebild
       member:
         first_name: Vorname
+        last_name: Name
+        scout_name: Pfadiname
+        birthdate: Geburtsdatum
+        nationality: Nationalität
+        gender: Geschlecht
+        gender_options:
+          male: männlich
+          female: weiblich
+        avatar: Profilbild
+        organisational_unit: Gruppe
+        functions: Funktionen
+        education: Pfadiausbildung
+        member_since: in der Pfadi seit
+        remarks: Bemerkungen
+        vegetarian: Vegetarier/in
+      phone:
+        phone_numbers: Telefonnummern
+
+
       user:
         password: Neues Passwort
         password_confirmation: Passwort wiederholen
+
+    sections:
+      member:
+        general: Person
+        scout: Pfadi
+        contact_information: Konftaktinformationen
+        additional_info: Zusätzliche Infos
+
     errors:
       format: "%{attribute} %{message}"
 
@@ -249,6 +281,7 @@ de:
     hints:
       member:
         education: "Ein Kurs pro Linie"
+        male: männlich
       album_upload:
         file: "Mit Picasa erstellte .zip Datei mit den Fotos"
     actions:
