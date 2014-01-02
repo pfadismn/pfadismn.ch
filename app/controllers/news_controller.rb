@@ -2,6 +2,8 @@ class NewsController < ApplicationController
   load_and_authorize_resource
 
   def index
+    @news = News.published_to(:web)
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @news }
@@ -17,6 +19,7 @@ class NewsController < ApplicationController
 
   def new
     @news.published_at ||= Time.now
+    @news.publish_to = [:web]
 
     respond_to do |format|
       format.html # new.html.erb

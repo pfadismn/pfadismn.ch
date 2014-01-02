@@ -61,6 +61,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    delayed_job (4.0.0)
+      activesupport (>= 3.0, < 4.1)
+    delayed_job_active_record (4.0.0)
+      activerecord (>= 3.0, < 4.1)
+      delayed_job (>= 3.0, < 4.1)
     dynamic_form (1.1.4)
     erubis (2.7.0)
     exception_notification (4.0.1)
@@ -170,6 +175,7 @@ DEPENDENCIES
   authlogic
   cancan
   coffee-rails
+  delayed_job_active_record
   dynamic_form
   exception_notification
   formtastic

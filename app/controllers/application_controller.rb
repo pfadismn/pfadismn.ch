@@ -23,10 +23,6 @@ class ApplicationController < ActionController::Base
     session[:return_to] = nil
   end
 
-  rescue_from Exception do |ex|
-    render file: 'public/500', status: 500, layout: false
-  end
-
   rescue_from ActionController::RoutingError, AbstractController::ActionNotFound, ActiveRecord::RecordNotFound do |ex|
     render file: 'public/404', status: 404, layout: false
   end

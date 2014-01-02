@@ -11,6 +11,7 @@ gem 'mysql2'
 gem 'nested_set'
 gem 'paperclip'
 gem 'strong_parameters'
+gem 'delayed_job_active_record'
 
 # Show
 gem 'index_helper', git: 'https://github.com/diegosteiner/index_helper.git'
