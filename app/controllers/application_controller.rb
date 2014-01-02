@@ -23,6 +23,9 @@ class ApplicationController < ActionController::Base
     session[:return_to] = nil
   end
 
+  rescue_from ActionController::RoutingError, ActionController::UnknownController, ActionController::UnknownAction, ActiveRecord::RecordNotFound do
+    render :file => 'public/404.html', layout: false
+  end
   rescue_from CanCan::AccessDenied do |exception|
     if current_user.present?
       flash[:alert] = "Zugriff verweigert!"
