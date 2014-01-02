@@ -23,12 +23,12 @@ class ApplicationController < ActionController::Base
     session[:return_to] = nil
   end
 
-  rescue_from Exception do
-    render :file => 'public/500.html', status: 500, layout: false
+  rescue_from Exception do |ex|
+    render file: 'public/500', status: 500, layout: false
   end
 
-  rescue_from ActionController::RoutingError, ActionController::UnknownController, ActionController::UnknownAction, ActiveRecord::RecordNotFound do
-    render :file => 'public/404.html', status: 404, layout: false
+  rescue_from ActionController::RoutingError, AbstractController::ActionNotFound, ActiveRecord::RecordNotFound do |ex|
+    render file: 'public/404', status: 404, layout: false
   end
 
   rescue_from CanCan::AccessDenied do |exception|
