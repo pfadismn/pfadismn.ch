@@ -2,6 +2,8 @@ class UserMailer < ActionMailer::Base
   default from: "info@pfadiheime.ch"
   layout :header_layout
 
+  add_template_helper(MembersHelper)
+
   def contact_form(contact_form)
     @contact_form = contact_form
     mail(to: @contact_form.organisational_unit.team.map(&:alias), subject: 'Kontaktanfrage pfadismn.ch')
