@@ -162,7 +162,7 @@ module PhotoCollection
             albums[year] = []
         
             Dir.glob("*").each do |album|
-              album_path = "#{Dir.pwd}/#{album}"
+              album_path = "#{PhotoCollection::BASE_PATH}/#{year}/#{album}"
               albums[year] << (Album.new(album_path)) rescue nil
             end
         
