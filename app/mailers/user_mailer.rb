@@ -1,20 +1,26 @@
 class UserMailer < ActionMailer::Base
   default from: "info@pfadiheime.ch"
-  layout 'user_mailer'
+  layout :header_layout
 
   def contact_form(contact_form)
-    attachments.inline['header.jpg'] = File.read("#{Rails.root}/app/assets/images/layouts/banner/usermailer.jpg")
     @contact_form = contact_form
 
     mail(to: 'andre.buerkler@u041.ch', subject: 'Kontaktanfrage pfadismn.ch')
   end
 
-  def newsletter(receipients, news)
-    attachments.inline['header.jpg'] = File.read("#{Rails.root}/app/assets/images/layouts/banner/usermailer.jpg")
+  def newsletter(news)
     @news = news
-    @receipients = receipients
-
-    mail(bcc: @receipients, subject: @news.title)
+    mail(bcc: @news.newsletter_receipients, subject: @news.title)
   end
 
+  def upcoming_event(event)
+    @event = event
+    mail(bcc: @event.organisational_unit.members.map(&:email), subject: @event.name)
+  end
+
+  private
+  def header_layout
+    attachments.inline['header.jpg'] = File.read("#{Rails.root}/app/assets/images/layouts/banner/usermailer.jpg")
+    'user_mailer'
+  end
 end
