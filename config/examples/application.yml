@@ -1,0 +1,16 @@
+defaults: &defaults
+  event_reminder_forerun_hours: 24
+  newsletter_group_leiter: "leiter@pfadismn.ch"
+  newsletter_group_members: "members@pfadismn.ch"
+
+production: &production
+  <<: *defaults
+
+development: &development
+  <<: *defaults
+  event_reminder_forerun_hours: 0
+  newsletter_group_leiter: "filou@pfadismn.ch"
+  newsletter_group_members: "dev@pfadismn.ch"
+
+test:
+  <<: *development
