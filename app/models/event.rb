@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
   belongs_to :creator, class_name: 'User'
   belongs_to :start_place, class_name: 'Place'
   belongs_to :end_place, class_name: 'Place'
+  attr_accessor :send_reminder
 
   # Attachment
   has_attached_file :content_image, styles: {large: '610x800>', medium: '305x400>', small: '150x200>'}, path: ':rails_root/var/attachments/:class/:attachment/:id/:style/:filename'
@@ -29,6 +30,6 @@ class Event < ActiveRecord::Base
   end
 
   def queue_reminder
-    UserMailer.delay(run_at: published_at - ENV['event_reminder_forerun_hours'].to_i.hours).upcoming_event(self)
+    UserMailer.delay(run_at: published_at - ENV['event_reminder_forerun_hours'].to_i.hours).upcoming_event(self) if send_reminder
   end
 end
