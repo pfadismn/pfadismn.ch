@@ -16,7 +16,8 @@ set :branch, 'production'
 set :user, 'rails'
 set :rails_env, 'production'
 
-set :pid_file, lambda { "#{deploy_to}/run/#{rails_env}.pid" }
+set :puma_pid_file, lambda { "#{deploy_to}/run/#{rails_env}.pid" }
+set :delayed_pid_dir, lambda { "#{deploy_to}/run/delayed.pid.d" }
 set :socket, lambda { "unix:///#{deploy_to}/run/#{rails_env}.sock" }
 set :app_path, lambda { "#{deploy_to}/#{current_path}" }
 
@@ -84,16 +85,20 @@ end
 
 desc 'Starts the application'
 task :start => :environment do
-  queue "cd #{app_path} ; bundle exec puma -e #{rails_env} -d -b #{socket} --pidfile #{pid_file}"
+  queue "cd #{app_path}"
+  queue "bundle exec puma -e #{rails_env} -d -b #{socket} --pidfile #{puma_pid_file}"
+  queue "script/delayed_job --pid-dir #{delayed_pid_dir}"
 end
 
 desc 'Stops the application'
 task :stop => :environment do
-  queue %[kill -9 `cat #{pid_file}`]
+  queue %[kill -9 `cat #{puma_pid_file}`]
+  queue %[kill -9 `cat #{delayed_pid_dir}/*`]
 end
 
 desc 'Restarts the application'
 task :restart => :environment do
-  queue %[kill -9 `cat #{pid_file}` || true]
+  queue %[kill -9 `cat #{puma_pid_file}` || true]
+  queue %[kill -9 `cat #{delayed_pid_dir}/*` || true]
   invoke :start
 end
