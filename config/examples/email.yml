@@ -1,0 +1,48 @@
+# Outgoing email settings
+
+development:
+  default_url_options:
+    host: localhost:3000
+    only_path: false
+  raise_delivery_errors: true
+  delivery_method: :file
+
+production:
+  default_url_options:
+    host: localhost:3000
+    only_path: false
+  raise_delivery_errors: true
+  delivery_method: :sendmail
+  #default_charset: iso-8859-1
+
+#test:
+#  default_url_options:
+#    host: local.tipish.com:3000
+#
+#staging:
+#  default_url_options:
+#    host: staging.tipish.com
+#  raise_delivery_errors: true
+#  delivery_method: :smtp
+#  #default_charset: iso-8859-1
+#  smtp_settings:
+#    address: mail.elmermx.ch
+#    port: 25
+#    domain: mail.elmermx.ch
+#    authentication: :login
+#    user_name: elmermx
+#    password: XXXXXXXXXXX
+#
+#production:
+#  default_url_options:
+#    host: tipish.com
+#  raise_delivery_errors: true
+#  delivery_method: :smtp
+#  #default_charset: iso-8859-1
+#  smtp_settings:
+#    address: mail.elmermx.ch
+#    port: 25
+#    domain: mail.elmermx.ch
+#    authentication: :login
+#    user_name: elmermx
+#    password: XXXXXXXXXXX
