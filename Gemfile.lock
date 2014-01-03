@@ -72,6 +72,9 @@ GEM
       actionmailer (>= 3.0.4)
       activesupport (>= 3.0.4)
     execjs (2.0.2)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
     hike (1.2.3)
@@ -178,6 +181,7 @@ DEPENDENCIES
   delayed_job_active_record
   dynamic_form
   exception_notification
+  figaro
   formtastic
   index_helper!
   jquery-rails
