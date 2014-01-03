@@ -1,4 +1,4 @@
-<%= heading("Events", "Anlässe #{@ou.name}", icon: 'events/index/icon_event.png') %>
+<%= heading("Events #{@ou.name}", "Anlässe #{@ou.name}", icon: 'events/index/icon_event.png') %>
 
 <% if can? :create, Event %>
   <ul class="buttons" style="float:right;">
