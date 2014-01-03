@@ -6,11 +6,7 @@ class OrganisationalUnitsController < ApplicationController
   end
 
   def show
-    @ou = OrganisationalUnit.find_by_name(params[:id])
-    
-    respond_to do |format|
-      format.html
-    end
+    @ou = OrganisationalUnit.where(name: params[:id]).first!
   end
   
   def rheinfallmarsch

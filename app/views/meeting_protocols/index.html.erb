@@ -7,4 +7,7 @@
     
   <% end %>
   <% builder.column :organisational_unit %>
+  <% builder.button do %>
+    <%= link_to "Neues Protokoll", new_meeting_protocol_path %>
+  <% end %>
 <% end %>

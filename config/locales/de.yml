@@ -187,23 +187,61 @@ de:
       update: '%{model} aktualisieren'
       submit: '%{model} speichern'
 
-      
   activerecord:
     models:
       member: 
         one: Mitglied
         other: Mitglieder
+      organisational_unit:
+        one: Gruppe
+        other: Gruppen
+      contact_form:
+        one: Kontaktformular
+        other: Kontaktformulare
     attributes:
       event:
-        start_time: Start-Zeit
-        end_time: End-Zeit
-        start_place: Start-Ort
-        end_place: End-Ort
+        organisational_unit: Gruppe
+        start_time: Start (Zeit)
+        end_time: Ende (Zeit)
+        start_place: Start (Ort)
+        end_place: End (Ort)
         description: Beschreibung
         take_along: Mitnehmen
         published: Veröffentlicht
+        content_image: Anzeigebild
+        send_reminder: Erinnerung verschicken
       member:
         first_name: Vorname
+        last_name: Name
+        scout_name: Pfadiname
+        birthdate: Geburtsdatum
+        nationality: Nationalität
+        gender: Geschlecht
+        gender_options:
+          male: männlich
+          female: weiblich
+        avatar: Profilbild
+        organisational_unit: Gruppe
+        functions: Funktionen
+        education: Pfadiausbildung
+        member_since: in der Pfadi seit
+        remarks: Bemerkungen
+        vegetarian: Vegetarier/in
+      phone:
+        phone_numbers: Telefonnummern
+
+
+      user:
+        password: Neues Passwort
+        password_confirmation: Passwort wiederholen
+
+    sections:
+      member:
+        general: Person
+        scout: Pfadi
+        contact_information: Konftaktinformationen
+        additional_info: Zusätzliche Infos
+
     errors:
       format: "%{attribute} %{message}"
 
@@ -239,9 +277,20 @@ de:
   formtastic:
     titles:
     labels:
+      album_upload:
+        year: Jahr
+        file: Datei
+      contact_form:
+        name: Name
+        email: E-Mail Adresse
+        phone: Telefon-/Natelnummer
+        message: Mitteilung
     hints:
       member:
         education: "Ein Kurs pro Linie"
+        male: männlich
+      album_upload:
+        file: "Mit Picasa erstellte .zip Datei mit den Fotos"
     actions:
       user_session:
         create: "Login"

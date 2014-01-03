@@ -1,23 +1,24 @@
 <%= semantic_form_for [@ou, @member] do |f| %>
   <%= f.error_messages %>
 
-  <%= f.inputs t(:general) do %>
+  <%= f.inputs t(:general, scope: 'activerecord.sections.member') do %>
     <%= image_tag avatar_organisational_unit_member_path(@ou, @member, size: :thumb), class: :avatar unless @member.new_record? %>
-    <%= f.inputs 'Firstname, Lastname', class: :doublefield do %>
+    <%= f.inputs "Vorname, Nachname", class: :doublefield do %>
       <%= f.input :first_name %>
       <%= f.input :last_name %>
     <% end %>
     <%= f.input :scout_name %>
-    <%= f.input :birthdate, start_year: Time.now.year - 30, end_year: Time.now.year %>
+    <%= f.input :birthdate, start_year: Time.now.year - 40, end_year: Time.now.year %>
     <%= f.input :nationality %>
-    <%= f.input :gender, :as => :radio, collection: Member::GENDERS %>
+    <%= f.input :gender, :as => :radio, collection: Member::GENDERS.map { |g| [t(g, scope: 'activerecord.attributes.member.gender_options'), Member::GENDERS.index(g)] } %>
     <%= f.input :avatar %>
   <% end %>
 
-  <%= f.inputs t :contact_information do %>
+  <%= f.inputs t(:contact_information, scope: 'activerecord.sections.member') do %>
+    <%= f.input :alias %>
     <%= f.input :email %>
     <% unless @member.new_record? %>
-      <%= form_element t(:phone_numbers) do %>
+      <%= form_element t(:phone_numbers, scope: 'activerecord.attributes.models.member.phone') do %>
         <% @member.phone_numbers.each do |p| %>
           <%= link_to t(:remove_phone_number), [@ou, @member, p], method: :delete, confirm: :really_delete? %>
           <%= formatted_phone_number p %>
@@ -41,15 +42,15 @@
     <% end %>
   <% end %>
 
-  <%= f.inputs t :scout do %>
+  <%= f.inputs t(:scout, scope: 'activerecord.sections.member') do %>
     <%= f.input :organisational_unit, as: :select, input_html: { class: 'chosen-select' }, wrapper_html: { class: 'chosen' }, collection: OrganisationalUnit.all, member_label: :to_s, include_blank: false %>
     <%= f.input :functions, as: :hidden, input_html: { name:'member[functions][]', value: 0 } %>
-    <%= f.input :functions, as: :select, input_html: { multiple: true, class: 'chosen-select',  name:'member[functions][]', value: @member.functions }, wrapper_html: { class: 'chosen' }, collection: Member::FUNCTIONS.map{ |f| [t(f), f] }, include_blank: false %>
+    <%= f.input :functions, as: :select, input_html: { multiple: true, class: 'chosen-select',  name:'member[functions][]', value: @member.functions }, wrapper_html: { class: 'chosen' }, collection: MemberFunction::FUNCTIONS.map{ |f| [t(f), f] }, include_blank: false %>
     <%= f.input :education %>
     <%= f.input :member_since, start_year: Time.now.year - 30, end_year: Time.now.year%>
   <% end %>
 
-  <%= f.inputs t :additional_info do %>
+  <%= f.inputs t(:additional_info, scope: 'activerecord.sections.member') do %>
     <%= f.input :remarks %>
     <%= f.input :vegetarian %>
   <% end %>

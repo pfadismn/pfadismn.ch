@@ -1,8 +1,9 @@
+<div class="event">
 <% if can? :create, Event %>
   <ul class="buttons" style="float: right;">
     <li><%= link_to 'Event bearbeiten', edit_organisational_unit_event_path(@ou, @event), class: 'edit' if can? :update, Event %></li>
     <li><%= link_to 'Event löschen', organisational_unit_event_path(@ou, @event), method: :delete, confirm: t(:really_delete?), class: 'delete' if can? :destroy, Event %></li>
-    <li><%= link_to 'Event erfassen', new_organisational_unit_event_path(@ou), class: 'new' if can? :create, Event %></li>        
+    <li><%= link_to 'Event erfassen', new_organisational_unit_event_path(@ou), class: 'new' if can? :create, Event %></li>
   </ul>
 <% end %>
 <h2><%= @event.name %></h2>
@@ -11,9 +12,11 @@
 <div>Beginn: <%= l @event.start_time %>  <%= "(#{link_to @event.start_place, @event.start_place})".html_safe if @event.start_place %></div>
 <div>Ende: <%= l @event.end_time %>  <%= "(#{link_to @event.end_place, @event.end_place})".html_safe if @event.end_place %></div>
 
-<div>
-  <%= RedCloth.new(@event.content).to_html.html_safe if @event.content.present? %>
-</div>
+  <% if @event.content_image.present? %>
+      <div class="content_image">
+        <%= image_tag image_organisational_unit_event_path(@event) %>
+      </div>
+  <% end %>
 
 <h3>Mitnehmen</h3>
 <ul>
@@ -34,6 +37,7 @@
 <br/>
 <br/>
   <p><%= link_to '« zur Event Übersicht', organisational_unit_events_path(@ou) %></p>
+      </div>
 
 <% content_for :sidebar do %>
   <%= render 'sidebar' %>

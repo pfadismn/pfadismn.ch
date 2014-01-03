@@ -10,11 +10,11 @@
     <p>Keine News vorhanden</p>
   <% else %>
     <ol class="stories">
-      <%= render partial: 'news/news', collection: @news %> 
+      <%= render partial: 'news/news', collection: @news %>
     <ol>
   <% end %>
   <div class="overflow">
-    <%= link_to "mehr Aktuelles...", news_index_path%>
+    <%= link_to "mehr Aktuelles...", news_index_path %>
   </div>
 </div>
 

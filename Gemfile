@@ -1,10 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.1'
-#gem 'arel', git: 'https://github.com/rails/arel.git' # 
-#gem 'journey', git: 'https://github.com/rails/journey.git' #
-gem 'newrelic_rpm'
-gem 'mina', git: 'https://github.com/nadarei/mina.git'
+gem 'rails', '~> 3.2'
 
 # Authentication & authorisation
 gem 'cancan'
@@ -14,9 +10,14 @@ gem 'authlogic'
 gem 'mysql2'
 gem 'nested_set'
 gem 'paperclip'
+gem 'strong_parameters'
+gem 'delayed_job_active_record'
+gem 'figaro'
+gem 'daemons'
 
 # Show
 gem 'index_helper', git: 'https://github.com/diegosteiner/index_helper.git'
+#gem 'index_helper', path: '/home/digi/workspaces/private/Gems/index_helper'
 gem 'formtastic'
 gem 'dynamic_form'
 gem 'kaminari'
@@ -27,14 +28,17 @@ gem 'pdfkit'
 # Tools
 gem 'rubyzip'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'jquery-rails'
-  gem 'jquery-ui-rails'
-  gem 'uglifier'
+# Assets
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'uglifier'
+gem 'therubyracer', platforms: :ruby
+
+group :development do
+  gem 'mina', git: 'https://github.com/nadarei/mina.git'
+  gem 'quiet_assets'
 end
 
 group :test do
@@ -44,4 +48,5 @@ end
 
 group :production do
   gem 'exception_notification'
+  gem 'puma'
 end

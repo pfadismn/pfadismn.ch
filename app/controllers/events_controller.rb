@@ -2,7 +2,7 @@
 class EventsController < ApplicationController
   before_filter :inject_publish, only: [ :create, :update ]
   before_filter :load_parent_resource
-  load_and_authorize_resource except: [:show, :index, :quartalsprogramm]
+  load_and_authorize_resource except: [:show, :index, :quartalsprogramm, :image]
 #  load_and_authorize_resource
   
   def index
@@ -42,17 +42,20 @@ class EventsController < ApplicationController
     end
   end
 
+  def image
+    @event = Event.find(params[:id])
+    size = params[:size] || :large
+
+    send_file @event.content_image.path(size), type: @event.content_image.content_type, disposition: :inline
+  end
+
   def new
-    tl = <<-tl
-Pfadihemd
-Kravatte
-    tl
     @event.organisational_unit = @ou
-    
+    @event.send_reminder = true
     @event.published_at ||= Time.now
-    @event.start_time ||= Time.now + (5*24*60*60)
-    @event.end_time ||= Time.now + (5*24*60*60)
-    @event.take_along ||= tl
+    @event.start_time ||= 5.days.from_now
+    @event.end_time ||= 5.days.from_now
+    @event.take_along ||= ENV['default_take_along']
   end
 
   def edit

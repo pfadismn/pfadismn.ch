@@ -12,9 +12,9 @@
     <%= f.input :description %>
     <%= f.input :take_along %>
     <%= f.input :published, as: :boolean %>
+    <%= f.input :send_reminder, as: :boolean %>
   <% end %>
-  <%= f.inputs t(:Content) do %>
-    <%= f.input :content, input_html: { class: 'textile_editor' } %>
+  <%= f.inputs t(:Bild) do %>
     <%= f.input :content_image, as: :file %>
   <% end if current_user.has_role? [:manager, :admin] %>
   <%= f.actions %>

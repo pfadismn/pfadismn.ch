@@ -7,9 +7,9 @@ class UserSessionsController < ApplicationController
   def create
     if @user_session.save
       flash[:notice] = "Login erfolgreich!"
-      redirect_back_or_default index_path
+      redirect_back_or_default dashboard_path
     else
-      render action: :new, alert: "Login unsuccessful!<br/>"
+      render action: :new, alert: "Login fehlgeschlagen!"
     end
   end
 
