@@ -18,7 +18,7 @@
   <% else %>
     <%= stickyposter(:paper) do %>
       <h2>Mitmachen?</h2>
-      <p>Dann melde dich mit dem <%= link_to 'Kontaktformular', organisational_unit_contact_forms_path(OrganisationalUnit.find_by_name("Abteilung")) %> und erhalte unverbindlich Infos!</p>
+      <p>Dann melde dich mit dem <%= link_to 'Kontaktformular', organisational_unit_contact_forms_path(OrganisationalUnit.find_by_name("Abteilung")) %> oder unter <%= link_to "pfadi@pfadismn.ch", "mailto:pfadi@pfadismn.ch" %> und erhalte unverbindlich Infos!</p>
     <% end %>
   <% end %>
 

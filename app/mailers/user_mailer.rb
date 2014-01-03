@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default from: "info@pfadiheime.ch"
+  default from: "info@pfadismn.ch"
   layout :header_layout
 
   add_template_helper(MembersHelper)
