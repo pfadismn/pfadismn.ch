@@ -11,7 +11,8 @@ require 'mina/rbenv'
 
 set :domain, 'lvps87-230-19-26.dedicated.hosteurope.de'
 set :deploy_to, '/home/rails/pfadismn.ch'
-set :repository, 'ssh://git@git.unimatrix041.ch:11022/pfadi/pfadismn.git'
+#set :repository, 'ssh://git@git.unimatrix041.ch:11022/pfadi/pfadismn.git'
+set :repository, 'file:///home/rails/pfadismn.ch.git'
 set :branch, 'production'
 set :user, 'rails'
 set :rails_env, 'production'
@@ -67,7 +68,7 @@ task :deploy => :environment do
   deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
-    queue   'export RAILS_ENV="production"'
+    queue   "export RAILS_ENV=#{rails_env}"
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
@@ -87,18 +88,18 @@ desc 'Starts the application'
 task :start => :environment do
   queue "cd #{app_path}"
   queue "bundle exec puma -e #{rails_env} -d -b #{socket} --pidfile #{puma_pid_file}"
-  queue "script/delayed_job --pid-dir #{delayed_pid_dir}"
+  queue "RAILS_ENV=#{rails_env} script/delayed_job --pid-dir #{delayed_pid_dir} start"
 end
 
 desc 'Stops the application'
 task :stop => :environment do
   queue %[kill -9 `cat #{puma_pid_file}`]
-  queue %[kill -9 `cat #{delayed_pid_dir}/*`]
+  queue %[RAILS_ENV=#{rails_env} script/delayed_job --pid-dir #{delayed_pid_dir} stop]
 end
 
 desc 'Restarts the application'
 task :restart => :environment do
   queue %[kill -9 `cat #{puma_pid_file}` || true]
-  queue %[kill -9 `cat #{delayed_pid_dir}/*` || true]
+  queue %[RAILS_ENV=#{rails_env} script/delayed_job --pid-dir #{delayed_pid_dir} stop || true]
   invoke :start
 end
