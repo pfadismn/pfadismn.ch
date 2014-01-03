@@ -1,6 +1,6 @@
 class IndexController < ApplicationController
   def index
-    @news = News.published_to(:web)
+    @news = News.published_to(:web).first(5)
     @ou = OrganisationalUnit.find_by_name(params[:id])
   end
   
