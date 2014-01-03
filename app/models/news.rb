@@ -5,10 +5,10 @@ class News < ActiveRecord::Base
   
   # Scopes
   default_scope order('published_at DESC')
-  scope :published, ->() { where('published_at <= ?', DateTime.now) }
+  scope :published, -> { where('published_at <= ?', DateTime.now) }
   scope :published_to, ->(to) { published.where('publish_to_mask & ?', 2**PUBLISH_TO.index(to)) }
 
-  after_save :publish
+  after_save :queue_newsletter
   
   def to_html
     RedCloth.new(body).to_html.html_safe
@@ -25,13 +25,15 @@ class News < ActiveRecord::Base
     self.publish_to_mask = (ps & PUBLISH_TO).map { |p| 2**PUBLISH_TO.index(p) }.sum
   end
 
-  def publish
-    receipients = []
-    receipients += ["filou@pfadismn.ch"] if publish_to.include?(:leiter)
-    receipients += ["gulli@pfadismn.ch"] if publish_to.include?(:members)
-    #receipients += Subscriber.all.map { |s| s.email } if @news.publish_to.include? :subscribers
+  def queue_newsletter
+    UserMailer.delay(run_at: published_at).newsletter(self) if newsletter_receipients.any?
+  end
 
-    UserMailer.delay(run_at: published_at).newsletter(receipients, self)
-    #UserMailer.newsletter(receipients, self).deliver
+  def newsletter_receipients
+    receipients = []
+    receipients += [ENV['newsletter_group_leiter']] if publish_to.include?(:leiter)
+    receipients += [ENV['newsletter_group_members']] if publish_to.include?(:members)
+    #receipients += Subscriber.all.map { |s| s.email } if @news.publish_to.include? :subscribers
+    receipients.flatten
   end
 end

@@ -7,5 +7,6 @@ tmp/*
 db/schema.rb
 config/database.yml
 config/email.yml
+config/application.yml
 .idea/
 /var/attachments/*

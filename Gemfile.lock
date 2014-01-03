@@ -61,6 +61,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    daemons (1.1.9)
     delayed_job (4.0.0)
       activesupport (>= 3.0, < 4.1)
     delayed_job_active_record (4.0.0)
@@ -72,6 +73,9 @@ GEM
       actionmailer (>= 3.0.4)
       activesupport (>= 3.0.4)
     execjs (2.0.2)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
     hike (1.2.3)
@@ -175,9 +179,11 @@ DEPENDENCIES
   authlogic
   cancan
   coffee-rails
+  daemons
   delayed_job_active_record
   dynamic_form
   exception_notification
+  figaro
   formtastic
   index_helper!
   jquery-rails

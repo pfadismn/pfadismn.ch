@@ -12,17 +12,18 @@ require 'mina/rbenv'
 set :domain, 'lvps87-230-19-26.dedicated.hosteurope.de'
 set :deploy_to, '/home/rails/pfadismn.ch'
 set :repository, 'ssh://git@git.unimatrix041.ch:11022/pfadi/pfadismn.git'
-set :branch, '26-emails'
+set :branch, 'production'
 set :user, 'rails'
 set :rails_env, 'production'
 
-set :pid_file, lambda { "#{deploy_to}/run/#{rails_env}.pid" }
+set :puma_pid_file, lambda { "#{deploy_to}/run/#{rails_env}.pid" }
+set :delayed_pid_dir, lambda { "#{deploy_to}/run/delayed.pid.d" }
 set :socket, lambda { "unix:///#{deploy_to}/run/#{rails_env}.sock" }
 set :app_path, lambda { "#{deploy_to}/#{current_path}" }
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'config/email.yml', 'log', 'public/photos', 'var']
+set :shared_paths, ['config/database.yml', 'config/email.yml', 'config/application.yml' 'log', 'public/photos', 'var']
 
 
 # This task is the environment that is loaded for most commands, such as
@@ -84,16 +85,20 @@ end
 
 desc 'Starts the application'
 task :start => :environment do
-  queue "cd #{app_path} ; bundle exec puma -e #{rails_env} -d -b #{socket} --pidfile #{pid_file}"
+  queue "cd #{app_path}"
+  queue "bundle exec puma -e #{rails_env} -d -b #{socket} --pidfile #{puma_pid_file}"
+  queue "script/delayed_job --pid-dir #{delayed_pid_dir}"
 end
 
 desc 'Stops the application'
 task :stop => :environment do
-  queue %[kill -9 `cat #{pid_file}`]
+  queue %[kill -9 `cat #{puma_pid_file}`]
+  queue %[kill -9 `cat #{delayed_pid_dir}/*`]
 end
 
 desc 'Restarts the application'
 task :restart => :environment do
-  queue %[kill -9 `cat #{pid_file}` || true]
+  queue %[kill -9 `cat #{puma_pid_file}` || true]
+  queue %[kill -9 `cat #{delayed_pid_dir}/*` || true]
   invoke :start
 end
