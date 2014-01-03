@@ -272,7 +272,14 @@ de:
           other:  "Konnte %{model} nicht speichern: %{count} Fehler."
         body: "Bitte überprüfen Sie die folgenden Felder:"
 
-  
+
+  views:
+    pagination:
+      first: Erste
+      last: Letzte
+      next: Nächste
+      previous: Vorherige
+
   formtastic:
     titles:
     labels:
