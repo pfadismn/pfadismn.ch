@@ -4,8 +4,7 @@ class UserMailer < ActionMailer::Base
 
   def contact_form(contact_form)
     @contact_form = contact_form
-
-    mail(to: 'andre.buerkler@u041.ch', subject: 'Kontaktanfrage pfadismn.ch')
+    mail(to: @contact_form.organisational_unit.team.map(&:alias), subject: 'Kontaktanfrage pfadismn.ch')
   end
 
   def newsletter(news)
