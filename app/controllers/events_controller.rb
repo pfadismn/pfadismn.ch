@@ -50,16 +50,12 @@ class EventsController < ApplicationController
   end
 
   def new
-    tl = <<-tl
-Pfadihemd
-Kravatte
-    tl
     @event.organisational_unit = @ou
-    
+    @event.send_reminder = true
     @event.published_at ||= Time.now
-    @event.start_time ||= Time.now + (5*24*60*60)
-    @event.end_time ||= Time.now + (5*24*60*60)
-    @event.take_along ||= tl
+    @event.start_time ||= 5.days.from_now
+    @event.end_time ||= 5.days.from_now
+    @event.take_along ||= ENV['default_take_along']
   end
 
   def edit

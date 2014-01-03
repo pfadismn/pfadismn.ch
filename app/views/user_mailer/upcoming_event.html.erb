@@ -1,0 +1,16 @@
+<h1><%= @event.name %></h1>
+<h3>Eckdaten</h3>
+<table border="0">
+    <tr><td width="75">Gruppe:</td> <td><%= link_to @event.organisational_unit, organisational_unit_events_url(@event.organisational_unit) %></td></tr>
+    <tr><td width="75">Beginn:</td> <td><%= l @event.start_time %>, <%= link_to @event.start_place, place_url(@event.start_place) %></td></tr>
+    <tr><td width="75">Ende:</td> <td><%= l @event.end_time %>, <%= link_to @event.end_place, place_url(@event.end_place) %></td></tr>
+    <tr><td width="75">Rückfragen:</td> <td><%= contact_name @event.creator.member %></td></tr>
+</table>
+
+<h3>Mitnehmen</h3>
+<%= simple_format(@event.take_along) %>
+
+<% if !@event.description.blank? %>
+    <h3>Zusätzliche Infos</h3><%= simple_format(@event.description) %>
+<% end %>
+

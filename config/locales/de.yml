@@ -209,6 +209,7 @@ de:
         take_along: Mitnehmen
         published: Veröffentlicht
         content_image: Anzeigebild
+        send_reminder: Erinnerung verschicken
       member:
         first_name: Vorname
         last_name: Name

@@ -85,10 +85,21 @@
 
     &.calendar {
       width: 200px;
-      height: 160px;
-      padding: 20px;
+      height: 170px;
+      padding: 10px;
       background: image-url('index/post/calendarwithnail.png') no-repeat top center;
       background-size: contain;
+
+      h2 {
+        text-align: center;
+        margin: 16px 0;
+      }
+
+      ul {
+        margin-left: 20px;
+        line-height: 1.5em;
+        font-size: 1.1em;
+      }
     }
 
     &.plain {
