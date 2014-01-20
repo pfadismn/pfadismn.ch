@@ -8,7 +8,7 @@ gem 'authlogic'
 
 # Data
 gem 'mysql2'
-gem 'nested_set'
+gem 'awesome_nested_set'
 gem 'paperclip'
 gem 'strong_parameters'
 gem 'delayed_job_active_record'
