@@ -7,6 +7,9 @@ class IndexController < ApplicationController
   def dashboard
   end
 
+  def jubilaeum2014
+  end
+
   def impressum
   end
   
