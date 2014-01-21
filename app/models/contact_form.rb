@@ -31,7 +31,7 @@ class ContactForm
 
   def save
     return false unless valid?
-    UserMailer.contact_form_notification(self).deliver
+    UserMailer.contact_form(self).deliver
     @sent = true
   end
 

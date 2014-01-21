@@ -26,7 +26,8 @@ class News < ActiveRecord::Base
   end
 
   def queue_newsletter
-    UserMailer.delay(run_at: published_at).newsletter(self) if newsletter_receipients.any?
+    logger.debug(newsletter_receipients)
+    UserMailer.newsletter(self).deliver if newsletter_receipients.any?
   end
 
   def newsletter_receipients

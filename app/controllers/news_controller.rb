@@ -2,7 +2,8 @@ class NewsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @news = News.published_to(:web)
+    published_to = params[:published_to] || :web
+    @news = News.published_to(published_to.to_sym)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -34,7 +35,7 @@ class NewsController < ApplicationController
       @news.creator = current_user
       
       if @news.save
-        format.html { redirect_to news_index_path, notice: 'News was successfully created.' }
+        format.html { redirect_to news_index_path, notice: "News wurde erstellt" }
       else
         format.html { render action: "new" }
       end
