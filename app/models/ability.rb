@@ -71,6 +71,7 @@ class Ability
     can :manage, PhoneNumber
     can :manage, PhotoCollection::AlbumUpload
     can :manage, MailAlias
+    can :manage, AlumniAddress
   end
 
   def admin_privileges user

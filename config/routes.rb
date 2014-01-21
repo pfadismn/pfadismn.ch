@@ -1,5 +1,8 @@
 Pfadismn::Application.routes.draw do
 
+  resources :alumni_addresses
+
+
   get 'pfadilife/videos', as: :pfadilife_videos
   get 'pfadilife/skauty', as: :pfadilife_skauty
   get 'pfadilife/', action: :index, controller: :pfadilife, as: :pfadilife_index
@@ -20,6 +23,10 @@ Pfadismn::Application.routes.draw do
   match 'photos/new' => 'photos#new' , as: :new_photo
   match 'photos/:year' => 'photos#index' , as: :photo_year
   match 'photos/:year/:id' => 'photos#show', as: :photo_album
+
+  get 'treasurehunt' => 'index#jubilaeum2014', as: :jubilaeum2014
+  get '70jahre' => 'index#jubilaeum2014', as: :jubilaeum2014
+  get '70jahre_ehemalige', action: :new, controller: :alumni_addresses, as: :new
   
   resources :organisational_units, path: :abteilung do
     resources :contact_forms
