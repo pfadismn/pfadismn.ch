@@ -229,6 +229,16 @@ de:
         vegetarian: Vegetarier/in
       phone:
         phone_numbers: Telefonnummern
+      alumni_address:
+        comment: Kommentar
+        email: E-Mail
+        name: Name
+      address:
+        line1: Adresse (Linie 1)
+        line2: Adresse (Linie 2)
+        zip: Postleitzahl
+        place: Ort
+        country: Land
 
 
       user:

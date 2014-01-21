@@ -3,10 +3,10 @@ class Member < ActiveRecord::Base
 
   # Relations
   belongs_to :organisational_unit
-  has_many :addresses, as: :addressable
-  has_many :phone_numbers, as: :phonable
-  has_many :member_contacts
-  has_many :contacts, through: :member_contacts
+  has_many :addresses, as: :addressable, dependent: :destroy
+  has_many :phone_numbers, as: :phonable, dependent: :destroy
+  has_many :member_contacts, dependent: :destroy
+  has_many :contacts, through: :member_contacts, dependent: :destroy
   has_one :user, dependent: :delete
 
   # Attachment
