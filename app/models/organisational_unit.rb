@@ -15,11 +15,11 @@ class OrganisationalUnit < ActiveRecord::Base
   end
   
   def members
-    Member.where(organisational_unit_id: self_and_descendants.collect { |ou| ou.id } )
+    Member.where(organisational_unit_id: self_and_descendants.map(&:id) )
   end
   
   def events
-      Event.where(organisational_unit_id: self_and_ancestors.collect { |ou| ou.id } )
+      Event.where(organisational_unit_id: self_and_ancestors.map(&:id) )
   end
   
   def team

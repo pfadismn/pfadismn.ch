@@ -1,5 +1,5 @@
 defaults: &defaults
-  event_reminder_forerun_hours: 24
+  event_reminder_forerun_hours: 48
   newsletter_group_leiter: "leiter@pfadismn.ch"
   newsletter_group_members: "members@pfadismn.ch"
   default_take_along: |
