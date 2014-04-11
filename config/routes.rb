@@ -26,7 +26,7 @@ Pfadismn::Application.routes.draw do
 
   get 'treasurehunt' => 'index#jubilaeum2014'
   get '70jahre' => 'index#jubilaeum2014', as: :jubilaeum2014
-  get '70jahre_ehemalige', action: :new, controller: :alumni_addresses, as: :new
+  get 'anmeldung70jahre', action: :new, controller: :alumni_addresses, as: :new
   
   resources :organisational_units, path: :abteilung do
     resources :contact_forms
