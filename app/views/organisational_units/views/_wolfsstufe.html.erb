@@ -27,7 +27,7 @@
 
   <h2>Events</h2>
   <ul>
-    <% if @ou.events.upcoming.any? %>
+    <% if @ou.inherited_and_propageted_events.upcoming.active.any? %>
       <li><%= link_to "Alle Events »", organisational_unit_events_path(@ou) %></li>
       <% @ou.children.active.each do |ou| %>
         <li><%= link_to "Events von #{ou.name} »", organisational_unit_events_path(ou) %></li>
