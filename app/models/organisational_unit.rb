@@ -21,6 +21,10 @@ class OrganisationalUnit < ActiveRecord::Base
   def events
       Event.where(organisational_unit_id: self_and_ancestors.map(&:id) )
   end
+
+  def inherited_and_propageted_events
+    Event.where(organisational_unit_id: (self.descendants.map(&:id) + self.ancestors.map(&:id) << self.id))
+  end
   
   def team
     members.by_function(responsible_function.to_sym) if MemberFunction::FUNCTIONS.index(responsible_function.to_sym)

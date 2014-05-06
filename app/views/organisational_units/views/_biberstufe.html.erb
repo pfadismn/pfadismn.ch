@@ -17,7 +17,7 @@
   <h2>Events</h2>
   <ul>
     <li><%= link_to "Alle Events »", organisational_unit_events_path(@ou) %></li>
-    <% if @ou.events.upcoming.any? %>
+    <% if @ou.inherited_and_propageted_events.upcoming.active.any? %>
       <li><%= link_to "Quartalsprogramm als PDF", quartalsprogramm_organisational_unit_events_path(@ou, format: :pdf) %></li>
     <% end %>
   </ul>

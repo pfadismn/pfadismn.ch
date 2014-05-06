@@ -6,7 +6,7 @@ class EventsController < ApplicationController
 #  load_and_authorize_resource
   
   def index
-    @events = Event.where(organisational_unit_id: (@ou.descendants.map(&:id) + @ou.ancestors.map(&:id) << @ou.id)).upcoming.active
+    @events = @ou.inherited_and_propageted_events.upcoming.active
 
     respond_to do |format|
       format.html # index.html.erb

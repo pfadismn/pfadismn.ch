@@ -30,6 +30,6 @@ class Event < ActiveRecord::Base
   end
 
   def queue_reminder
-    UserMailer.delay(run_at: published_at - ENV['event_reminder_forerun_hours'].to_i.hours).upcoming_event(self) if send_reminder
+    UserMailer.delay(run_at: start_time - ENV['event_reminder_forerun_hours'].to_i.hours).upcoming_event(self) if send_reminder
   end
 end
