@@ -33,8 +33,14 @@
   <% end %>
 
   <%= stickyposter(:plain) do %>
+      <%= link_to image_tag('index/post/teaser70jahre.png'), '70jahre', style: 'border:none; text-align:center; display:block;' %>
+  <% end %>
+
+<!--
+  <%= stickyposter(:plain) do %>
       <%= link_to image_tag('index/post/collage_post.png'), photos_path, style: 'border:none;' %>
   <% end %>
+  -->
 
 
   <%= stickyposter(:paper, 0) do %>
