@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2'
+gem 'rails', '~> 3.2.0'
 
 # Authentication & authorisation
 gem 'cancan'
@@ -29,8 +29,8 @@ gem 'pdfkit'
 gem 'rubyzip'
 
 # Assets
-gem 'sass-rails'
-gem 'coffee-rails'
+gem 'sass-rails', '~> 3.2.6'
+gem 'coffee-rails', '~> 3.2.2'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'uglifier'
