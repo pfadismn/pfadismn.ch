@@ -13,7 +13,7 @@ set :domain, 'pfadismn.ch'
 set :deploy_to, '/home/rails/pfadismn.ch'
 set :repository, 'ssh://git@git.unimatrix041.ch:11022/pfadi/pfadismn.git'
 #set :repository, 'file:///home/rails/pfadismn.ch.git'
-set :branch, 'production'
+set :branch, 'master'
 set :user, 'rails'
 set :rails_env, 'production'
 
