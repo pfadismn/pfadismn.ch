@@ -3,7 +3,7 @@
 ## Setup
 
 ### config/application.yml
-`
+```yaml
 defaults: &defaults
   event_reminder_forerun_hours: 48
   newsletter_group_leiter: "leiter@pfadismn.ch"
@@ -23,11 +23,11 @@ development: &development
 
 test:
   <<: *development
-`
+```
 
 ### config/database.yml
 
-`
+```yaml
 development: &development
   adapter: postgres
   encoding: utf8
@@ -38,4 +38,4 @@ development: &development
 
 test: *development
 production: *development
-`
+```
