@@ -1,4 +1,4 @@
-= index [@ou, Member], @members do |builder|
+= index [@ou, Member], @members, pagination: false do |builder|
   - builder.column :name do |r|
     = link_to r.name, [@ou, r]
   - builder.column :email

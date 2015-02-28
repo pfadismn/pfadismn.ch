@@ -24,6 +24,9 @@ h2
           = link_to "Details »", organisational_unit_event_path(@ou, event)
 - else
   i
-    | Keine Events geplant.
+    | Derzeit sind keine Informationen zu kommenden Anlässen verfügbar.
+    br
+      br
+    | Benötigst du bereits jetzt Informationen zu einer Aktivität, melde dich doch kurz bei deiner Leiterin oder deinem Leiter.
 - content_for :sidebar do
   = render'sidebar'

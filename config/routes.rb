@@ -10,6 +10,7 @@ Pfadismn::Application.routes.draw do
   get 'impressum', action: :impressum, controller: :index, as: :impressum
   get 'rheinfallmarsch', action: :rheinfallmarsch, controller: :index, as: :rheinfallmarsch
   get 'chronik', action: :chronik, controller: :index, as: :chronik
+  get 'faq', action: :faq, controller: :index, as: :faq
 
   get 'login' => 'user_sessions#new', as: :login
   match 'logout' => 'user_sessions#destroy', via: [:delete, :get], as: :logout
