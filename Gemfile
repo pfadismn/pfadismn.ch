@@ -22,13 +22,14 @@ gem 'RedCloth'
 gem 'pdfkit'
 gem 'rubyzip'
 gem 'slim-rails'
-
-# Assets
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'uglifier'
+
+#legacy
+gem 'actionpack-action_caching'
 
 group :development do
   gem 'mina', git: 'https://github.com/nadarei/mina.git'
