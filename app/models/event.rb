@@ -21,9 +21,9 @@ class Event < ActiveRecord::Base
   after_save :queue_reminder
 
   # Scopes
-  default_scope order('start_time ASC')
-  scope :active, -> { where('published_at <= ?', Time.now) }
-  scope :upcoming, -> { where('end_time >= ?', Time.now) }
+  scope :chronological, -> { order('start_time ASC') }
+  scope :active, -> { where('published_at <= ?', Time.now).chronological }
+  scope :upcoming, -> { where('end_time >= ?', Time.now).chronological }
 
   def published
     published_at.present? && published_at <= Time.current

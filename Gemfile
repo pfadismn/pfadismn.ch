@@ -1,16 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2.0'
+gem 'rails', '~> 4.1.0'
 
 # Authentication & authorisation
 gem 'cancan'
 gem 'authlogic'
 
 # Data
-gem 'mysql2'
+gem 'pg'
 gem 'awesome_nested_set'
 gem 'paperclip'
-gem 'strong_parameters'
 gem 'delayed_job_active_record'
 gem 'figaro'
 gem 'daemons'
@@ -29,12 +28,11 @@ gem 'pdfkit'
 gem 'rubyzip'
 
 # Assets
-gem 'sass-rails', '~> 3.2.6'
-gem 'coffee-rails', '~> 3.2.2'
+gem 'sass-rails'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'uglifier'
-gem 'therubyracer', platforms: :ruby
 
 group :development do
   gem 'mina', git: 'https://github.com/nadarei/mina.git'
@@ -49,4 +47,5 @@ end
 group :production do
   gem 'exception_notification'
   gem 'puma'
+  gem 'mysql2'
 end

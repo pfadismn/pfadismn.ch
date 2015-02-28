@@ -49,6 +49,9 @@ Pfadismn::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+
+  config.eager_load = false
+
   Pfadismn::Application.config.middleware.use ExceptionNotification::Rack,
     email: {
         email_prefix: "[Exception] ",

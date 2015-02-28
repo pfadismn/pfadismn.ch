@@ -14,8 +14,8 @@ class Member < ActiveRecord::Base
   accepts_nested_attributes_for :addresses, :phone_numbers
 
   # Validations
-  validates :alias, uniqueness: true, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }, if: Proc.new { |m| m.email.present? }
-  validates :email, uniqueness: true, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }, if: Proc.new { |m| m.email.present? || m.alias.present? }
+  validates :alias, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }, if: Proc.new { |m| m.email.present? }
+  validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }, if: Proc.new { |m| m.email.present? || m.alias.present? }
   validates :first_name, :last_name, presence: true
   validates :birthdate, :organisational_unit, presence: true
   
