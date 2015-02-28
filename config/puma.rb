@@ -27,7 +27,7 @@
 # The default is “tcp://0.0.0.0:9292”.
 #
 # bind 'tcp://0.0.0.0:9292'
-bind 'unix:///var/run/puma.sock'
+bind 'unix:///home/rails/pfadismn.ch/run/puma.sock'
 # bind 'unix:///var/run/puma.sock?umask=0777'
 # bind 'ssl://127.0.0.1:9292?key=path_to_key&cert=path_to_cert'
 
@@ -42,12 +42,12 @@ bind 'unix:///var/run/puma.sock'
 # Check out https://github.com/puma/puma/blob/master/lib/puma/app/status.rb
 # to see what the app has available.
 #
-activate_control_app 'unix:///var/run/pumactl.sock'
+activate_control_app 'unix:///home/rails/pfadismn.ch/run/pumactl.sock'
 # activate_control_app 'unix:///var/run/pumactl.sock', { auth_token: '12345' }
 # activate_control_app 'unix:///var/run/pumactl.sock', { no_token: true }
 
 rackup DefaultRackup
-environment ENV['RACK_ENV'] || 'development'
+environment ENV['RACK_ENV'] || ENV['RAILS_ENV'] || 'development'
 
 on_worker_boot do
   ActiveSupport.on_load(:active_record) do
