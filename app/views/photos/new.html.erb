@@ -1,9 +1,0 @@
-<%= semantic_form_for @album do |f| %>
-  <%= f.error_messages %>
-  <%= f.inputs t(:album) do %>
-        <%= f.input :year, label: true %>
-        <%= f.input :file, as: :file, hint: true, label: true %>
-    <% end %>
-
-  <%= f.actions %>
-<% end %>

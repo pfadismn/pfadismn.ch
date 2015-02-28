@@ -6,15 +6,12 @@ gem 'rails', '~> 4.2.0'
 gem 'cancan'
 gem 'authlogic'
 
-# Data
 gem 'mysql2'
 gem 'awesome_nested_set'
 gem 'paperclip'
 gem 'delayed_job_active_record'
 gem 'figaro'
 gem 'daemons'
-
-# Show
 gem 'index_helper', git: 'https://github.com/diegosteiner/index_helper.git'
 #gem 'index_helper', path: '/home/digi/workspaces/private/Gems/index_helper'
 gem 'formtastic'
@@ -23,9 +20,8 @@ gem 'kaminari'
 gem 'nokogiri'
 gem 'RedCloth'
 gem 'pdfkit'
-
-# Tools
 gem 'rubyzip'
+gem 'slim-rails'
 
 # Assets
 gem 'sass-rails'
