@@ -12,7 +12,7 @@
     = f.input :take_along
     = f.input :published, as: :boolean
     = f.input :send_reminder, as: :boolean
-  = f.inputs t(:Bild) do
-    = f.input :content_image, as: :file
-    - end if current_user.has_role? [:manager, :admin]
-    = f.actions
+  - if current_user.has_role? [:manager, :admin]
+    = f.inputs t(:Bild) do
+      = f.input :content_image, as: :file
+  = f.actions
