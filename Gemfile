@@ -1,12 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 4.1.0'
+gem 'rails', '~> 4.2.0'
 
 # Authentication & authorisation
 gem 'cancan'
 gem 'authlogic'
 
 # Data
+gem 'mysql2'
 gem 'awesome_nested_set'
 gem 'paperclip'
 gem 'delayed_job_active_record'
@@ -35,8 +36,8 @@ gem 'uglifier'
 
 group :development do
   gem 'mina', git: 'https://github.com/nadarei/mina.git'
-  gem 'pg'
   gem 'quiet_assets'
+  gem 'web-console', '~> 2.0'
 end
 
 group :test do
@@ -47,5 +48,4 @@ end
 group :production do
   gem 'exception_notification'
   gem 'puma'
-  gem 'mysql2'
 end
