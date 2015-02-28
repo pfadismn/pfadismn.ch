@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user.member, notice: 'User was successfully updated.' }
+        format.html { redirect_to [:edit, @user.member.organisational_unit, @user.member], notice: 'User was successfully updated.' }
       else
         format.html { render action: "edit" }
       end
