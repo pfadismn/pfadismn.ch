@@ -29,7 +29,11 @@ class Event < ActiveRecord::Base
     published_at.present? && published_at <= Time.current
   end
 
+  def remind_at
+    start_time - ENV['event_reminder_forerun_hours'].to_i.hours
+  end
+
   def queue_reminder
-    UserMailer.delay(run_at: start_time - ENV['event_reminder_forerun_hours'].to_i.hours).upcoming_event(self) if send_reminder
+    UserMailer.upcoming_event(self).delay(run_at: remind_at, queue: :event_reminder).deliver if send_reminder
   end
 end

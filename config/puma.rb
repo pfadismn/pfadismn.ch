@@ -128,6 +128,9 @@ activate_control_app 'unix:///var/run/pumactl.sock'
 # activate_control_app 'unix:///var/run/pumactl.sock', { auth_token: '12345' }
 # activate_control_app 'unix:///var/run/pumactl.sock', { no_token: true }
 
+timeout 15
+preload_app true
+
 rackup DefaultRackup
 environment ENV['RACK_ENV'] || 'development'
 
