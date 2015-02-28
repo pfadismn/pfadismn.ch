@@ -1,5 +1,6 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
+ruby '2.2.0'
 gem 'rails', '~> 4.2.0'
 
 # Authentication & authorisation
@@ -26,6 +27,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'uglifier'
+gem 'exception_notification'
 
 #legacy
 gem 'actionpack-action_caching'
@@ -33,7 +35,15 @@ gem 'actionpack-action_caching'
 group :development do
   gem 'mina', git: 'https://github.com/nadarei/mina.git'
   gem 'quiet_assets'
-  gem 'web-console', '~> 2.0'
+
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console'
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
 end
 
 group :test do
@@ -42,6 +52,5 @@ group :test do
 end
 
 group :production do
-  gem 'exception_notification'
   gem 'puma'
 end
