@@ -7,7 +7,6 @@ gem 'cancan'
 gem 'authlogic'
 
 # Data
-gem 'pg'
 gem 'awesome_nested_set'
 gem 'paperclip'
 gem 'delayed_job_active_record'
@@ -36,6 +35,7 @@ gem 'uglifier'
 
 group :development do
   gem 'mina', git: 'https://github.com/nadarei/mina.git'
+  gem 'pg'
   gem 'quiet_assets'
 end
 
