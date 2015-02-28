@@ -22,7 +22,10 @@ class IndexController < ApplicationController
 
   def rheinfallmarsch
   end
-  
+
+  def faq
+  end
+
   def downloads
     @downloads_aktuelles = Dir.glob("#{Rails.root}/public/downloads/aktuelles/*.pdf")
     @downloads_admin = Dir.glob("#{Rails.root}/public/downloads/administratives/*.pdf")
