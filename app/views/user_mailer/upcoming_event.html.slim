@@ -1,0 +1,36 @@
+h1
+  = @event.name
+h3
+  | Eckdaten
+table[border="0"]
+  tr
+    td[width="75"]
+      | Gruppe:
+    td
+      = link_to @event.organisational_unit, organisational_unit_events_url(@event.organisational_unit)
+  tr
+    td[width="75"]
+      | Beginn:
+    td
+      = l @event.start_time
+      | , 
+      = link_to @event.start_place, place_url(@event.start_place)
+  tr
+    td[width="75"]
+      | Ende:
+    td
+      = l @event.end_time
+      | , 
+      = link_to @event.end_place, place_url(@event.end_place)
+  tr
+    td[width="75"]
+      | Rückfragen:
+    td
+      = contact_name @event.creator.member
+h3
+  | Mitnehmen
+= simple_format(@event.take_along)
+- if !@event.description.blank?
+  h3
+    | Zusätzliche Infos
+  = simple_format(@event.description)

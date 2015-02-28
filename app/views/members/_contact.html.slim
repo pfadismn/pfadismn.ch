@@ -1,0 +1,10 @@
+.contact-businesscard
+  = image_tag avatar_organisational_unit_member_path(member.organisational_unit, member, size: :thumb)
+  = contact_name member
+  .courses
+    | Kurse: 
+    = member.last_education(3).to_sentence
+  .since
+    | Dabei seit: 
+    = member.member_since.try(:year)
+  = clearer

@@ -1,0 +1,60 @@
+.stickypost-container
+  .stickypost-top
+  - if current_user.present?
+    = stickyposter(:paper, 1) do
+      h2
+        | Willkommen 
+        = current_user.member.scout_name
+        | !
+      p
+        | Was möchtest du tun?
+      ul
+        - if !current_user.member.organisational_unit.nil?
+          = content_tag :li, link_to("Neuen Event erstellen", new_organisational_unit_event_path(current_user.member.organisational_unit)) if can? :create, Event
+          = content_tag :li, link_to("Meine Gruppe verwalten", organisational_unit_members_path(current_user.member.organisational_unit)) if can? :create, Member
+          = content_tag :li, link_to("Meine Infos anpassen", organisational_unit_member_path(current_user.member.organisational_unit, current_user.member))
+        = content_tag :li, link_to("Mein Passwort ändern", edit_password_user_path(current_user))
+        li
+          = link_to "Logout", logout_path
+  - else
+    = stickyposter(:paper) do
+      h2
+        | Mitmachen?
+      p
+        | Dann melde dich mit dem 
+        = link_to 'Kontaktformular', organisational_unit_contact_forms_path(OrganisationalUnit.find_by_name("Abteilung"))
+        |  oder unter 
+        = link_to "pfadi@pfadismn.ch", "mailto:pfadi@pfadismn.ch"
+        |  und erhalte unverbindlich Infos!
+  = stickyposter(:calendar, 3) do
+    h2
+      | Nächste Events
+    ul
+      li
+        = link_to "Biberstufe »", organisational_unit_events_path('biberstufe')
+      li
+        = link_to "Wolfsstufe »", organisational_unit_events_path('wolfsstufe')
+      li
+        = link_to "Pfadistufe »", organisational_unit_events_path('pfadistufe')
+      li
+        = link_to "Abteilung »", organisational_unit_events_path('abteilung')
+  = stickyposter(:plain) do
+    = link_to image_tag('index/post/collage_post.png'), photos_path, style: 'border:none;'
+  = stickyposter(:paper, 0) do
+    h2
+      | Quicklinks
+    ul
+      li
+        = link_to 'Jahresprogramm', jahresprogramm_path
+      li
+        = link_to 'Skauty', pfadilife_skauty_path
+      li
+        = link_to 'Downloads', downloads_path
+      - if !current_user.present?
+        li
+          = link_to 'Login', login_path
+  = stickyposter(:paper, 2) do
+    = link_to image_tag('index/post/fb.png', style: 'width: 60px;'), 'http://www.facebook.com/pfadismn', style: 'border:none; padding: 25px; float: left;', target: '_blank'
+    = link_to image_tag('index/post/yt.png', style: 'width: 60px;'), 'http://www.youtube.com/user/pfadismn', style: 'border:none; padding: 25px; float: left;', target: '_blank'
+    .clear
+  .stickypost-bottom

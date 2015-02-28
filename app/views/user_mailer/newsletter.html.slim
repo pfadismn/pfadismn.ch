@@ -1,0 +1,8 @@
+h1[style="display:inline;"]
+  = @news.title
+span[style="margin-left: 10px; color: #555"]
+  = l @news.published_at
+  |  von 
+  = @news.creator.try(:member) || "?"
+div
+  = @news.to_html

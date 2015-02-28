@@ -1,0 +1,41 @@
+= heading("Downloads", "Dokumente und Infos zum herunterladen", icon: 'index/downloads/icon_downloads.png')
+.downloads
+  h2
+    | Dokumente im Überblick
+  - if !@downloads_aktuelles.blank?
+    h3
+      | Aktuelles
+    ul
+      - @downloads_aktuelles.each do |f|
+        li.pdf
+          = link_to File.basename(f), "/downloads/aktuelles/#{File.basename(f)}"
+  h3
+    | Jahresprogramm
+  ul
+    li.pdf
+      = link_to 'Jahresprogramm Pfadi SMN', jahresprogramm_path
+  h3
+    | Administratives
+  ul
+    - @downloads_admin.each do |f|
+      li.pdf
+        = link_to File.basename(f), "/downloads/administratives/#{File.basename(f)}"
+  h3
+    | Zeitungsartikel
+  ul
+    - @downloads_press.each do |f|
+      li.pdf
+        = link_to File.basename(f), "/downloads/press/#{File.basename(f)}"
+- content_for :sidebar do
+  h2
+    | Weitere Downloads
+  p
+    | Die Skautys gibt's hier zum Download: 
+    = link_to 'Skauty Archiv', pfadilife_skauty_path
+  br
+  p
+    | Viele interessante Downloads gibts auch bei der 
+    = link_to 'Pfadi Züri', 'http://pfadizueri.ch/downloads.html'
+    |  und bei der 
+    = link_to 'Pfadibewegung Schweiz', 'http://www5.scout.ch/de/verband/downloads'
+    | . Reinschauen lohnt sich.

@@ -1,0 +1,38 @@
+div
+  h2
+    | Bienli
+  p
+    | Du bist zwischen 7 und 10 Jahren alt? Ja? Und abenteuerlustig bist du auch? Perfekt! Wir Bienli von der Pfadi SMN sind das nämlich alle auch. Schliesslich haben wir manchmal reichlich schwierige Aufgaben zu lösen und sind darum auch froh um jedes neue Bienli.
+  p
+    | Wusstest du, dass ohne uns die Welt von bösen Spielkartenfiguren beherrscht würde? Und dass der Samichlaus keinen Bart mehr hätte? Wie die Welt aussähe, wenn wir nicht immer euses Best geben würden, wollen wir lieber gar nicht erst wissen.
+  p
+    | Meist triffst du uns im Wald beim Bräteln, Spielen, Basteln, Rätsel lösen oder Bauen an unserem Bienliplatz. Manchmal machen wir auch das Quartier oder sogar die Stadt unsicher. Und natürlich ist da noch unser Pfadilokal mit der Verkleidungskiste, den (fast) tausend Sofas und dem Krimskramsschrank.
+  p
+    | Natürlich haben wir auch Pfadilager. Am Lagerfeuer singen, Olympiaden gewinnen, Abzeichen für die Pfadiuniform verdienen, backen, dreckeln, schwimmen…
+  p
+    | Neugierig? Wir freuen uns auf dich!
+  = image_tag image_path('abteilung/wolfsstufe/collage_wolfsstufe.jpg')
+  h2
+    | Wölfe
+  p
+    | Du bist zwischen 7 und 10 Jahren alt und möchtest am Samstagnachmittag mit Buben in deinem Alter etwas unternehmen? Dann bist du bei den Wölfen der Pfadi Höngg genau richtig!
+  p
+    | Die Wölfe erleben gemeinsam spannende Abenteuer, erforschen den Wald und bauen eine richtige Waldhütte. Mit den Wölfen löst du als Detektiv geheimnisvolle Rätsel und verfolgst böse Gangster auf ihrer Flucht. Bei den Wölfen lernst du auch ein Feuer zu machen, Tierspuren zu lesen oder ein eigenes Werkzeug zu schnitzen. Im einwöchigen Herbst- oder Sommerlager und auch im Chlausweekend erwarten dich einmalige Erlebnisse!
+- content_for :sidebar do
+  h2
+    | Stufenleitung
+  - @ou.team.each do |member|
+    = render partial: 'members/contact', locals: { member: member }
+  h2
+    | Events
+  ul
+    - if @ou.inherited_and_propageted_events.upcoming.active.any?
+      li
+        = link_to "Alle Events »", organisational_unit_events_path(@ou)
+      - @ou.children.active.each do |ou|
+        li
+          = link_to "Events von #{ou.name} »", organisational_unit_events_path(ou)
+  br
+  p
+    = link_to 'Kontakt aufnehmen »', organisational_unit_contact_forms_path(@ou)
+  - #= render partial: 'events/sidebar_event', locals: { event: @ou.events.upcoming.first }

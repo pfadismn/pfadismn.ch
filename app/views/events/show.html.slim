@@ -1,0 +1,45 @@
+= title(@event.name)
+.event
+  - if can? :create, Event
+    ul.buttons[style="float: right;"]
+      li
+        = link_to 'Event bearbeiten', edit_organisational_unit_event_path(@ou, @event), class: 'edit' if can? :update, Event
+      li
+        = link_to 'Event löschen', organisational_unit_event_path(@ou, @event), method: :delete, confirm: t(:really_delete?), class: 'delete' if can? :destroy, Event
+      li
+        = link_to 'Event erfassen', new_organisational_unit_event_path(@ou), class: 'new' if can? :create, Event
+  h2
+    = @event.name
+  h3
+    = @event.organisational_unit
+  div
+    | Beginn: 
+    = l @event.start_time
+    = "(#{link_to @event.start_place, @event.start_place})".html_safe if @event.start_place
+  div
+    | Ende: 
+    = l @event.end_time
+    = "(#{link_to @event.end_place, @event.end_place})".html_safe if @event.end_place
+  - if @event.content_image.present?
+    .content_image
+      = image_tag image_organisational_unit_event_path(@event)
+  h3
+    | Mitnehmen
+  ul
+    - @event.take_along.each_line do |line|
+      li
+        = line
+  h3
+    | Zusätzliche Infos
+  = RedCloth.new(@event.description).to_html.html_safe
+  - if @event.creator
+    h3
+      | Rückfragen & Abmeldungen
+    p
+      = contact_name @event.creator.member
+  br
+  br
+  p
+    = link_to '« zur Event Übersicht', organisational_unit_events_path(@ou)
+- content_for :sidebar do
+  = render 'sidebar'

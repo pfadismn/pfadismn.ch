@@ -1,0 +1,29 @@
+.sidebar-event
+  - unless event.blank?
+  h3
+    = link_to event.name, [@ou, event]
+  .meetup
+    | Beginn: 
+    = l event.start_time, format: :short
+    = "(#{link_to event.start_place, event.start_place})".html_safe if event.start_place
+  .meetup
+    | Ende: 
+    = l event.end_time, format: :short
+    = "(#{link_to event.end_place, event.end_place})".html_safe if event.end_place
+  h4
+    | Mitnehmen
+  ul
+    - event.take_along.each_line do |line|
+      li
+        = line
+  h4
+    | Zusätzliche Infos
+  = RedCloth.new(event.description).to_html.html_safe
+  - if event.creator
+    h4
+      | Rückfragen & Abmeldungen
+    p
+      = contact_name event.creator.member
+  - else
+    p.no-event
+      |  Keine Informationen verfügbar. 

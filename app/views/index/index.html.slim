@@ -1,0 +1,21 @@
+- title "Home"
+h2
+  | Was für ein Pfadi bist du?
+p
+  | Egal ob 5 oder 15 Jahre, in der Pfadiabteilung St. Mauritius Nansen hat es für jede Altersgruppe das Richtige. Klicke in der Auswahl unten auf deine Alterskategorie und erfahre mehr über die spannenden Aktivitäten in deiner Stufe!
+= render partial: 'division_selector'
+.latest-news
+  h2
+    | Aktuell
+  - if @news.empty?
+    p
+      | Keine News vorhanden
+  - else
+    ol.stories
+      = render partial: 'news/news', collection: @news
+    ol
+
+  .overflow
+    = link_to "mehr Aktuelles...", news_index_path
+- content_for :sidebar do
+  = render partial: 'stickypost'

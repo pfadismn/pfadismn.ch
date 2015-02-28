@@ -1,0 +1,35 @@
+h2
+  | Buebepfadi
+p
+  | Du bist zwischen 10 und 15 Jahren alt und möchtest am Samstagnachmittag mit Kollegen in deinem Alter etwas unternehmen? Herzlich willkommen bei der Buebepfadi der Pfadi Höngg!
+p
+  | Bei der Buebepfadi ist Action angesagt: Du bist bei atemberaubenden Geländespielen dabei, löst mysteriöse Rätsel während Nachtübungen und lieferst dir spannende Verfolgungsjagden mit bösen Gangstern. Gemeinsam mit Kollegen baust eine Waldhütte an einem geheimen Ort und erlebst lustige Spielnachmittage oder gemütliche Stimmung am Lagerfeuer. Den Höhepunkt bilden das Pfingstlager und das 2 wöchige Sommerlager, das du bestimmt so schnell nicht mehr vergessen wirst!
+= image_tag image_path('abteilung/pfadistufe/collage_pfadistufe.jpg')
+h2
+  | Maitlipfadi
+p
+  | Wir sind die Meitlistufe der Pfadi SMN. Wir bestehen aus einer lustigen, aufgestellten Gruppe von jungen, motivierten und offenen Mädchen. Jeden Samstag treffen wir uns für drei Stunden, um eine tolle Zeit zu erleben. Es erwartet uns ein abwechslungsreicher Pfadialltag mit viel Spiel und Spass.
+p
+  | Oft gehen wir in den Wald, wo wir abenteuerliche Schnitzeljagden bestreiten oder deliziöse Gerichte auf offenem Feuer zubereiten. Auch gemütliche Entspannungstage mit Wohlfühlprogramm dürfen natürlich nicht fehlen.
+p
+  | Wenn du zwischen 10 und 15 Jahren alt bist und neue Leute aus deiner Umgebung kennenlernen willst, dann schau doch vorbei.
+p
+  | Wir freuen uns auf dich!
+- content_for :sidebar do
+  h2
+    | Stufenleitung
+  - @ou.team.each do |member|
+    = render partial: 'members/contact', locals: { member: member }
+  h2
+    | Events
+  ul
+    - if @ou.inherited_and_propageted_events.upcoming.active.any?
+      li
+        = link_to "Alle Events »", organisational_unit_events_path(@ou)
+      - @ou.children.active.each do |ou|
+        li
+          = link_to "Events von #{ou.name} »", organisational_unit_events_path(ou)
+  br
+  p
+    = link_to 'Kontakt aufnehmen »', organisational_unit_contact_forms_path(@ou)
+  - #= render partial: 'events/sidebar_event', locals: { event: @ou.events.upcoming.first }

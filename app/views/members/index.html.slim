@@ -1,0 +1,9 @@
+= index [@ou, Member], @members do |builder|
+  - builder.column :name do |r|
+    = link_to r.name, [@ou, r]
+  - builder.column :email
+  - builder.column :organisational_unit
+  - builder.column :birthdate do |r|
+    = l r.birthdate
+  - builder.button do
+    = link_to "Neues Mitglied", new_organisational_unit_member_path(@ou)

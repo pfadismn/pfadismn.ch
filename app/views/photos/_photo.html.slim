@@ -1,0 +1,3 @@
+li class="photo rotate-#{(1..6).to_a.sample} resize-#{(1..5).to_a.sample}"
+  = link_to photo.url, class: 'fancybox', rel: 'album', title: photo.caption do
+    - image_tag photo.thumbnail.url, alt: photo.caption
