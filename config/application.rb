@@ -21,6 +21,10 @@ module Pfadismn
     config.i18n.default_locale = :de
     config.assets.paths << "#{Rails.root}/app/assets/downloads"
 
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_record.raise_in_transactional_callbacks = true
+
+    # To be replaced!
     config.action_controller.permit_all_parameters = true
   end
 end
