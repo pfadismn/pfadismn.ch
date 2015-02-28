@@ -25,8 +25,8 @@ Member.create!(first_name: 'Sabine', last_name: 'Schibli', scout_name: 'Coco', e
 Member.create!(first_name: 'Dominik', last_name: 'Näpfli', scout_name: 'Pippin', email: 'pippin@pfadismn.ch', alias: 'pippin@pfadismn.ch', birthdate: 19.years.ago, gender: 0, organisational_unit: ou[:abteilung])
 Member.create!(first_name: 'Eva', last_name: 'Müller', scout_name: 'Chaja', email: 'chaja@pfadismn.ch', alias: 'chaja@pfadismn.ch', birthdate: 19.years.ago, gender: 0, organisational_unit: ou[:abteilung])
 
-User.create!({email: 'filou@pfadismn.ch', password: '1234', password_confirmation: '1234', roles: [:admin], member: filou}, as: :admin)
-User.create!({email: 'gulli@pfadismn.ch', password: 'defaultSMNpw', password_confirmation: 'defaultSMNpw', roles: [:admin], member: gulli}, as: :admin)
+User.create!({email: 'filou@pfadismn.ch', password: '1234', password_confirmation: '1234', roles: [:admin], member: filou})
+User.create!({email: 'gulli@pfadismn.ch', password: 'defaultSMNpw', password_confirmation: 'defaultSMNpw', roles: [:admin], member: gulli})
 filou.reload
 gulli.reload
 

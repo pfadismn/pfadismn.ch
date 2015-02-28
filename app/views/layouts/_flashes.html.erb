@@ -1,14 +1,16 @@
 <div id="flashes">
   <% flash.each do |flash_type, message| %>
-    <% next if message.blank? %>
-    <% style = { icon: :info, state: :highlight } if flash_type == :notice %>
-    <% style = { icon: :error, state: :error }  if flash_type == :alert %>
-    <div class="flash-message ui-state-<%= style[:state] %> ui-corner-all">
-      <div class="ui-icon ui-icon-<%= style[:icon] %>"></div>
-      <p>
-        <%= message %>
-      </p>
-      <div class="clear"></div>
-    </div>
+      <% next if message.blank? %>
+      <% style = {icon: :error, state: :error} if flash_type == :alert %>
+      <% style ||= {icon: :info, state: :highlight} %>
+
+      <div class="flash-message ui-state-<%= style[:state] %> ui-corner-all">
+        <div class="ui-icon ui-icon-<%= style[:icon] %>"></div>
+        <p>
+          <%= message %>
+        </p>
+
+        <div class="clear"></div>
+      </div>
   <% end %>
 </div>

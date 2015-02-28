@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user], as: :admin)
+    @user = User.new(params[:user])
     
     respond_to do |format|
       if @user.save
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
 
   def update
     respond_to do |format|
-      if @user.update_attributes(params[:user], as: :admin)
+      if @user.update_attributes(params[:user])
         format.html { redirect_to @user.member, notice: 'User was successfully updated.' }
       else
         format.html { render action: "edit" }
@@ -65,5 +65,9 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to organisational_unit_member_path(@user.member.organisational_unit, @user.member) }
     end
+  end
+
+  def user_params
+
   end
 end

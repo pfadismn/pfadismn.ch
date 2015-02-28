@@ -1,7 +1,5 @@
 Pfadismn::Application.routes.draw do
 
-  resources :alumni_addresses
-
   get 'pfadilife/videos', as: :pfadilife_videos
   get 'pfadilife/skauty', as: :pfadilife_skauty
   get 'pfadilife/', action: :index, controller: :pfadilife, as: :pfadilife_index
