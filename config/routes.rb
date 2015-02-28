@@ -34,7 +34,7 @@ Pfadismn::Application.routes.draw do
         get 'image(/:size)(.:format)', action: :image, default: { size: :large }, as: :image
       end
     end
-    resources :members do
+    resources :members, shallow: true do
       resources :addresses
       resources :phone_numbers
       resources :contacts

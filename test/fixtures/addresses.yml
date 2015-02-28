@@ -1,0 +1,41 @@
+---
+Address_1:
+  id: 1
+  line1: Kappenbühlstrasse 60
+  zip: '8049'
+  place: Zürich
+  country: Schweiz
+  created_at: 2015-02-28 11:44:25.000000000 Z
+  updated_at: 2015-02-28 11:44:25.000000000 Z
+Address_2:
+  id: 2
+  line1: Kappenbühlstrasse 80
+  zip: '8049'
+  place: Zürich
+  country: Schweiz
+  created_at: 2015-02-28 11:44:25.000000000 Z
+  updated_at: 2015-02-28 11:44:25.000000000 Z
+Address_3:
+  id: 3
+  line1: Limattalstrasse 146
+  zip: '8049'
+  place: Zürich
+  country: Schweiz
+  created_at: 2015-02-28 11:44:25.000000000 Z
+  updated_at: 2015-02-28 11:44:25.000000000 Z
+Address_4:
+  id: 4
+  line1: Limattalstrasse 177
+  zip: '8049'
+  place: Zürich
+  country: Schweiz
+  created_at: 2015-02-28 11:44:25.000000000 Z
+  updated_at: 2015-02-28 11:44:25.000000000 Z
+Address_5:
+  id: 5
+  line1: Museumsstrasse 2
+  zip: '8001'
+  place: Zürich
+  country: Schweiz
+  created_at: 2015-02-28 11:44:25.000000000 Z
+  updated_at: 2015-02-28 11:44:25.000000000 Z

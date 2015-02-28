@@ -1,0 +1,47 @@
+---
+Place_1:
+  id: 1
+  address_id: 1
+  name: Holbrig
+  description: Der Holbrig ist gleich beim Turnerhaus auf dem Hönggerberg und ist
+    der übliche Treffpunkt für Aktivitäten im Wald.<h2>Koordinaten</h2>679/987//251/257
+  coordinates: 47.407604,8.497544
+  created_at: 2015-02-28 11:44:25.000000000 Z
+  updated_at: 2015-02-28 11:44:25.000000000 Z
+Place_2:
+  id: 2
+  address_id: 2
+  name: Schützenhaus
+  description: Das Schützenhaus Höngg ist der alternative Treffpunkt für Aktivitäten
+    im Wald.<h2>Koordinaten</h2>679/883//251/529
+  coordinates: 47.409514,8.49672
+  created_at: 2015-02-28 11:44:25.000000000 Z
+  updated_at: 2015-02-28 11:44:25.000000000 Z
+Place_3:
+  id: 3
+  address_id: 3
+  name: Lokal
+  description: Unser Lokal befindet sich gleich beim Pfarreizentrum Heilig Geist.
+    Treffpunkt ist der Eingang zu den Zivilschutz-Räumlichkeiten.<h2>Koordinaten</h2>680/345//250/599
+  coordinates: 47.401241,8.502817
+  created_at: 2015-02-28 11:44:25.000000000 Z
+  updated_at: 2015-02-28 11:44:25.000000000 Z
+Place_4:
+  id: 4
+  address_id: 1
+  name: Meierhofplatz
+  description: Der Meierhofplatz ist der häufigste Treffpunkt für Aktivitäten in der
+    Stadt. Genauer beschrieben trifft man sich vor dem Kiosk bei der 46er Haltestelle
+    (Fahrtichtung Stadtzentrum).<h2>Koordinaten</h2>680/092//250/643
+  coordinates: 47.40181,8.499712
+  created_at: 2015-02-28 11:44:25.000000000 Z
+  updated_at: 2015-02-28 11:44:25.000000000 Z
+Place_5:
+  id: 5
+  address_id: 5
+  name: Landesmuseum
+  description: Der Platz vor dem Landesmuseum ist der übliche Treffpunkt für die Abreise
+    in unvergessliche Lager.<h2>Koordinaten</h2>683/248//248/161
+  coordinates: 47.379004,8.540714
+  created_at: 2015-02-28 11:44:25.000000000 Z
+  updated_at: 2015-02-28 11:44:25.000000000 Z

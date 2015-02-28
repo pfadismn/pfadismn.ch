@@ -1,0 +1,61 @@
+---
+MemberFunction_1:
+  id: 1
+  name: neumitglied
+  email: neumitglied@pfadismn.ch
+  mask: 1
+MemberFunction_2:
+  id: 2
+  name: mitglied
+  email: mitglied@pfadismn.ch
+  mask: 2
+MemberFunction_3:
+  id: 3
+  name: gruppenleiter
+  email: gruppenleiter@pfadismn.ch
+  mask: 4
+MemberFunction_4:
+  id: 4
+  name: stammleiter
+  email: stammleiter@pfadismn.ch
+  mask: 8
+MemberFunction_5:
+  id: 5
+  name: stufenleiter
+  email: stufenleiter@pfadismn.ch
+  mask: 16
+MemberFunction_6:
+  id: 6
+  name: al
+  email: al@pfadismn.ch
+  mask: 32
+MemberFunction_7:
+  id: 7
+  name: skauty
+  email: skauty@pfadismn.ch
+  mask: 64
+MemberFunction_8:
+  id: 8
+  name: webmaster
+  email: webmaster@pfadismn.ch
+  mask: 128
+MemberFunction_9:
+  id: 9
+  name: materialverantwortlicher
+  email: materialverantwortlicher@pfadismn.ch
+  mask: 256
+MemberFunction_10:
+  id: 10
+  name: coach
+  email: coach@pfadismn.ch
+  mask: 512
+MemberFunction_11:
+  id: 11
+  name: praeses
+  email: praeses@pfadismn.ch
+  mask: 1024
+MemberFunction_12:
+  id: 12
+  name: kassier
+  email: kassier@pfadismn.ch
+  mask: 2048
