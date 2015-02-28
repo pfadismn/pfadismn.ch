@@ -12,10 +12,8 @@ require 'mina/rbenv'
 set :domain, 'pfadismn.ch'
 set :deploy_to, '/home/rails/pfadismn.ch'
 set :repository, 'ssh://git@git.unimatrix041.ch:11022/pfadi/pfadismn.git'
-#set :repository, 'file:///home/rails/pfadismn.ch.git'
 set :branch, 'master'
 set :user, 'rails'
-set :rails_env, 'production'
 
 set :puma_pid_file, lambda { "#{deploy_to}/run/#{rails_env}.pid" }
 set :delayed_pid_dir, lambda { "#{deploy_to}/run/delayed.pid.d" }
@@ -73,7 +71,7 @@ task :deploy => :environment do
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
-    queue   'bundle exec rake assets:precompile'
+    invoke :'rails:assets_precompile'
     invoke :'rails:tmp_create'
     invoke :'filesystem:cleanup'
     invoke :'deploy:cleanup'
