@@ -12,10 +12,8 @@ require 'mina/rbenv'
 set :domain, 'pfadismn.ch'
 set :deploy_to, '/home/rails/pfadismn.ch'
 set :repository, 'ssh://git@git.unimatrix041.ch:11022/pfadi/pfadismn.git'
-#set :repository, 'file:///home/rails/pfadismn.ch.git'
 set :branch, 'master'
 set :user, 'rails'
-set :rails_env, 'production'
 
 set :puma_pid_file, lambda { "#{deploy_to}/run/#{rails_env}.pid" }
 set :delayed_pid_dir, lambda { "#{deploy_to}/run/delayed.pid.d" }
@@ -73,33 +71,38 @@ task :deploy => :environment do
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
-    queue   'bundle exec rake assets:precompile'
+    invoke :'rails:assets_precompile'
     invoke :'rails:tmp_create'
     invoke :'filesystem:cleanup'
     invoke :'deploy:cleanup'
 
     to :launch do
+      invoke :'export_procfile'
       invoke :restart
+    end
+
+    to :clean do
     end
   end
 end
 
+
+desc 'Starts the application'
+task :export_procfile => :environment do
+  queue "bundle exec foreman export upstart #{deploy_to}/shared/init -a #{domain}"
+end
+
 desc 'Starts the application'
 task :start => :environment do
-  queue "cd #{app_path}"
-  queue "bundle exec puma -e #{rails_env} -d -b #{socket} --pidfile #{puma_pid_file}"
-  queue "RAILS_ENV=#{rails_env} script/delayed_job --pid-dir #{delayed_pid_dir} start"
+
 end
 
 desc 'Stops the application'
 task :stop => :environment do
-  queue %[kill -9 `cat #{puma_pid_file}`]
-  queue %[RAILS_ENV=#{rails_env} script/delayed_job --pid-dir #{delayed_pid_dir} stop]
 end
 
 desc 'Restarts the application'
 task :restart => :environment do
-  queue %[kill -9 `cat #{puma_pid_file}` || true]
-  queue %[RAILS_ENV=#{rails_env} script/delayed_job --pid-dir #{delayed_pid_dir} stop || true]
-  invoke :start
+  invoke :'stop'
+  invoke :'start'
 end
