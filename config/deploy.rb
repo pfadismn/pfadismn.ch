@@ -75,18 +75,25 @@ task :deploy => :environment do
     invoke :'rails:tmp_create'
     invoke :'filesystem:cleanup'
     invoke :'deploy:cleanup'
+    invoke :'export_procfile'
 
     to :launch do
       invoke :restart
     end
+
+    to :clean do
+    end
   end
+end
+
+
+desc 'Starts the application'
+task :export_procfile => :environment do
+  queue "cd current; bundle exec foreman export upstart ../shared/init"
 end
 
 desc 'Starts the application'
 task :start => :environment do
-  queue "cd #{app_path}"
-  queue "bundle exec puma -e #{rails_env} -d -b #{socket} --pidfile #{puma_pid_file}"
-  queue "RAILS_ENV=#{rails_env} script/delayed_job --pid-dir #{delayed_pid_dir} start"
 end
 
 desc 'Stops the application'
