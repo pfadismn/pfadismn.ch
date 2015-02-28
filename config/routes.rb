@@ -34,7 +34,7 @@ Pfadismn::Application.routes.draw do
         get 'image(/:size)(.:format)', action: :image, default: { size: :large }, as: :image
       end
     end
-    resources :members, shallow: true do
+    resources :members do
       resources :addresses
       resources :phone_numbers
       resources :contacts
@@ -55,7 +55,7 @@ Pfadismn::Application.routes.draw do
   resources :users do
     member do
       get 'password', action: :edit_password, as: :edit_password
-      put 'password', action: :update_password, as: :update_password
+      patch'password', action: :update_password, as: :update_password
     end
   end
   

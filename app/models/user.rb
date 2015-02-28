@@ -3,7 +3,10 @@ class User < ActiveRecord::Base
   ROLES = [:admin, :manager, :leader]
 
   # Authlogic
-  acts_as_authentic
+  acts_as_authentic do |config|
+    config.transition_from_crypto_providers = [Authlogic::CryptoProviders::Sha512]
+    config.crypto_provider = Authlogic::CryptoProviders::SCrypt
+  end
 
   # Relations
   belongs_to :member

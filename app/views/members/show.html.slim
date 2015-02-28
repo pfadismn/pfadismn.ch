@@ -13,7 +13,7 @@
         li
           = link_to "Login anlegen", new_user_path(member: @member), class: 'new with-text'
 .show-container
-  = image_tag avatar_organisational_unit_member_path(@member, size: :thumb), class: :avatar
+  = image_tag avatar_organisational_unit_member_path(@member.organisational_unit, @member, size: :thumb), class: :avatar
   = show_section :allgemein do
     = show_field :name, @member
     = show_field :addresses, @member do
