@@ -1,0 +1,13 @@
+h2
+  | Umgebung
+p
+  |  TODO! 
+- content_for :sidebar do
+  h2
+    | Treffpunkte
+  p
+    |  Wir treffen uns an verschiedenen Orten in Höngg. Genauere Informationen findest du hier:
+  ul
+    - @places.each do |place|
+      li
+        = link_to place, place

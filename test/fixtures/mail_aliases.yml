@@ -1,9 +1,4 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  string: 
-  string: 
-
-two:
-  string: 
-  string: 
+--- {}
+MailAlias_1:
+  email: "test@pfadismn2.ch"
+  alias: "test@pfadismn.ch"

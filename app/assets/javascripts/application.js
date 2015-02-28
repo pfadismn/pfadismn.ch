@@ -6,7 +6,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.all
+//= require jquery-ui
 //= require_tree ./lib/
 //= require_tree ./forms/
 //= require_tree ./app/

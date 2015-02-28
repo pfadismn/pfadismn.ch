@@ -65,7 +65,7 @@ module CrudHelper
          concat content_tag(:li, link_to("Bearbeiten", [:edit] + path_struct + [record], class: 'edit', title: 'Bearbeiten')) if !options[:except].include?(:edit) && can?(:update, record)
          concat content_tag(:li, link_to("Löschen", path_struct + [record], method: :delete, confirm: t(:really_delete?), class: 'delete', title: 'Löschen')) if !options[:except].include? :destroy && can?(:destroy, record)
       end
-       concat content_tag(:li, link_to("Neu", [:new] + path_struct + [model.model_name.underscore], class: 'new', title: 'Neu')) if !options[:except].include? :new && !record.try(:new_record?) && can?(:create, record)
+        concat content_tag(:li, link_to("Neu", [:new] + path_struct + [model.model_name.singular], class: 'new', title: 'Neu')) if !options[:except].include? :new && !record.try(:new_record?) && can?(:create, record)
     end
   end
   

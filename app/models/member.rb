@@ -14,23 +14,24 @@ class Member < ActiveRecord::Base
   accepts_nested_attributes_for :addresses, :phone_numbers
 
   # Validations
-  validates :alias, uniqueness: true, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }, if: Proc.new { |m| m.email.present? }
-  validates :email, uniqueness: true, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }, if: Proc.new { |m| m.email.present? || m.alias.present? }
+  validates :alias, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }, if: Proc.new { |m| m.email.present? }
+  validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }, if: Proc.new { |m| m.email.present? || m.alias.present? }
   validates :first_name, :last_name, presence: true
   validates :birthdate, :organisational_unit, presence: true
-  
+  validates_attachment :avatar, content_type: { content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'] }
+
   # Scopes
   scope :by_function, ->(function) { where('functions_mask & ? > 0', 2**MemberFunction::FUNCTIONS.index(function)) }
-  
+
   # Hooks
   after_save do
     user.update_attribute(:email, self.alias) if user.present?
-  end  
-    
+  end
+
   def to_s
     name
   end
-    
+
   def name
     ["#{first_name} #{last_name}", ("#{scout_name}" if scout_name)].join(" / ")
   end

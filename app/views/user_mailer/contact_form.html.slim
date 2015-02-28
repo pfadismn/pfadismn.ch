@@ -1,0 +1,23 @@
+h1
+  | Kontaktanfrage
+h3
+  | Kontaktdaten
+table[border="0"]
+  tr
+    td[width="55"]
+      | Name:
+    td
+      = @contact_form.name
+  tr
+    td[width="55"]
+      | E-Mail:
+    td
+      = @contact_form.email
+  tr
+    td[width="55"]
+      | Telefon:
+    td
+      = @contact_form.phone
+h3
+  | Nachricht
+= simple_format(@contact_form.message)

@@ -1,0 +1,42 @@
+= heading("Skauty", "Die Abteilungszeitschrift von SMN", icon: 'pfadilife/skauty/icon_skauty.png')
+h2
+  | Über das Skauty
+p
+  |  Das Skauty ist unsere Abteilungszeitung und erscheint zwei mal jährlich. Die Auflage beträgt 200 Exemplare. Untenstehend findest du alle Ausgaben seit 2001 zum Download. Mit einem Klick auf das Cover lädst du das PDF herunter. 
+.skauty-carousel
+  .skauty-carousel-inner
+    ul
+      - @issues.sort.reverse.each do |issue|
+        - issue_no = /(?<year>\d+)_(?<no>\d+)\.pdf/.match(issue)
+        li
+          = link_to "/downloads/skauty/#{File.basename(issue)}" do
+            - preview = "/downloads/skauty/#{File.basename(issue)}.png"
+            = image_tag (File.exists?("#{Rails.root}/public/#{preview}") ? preview : "/downloads/skauty/kein_cover.png")
+          h1
+            = "Ausgabe #{issue_no[:no]}, Jahr #{issue_no[:year]}"
+  a.jcarousel-prev
+    | Neuere Ausgaben
+  a.jcarousel-next
+    | Ältere Ausgaben
+- content_for :sidebar do
+  h2
+    | Berichte einsenden
+  p
+    | Damit das Skauty existieren kann, sind wir auf Berichte aus den Reihen der Pfadis und Eltern angewiesen. Ein tolles Lager erlebt oder eine Übung der anderen Art? Dann los, haut in die Tasten!
+  p
+    | Einsendungen nehmen wir gerne unter 
+    = link_to 'skauty@pfadismn.ch', 'mailto:skauty@pfadismn.ch'
+    |  entegegen. Viele Dank für deine Mithilfe! 
+  h2
+    | Redaktion
+  p
+    |  Die Skauty-Redaktion: 
+  ul
+    li
+      | Nina Pasquale v/o Sugus
+    li
+      | Thomas Zimmermann v/o Biber
+    li
+      | Sabine Schibli v/o Cocorita
+    li
+      | Sonja Janzek v/o Shyra

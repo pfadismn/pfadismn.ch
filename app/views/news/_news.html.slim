@@ -1,0 +1,11 @@
+li
+  .story
+    h3
+      = news.title
+    span.meta
+      = l news.published_at
+      |  von 
+      = news.creator.try(:member) || "?"
+    div
+      = news.to_html
+    = link_to "Anzeigen »", news_path(news)

@@ -1,8 +1,5 @@
 Pfadismn::Application.routes.draw do
 
-  resources :alumni_addresses
-
-
   get 'pfadilife/videos', as: :pfadilife_videos
   get 'pfadilife/skauty', as: :pfadilife_skauty
   get 'pfadilife/', action: :index, controller: :pfadilife, as: :pfadilife_index
@@ -14,15 +11,14 @@ Pfadismn::Application.routes.draw do
   get 'rheinfallmarsch', action: :rheinfallmarsch, controller: :index, as: :rheinfallmarsch
   get 'chronik', action: :chronik, controller: :index, as: :chronik
 
-  match 'login' => 'user_sessions#new', as: :login
-  match 'logout' => 'user_sessions#destroy', as: :logout
+  get 'login' => 'user_sessions#new', as: :login
+  match 'logout' => 'user_sessions#destroy', via: [:delete, :get], as: :logout
     
-  match 'photos' => 'photos#destroy', via: [:delete] , as: :photo_collection_album_uploads
+  match 'photos' => 'photos#destroy', via: [:delete]
   match 'photos' => 'photos#create', via: [:post] , as: :photo_collection_album_uploads
-  match 'photos' => 'photos#index' , as: :photos
-  match 'photos/new' => 'photos#new' , as: :new_photo
-  match 'photos/:year' => 'photos#index' , as: :photo_year
-  match 'photos/:year/:id' => 'photos#show', as: :photo_album
+  get 'photos/new' => 'photos#new' , as: :new_photo
+  get 'photos/:year' => 'photos#index' , as: :photo_year
+  get 'photos/:year/:id' => 'photos#show', as: :photo_album
 
   get 'treasurehunt' => 'index#jubilaeum2014'
   get '70jahre' => 'index#jubilaeum2014', as: :jubilaeum2014
@@ -59,7 +55,7 @@ Pfadismn::Application.routes.draw do
   resources :users do
     member do
       get 'password', action: :edit_password, as: :edit_password
-      put 'password', action: :update_password, as: :update_password
+      patch'password', action: :update_password, as: :update_password
     end
   end
   

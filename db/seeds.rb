@@ -18,15 +18,15 @@ ou[:apv] = OrganisationalUnit.create!(name: 'APV', caption: 'Verein der Ehemalig
 ou[:elternrat] = OrganisationalUnit.create!(name: 'Elternrat', caption: 'Die Elternvertretung in der Pfadi SMN', parent: ou[:abteilung])
 
 
-filou = Member.create!(first_name: 'Diego', last_name: 'Steiner', scout_name: 'Filou', email: 'filou@pfadismn.ch', birthdate: 23.years.ago, gender: 0, member_since: 14.years.ago, education: "Pano (2010)")
-gulli = Member.create!(first_name: 'André', last_name: 'Bürkler', scout_name: 'Gulli', email: 'gulli@pfadismn.ch', birthdate: 24.years.ago, gender: 0, organisational_unit: ou[:abteilung])
-Member.create!(first_name: 'Sonja', last_name: 'Janzek', scout_name: 'Shyra', email: 'shyra@pfadismn.ch', birthdate: 22.years.ago, gender: 0)
-Member.create!(first_name: 'Sabine', last_name: 'Schibli', scout_name: 'Coco', email: 'coco@pfadismn.ch', birthdate: 24.years.ago, gender: 0)
-Member.create!(first_name: 'Dominik', last_name: 'Näpfli', scout_name: 'Pippin', email: 'pippin@pfadismn.ch', birthdate: 19.years.ago, gender: 0)
-Member.create!(first_name: 'Eva', last_name: 'Müller', scout_name: 'Chaja', email: 'chaja@pfadismn.ch', birthdate: 19.years.ago, gender: 0)
+filou = Member.create!(first_name: 'Diego', last_name: 'Steiner', scout_name: 'Filou', email: 'filou@pfadismn.ch', alias: 'filou@pfadismn.ch', birthdate: 23.years.ago, gender: 0, member_since: 14.years.ago, education: "Pano (2010)", organisational_unit: ou[:abteilung])
+gulli = Member.create!(first_name: 'André', last_name: 'Bürkler', scout_name: 'Gulli', email: 'gulli@pfadismn.ch', alias: 'gulli@pfadismn.ch', birthdate: 24.years.ago, gender: 0, organisational_unit: ou[:abteilung])
+Member.create!(first_name: 'Sonja', last_name: 'Janzek', scout_name: 'Shyra', email: 'shyra@pfadismn.ch', alias: 'shyra@pfadismn.ch', birthdate: 22.years.ago, gender: 0, organisational_unit: ou[:abteilung])
+Member.create!(first_name: 'Sabine', last_name: 'Schibli', scout_name: 'Coco', email: 'coco@pfadismn.ch', alias: 'coco@pfadismn.ch', birthdate: 24.years.ago, gender: 0, organisational_unit: ou[:abteilung])
+Member.create!(first_name: 'Dominik', last_name: 'Näpfli', scout_name: 'Pippin', email: 'pippin@pfadismn.ch', alias: 'pippin@pfadismn.ch', birthdate: 19.years.ago, gender: 0, organisational_unit: ou[:abteilung])
+Member.create!(first_name: 'Eva', last_name: 'Müller', scout_name: 'Chaja', email: 'chaja@pfadismn.ch', alias: 'chaja@pfadismn.ch', birthdate: 19.years.ago, gender: 0, organisational_unit: ou[:abteilung])
 
-User.create!({email: 'filou@pfadismn.ch', password: '1234', password_confirmation: '1234', roles: [:admin], member: filou}, as: :admin)
-User.create!({email: 'gulli@pfadismn.ch', password: 'defaultSMNpw', password_confirmation: 'defaultSMNpw', roles: [:admin], member: gulli}, as: :admin)
+User.create!({email: 'filou@pfadismn.ch', password: '1234', password_confirmation: '1234', roles: [:admin], member: filou})
+User.create!({email: 'gulli@pfadismn.ch', password: 'defaultSMNpw', password_confirmation: 'defaultSMNpw', roles: [:admin], member: gulli})
 filou.reload
 gulli.reload
 

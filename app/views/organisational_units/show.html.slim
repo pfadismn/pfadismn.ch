@@ -1,0 +1,3 @@
+= heading(@ou.name, @ou.caption, quote: @ou.motto, icon: "abteilung/#{@ou.to_param}/heading.png")
+= render "organisational_units/views/#{@ou.to_param}"
+- content_for :sidebar do

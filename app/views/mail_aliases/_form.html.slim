@@ -1,0 +1,5 @@
+= semantic_form_for @mail_alias do |f|
+  = f.inputs MailAlias.model_name.human do
+    = f.input :email
+    = f.input :alias
+  = f.actions

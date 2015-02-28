@@ -1,0 +1,12 @@
+h2
+  = @place.name
+iframe width="606" height="408" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?q=#{@place.coordinates}&num=1&t=m&vpsrc=6&ie=UTF8&ll=#{@place.coordinates}&spn=0.011624,0.025706&z=15&output=embed"
+
+- content_for :sidebar do
+  h2
+    | Beschreibung
+  p
+    = RedCloth.new(@place.description).to_html.html_safe
+  h2
+    | Adresse
+  = formatted_address @place.address

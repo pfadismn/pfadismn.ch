@@ -21,15 +21,19 @@ class Event < ActiveRecord::Base
   after_save :queue_reminder
 
   # Scopes
-  default_scope order('start_time ASC')
-  scope :active, -> { where('published_at <= ?', Time.now) }
-  scope :upcoming, -> { where('end_time >= ?', Time.now) }
+  scope :chronological, -> { order('start_time ASC') }
+  scope :active, -> { where('published_at <= ?', Time.now).chronological }
+  scope :upcoming, -> { where('end_time >= ?', Time.now).chronological }
 
   def published
     published_at.present? && published_at <= Time.current
   end
 
+  def remind_at
+    start_time - ENV['event_reminder_forerun_hours'].to_i.hours
+  end
+
   def queue_reminder
-    UserMailer.delay(run_at: start_time - ENV['event_reminder_forerun_hours'].to_i.hours).upcoming_event(self) if send_reminder
+    UserMailer.upcoming_event(self).delay(run_at: remind_at, queue: :event_reminder).deliver if send_reminder
   end
 end

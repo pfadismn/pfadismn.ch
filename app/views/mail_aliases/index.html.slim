@@ -1,0 +1,9 @@
+= index MailAlias, @mail_aliases, pagination: false do |builder|
+  - builder.column :email
+  - builder.column :alias
+  - builder.column do |a|
+    = link_to "Bearbeiten", edit_mail_alias_path(a) if can?(:manage, a) && !a.generic
+  - builder.column do |a|
+    = link_to "Löschen", mail_alias_path(a), confirm: "Are you sure?", method: :delete if can?(:manage, a) && !a.generic
+  - builder.button do
+    = link_to "Neuer Alias", new_mail_alias_path

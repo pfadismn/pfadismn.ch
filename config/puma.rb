@@ -27,7 +27,7 @@
 #
 # The default is “development”.
 #
-environment 'production'
+# environment 'production'
 
 # Daemonize the server into the background. Highly suggest that
 # this be combined with “pidfile” and “stdout_redirect”.
@@ -50,7 +50,7 @@ environment 'production'
 # (“append”) specifies whether the output is appended, the default is
 # “false”.
 #
-stdout_redirect 'log/stdout', 'log/stderr'
+#stdout_redirect 'log/stdout', 'log/stderr'
 # stdout_redirect '/u/apps/lolcat/log/stdout', '/u/apps/lolcat/log/stderr', true
 
 # Disable request logging.
@@ -127,3 +127,17 @@ bind 'unix:///var/run/puma.sock'
 activate_control_app 'unix:///var/run/pumactl.sock'
 # activate_control_app 'unix:///var/run/pumactl.sock', { auth_token: '12345' }
 # activate_control_app 'unix:///var/run/pumactl.sock', { no_token: true }
+
+timeout 15
+preload_app true
+
+rackup DefaultRackup
+environment ENV['RACK_ENV'] || 'development'
+
+on_worker_boot do
+  ActiveSupport.on_load(:active_record) do
+    config = ActiveRecord::Base.configurations[Rails.env] || Rails.application.config.database_configuration[Rails.env]
+    config['pool'] = ENV['MAX_THREADS'] || 6
+    ActiveRecord::Base.establish_connection(config)
+  end
+end

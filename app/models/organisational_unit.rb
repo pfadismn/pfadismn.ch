@@ -8,7 +8,7 @@ class OrganisationalUnit < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   
   # Scopes
-  scope :active, where(active: true)
+  scope :active, -> { where(active: true) }
   
   def to_param
     "#{name.gsub(/[^a-z0-9]+/i, '_')}".downcase

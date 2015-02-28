@@ -1,0 +1,160 @@
+---
+OrganisationalUnit_1:
+  id: 1
+  name: Abteilung
+  responsible_function: al
+  lft: 1
+  rgt: 30
+  created_at: 2015-02-28 11:44:23.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true
+OrganisationalUnit_2:
+  id: 2
+  name: Biberstufe
+  motto: Immer däbii
+  caption: Die Pfadi St. Mauritius Nansen
+  responsible_function: stufenleiter
+  parent_id: 1
+  lft: 2
+  rgt: 3
+  created_at: 2015-02-28 11:44:24.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true
+OrganisationalUnit_3:
+  id: 3
+  name: Wolfsstufe
+  motto: Euses Bescht
+  caption: Jungs und Mädchen von 7 bis 10
+  responsible_function: stufenleiter
+  parent_id: 1
+  lft: 4
+  rgt: 9
+  created_at: 2015-02-28 11:44:24.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true
+OrganisationalUnit_4:
+  id: 4
+  name: Pfadistufe
+  motto: Allzeit Bereit
+  caption: Jungs und Mädchen von 10 bis 15
+  responsible_function: stufenleiter
+  parent_id: 1
+  lft: 10
+  rgt: 21
+  created_at: 2015-02-28 11:44:24.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true
+OrganisationalUnit_5:
+  id: 5
+  name: Piostufe
+  motto: Zäme witercho
+  caption: Angehenden Leiter und Leiterinnen von 15 bis 17
+  responsible_function: stufenleiter
+  parent_id: 1
+  lft: 22
+  rgt: 23
+  created_at: 2015-02-28 11:44:24.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true
+OrganisationalUnit_6:
+  id: 6
+  name: Roverstufe
+  motto: Bewusst handeln
+  caption: Leiter und Pfadis über 18
+  responsible_function: stufenleiter
+  parent_id: 1
+  lft: 24
+  rgt: 25
+  created_at: 2015-02-28 11:44:24.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true
+OrganisationalUnit_7:
+  id: 7
+  name: Vampir
+  responsible_function: gruppenleiter
+  parent_id: 4
+  lft: 11
+  rgt: 12
+  created_at: 2015-02-28 11:44:24.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true
+OrganisationalUnit_8:
+  id: 8
+  name: Troja
+  responsible_function: gruppenleiter
+  parent_id: 4
+  lft: 13
+  rgt: 14
+  created_at: 2015-02-28 11:44:24.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true
+OrganisationalUnit_9:
+  id: 9
+  name: Puma
+  responsible_function: gruppenleiter
+  parent_id: 4
+  lft: 15
+  rgt: 16
+  created_at: 2015-02-28 11:44:24.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true
+OrganisationalUnit_10:
+  id: 10
+  name: Auriga
+  responsible_function: gruppenleiter
+  parent_id: 4
+  lft: 17
+  rgt: 18
+  created_at: 2015-02-28 11:44:24.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true
+OrganisationalUnit_11:
+  id: 11
+  name: Orion
+  responsible_function: gruppenleiter
+  parent_id: 4
+  lft: 19
+  rgt: 20
+  created_at: 2015-02-28 11:44:24.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true
+OrganisationalUnit_12:
+  id: 12
+  name: Bubenwoelfe
+  responsible_function: gruppenleiter
+  parent_id: 3
+  lft: 5
+  rgt: 6
+  created_at: 2015-02-28 11:44:24.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true
+OrganisationalUnit_13:
+  id: 13
+  name: Maitliwoelfe
+  responsible_function: gruppenleiter
+  parent_id: 3
+  lft: 7
+  rgt: 8
+  created_at: 2015-02-28 11:44:24.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true
+OrganisationalUnit_14:
+  id: 14
+  name: APV
+  caption: Verein der Ehemaligen der Pfadi SMN
+  parent_id: 1
+  lft: 26
+  rgt: 27
+  created_at: 2015-02-28 11:44:24.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true
+OrganisationalUnit_15:
+  id: 15
+  name: Elternrat
+  caption: Die Elternvertretung in der Pfadi SMN
+  parent_id: 1
+  lft: 28
+  rgt: 29
+  created_at: 2015-02-28 11:44:24.000000000 Z
+  updated_at: 2015-02-28 11:44:24.000000000 Z
+  active: true

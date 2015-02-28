@@ -1,0 +1,33 @@
+- title "Dashboard"
+h2
+  | Dashboard
+h3
+  | Über mich
+ul
+  li
+    = link_to("Meine Infos anpassen", organisational_unit_member_path(current_user.member.organisational_unit, current_user.member))
+  li
+    = link_to("Mein Passwort ändern", edit_password_user_path(current_user))
+h3
+  | Mitglieder & Events
+ul
+  - if !current_user.member.organisational_unit.nil?
+    li
+      = link_to 'Mitglieder verwalten', organisational_unit_members_path(current_user.member.organisational_unit) if can? :create, Member
+    li
+      = link_to 'Mitglied hinzufügen', new_organisational_unit_member_path(current_user.member.organisational_unit) if can? :create, Member
+    li
+      = link_to 'Events verwalten', organisational_unit_events_path(current_user.member.organisational_unit) if can? :create, Event
+    li
+      = link_to 'Event erstellen', new_organisational_unit_event_path(current_user.member.organisational_unit) if can? :create, Event
+h3
+  | Administratives
+ul
+  li
+    = link_to 'News verwalten', news_index_path if can? :create, News
+  li
+    = link_to 'Protokolle verwalten', meeting_protocols_path if can? :create, MeetingProtocol
+  li
+    = link_to 'Mail Aliase verwalten', mail_aliases_path if can? :create, MailAlias
+- content_for :sidebar do
+  = render partial: 'stickypost'

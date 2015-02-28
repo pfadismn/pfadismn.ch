@@ -21,9 +21,9 @@ class EventsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @events }
       format.pdf {
-        pdf_renderer = PDFKit.new(render_to_string(:layout => false , :action => "quartalsprogramm.html.erb"))
+        pdf_renderer = PDFKit.new(render_to_string(layout: false , action: 'quartalsprogramm'))
         pdf_renderer.stylesheets << "#{Rails.root}/app/assets/stylesheets/pdf.css"
-        send_data(pdf_renderer.to_pdf, filename: "quartalsprogramm.pdf", type: 'application/pdf')
+        send_data(pdf_renderer.to_pdf, filename: 'quartalsprogramm.pdf', type: 'application/pdf')
       }
     end
   end

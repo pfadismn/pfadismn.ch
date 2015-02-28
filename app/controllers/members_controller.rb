@@ -69,6 +69,6 @@ class MembersController < ApplicationController
   
   private
   def load_parent_resource
-    @ou = OrganisationalUnit.find_by_name(params[:organisational_unit_id])
+    @ou = OrganisationalUnit.find_by(name: params[:organisational_unit_id])
   end
 end

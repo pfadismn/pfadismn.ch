@@ -1,0 +1,33 @@
+= crud_navigation [@ou, @member] do
+  - if current_user.has_role? [:manager, :admin]
+    ul.buttons
+      - if @member.user.present?
+        li
+          = link_to "Login bearbeiten", edit_user_path(@member.user), class: 'edit with-text'
+        li
+          = link_to "Login löschen", user_path(@member.user), method: :delete, confirm: t(:really_delete?), class: 'delete with-text'
+          = link_to "Passwort setzen", edit_password_user_path(@member.user)
+        li
+
+      - else
+        li
+          = link_to "Login anlegen", new_user_path(member: @member), class: 'new with-text'
+.show-container
+  = image_tag avatar_organisational_unit_member_path(@member.organisational_unit, @member, size: :thumb), class: :avatar
+  = show_section :allgemein do
+    = show_field :name, @member
+    = show_field :addresses, @member do
+      - @member.addresses.each do |a|
+        = formatted_address a
+    = show_field :birthdate, @member
+    = show_field :nationality, @member
+  = show_section "Kontakt" do
+    = show_field :alias, @member
+    = show_field :email, @member
+    = show_field :phone_numbers, @member do
+      - @member.phone_numbers.each do |p|
+        = formatted_phone_number p
+  = show_section "Pfadi" do
+    = show_field :organisational_unit, @member
+    = show_field :functions, @member
+    = show_field :education, @member

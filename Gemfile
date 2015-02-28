@@ -1,21 +1,16 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2.0'
+gem 'rails', '~> 4.2.0'
 
 # Authentication & authorisation
 gem 'cancan'
 gem 'authlogic'
 
-# Data
 gem 'mysql2'
 gem 'awesome_nested_set'
 gem 'paperclip'
-gem 'strong_parameters'
 gem 'delayed_job_active_record'
 gem 'figaro'
-gem 'daemons'
-
-# Show
 gem 'index_helper', git: 'https://github.com/diegosteiner/index_helper.git'
 #gem 'index_helper', path: '/home/digi/workspaces/private/Gems/index_helper'
 gem 'formtastic'
@@ -24,21 +19,21 @@ gem 'kaminari'
 gem 'nokogiri'
 gem 'RedCloth'
 gem 'pdfkit'
-
-# Tools
 gem 'rubyzip'
-
-# Assets
-gem 'sass-rails', '~> 3.2.6'
-gem 'coffee-rails', '~> 3.2.2'
+gem 'slim-rails'
+gem 'sass-rails'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'uglifier'
-gem 'therubyracer', platforms: :ruby
+
+#legacy
+gem 'actionpack-action_caching'
 
 group :development do
   gem 'mina', git: 'https://github.com/nadarei/mina.git'
   gem 'quiet_assets'
+  gem 'web-console', '~> 2.0'
 end
 
 group :test do

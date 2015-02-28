@@ -1,0 +1,43 @@
+h2
+  | Über die Pfadi SMN
+p
+  | Die Pfadiabteilung St. Mauritius-Nansen ist eine der grössten Jugendorganisationen in Höngg und engagiert sich seit über 60 Jahren in diesem Quartier. Motivierte und zuverlässige Leiter sorgen Samstag für Samstag für spannende und unvergessliche Übungen. Meitli und Buben jeden Alters erleben in unserer Pfadi ein abwechslungsreiches, lustiges und wertvolles Programm sowohl in der Natur wie auch im Dorf und der Stadt.
+p
+  | Freundschaft, Gemeinschaft und das Entdecken der Umwelt sind uns dabei wichtig, wobei das Programm von jungen Menschen für junge Menschen gestaltet wird.
+= image_tag image_path('abteilung/abteilung/collage_abteilung.jpg')
+h2
+  | Geschichte der Abteilung
+p
+  | Die Pfadi St. Mauritius Nansen wurde 1944 gegründet. Anlässlich des 50-Jahr Jubiläums der Pfadi SMN wurde eine Chronik erstellt, welche hier zu finden ist:
+  br
+  br
+  =  link_to 'Chronik der Pfadi SMN', chronik_path
+h2
+  | Rheinfallmarsch
+p
+  | Einmal im Jahr organisiert die Pfadi SMN den traditionellen Rheinfallmarsch. Weitere Infos dazu befinden sich hier:
+  br
+  br
+  =  link_to 'Der Rheinfallmarsch', rheinfallmarsch_path
+- content_for :sidebar do
+  h2
+    | Abteilungsleitung
+  - @ou.team.each do |member|
+    = render partial: 'members/contact', locals: { member: member }
+  br
+  p
+    = link_to 'Kontakt aufnehmen »', organisational_unit_contact_forms_path(@ou)
+  h2
+    | Dachorganisationenen
+  p
+    | Die Pfadi SMN gehört den folgenden Dachorganisationen an:
+  |  <p 
+  ul
+    li
+      = link_to 'Korps Limmat', 'http://www.korpslimmat.ch'
+    li
+      = link_to 'Distrikt St. Georg', 'http://www.distrikt.ch'
+    li
+      = link_to 'Pfadi Züri', 'http://www.pfadizueri.ch'
+    li
+      = link_to 'Pfadibewegung Schweiz', 'http://www5.scout.ch/de/verband/'

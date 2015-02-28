@@ -1,409 +1,391 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
-#abteilungsleitung
-al1:
+---
+Member_1:
   id: 1
   organisational_unit_id: 1
   first_name: André
   last_name: Bürkler
   scout_name: Gulli
-  email: gulli@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1987-06-06
   gender: 0
   functions_mask: 32
   vegetarian: false
   member_since: 1993-11-01
-  education: "
-  TIP\n
-  L/T 1\n
-  L/T 2\n
-  J+S Kids FK\n
-  AL Kurs\n
-  Bergtrekking\n
-  Pano\n
-  Coach\n"
-  
-al2:
+  education: |2
+     TIP
+     L/T 1
+     L/T 2
+     J+S Kids FK
+     AL Kurs
+     Bergtrekking
+     Pano
+     Coach
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: gulli@pfadismn.ch
+Member_2:
   id: 2
   organisational_unit_id: 1
   first_name: Jan
   last_name: Meier
   scout_name: Prometheus
-  email: prometheus@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1991-11-11
   gender: 0
   functions_mask: 32
   vegetarian: false
   member_since: 2005-05-01
-  education: "
-  TIP\n
-  L/T 1\n
-  L/T 2\n
-  J+S Kids FK\n
-  Bergtrekking\n
-  Pano\n"
-  
-al3:
+  education: |2
+     TIP
+     L/T 1
+     L/T 2
+     J+S Kids FK
+     Bergtrekking
+     Pano
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: prometheus@pfadismn.ch
+Member_3:
   id: 3
   organisational_unit_id: 1
   first_name: Eva
   last_name: Müller
   scout_name: Chaja
-  email: chaja@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1991-05-31
   gender: 1
   functions_mask: 32
   vegetarian: false
   member_since: 1998-05-01
-  education: "
-  TIP\n
-  L/T 1\n
-  L/T 2\n
-  J+S Kids FK\n"
-
-#stufenleitung
-sl_biber:
+  education: |2
+     TIP
+     L/T 1
+     L/T 2
+     J+S Kids FK
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: chaja@pfadismn.ch
+Member_4:
   id: 4
-  organisational_unit_id: 2, 5
+  organisational_unit_id: 2
   first_name: Diego
   last_name: Steiner
   scout_name: Filou
-  email: filou@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1987-10-26
   gender: 0
   functions_mask: 16
   vegetarian: false
   member_since: 1997-11-01
-  education: "
-  TIP\n
-  L/T 1\n
-  L/T 2\n
-  J+S Kids FK\n
-  Pano\n"
-    
-sl_bienli:
+  education: |2
+     TIP
+     L/T 1
+     L/T 2
+     J+S Kids FK
+     Pano
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: filou@pfadismn.ch
+Member_5:
   id: 5
   organisational_unit_id: 3
   first_name: Anke
   last_name: Schindler
   scout_name: Foxy
-  email: foxy@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1994-11-30
   gender: 1
   functions_mask: 16
   vegetarian: false
   member_since: 2000-11-01
-  education: "
-  TIP\n
-  L/T 1\n"
-  
-sl_woelfe:
+  education: |2
+     TIP
+     L/T 1
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: foxy@pfadismn.ch
+Member_6:
   id: 6
   organisational_unit_id: 3
   first_name: Dimitri
   last_name: Tanner
   scout_name: Kondor
-  email: kondor@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1992-12-13
   gender: 0
   functions_mask: 16
   vegetarian: false
   member_since: 1998-11-01
-  education: "
-  TIP\n
-  L/T 1\n
-  L/T 2\n"
-
-sl_buebe:
+  education: |2
+     TIP
+     L/T 1
+     L/T 2
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: kondor@pfadismn.ch
+Member_7:
   id: 7
   organisational_unit_id: 4
   first_name: Oliver
   last_name: Dubs
   scout_name: Panther
-  email: panther@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1992-04-18
   gender: 0
   functions_mask: 16
   vegetarian: false
   member_since: 1998-11-01
-  education: "
-  TIP\n
-  L/T 1\n
-  L/T 2\n"
-  
-sl_maitli:
+  education: |2
+     TIP
+     L/T 1
+     L/T 2
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: panther@pfadismn.ch
+Member_8:
   id: 8
   organisational_unit_id: 4
   first_name: Laura
   last_name: Schweizer
   scout_name: Stromboli
-  email: stromboli@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1991-07-28
   gender: 0
   functions_mask: 16
   vegetarian: false
   member_since: 1998-11-01
-  education: "
-  TIP\n
-  L/T 1\n
-  L/T 2\n"
-  
-#leiter biberstufe
-biber_1:
+  education: |2
+     TIP
+     L/T 1
+     L/T 2
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: stromboli@pfadismn.ch
+Member_9:
   id: 9
   organisational_unit_id: 2
   first_name: Fanny
   last_name: Müller
   scout_name: Fiumina
-  email: fiumina@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1988-05-13
   gender: 1
   functions_mask: 4
   vegetarian: false
   member_since: 1995-11-01
-  education: "
-  TIP\n
-  L/T 1\n
-  L/T 2\n"
-#leiter wolfsstufe
-bienli_1:
+  education: |2
+     TIP
+     L/T 1
+     L/T 2
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: fiumina@pfadismn.ch
+Member_10:
   id: 10
   organisational_unit_id: 3
   first_name: Laura
   last_name: Otth
   scout_name: Fairy
-  email: fairy@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1995-01-02
   gender: 1
   functions_mask: 4
   vegetarian: false
-  member_since:
-  education: "
-  TIP\n"
-  
-bienli_2:
+  education: |2
+     TIP
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: fairy@pfadismn.ch
+Member_11:
   id: 11
   organisational_unit_id: 3
   first_name: Lilian
   last_name: Pugin
   scout_name: Koschka
-  email: koschka@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1995-06-08
   gender: 1
   functions_mask: 4
   vegetarian: false
-  member_since:
-  education: ""
-  
-bienli_3:
+  education: ''
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: koschka@pfadismn.ch
+Member_12:
   id: 12
   organisational_unit_id: 3
   first_name: Marc
   last_name: Bayard
   scout_name: Baloo
-  email: baloo@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1994-12-26
   gender: 0
   functions_mask: 4
   vegetarian: false
-  member_since:
-  education: "
-  TIP\n"
-  
-woelfe_1:
+  education: |2
+     TIP
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: baloo@pfadismn.ch
+Member_13:
   id: 13
   organisational_unit_id: 3
   first_name: Chistopher
   last_name: Waugh
   scout_name: Manitu
-  email: manitu@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1994-04-16
   gender: 0
   functions_mask: 4
   vegetarian: false
-  member_since:
-  education: "
-  TIP\n"
-  
-woelfe_2:
+  education: |2
+     TIP
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: manitu@pfadismn.ch
+Member_14:
   id: 14
   organisational_unit_id: 3
   first_name: Alessandro
   last_name: Walder
   scout_name: Luchs
-  email: luchs@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1994-02-13
   gender: 0
   functions_mask: 4
   vegetarian: false
-  member_since:
-  education: "
-  TIP\n"
-  
-    
-woelfe_3:
+  education: |2
+     TIP
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: luchs@pfadismn.ch
+Member_15:
   id: 15
   organisational_unit_id: 3
   first_name: Matthias
   last_name: Keller
   scout_name: Baracuda
-  email: baracuda@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1993-03-03
   gender: 0
   functions_mask: 4
   vegetarian: false
-  member_since:
-  education: "
-  TIP\n"
-
-#leiter pfadistufe
-maitli_1:
+  education: |2
+     TIP
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: baracuda@pfadismn.ch
+Member_16:
   id: 16
   organisational_unit_id: 10
   first_name: Simone
   last_name: Hoffmann
   scout_name: Milou
-  email: milou@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1994-05-09
   gender: 1
   functions_mask: 4
   vegetarian: false
-  member_since:
-  education: "
-  TIP\n
-  L/T 1\n"
-  
-maitli_2:
+  education: |2
+     TIP
+     L/T 1
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: milou@pfadismn.ch
+Member_17:
   id: 17
   organisational_unit_id: 10
   first_name: Viola
   last_name: Pescia
   scout_name: Chili
-  email: chili@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1994-10-15
   gender: 1
   functions_mask: 4
   vegetarian: false
-  member_since:
-  education: "
-  TIP\n"
-  
-maitli_3:
+  education: |2
+     TIP
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: chili@pfadismn.ch
+Member_18:
   id: 18
   organisational_unit_id: 11
   first_name: Sabrina
   last_name: Looser
   scout_name: Surrli
-  email: surrli@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1995-06-17
   gender: 1
   functions_mask: 4
   vegetarian: false
-  member_since:
-  education: "
-  TIP\n"
-  
-maitli_4:
+  education: |2
+     TIP
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: surrli@pfadismn.ch
+Member_19:
   id: 19
   organisational_unit_id: 11
   first_name: Joyce
   last_name: Otazo
   scout_name: Pelea
-  email: pelea@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1996-03-13
   gender: 1
   functions_mask: 4
   vegetarian: false
-  member_since:
-  education: "
-  TIP\n"
-  
-buebe_1:
+  education: |2
+     TIP
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: pelea@pfadismn.ch
+Member_20:
   id: 20
   organisational_unit_id: 9
   first_name: Janis
   last_name: Tanner
   scout_name: Muck
-  email: muck@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1994-12-25
   gender: 0
   functions_mask: 4
   vegetarian: false
-  member_since:
-  education: "
-  TIP\n
-  L/T 1\n"
-  
-buebe_2:
+  education: |2
+     TIP
+     L/T 1
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: muck@pfadismn.ch
+Member_21:
   id: 21
   organisational_unit_id: 8
   first_name: Fabrice
   last_name: Truttmann
   scout_name: Trick
-  email: trick@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1994-08-05
   gender: 0
   functions_mask: 4
   vegetarian: false
-  member_since:
-  education: "
-  TIP\n"
-  
-    
-buebe_3:
+  education: |2
+     TIP
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: trick@pfadismn.ch
+Member_22:
   id: 22
   organisational_unit_id: 8
   first_name: Ener
   last_name: Yagcioglu
   scout_name: Lupin
-  email: lupin@pfadismn.ch
   nationality: CH
-  remarks:
   birthdate: 1994-09-11
   gender: 0
   functions_mask: 4
   vegetarian: false
-  member_since:
-  education: "
-  TIP\n"
+  education: |2
+     TIP
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+  email: lupin@pfadismn.ch

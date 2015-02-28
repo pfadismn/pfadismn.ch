@@ -1,0 +1,78 @@
+---
+Event_1:
+  id: 1
+  organisational_unit_id: 2
+  creator_id: 1
+  start_place_id: 1
+  end_place_id: 3
+  start_time: 2012-12-22 14:00:00.000000000 Z
+  end_time: 2012-12-22 17:30:00.000000000 Z
+  name: Abschlussübung
+  description: Heute ist Abschlussübung von Pippin!
+  take_along: |-
+    Pfadihemd
+      Kravatte
+      Sackmesser
+  published_at: 2015-02-28 11:44:25.000000000 Z
+  created_at: 2015-02-28 11:44:25.000000000 Z
+  updated_at: 2015-02-28 11:44:25.000000000 Z
+Event_2:
+  id: 2
+  organisational_unit_id: 3
+  creator_id: 1
+  start_place_id: 2
+  end_place_id: 5
+  start_time: 2012-12-22 14:00:00.000000000 Z
+  end_time: 2012-12-22 17:30:00.000000000 Z
+  name: Abschlussübung
+  description: Heute ist Abschlussübung von Grizzly
+  take_along: "Pfadihemd\n  Kravatte \n  Sackmesser"
+  published_at: 2015-02-28 11:44:25.000000000 Z
+  created_at: 2015-02-28 11:44:25.000000000 Z
+  updated_at: 2015-02-28 11:44:25.000000000 Z
+Event_3:
+  id: 3
+  organisational_unit_id: 4
+  creator_id: 1
+  start_place_id: 2
+  end_place_id: 5
+  start_time: 2012-12-22 14:00:00.000000000 Z
+  end_time: 2012-12-22 17:30:00.000000000 Z
+  name: Abschlussübung
+  description: Heute ist Abschlussübung von Grizzly
+  take_along: |-
+    Pfadihemd
+      Kravatte
+      Sackmesser
+  published_at: 2015-02-28 11:44:25.000000000 Z
+  created_at: 2015-02-28 11:44:25.000000000 Z
+  updated_at: 2015-02-28 11:44:25.000000000 Z
+Event_4:
+  id: 4
+  organisational_unit_id: 6
+  creator_id: 1
+  start_place_id: 2
+  end_place_id: 5
+  start_time: 2012-12-22 14:00:00.000000000 Z
+  end_time: 2012-12-22 17:30:00.000000000 Z
+  name: Abschlussübung
+  description: Heute ist Abschlussübung von Grizzly
+  take_along: |-
+    Pfadihemd
+      Kravatte
+      Sackmesser
+  published_at: 2015-02-28 11:44:25.000000000 Z
+  created_at: 2015-02-28 11:44:25.000000000 Z
+  updated_at: 2015-02-28 11:44:25.000000000 Z
+Event_5:
+  id: 5
+  organisational_unit_id: 1
+  creator_id: 1
+  start_time: 2015-03-05 12:45:00.000000000 Z
+  end_time: 2015-03-05 17:00:00.000000000 Z
+  name: Test
+  description: ''
+  take_along: "Pfadihemd\r\nKravatte\r\n"
+  published_at: 2015-02-28 12:45:44.000000000 Z
+  created_at: 2015-02-28 12:45:44.000000000 Z
+  updated_at: 2015-02-28 12:45:44.000000000 Z

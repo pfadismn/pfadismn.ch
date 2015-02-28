@@ -63,4 +63,9 @@ class AddressesController < ApplicationController
   def redirect_to_parent options={}
     redirect_to [:edit, @ou, @addressable]
   end
+
+  private
+  def address_params
+    params.require(:address).permit()
+  end
 end

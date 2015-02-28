@@ -1,0 +1,7 @@
+h2
+  | Passwort anfordern
+= semantic_form_for User.new, url: password_resets_path do |f|
+  = f.error_messages
+  = f.inputs t(:reset) do
+    = f.input :email
+  = f.actions

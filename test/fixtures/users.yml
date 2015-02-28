@@ -1,175 +1,243 @@
-gulli:
+---
+User_1:
   id: 1
   member_id: 1
   email: gulli@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 1
-  
-prometheus:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_2:
   id: 2
   member_id: 2
   email: prometheus@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 2
-  
-chaja:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_3:
   id: 3
   member_id: 3
   email: chaja@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 2
-  
-filou:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_4:
   id: 4
   member_id: 4
   email: filou@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 1
-  
-foxy:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_5:
   id: 5
   member_id: 5
   email: foxy@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-kondor:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_6:
   id: 6
   member_id: 6
   email: kondor@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-panther:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_7:
   id: 7
   member_id: 7
   email: panther@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-stromboli:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_8:
   id: 8
   member_id: 8
   email: stromboli@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-fiumina:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_9:
   id: 9
   member_id: 9
   email: fiumina@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-fairy:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_10:
   id: 10
   member_id: 10
   email: fairy@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-koschka:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_11:
   id: 11
   member_id: 11
   email: koschka@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-baloo:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_12:
   id: 12
   member_id: 12
   email: baloo@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-manitu:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_13:
   id: 13
   member_id: 13
   email: manitu@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-luchs:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_14:
   id: 14
   member_id: 14
   email: luchs@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-baracuda:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_15:
   id: 15
   member_id: 15
   email: baracuda@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-milou:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_16:
   id: 16
   member_id: 16
   email: milou@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-chili:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_17:
   id: 17
   member_id: 17
   email: chili@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-surrli:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_18:
   id: 18
   member_id: 18
   email: surrli@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-pelea:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_19:
   id: 19
   member_id: 19
   email: pelea@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-muck:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_20:
   id: 20
   member_id: 20
   email: muck@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-trick:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_21:
   id: 21
   member_id: 21
   email: trick@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
-  
-lupin:
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z
+User_22:
   id: 22
   member_id: 22
   email: lupin@pfadismn.ch
   crypted_password: 66aa0fa305c8b5fb987c75d47773e29def4c63f0dd7e56ab1db029c525331e28170a0507e5d1d0e716ff1040beb907356c196ff13d83516ee02d885e1dd007fe
   password_salt: vFLfqNTA0dd9wYwznME
+  persistence_token: ''
+  perishable_token: ''
   roles_mask: 4
+  created_at: 2015-02-28 13:57:43.000000000 Z
+  updated_at: 2015-02-28 13:57:43.000000000 Z

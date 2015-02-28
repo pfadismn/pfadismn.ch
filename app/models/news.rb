@@ -4,8 +4,7 @@ class News < ActiveRecord::Base
   belongs_to :creator, class_name: 'User'
   
   # Scopes
-  default_scope order('published_at DESC')
-  scope :published, -> { where('published_at <= ?', DateTime.now) }
+  scope :published, -> { where('published_at <= ?', DateTime.now).order('published_at DESC') }
   scope :published_to, ->(to) { published.where('publish_to_mask & ?', 2**PUBLISH_TO.index(to)) }
 
   after_save :queue_newsletter
