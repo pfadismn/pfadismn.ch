@@ -34,6 +34,6 @@ class Event < ActiveRecord::Base
   end
 
   def queue_reminder
-    UserMailer.upcoming_event(self).delay(run_at: remind_at, queue: :event_reminder).deliver if send_reminder
+    UserMailer.delay(run_at: remind_at, queue: :event_reminder).upcoming_event(self) if send_reminder
   end
 end

@@ -5,6 +5,8 @@ defaults: &defaults
   default_take_along: |
                       Pfadihemd
                       Kravatte
+  MAIL_SENDER: info@pfadismn.ch
+  APP_HOST: pfadismn.ch
 
 production: &production
   <<: *defaults
