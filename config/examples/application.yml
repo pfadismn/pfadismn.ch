@@ -14,9 +14,11 @@ development: &development
   event_reminder_forerun_hours: '0'
   newsletter_group_leiter: 'filou@pfadismn.ch'
   newsletter_group_members: 'dev@pfadismn.ch'
+  DATABASE_URL: 'postgresql://localhost/pfadismn_development'
 
 test:
   <<: *development
+  DATABASE_URL: 'postgresql://localhost/pfadismn_test'
 
 production: &production
   <<: *defaults

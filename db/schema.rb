@@ -18,19 +18,19 @@ ActiveRecord::Schema.define(version: 20151229130610) do
 
   create_table "addresses", force: :cascade do |t|
     t.integer  "addressable_id"
-    t.string   "addressable_type", limit: 255
-    t.string   "line1",            limit: 255
-    t.string   "line2",            limit: 255
-    t.string   "zip",              limit: 255
-    t.string   "place",            limit: 255
-    t.string   "country",          limit: 255
+    t.string   "addressable_type"
+    t.string   "line1"
+    t.string   "line2"
+    t.string   "zip"
+    t.string   "place"
+    t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.string   "first_name",    limit: 255
-    t.string   "last_name",     limit: 255
+    t.string   "first_name"
+    t.string   "last_name"
     t.integer  "relation_mask"
     t.text     "remarks"
     t.datetime "created_at"
@@ -38,15 +38,15 @@ ActiveRecord::Schema.define(version: 20151229130610) do
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
-    t.integer  "priority",               default: 0, null: false
-    t.integer  "attempts",               default: 0, null: false
-    t.text     "handler",                            null: false
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
     t.text     "last_error"
     t.datetime "run_at"
     t.datetime "locked_at"
     t.datetime "failed_at"
-    t.string   "locked_by",  limit: 255
-    t.string   "queue",      limit: 255
+    t.string   "locked_by"
+    t.string   "queue"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -60,15 +60,15 @@ ActiveRecord::Schema.define(version: 20151229130610) do
     t.integer  "end_place_id"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.string   "name",                       limit: 255
+    t.string   "name"
     t.text     "description"
     t.text     "take_along"
     t.text     "content"
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "content_image_file_name",    limit: 255
-    t.string   "content_image_content_type", limit: 255
+    t.string   "content_image_file_name"
+    t.string   "content_image_content_type"
     t.integer  "content_image_file_size"
     t.datetime "content_image_updated_at"
   end
@@ -89,22 +89,22 @@ ActiveRecord::Schema.define(version: 20151229130610) do
   create_table "member_contacts", id: false, force: :cascade do |t|
     t.integer "contact_id"
     t.integer "member_id"
-    t.string  "relation",   limit: 255
+    t.string  "relation"
   end
 
   create_table "member_functions", force: :cascade do |t|
-    t.string  "name",  limit: 255
-    t.string  "email", limit: 255
+    t.string  "name"
+    t.string  "email"
     t.integer "mask"
   end
 
   create_table "members", force: :cascade do |t|
     t.integer  "organisational_unit_id"
-    t.string   "first_name",             limit: 255
-    t.string   "last_name",              limit: 255
-    t.string   "scout_name",             limit: 255
-    t.string   "alias",                  limit: 255
-    t.string   "nationality",            limit: 255
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "scout_name"
+    t.string   "alias"
+    t.string   "nationality"
     t.text     "remarks"
     t.date     "birthdate"
     t.integer  "gender"
@@ -112,65 +112,65 @@ ActiveRecord::Schema.define(version: 20151229130610) do
     t.boolean  "vegetarian"
     t.date     "member_since"
     t.text     "education"
-    t.string   "avatar_file_name",       limit: 255
-    t.string   "avatar_content_type",    limit: 255
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email",                  limit: 255
+    t.string   "email"
   end
 
   add_index "members", ["organisational_unit_id"], name: "index_members_on_organisational_unit_id", using: :btree
 
   create_table "news", force: :cascade do |t|
     t.integer  "creator_id"
-    t.string   "title",           limit: 255
+    t.string   "title"
     t.text     "body"
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "publish_to_mask",             default: 1
+    t.integer  "publish_to_mask", default: 1
   end
 
   add_index "news", ["creator_id"], name: "index_news_on_creator_id", using: :btree
 
   create_table "organisational_units", force: :cascade do |t|
-    t.string   "name",                 limit: 255
-    t.string   "motto",                limit: 255
-    t.string   "caption",              limit: 255
-    t.string   "responsible_function", limit: 255
+    t.string   "name"
+    t.string   "motto"
+    t.string   "caption"
+    t.string   "responsible_function"
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "active",                           default: true
-    t.string   "email",                limit: 255
+    t.boolean  "active",               default: true
+    t.string   "email"
   end
 
   add_index "organisational_units", ["parent_id"], name: "index_organisational_units_on_parent_id", using: :btree
 
   create_table "phone_numbers", force: :cascade do |t|
     t.integer  "phonable_id"
-    t.string   "phonable_type", limit: 255
-    t.string   "phone_type",    limit: 255
-    t.string   "number",        limit: 255
+    t.string   "phonable_type"
+    t.string   "phone_type"
+    t.string   "number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "places", force: :cascade do |t|
     t.integer  "address_id"
-    t.string   "name",        limit: 255
+    t.string   "name"
     t.text     "description"
-    t.string   "coordinates", limit: 255
+    t.string   "coordinates"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "sessions", force: :cascade do |t|
-    t.string   "session_id", limit: 255, null: false
+    t.string   "session_id", null: false
     t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -181,11 +181,11 @@ ActiveRecord::Schema.define(version: 20151229130610) do
 
   create_table "users", force: :cascade do |t|
     t.integer  "member_id"
-    t.string   "email",             limit: 255, null: false
-    t.string   "crypted_password",  limit: 255, null: false
-    t.string   "password_salt",     limit: 255, null: false
-    t.string   "persistence_token", limit: 255, null: false
-    t.string   "perishable_token",  limit: 255, null: false
+    t.string   "email",             null: false
+    t.string   "crypted_password",  null: false
+    t.string   "password_salt",     null: false
+    t.string   "persistence_token", null: false
+    t.string   "perishable_token",  null: false
     t.integer  "roles_mask"
     t.datetime "created_at"
     t.datetime "updated_at"
