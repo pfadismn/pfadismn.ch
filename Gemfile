@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
+ruby File.read('.ruby-version').strip
 gem 'rails', '~> 4.2.0'
 
 # Authentication & authorisation
@@ -8,13 +8,13 @@ gem 'cancan'
 gem 'authlogic'
 
 gem 'mysql2'
+gem 'pg'
 gem 'awesome_nested_set'
 gem 'paperclip'
 gem 'delayed_job_active_record'
 gem 'figaro'
 gem 'daemons'
 gem 'index_helper', git: 'https://github.com/diegosteiner/index_helper.git'
-#gem 'index_helper', path: '/home/digi/workspaces/private/Gems/index_helper'
 gem 'formtastic'
 gem 'dynamic_form'
 gem 'kaminari'
@@ -36,19 +36,15 @@ gem 'actionpack-action_caching'
 group :development do
   gem 'mina', git: 'https://github.com/nadarei/mina.git'
   gem 'quiet_assets'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
   gem 'letter_opener'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
+  gem 'turn', require: false
+  gem 'rspec-rails'
 end
 
 group :production do
