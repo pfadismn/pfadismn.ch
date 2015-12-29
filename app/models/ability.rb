@@ -48,21 +48,20 @@ class Ability
     can :read, Member, { id: user.member.id }
     can :reset_password, User, { id: user.id }
   end
-  
+
   def leader_privileges user
     can [:read, :create], Member
     can :manage, Member, organisational_unit_id: user.member.organisational_unit.self_and_descendants.collect { |ou| ou.id }
-    
+
     can :manage, Event, organisational_unit_id: user.member.organisational_unit.self_and_descendants.collect { |ou| ou.id }
     can :create, Event
-    
+
     can :manage, Address
     can :manage, Contact
     can :manage, PhoneNumber
   end
-  
+
   def manager_privileges user
-    can :manage, MeetingProtocol
     can :manage, News
     can :manage, Event
     can :manage, Member
@@ -70,7 +69,6 @@ class Ability
     can :manage, Contact
     can :manage, PhoneNumber
     can :manage, PhotoCollection::AlbumUpload
-    can :manage, MailAlias
   end
 
   def admin_privileges user

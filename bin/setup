@@ -13,8 +13,8 @@ Dir.chdir APP_ROOT do
   system 'bundle check || bundle install'
 
   puts "\n== Copying sample files =="
-  Dir['config/*.example.yml'].each do |example_file|
-    target_file = example_file.gsub('.example', '')
+  Dir['config/examples/*.yml'].each do |example_file|
+    target_file = "config/#{File.basename(example_file)}"
     unless File.exist?(target_file)
       system "cp #{example_file} #{target_file}"
       puts "--> copied new file #{target_file}, you might want to edit it"

@@ -1,14 +1,14 @@
 class News < ActiveRecord::Base
-  PUBLISH_TO = [:web, :leiter, :members, :subscribers]
+  PUBLISH_TO = [:web, :leiter, :members]
   # Relations
   belongs_to :creator, class_name: 'User'
-  
+
   # Scopes
-  scope :published, -> { where('published_at <= ?', DateTime.now).order('published_at DESC') }
-  scope :published_to, ->(to) { published.where('publish_to_mask & ?', 2**PUBLISH_TO.index(to)) }
+  scope :published, -> { where(arel_table[:published_at].lteq(Time.zone.now)).order(published_at: :desc) }
+  scope :published_to, ->(to) { published.where('publish_to_mask & ? > 0', 2**PUBLISH_TO.index(to)) }
 
   after_save :queue_newsletter
-  
+
   def to_html
     RedCloth.new(body).to_html.html_safe
   end
@@ -33,7 +33,6 @@ class News < ActiveRecord::Base
     receipients = []
     receipients += [ENV['newsletter_group_leiter']] if publish_to.include?(:leiter)
     receipients += [ENV['newsletter_group_members']] if publish_to.include?(:members)
-    #receipients += Subscriber.all.map { |s| s.email } if @news.publish_to.include? :subscribers
     receipients.flatten
   end
 end
