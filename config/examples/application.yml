@@ -7,6 +7,7 @@ defaults: &defaults
                       Kravatte
   MAIL_SENDER: 'info@pfadismn.ch'
   APP_HOST: 'pfadismn.ch'
+  DEFAULT_PASSWORD: 'betterthinkofsomethinggood!'
 
 development: &development
   <<: *defaults
