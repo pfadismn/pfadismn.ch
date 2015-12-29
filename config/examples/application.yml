@@ -1,21 +1,24 @@
 defaults: &defaults
-  event_reminder_forerun_hours: 48
-  newsletter_group_leiter: "leiter@pfadismn.ch"
-  newsletter_group_members: "members@pfadismn.ch"
+  event_reminder_forerun_hours: '48'
+  newsletter_group_leiter: 'leiter@pfadismn.ch'
+  newsletter_group_members: 'members@pfadismn.ch'
   default_take_along: |
                       Pfadihemd
                       Kravatte
-  MAIL_SENDER: info@pfadismn.ch
-  APP_HOST: pfadismn.ch
-
-production: &production
-  <<: *defaults
+  MAIL_SENDER: 'info@pfadismn.ch'
+  APP_HOST: 'pfadismn.ch'
 
 development: &development
   <<: *defaults
-  event_reminder_forerun_hours: "0"
-  newsletter_group_leiter: "filou@pfadismn.ch"
-  newsletter_group_members: "dev@pfadismn.ch"
+  event_reminder_forerun_hours: '0'
+  newsletter_group_leiter: 'filou@pfadismn.ch'
+  newsletter_group_members: 'dev@pfadismn.ch'
 
 test:
   <<: *development
+
+production: &production
+  <<: *defaults
+  MAIL_USERNAME: 'SENDGRID_USERNAME'
+  MAIL_PASSWORD: 'SENDGRID_PASSWORD'
+
