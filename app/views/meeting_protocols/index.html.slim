@@ -1,8 +1,0 @@
-= index MeetingProtocol, @meeting_protocols do |builder|
-  - builder.column :title do |p|
-    = link_to p.title, meeting_protocol_path(p)
-  - builder.column :created_at do |p|
-    = l p.created_at, format: :short
-  - builder.column :organisational_unit
-  - builder.button do
-    = link_to "Neues Protokoll", new_meeting_protocol_path

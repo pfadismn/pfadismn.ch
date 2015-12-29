@@ -25,9 +25,5 @@ h3
 ul
   li
     = link_to 'News verwalten', news_index_path if can? :create, News
-  li
-    = link_to 'Protokolle verwalten', meeting_protocols_path if can? :create, MeetingProtocol
-  li
-    = link_to 'Mail Aliase verwalten', mail_aliases_path if can? :create, MailAlias
 - content_for :sidebar do
   = render partial: 'stickypost'
