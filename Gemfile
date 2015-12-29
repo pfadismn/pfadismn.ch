@@ -29,12 +29,12 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'uglifier'
 gem 'exception_notification'
+gem 'rails_12factor'
 
 #legacy
 gem 'actionpack-action_caching'
 
 group :development do
-  gem 'mina', git: 'https://github.com/nadarei/mina.git'
   gem 'quiet_assets'
   gem 'spring'
   gem 'letter_opener'
