@@ -1,7 +1,7 @@
 class AddressesController < ApplicationController
   load_and_authorize_resource
   before_filter :load_parent_resource
-  
+
   def index
     redirect_to_parent
   end
@@ -55,7 +55,7 @@ class AddressesController < ApplicationController
 
   private
   def load_parent_resource
-    @ou = OrganisationalUnit.find_by_name(params[:organisational_unit_id])
+    @ou = OrganisationalUnit.by_name(params[:organisational_unit_id])
     @addressable = Member.find(params[:member_id]) if params[:member_id]
     @addressable = Contact.find(params[:contact_id]) if params[:contact_id]
   end

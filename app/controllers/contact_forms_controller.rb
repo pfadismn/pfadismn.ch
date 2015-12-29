@@ -31,6 +31,6 @@ class ContactFormsController < ApplicationController
     params.require(:contact_form).permit(:name, :email, :phone, :message)
   end
   def load_parent_resource
-    @ou = OrganisationalUnit.find_by_name(params[:organisational_unit_id])
+    @ou = OrganisationalUnit.by_name(params[:organisational_unit_id])
   end
 end

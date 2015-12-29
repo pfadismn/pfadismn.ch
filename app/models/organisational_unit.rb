@@ -9,7 +9,10 @@ class OrganisationalUnit < ActiveRecord::Base
 
   # Scopes
   scope :active, -> { where(active: true) }
-  scope :by_name, ->(name) { where(arel_table[:name].matches(name)) }
+
+  def self.by_name(name)
+    where(arel_table[:name].matches(name)).take!
+  end
 
   def to_param
     "#{name.gsub(/[^a-z0-9]+/i, '_')}".downcase

@@ -5,7 +5,7 @@ class ContactsController < ApplicationController
   def index
     redirect_to [@ou, @member]
   end
-  
+
   def show
     respond_to do |format|
       format.json { render json: @contact }
@@ -56,9 +56,9 @@ class ContactsController < ApplicationController
   def redirect_to_parent options={}
     redirect_to [:edit, @ou, @member], options if @member
   end
-  
+
   def load_parent_resource
-    @ou = OrganisationalUnit.find_by_name(params[:organisational_unit_id])
+    @ou = OrganisationalUnit.by_name(params[:organisational_unit_id])
     @member = Member.find(params[:member_id]) if params[:member_id]
   end
 end

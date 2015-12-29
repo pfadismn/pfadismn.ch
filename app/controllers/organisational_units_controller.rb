@@ -6,7 +6,7 @@ class OrganisationalUnitsController < ApplicationController
   end
 
   def show
-    @ou = OrganisationalUnit.by_name(params[:id]).take!
+    @ou = OrganisationalUnit.by_name(params[:id])
   end
 
   def rheinfallmarsch
