@@ -11,7 +11,7 @@ class OrganisationalUnit < ActiveRecord::Base
   scope :active, -> { where(active: true) }
 
   def self.by_name(name)
-    where(arel_table[:name].matches(name)).take!
+    where(arel_table[:name].matches(name)).take
   end
 
   def to_param
