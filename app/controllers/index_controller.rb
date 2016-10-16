@@ -1,18 +1,15 @@
 class IndexController < ApplicationController
   def index
     @news = News.published_to(:web).first(5)
-    @ou = OrganisationalUnit.find_by_name(params[:id])
-  end
-  
-  def dashboard
+    @ou = OrganisationalUnit.by_name(params[:id])
   end
 
-  def jubilaeum2014
+  def dashboard
   end
 
   def impressum
   end
-  
+
   def jahresprogramm
     send_file "#{Rails.root}/public/jahresprogramm.pdf", type: 'application/pdf', disposition: 'inline'
   end

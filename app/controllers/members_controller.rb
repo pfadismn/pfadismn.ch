@@ -5,7 +5,7 @@ class MembersController < ApplicationController
 
   def index
     @members = @ou.members.accessible_by(current_ability)
-    
+
     respond_to do |format|
       format.html { }
       format.json { render json: @members }
@@ -66,9 +66,9 @@ class MembersController < ApplicationController
       format.html { redirect_to [@ou, Member] }
     end
   end
-  
+
   private
   def load_parent_resource
-    @ou = OrganisationalUnit.find_by(name: params[:organisational_unit_id])
+    @ou = OrganisationalUnit.by_name(params[:organisational_unit_id])
   end
 end

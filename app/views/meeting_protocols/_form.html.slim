@@ -1,7 +1,0 @@
-= semantic_form_for @meeting_protocol do |f|
-  = f.inputs :general do
-    = f.input :organisational_unit, as: :select, input_html: { class: 'chosen-select' }, wrapper_html: { class: 'chosen' }, collection: OrganisationalUnit.all, member_label: :to_s, include_blank: false
-    = f.input :participants, as: :select, input_html: { multiple: true, class: 'chosen-select',  name:'meeting_protocol[participant_ids][]', value: @meeting_protocol.participant_ids }, wrapper_html: { class: 'chosen' }, collection: Member.all.map{ |m| [m, m.id] }, include_blank: false
-    = f.input :title
-    = f.input :body, input_html: { class: 'textile_editor' }
-  = f.actions

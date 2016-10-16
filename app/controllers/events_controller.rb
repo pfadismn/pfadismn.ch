@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   before_filter :load_parent_resource
   load_and_authorize_resource except: [:show, :index, :quartalsprogramm, :image]
 #  load_and_authorize_resource
-  
+
   def index
     @events = @ou.inherited_and_propageted_events.upcoming.active
 
@@ -13,10 +13,10 @@ class EventsController < ApplicationController
       format.json { render json: @events }
     end
   end
-  
+
   def quartalsprogramm
     @events = @ou.events.active.upcoming.limit(10)
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
@@ -31,7 +31,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @event ||= Event.active.upcoming.where(name: params[:id]).first unless @event || params[:id].blank?
-    
+
     respond_to do |format|
       if @event.present?
         format.html # show.html.erb
@@ -64,7 +64,7 @@ class EventsController < ApplicationController
   def create
     @event.organisational_unit = @ou unless current_user.has_role?(:admin || :manager)
     @event.creator = current_user
-    
+
     respond_to do |format|
       if @event.save
         format.html { redirect_to [@ou, @event], notice: 'Event was successfully created.' }
@@ -95,7 +95,7 @@ class EventsController < ApplicationController
       format.json { head :ok }
     end
   end
-  
+
   private
   def inject_publish
     if params[:event].present? && params[:event][:published].present?
@@ -107,8 +107,8 @@ class EventsController < ApplicationController
       params[:event].delete :published
     end
   end
-  
+
   def load_parent_resource
-    @ou = OrganisationalUnit.find_by_name(params[:organisational_unit_id])
+    @ou = OrganisationalUnit.by_name(params[:organisational_unit_id])
   end
 end
