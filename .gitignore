@@ -4,6 +4,7 @@ tmp/
 tmp/*
 /nbproject/
 /public/photos/*
+!/public/photos/README.md
 config/application.yml
 .idea/
 /var/attachments/*
