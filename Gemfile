@@ -8,6 +8,7 @@ gem 'cancan'
 gem 'authlogic'
 
 gem 'mysql2'
+gem 'pg'
 gem 'awesome_nested_set'
 gem 'paperclip'
 gem 'delayed_job_active_record'
@@ -34,7 +35,6 @@ gem 'rails_12factor'
 gem 'actionpack-action_caching'
 
 group :development do
-  gem 'pg'
   gem 'quiet_assets'
   gem 'spring'
   gem 'letter_opener'
