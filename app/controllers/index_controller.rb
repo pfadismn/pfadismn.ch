@@ -24,9 +24,9 @@ class IndexController < ApplicationController
   end
 
   def downloads
-    @downloads_aktuelles = Dir.glob("#{Rails.root}/public/downloads/aktuelles/*.pdf")
-    @downloads_admin = Dir.glob("#{Rails.root}/public/downloads/administratives/*.pdf")
-    @downloads_press = Dir.glob("#{Rails.root}/public/downloads/presse/*.pdf")
+    @downloads_aktuelles = Dir.glob("#{Rails.root}/public/downloads/aktuelles/*.pdf").sort
+    @downloads_admin = Dir.glob("#{Rails.root}/public/downloads/administratives/*.pdf").sort
+    @downloads_press = Dir.glob("#{Rails.root}/public/downloads/presse/*.pdf").sort
   end
 
 end
