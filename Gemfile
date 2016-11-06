@@ -49,5 +49,4 @@ end
 
 group :production do
   gem 'puma'
-  gem 'foreman'
 end
