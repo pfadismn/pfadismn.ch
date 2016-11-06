@@ -11,10 +11,10 @@ if ENV['MAIL_USERNAME'].present? && ENV['MAIL_PASSWORD'].present?
   ActionMailer::Base.smtp_settings = {
     user_name: ENV['MAIL_USERNAME'],
     password: ENV['MAIL_PASSWORD'],
-    address: 'smtp.sendgrid.net',
+    address: 'smtp.sparkpostmail.com',
     port: 587,
     enable_starttls_auto: true,
-    authentication: :plain,
+    authentication: :login,
     domain: ENV['APP_HOST']
   }
 elsif Rails.env.development?
