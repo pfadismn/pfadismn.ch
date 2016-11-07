@@ -229,6 +229,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
+    wkhtmltopdf-heroku (2.12.3.0)
 
 PLATFORMS
   ruby
@@ -269,6 +270,7 @@ DEPENDENCIES
   spring
   turn
   uglifier
+  wkhtmltopdf-heroku
 
 BUNDLED WITH
    1.10.6
