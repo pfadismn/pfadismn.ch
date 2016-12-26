@@ -1,50 +1,18 @@
-doctype html
-html
-  head
-    meta[charset="utf-8"]
-    meta[http-equiv="Content-Type" content="text/html; charset=utf-8"]
-    meta[http-equiv="Pragma" content="cache"]
-    meta[name="robots" content="index, follow"]
-    meta[http-equiv="Language" content="de"]
-    meta[http-equiv="Content-Style-Type" content="text/css"]
-    meta[property="og:site_name" content="Pfadi St. Mauritius Nansen"]
-    meta[property="og:title" content="#{yield :title}"]
-    title
-      | Pfadi SMN :: 
-      = yield :title
-    = stylesheet_link_tag "application", :debug => Rails.env.development?
-    = stylesheet_link_tag "//fonts.googleapis.com/css?family=Habibi"
-    = javascript_include_tag "application", :debug => Rails.env.development?, :charset => "utf-8"
-    = render '/layouts/google_analytics'
-    = favicon_link_tag
-    = csrf_meta_tag
-  body
-    #rootContainer.container
-      #headContainer.container
-        h2
-          | Pfadiabteilung
-        h1
-          | St. Mauritius Nansen
-        h3
-          | Höngg, 8049 Zürich
-      #navigationContainer.container
-        = render partial: 'layouts/navigation'
-      #contentContainer.container
-        = render partial: 'layouts/flashes', locals: { flash: flash}
-        - if content_for? :heading
-          #heading.container
-            = yield :heading
-        - if content_for? :sidebar
-          #mainContent.container
-            = yield
-          #sidebarContent.container
-            = yield :sidebar
-          .clear
-        - else
-          #content.container
-            = yield
-      #footContainer.container
-        |  © 
-        = Time.now.try(:year)
-        |  by Gulli & Filou | Pfadi SMN Zürich-Höngg | 
-        = link_to 'Impressum', impressum_path, :style => 'color: #7C7C7C; border-bottom: none;'
+- content_for(:content) do
+  main.container
+    - if content_for? :heading
+      #heading.row
+        .col-md-12
+          = yield :heading
+    .row
+      - if content_for? :sidebar
+        .col-md-8
+          = yield
+        .col-md-4
+          = yield :sidebar
+      - else
+        .col-md-12
+          = yield
+    .row
+      = render 'layouts/footer'
+= render template: 'layouts/base'

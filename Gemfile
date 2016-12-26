@@ -24,13 +24,15 @@ gem 'pdfkit'
 gem 'wkhtmltopdf-heroku'
 gem 'rubyzip'
 gem 'slim-rails'
-gem 'sass-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'sass-rails', '>= 3.2'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'uglifier'
 gem 'exception_notification'
 gem 'rails_12factor'
+gem 'pry-rails'
 
 #legacy
 gem 'actionpack-action_caching'
@@ -49,5 +51,6 @@ group :test do
 end
 
 group :production do
+  gem 'lograge'
   gem 'puma'
 end

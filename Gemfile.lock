@@ -54,6 +54,8 @@ GEM
       activesupport (>= 3.2, < 5.1)
       request_store (~> 1.0)
       scrypt (>= 1.2, < 4.0)
+    autoprefixer-rails (6.6.0)
+      execjs
     awesome_nested_set (3.1.1)
       activerecord (>= 4.0.0, < 5.1)
     better_errors (2.1.1)
@@ -62,6 +64,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
     cancan (1.6.10)
     climate_control (0.0.3)
@@ -116,10 +121,15 @@ GEM
       addressable (~> 2.3)
     letter_opener (1.4.1)
       launchy (~> 2.2)
+    lograge (0.3.4)
+      actionpack (>= 3)
+      activesupport (>= 3)
+      railties (>= 3)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -137,6 +147,12 @@ GEM
       mimemagic (~> 0.3.0)
     pdfkit (0.8.2)
     pg (0.19.0)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     public_suffix (2.0.4)
     puma (3.6.2)
     quiet_assets (1.1.0)
@@ -210,6 +226,7 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (~> 3.0)
+    slop (3.6.0)
     spring (2.0.0)
       activesupport (>= 4.2)
     sprockets (3.7.1)
@@ -241,6 +258,7 @@ DEPENDENCIES
   awesome_nested_set
   better_errors
   binding_of_caller
+  bootstrap-sass (~> 3.3.6)
   cancan
   coffee-rails
   daemons
@@ -254,18 +272,20 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   letter_opener
+  lograge
   mysql2
   nokogiri
   paperclip
   pdfkit
   pg
+  pry-rails
   puma
   quiet_assets
   rails (~> 4.2.0)
   rails_12factor
   rspec-rails
   rubyzip
-  sass-rails
+  sass-rails (>= 3.2)
   slim-rails
   spring
   turn
