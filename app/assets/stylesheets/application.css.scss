@@ -6,90 +6,51 @@
 @import "forms/markitup";
 @import "forms/forms";
 
+@import "heading";
 @import "views/index";
 @import "views/news";
 
 html {
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 body {
-    background: image-url('layouts/background.png') repeat center center;
+  background: image-url('layouts/background.png') repeat center center;
 }
 
 div.cb, div.clear
 {
-    clear: both;
+  clear: both;
 }
 
 main {
   background: #fff;
   box-shadow: 0 0 10px #000;
   min-height: 100vh;
-}
+  padding-top: 50px;
 
-a {
+  a {
     border-bottom: 1px dotted #000;
-    
+
     &:active, &:hover {
-        color: #555555;
-        border-bottom: 1px dotted #555555;
+      color: #555555;
+      border-bottom: 1px dotted #555555;
     }
+  }
 }
 
-#headContainer
-{
-    margin-top: 50px;
-    height:70vh;
-    position: relative;
-    //filter: blur(2px);
-    
-    background: image-url('layouts/banner/8.jpg') top no-repeat;
-    //background: image-url('layouts/banner/logo.png') no-repeat;
-    // background-position: 30px top;
-    background-size: cover;
-
-    h1, h2, h3 {
-        font-family: "Helvetica", sans-serif;
-        font-weight: 700;
-        color: white;
-        text-shadow: #000 5px 5px 10px;
-        display: block;
-        position: absolute;
-        margin: 0;
-    }
-    
-    h2 {
-        top: 34px;
-        left: 85px;
-        font-size: 1.75em;
-    }
-    
-    h1 {
-        top: 55px;
-        left: 85px;
-        font-size: 4.5em;
-    }
-    
-    h3 {
-        top: 42px;
-        left: 270px;
-        font-size: 1.2em;
-        color: #DDD;
-        font-weight: normal;
-    }
-}
 
 footer
 {
-//    width:920px;
-//    margin:50px auto 20px auto;
-//   padding:30px 0 0 0;
-    
-    font-size:0.8em;
-    text-align:center;
-    
-    color:#7C7C7C;
-    
-    background: image-url('layouts/pfadiischseil.png') no-repeat;
+  img { 
+    margin: $grid-gutter-width/4 auto;
+    display: block;
+  }
+
+  padding: $grid-gutter-width/2 0;
+  font-size: $font-size-small;
+  text-align:center;
+
+  color: $gray-light;
+
 }

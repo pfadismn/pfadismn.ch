@@ -1,6 +1,4 @@
 class IndexController < ApplicationController
-    layout 'base', only: :index
-
   def index
     @news = News.published_to(:web).first(5)
     @ou = OrganisationalUnit.by_name(params[:id])

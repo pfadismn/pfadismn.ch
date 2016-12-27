@@ -1,59 +1,66 @@
+#home-welcome
+{
+  height:100vh;
 
-.heading {
-    margin: 15px 40px;
-    position: relative;
-    
-    h1 {
-        font-size: 3em;
-        display: inline-block;
-        vertical-align: top;
-        margin-bottom: 0;
+  .bg {
+    filter: blur(3px);
+    height: 100%;
+    background: image-url('layouts/banner/8.jpg') top no-repeat;
+    background-size: cover;
+  }
+
+  .fg {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    .spacer {
+      height: 50px;
+      background-color: #222;
+      border-top: 1px solid black;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+        padding: 10px 0;
+
+      a {
+        color: $gray-lighter;
+      }
     }
-    
+
+    //background: image-url('layouts/banner/logo.png') no-repeat;
+    h1, h2, h3 {
+      font-family: "Helvetica", sans-serif;
+      font-weight: 700;
+      color: white;
+      text-shadow: #000 5px 5px 10px;
+      display: block;
+      margin: 0;
+      position: absolute;
+    }
+
     h2 {
-        font-size: 0.9em;
-        font-style: italic;
-        font-weight: normal;
-        display: inline-block;
-        color: #444;
-        vertical-align: bottom;
-        margin-top: 0;
+      bottom: 54%;
+      left: 20%;
+      font-size: 1.75em;
     }
-    
-    .icon {
-        height: 100px;
-        width: 90px;
-        text-align: center;
-        vertical-align: bottom;
-        display: inline-block;
-        
-        img {
-            max-width: 90%;
-            max-height: 90%;
-        }
+
+    h1 {
+      bottom: 42%;
+      left: 20%;
+      font-size: 4.5em;
     }
-    
-    blockquote {
-        position: absolute;
-        top: 15px;
-        width: 570px;
-        padding: 0 0 0 350px;
-        
-        text-align: center;
-        font-weight: normal;
-        font-style: italic;
-        font-size: 2.0em;
-        color: #D6D6D6;
-        text-transform: lowercase;
-        
-        &:before {
-            content: "„";
-        }
-        
-        &:after {
-            content: "“";
-        }
+
+    h3 {
+      bottom: 54%;
+      left: 40%;
+      font-size: 1.2em;
+      color: #DDD;
+      font-weight: normal;
     }
+  }
 }
 
 .division-selector {
@@ -108,6 +115,8 @@
 }
 
 .stickypost-container {
+  font-size: $font-size-small;
+
   background: image-url('index/post/stickypost-narrow.jpg') top center repeat-y;
   padding: 0 0 180px 0;
   position: relative;

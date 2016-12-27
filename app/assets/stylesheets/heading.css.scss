@@ -1,0 +1,36 @@
+main>header {
+  padding-top: $grid-gutter-width/2;
+  padding-bottom: $grid-gutter-width/2;
+
+    h1 {
+        font-size: 3em;
+        margin: 0.4em 0 0 0;
+    }
+    
+    h2 {
+        font-size: 0.9em;
+        font-style: italic;
+        font-weight: normal;
+        color: #444;
+        margin: 0;
+    }
+    
+    blockquote {
+        text-align: center;
+        font-weight: normal;
+        font-style: italic;
+        font-size: 2.0em;
+        color: #D6D6D6;
+        text-transform: lowercase;
+        border: none;
+        margin: 0.4em 0 0 0;
+        
+        &:before {
+            content: "„";
+        }
+        
+        &:after {
+            content: "“";
+        }
+    }
+}
