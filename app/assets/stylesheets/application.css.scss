@@ -5,10 +5,15 @@
 @import "forms/chosen";
 @import "forms/markitup";
 @import "forms/forms";
+@import "views/members";
 
 @import "heading";
 @import "views/index";
 @import "views/news";
+@import "views/pfadilife";
+@import "views/event";
+@import "views/abteilung";
+
 
 html {
   overflow-y: scroll;
