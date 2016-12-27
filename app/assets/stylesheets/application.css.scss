@@ -19,10 +19,6 @@
 @import "views/addresses";
 
 
-html {
-  overflow-y: scroll;
-}
-
 body {
   background: image-url('layouts/background.png') repeat center center;
 }
@@ -46,12 +42,16 @@ main {
       border-bottom: 1px dotted #555555;
     }
   }
-}
 
+  img {
+    max-width: 100%;
+  }
+}
 
 footer
 {
   .inner {
+    margin-top: $grid-gutter-width/3;
     padding-top: $grid-gutter-width/1.5;
     padding-bottom: $grid-gutter-width/2;
     color: $gray-light;
