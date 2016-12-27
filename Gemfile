@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 ruby File.read('.ruby-version').strip
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 5.0'
 
 # Authentication & authorisation
 gem 'cancan'
@@ -34,11 +34,7 @@ gem 'exception_notification'
 gem 'rails_12factor'
 gem 'pry-rails'
 
-#legacy
-gem 'actionpack-action_caching'
-
 group :development do
-  gem 'quiet_assets'
   gem 'spring'
   gem 'letter_opener'
   gem 'better_errors'
