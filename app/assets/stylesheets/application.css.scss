@@ -42,15 +42,13 @@ main {
 
 footer
 {
-  img { 
-    margin: $grid-gutter-width/4 auto;
-    display: block;
+  .inner {
+    padding-top: $grid-gutter-width/1.5;
+    padding-bottom: $grid-gutter-width/2;
+    color: $gray-light;
+    font-size: $font-size-small;
+    background-image: image-url('layouts/pfadiischseil.png');
+    background-repeat: no-repeat;
+    background-position: top right;
   }
-
-  padding: $grid-gutter-width/2 0;
-  font-size: $font-size-small;
-  text-align:center;
-
-  color: $gray-light;
-
 }
