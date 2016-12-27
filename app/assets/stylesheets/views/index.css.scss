@@ -62,17 +62,12 @@
 }
 
 .division-selector {
-
   .division {
-
-    display: inline-block;
-    text-align: center;
     font-size: 1.5em;
 
     img {
       opacity: 0.75;
       filter: alpha(opacity=75);
-      width: 100%;
     }
 
     a {
@@ -88,18 +83,7 @@
       margin-top: 0;
     }
 
-    &.biberstufe {
-      width: 29%;
-    }
-    &.wolfsstufe {
-      width: 29%;
-    }
-    &.pfadistufe {
-      width: 40%;
-    }
-
     &:hover {
-
       a {
         color: #111;
       }
