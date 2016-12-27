@@ -2,17 +2,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import "lib/fancybox.jquery";
+@import "formtastic";
 @import "forms/chosen";
 @import "forms/markitup";
 @import "forms/forms";
-@import "views/members";
 
-@import "heading";
+@import "views/heading";
+@import "views/flashes";
+@import "views/members";
 @import "views/index";
 @import "views/news";
 @import "views/pfadilife";
 @import "views/event";
 @import "views/abteilung";
+@import "views/addresses";
 
 
 html {

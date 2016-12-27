@@ -8,6 +8,10 @@
 .formtastic {
     
     font-size: 0.85em;
+
+    .action {
+        list-style: none;
+    }
     
     .input {
         /*        margin: 10px 0;*/
@@ -16,6 +20,7 @@
         margin: 0;
         height: 100%;
         clear: both;
+        list-style: none;
         
         .inline-hints {
             display: inline;
@@ -194,6 +199,8 @@
     .fragments {
         .label label {
             position: relative;
+            font-size: ($font-size-base*0.85);
+            display: block;
         }
         
         .fragments-group {

@@ -30,33 +30,31 @@
       }
     }
 
+    .title {
+      position: absolute;
+      top: 40vh;
+      left: 15vw;
+    }
+
     //background: image-url('layouts/banner/logo.png') no-repeat;
     h1, h2, h3 {
       font-family: "Helvetica", sans-serif;
       font-weight: 700;
       color: white;
       text-shadow: #000 5px 5px 10px;
-      display: block;
-      margin: 0;
-      position: absolute;
+      margin: 0.15em 0;
     }
 
     h2 {
-      bottom: 54%;
-      left: 20%;
-      font-size: 1.75em;
+      font-size: 3vw;
     }
 
     h1 {
-      bottom: 42%;
-      left: 20%;
-      font-size: 4.5em;
+      font-size: 6vw;
     }
 
     h3 {
-      bottom: 54%;
-      left: 40%;
-      font-size: 1.2em;
+      font-size: 2vw;
       color: #DDD;
       font-weight: normal;
     }
