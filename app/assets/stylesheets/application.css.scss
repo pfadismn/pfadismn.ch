@@ -33,6 +33,8 @@ main {
   box-shadow: 0 0 10px #000;
   min-height: 100vh;
   padding-top: 50px;
+  padding-bottom: 100px;
+  position: relative;
 
   a {
     border-bottom: 1px dotted #000;
@@ -48,8 +50,17 @@ main {
   }
 }
 
+#navbar .small {
+  font-size: 0.75em;
+  background: #090909;
+}
+
 footer
 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
   .inner {
     margin-top: $grid-gutter-width/3;
     padding-top: $grid-gutter-width/1.5;

@@ -6,39 +6,44 @@
       span.icon-bar
     = link_to index_path, class: 'navbar-brand'
       = image_tag('pfadismn_halo.png', style: 'height: 50px; margin: -13px 0;') 
+
 #navbar.collapse.navbar-collapse
   ul.nav.navbar-nav
+
     li[class=(params[:controller] == 'index' && params[:action] == 'index' ? 'active' : nil)]
       = link_to "Home", index_path 
+
     li[class=(params[:controller] == 'organisational_units' && params[:action] != 'index' ? 'active' : nil)]
-
       = link_to "Abteilung", organisational_units_path
-    li[class=((params[:controller] == 'pfadilife' ||  params[:controller] == 'photos') ? 'active' : nil )]
 
+    - if params[:controller] == 'organisational_units' || params[:controller] == 'events'
+      - ou = params[:id].try(:downcase)
+      li.small[class=(ou == 'biberstufe' ? 'active' : nil)]
+        = link_to "Biberstufe", organisational_unit_path('biberstufe')
+      li.small[class=(ou == 'wolfsstufe' ? 'active' : nil)]
+        = link_to "Wolfsstufe", organisational_unit_path('wolfsstufe')
+      li.small[class=(ou == 'pfadistufe' ? 'active' : nil)]
+        = link_to "Pfadistufe", organisational_unit_path('pfadistufe')
+      li.small[class=(ou == 'roverstufe' ? 'active' : nil)]
+        = link_to "Roverstufe", organisational_unit_path('roverstufe')
+      li.small[class=(ou == 'elternrat' ? 'active' : nil)]
+        = link_to "Elternrat", organisational_unit_path('elternrat')
+      li.small[class=(ou == 'apv' ? 'active' : nil)]
+        = link_to "APV", organisational_unit_path('apv')
+
+    li[class=((params[:controller] == 'pfadilife' ||  params[:controller] == 'photos') ? 'active' : nil )]
       = link_to "Pfadi Life", pfadilife_index_path
+
+    - if (params[:controller] == 'pfadilife' ||  params[:controller] == 'photos')
+      li.small[class=(params[:controller] == 'photos' ? 'active' : nil)]
+        = link_to "Fotos", photos_path
+      li.small[class=(params[:action] == 'videos' ? 'active' : nil)]
+        = link_to "Videos", pfadilife_videos_path
+      li.small[class=(params[:action] == 'skauty' ? 'active' : nil)]
+        = link_to "Skauty", pfadilife_skauty_path
+
     li[class=(params[:controller] == 'index' && params[:action] == 'faq' ? 'active' : nil)]
       = link_to "Infos A-Z", faq_path
+
     - if current_user.present?
-      li.nav-item
-        = link_to "Admin", dashboard_path
-  ul#sub-navigation.nav.navbar-nav
-    - if params[:controller] == 'organisational_units' || params[:controller] == 'events'
-      li.nav-item
-        = link_to "Biberstufe", organisational_unit_path('biberstufe'), class: (params[:id].try(:downcase) == 'biberstufe' ? 'active' : nil)
-      li.nav-item
-        = link_to "Wolfsstufe", organisational_unit_path('wolfsstufe'), class: (params[:id].try(:downcase) == 'wolfsstufe' ? 'active' : nil)
-      li.nav-item
-        = link_to "Pfadistufe", organisational_unit_path('pfadistufe'), class: (params[:id].try(:downcase) == 'pfadistufe' ? 'active' : nil)
-      li.nav-item
-        = link_to "Roverstufe", organisational_unit_path('roverstufe'), class: (params[:id].try(:downcase) == 'roverstufe' ? 'active' : nil)
-      li.nav-item
-        = link_to "Elternrat", organisational_unit_path('elternrat'), class: (params[:id].try(:downcase) == 'elternrat' ? 'active' : nil)
-      li.nav-item
-        = link_to "APV", organisational_unit_path('apv'), class: (params[:id].try(:downcase) == 'apv' ? 'active' : nil)
-    - if (params[:controller] == 'pfadilife' ||  params[:controller] == 'photos')
-      li.nav-item
-        = link_to "Fotos", photos_path, class: (params[:controller] == 'photos' ? 'active' : nil)
-      li.nav-item
-        = link_to "Videos", pfadilife_videos_path, class: (params[:action] == 'videos' ? 'active' : nil)
-      li.nav-item
-        = link_to "Skauty", pfadilife_skauty_path, class: (params[:action] == 'skauty' ? 'active' : nil)
+      li= link_to "Admin", dashboard_path
