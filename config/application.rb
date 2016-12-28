@@ -1,5 +1,4 @@
-require File.expand_path('../boot', __FILE__)
-
+require_relative 'boot'
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -29,5 +28,7 @@ module Pfadismn
 
     # To be replaced!
     config.action_controller.permit_all_parameters = true
+
+    ActiveSupport.halt_callback_chains_on_return_false = false
   end
 end

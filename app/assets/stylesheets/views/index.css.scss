@@ -1,16 +1,73 @@
+#home-welcome
+{
+  height:100vh;
+
+  .bg {
+    filter: blur(3px);
+    height: 100%;
+    background: image-url('layouts/banner/8.jpg') top no-repeat;
+    background-size: cover;
+  }
+
+  .fg {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    .spacer {
+      height: 50px;
+      background-color: #222;
+      border-top: 1px solid black;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      text-align: center;
+        padding: 10px 0;
+
+      a {
+        color: $gray-lighter;
+      }
+    }
+
+    .title {
+      position: absolute;
+      top: 40vh;
+      left: 15vw;
+    }
+
+    //background: image-url('layouts/banner/logo.png') no-repeat;
+    h1, h2, h3 {
+      font-family: "Helvetica", sans-serif;
+      font-weight: 700;
+      color: white;
+      text-shadow: #000 5px 5px 10px;
+      margin: 0.15em 0;
+    }
+
+    h2 {
+      font-size: 3vw;
+    }
+
+    h1 {
+      font-size: 6vw;
+    }
+
+    h3 {
+      font-size: 2vw;
+      color: #DDD;
+      font-weight: normal;
+    }
+  }
+}
 
 .division-selector {
-
   .division {
-
-    display: inline-block;
-    text-align: center;
     font-size: 1.5em;
 
     img {
       opacity: 0.75;
       filter: alpha(opacity=75);
-      width: 100%;
     }
 
     a {
@@ -26,18 +83,7 @@
       margin-top: 0;
     }
 
-    &.biberstufe {
-      width: 29%;
-    }
-    &.wolfsstufe {
-      width: 29%;
-    }
-    &.pfadistufe {
-      width: 40%;
-    }
-
     &:hover {
-
       a {
         color: #111;
       }
@@ -51,6 +97,8 @@
 }
 
 .stickypost-container {
+  font-size: $font-size-small;
+
   background: image-url('index/post/stickypost-narrow.jpg') top center repeat-y;
   padding: 0 0 180px 0;
   position: relative;

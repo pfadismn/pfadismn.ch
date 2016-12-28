@@ -1,0 +1,53 @@
+.skauty-carousel {
+  overflow: hidden;
+  clear: both;
+  width: 100%;
+
+  .skauty-carousel-inner {
+    padding: 30px 0 40px 0;
+    width: 100%;
+  }
+
+  li {
+    width: 100%;
+    text-align: center;
+
+    a {
+      box-shadow: 5px 5px 30px -10px #000;
+      border: none;
+      display: inline-block;
+
+      &:hover {
+        border: none;
+      }
+    }
+
+    h1 {
+      font-size: 1.2em;
+      text-align: center;
+    }
+  }
+
+  .jcarousel-prev, .jcarousel-next {
+    &:hover {
+      cursor: pointer;
+    }   
+  }
+
+  .jcarousel-prev {
+    float: left;
+
+    &:before {
+      content:"«";
+    }
+  }
+
+  .jcarousel-next {
+    float: right;
+
+    &:after {
+      content:"»";
+    }
+  }
+}
+

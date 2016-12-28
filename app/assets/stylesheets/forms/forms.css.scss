@@ -1,261 +1,271 @@
 /*
-* This is a manifest file that'll automatically include all the stylesheets available in this directory
-* and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
-* the top of the compiled file, but it's generally better to create a new file per style scope.
-*= require_tree .
-*/
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_tree .
+ */
 
 .formtastic {
-    
-    font-size: 0.85em;
-    
-    .input {
-        /*        margin: 10px 0;*/
-        padding: 0;
-        border-bottom: 1px solid #DDD;
-        margin: 0;
-        height: 100%;
-        clear: both;
-        
-        .inline-hints {
-            display: inline;
-            margin-left: 15px;
-        }
-        
-        .inline-errors {
-            display: none;
-        }
-        
-        .choices-group {
-            width: 400px;
-            clear: both;
-            
-            .choice {
-                width: auto;
-                margin: 0;
-                padding: 5px 8px 15px 0;
-                display: inline-block;
-            }
-        }
-        
-        & .label {
-            width: 180px;
-            padding: 15px 15px 14px 15px;
-            margin: 0 15px 0 0;
-            font-weight: bold;
-            text-align: right;
-            height: 100%;
-            
-            label {
-                position: relative;
-            }
-            
-            abbr[title=required] {
-                display: none;
-            }
-        }
-        
-        .field-content {
-            width: 400px;
-            padding: 15px 15px 14px 0;
-            float: left;
-            
-            a {
-                float: right;
-            }
-        }
-        
-        input, textarea, select {
-            padding: 4px 5px;
-            width: 400px;
-            margin: 10px 0 8px 0;
-            border: 1px solid #CCC;
-            font-family: 'Habibi', serif;    
-            
-            &:focus {
-                border: 1px solid #666666;
-            }
-            
-        }
-        
-        &.required {
-            input, textarea, select {
-                border: 1px solid #666666;
-            }
-        }
-        
-        select {
-            padding: 3px 4px;
-            background-color: #FFF;
-        }
-        
-        input[type=radio], input[type=checkbox] {
-            width: auto;
-            padding: 4px 5px;
-            margin: 10px 8px 8px 0;
-        }
-        
-        input[type=file] {
-            border: none;
-            padding: none;
-            margin: 8px 0 8px 0;
-        }
-        
-        &.error {
-            
-            input, textarea, select {
-                background: #ecc2bb image-url('jquery-ui/ui-bg_diagonals-thick_19_b81900_40x40.png') 50% 50% repeat;
-                border: 1px solid #C00;
-                
-                &:focus {
-                    background: #f0f0f0 image-url('jquery-ui/ui-bg_diagonals-thick_21_666666_40x40.png') 50% 50% repeat;
-                }
-            }
-        }
-        
-        &.chosen {
-            padding-bottom: 8px;
-            overflow: visible;
-            
-            .chosen-select {
-                width: 421px;
-            }
-        }
-        
-        .chzn-container {
-            width: 408px;
-            background: white;
-            margin: 8px 0 0 0;
-            
-            a {
-                border-bottom: none;
-            }
-            
-            .chzn-choices {
-                border: 1px solid #CCC;
-                background: white;
-            }
-            
-            &.chzn-container-active .chzn-choices {
-                outline: 5px auto -webkit-focus-ring-color;
-                border: 1px solid #666666;
-                -webkit-box-shadhow: none;
-                -moz-box-shadhow: none;
-                -o-box-shadhow: none;
-            }
-        }
+
+  font-size: 0.85em;
+
+  .action {
+    list-style: none;
+  }
+
+  .input {
+    /*        margin: 10px 0;*/
+    padding: 0;
+    border-bottom: 1px solid #DDD;
+    margin: 0;
+    height: 100%;
+    clear: both;
+    list-style: none;
+
+    .inline-hints {
+      display: inline;
+      margin-left: 15px;
     }
-    
-    .boolean label {
-        padding-left: 225px;
+
+    .inline-errors {
+      display: none;
     }
-    
-    .buttons {
-        padding-left: 225px;
-        
-        input {
-            margin: 8px 0 8px 0;
-        }
-    }
-    
-    .doublefield {
-        legend {
-            width: 180px;
-            padding: 15px 15px 14px 15px;
-            margin: 0 15px 0 0;
-            font-weight: bold;
-            text-align: right;
-            height: 100%;
-            float: left;
-        }
-        
-        .inline-hints {
-            display: inline;
-            color: #666;
-            margin: 0.5em 0 0 6px;
-        }
-        
-        ol .input {
-            border: none;
-            display: inline;
-            
-            .label, .inline-hints {
-                display: none;
-            }
-            
-            input, textarea, select {
-                width: 188px;
-                margin-right: 9px;
-            }
-        }
-        
-    }
-    
-    .fragments {
-        .label label {
-            position: relative;
-        }
-        
-        .fragments-group {
-            padding-left: 225px;
-        }
-        
-        input, textarea, select {
-            width: auto;
-        }
-    }
-    
-    &> .inputs {
-        margin: 10px 10px 25px 10px;
-        padding:0;
-        background: #F6F6F6;
-        overflow: visible;
-        
-        > legend {
-            background: #F6F6F6;
-            color: #000;
-            font-size: 16px;
-            padding: 8px 20px;
-            -webkit-border-top-left-radius: 10px;
-            -webkit-border-top-right-radius: 10px;
-            -moz-border-radius-topleft: 10px;
-            -moz-border-radius-topright: 10px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-    }
-    
-    #errorExplanation {
+
+    .choices-group {
+      width: 400px;
+      clear: both;
+
+      .choice {
         width: auto;
-        padding: 7px;
-        padding-bottom: 10px;
-        margin: 10px 10px 20px 10px;
-        background: #f0f0f0 image-url('/layouts/ui-bg_diagonals-thick_21_666666_40x40.png') 50% 50% repeat;
-        
-        h2 {
-            text-align: left;
-            font-weight: bold;
-            padding: 5px 5px 5px 15px;
-            font-size: 12px;
-            margin: -7px;
-            background: #f0f0f0 image-url('layouts/ui-bg_diagonals-thick_18_b81900_40x40.png') 50% 50% repeat;
-            color: #fff;
-        }
-        p {
-            color: #333;
-            margin-bottom: 0;
-            padding: 5px;
-            padding-top: 20px;
-        }
-        
-        ul {
-            list-style: square;
-            margin: 0 10px 5px 25px;
-            
-            li {
-                font-size: 12px;
-                list-style: square;
-            }
-        }
+        margin: 0;
+        padding: 5px 8px 15px 0;
+        display: inline-block;
+      }
     }
+
+    & .label {
+      width: 180px;
+      padding: 15px 15px 14px 15px;
+      margin: 0 15px 0 0;
+      font-weight: bold;
+      text-align: right;
+      height: 100%;
+      line-height: $line-height-base;
+      font-size: $font-size-small;
+      color: black;
+
+      label {
+        position: relative;
+      }
+
+      abbr[title=required] {
+        display: none;
+      }
+    }
+
+    .field-content {
+      width: 400px;
+      padding: 15px 15px 14px 0;
+      float: left;
+
+      a {
+        float: right;
+      }
+    }
+
+    input, textarea, select {
+      padding: 4px 5px;
+      width: 400px;
+      margin: 10px 0 8px 0;
+      border: 1px solid #CCC;
+      font-family: 'Habibi', serif;    
+
+      &:focus {
+        border: 1px solid #666666;
+      }
+
+    }
+
+    &.required {
+      input, textarea, select {
+        border: 1px solid #666666;
+      }
+    }
+
+    select {
+      padding: 3px 4px;
+      background-color: #FFF;
+    }
+
+    input[type=radio], input[type=checkbox] {
+      width: auto;
+      padding: 4px 5px;
+      margin: 10px 8px 8px 0;
+    }
+
+    input[type=file] {
+      border: none;
+      padding: none;
+      margin: 8px 0 8px 0;
+    }
+
+    &.error {
+
+      input, textarea, select {
+        background: #ecc2bb image-url('jquery-ui/ui-bg_diagonals-thick_19_b81900_40x40.png') 50% 50% repeat;
+        border: 1px solid #C00;
+
+        &:focus {
+          background: #f0f0f0 image-url('jquery-ui/ui-bg_diagonals-thick_21_666666_40x40.png') 50% 50% repeat;
+        }
+      }
+    }
+
+    &.chosen {
+      padding-bottom: 8px;
+      overflow: visible;
+
+      .chosen-select {
+        width: 421px;
+      }
+    }
+
+    .chzn-container {
+      width: 408px;
+      background: white;
+      margin: 8px 0 0 0;
+
+      a {
+        border-bottom: none;
+      }
+
+      .chzn-choices {
+        border: 1px solid #CCC;
+        background: white;
+      }
+
+      &.chzn-container-active .chzn-choices {
+        outline: 5px auto -webkit-focus-ring-color;
+        border: 1px solid #666666;
+        -webkit-box-shadhow: none;
+        -moz-box-shadhow: none;
+        -o-box-shadhow: none;
+      }
+    }
+  }
+
+  .boolean label {
+    padding-left: 225px;
+  }
+
+  .buttons {
+    padding-left: 225px;
+
+    input {
+      margin: 8px 0 8px 0;
+    }
+  }
+
+  .doublefield {
+    legend {
+      width: 180px;
+      padding: 15px 15px 14px 15px;
+      margin: 0 15px 0 0;
+      font-weight: bold;
+      text-align: right;
+      height: 100%;
+      float: left;
+    }
+
+    .inline-hints {
+      display: inline;
+      color: #666;
+      margin: 0.5em 0 0 6px;
+    }
+
+    ol .input {
+      border: none;
+      display: inline;
+
+      .label, .inline-hints {
+        display: none;
+      }
+
+      input, textarea, select {
+        width: 188px;
+        margin-right: 9px;
+      }
+    }
+
+  }
+
+  .fragments {
+    .label label {
+      position: relative;
+      font-size: ($font-size-base*0.85);
+      display: block;
+    }
+
+    .fragments-group {
+      padding-left: 225px;
+    }
+
+    input, textarea, select {
+      width: auto;
+    }
+  }
+
+  &> .inputs {
+    margin: 10px 10px 25px 10px;
+    padding:0;
+    background: #F6F6F6;
+    overflow: visible;
+
+    > legend {
+      background: #F6F6F6;
+      color: #000;
+      font-size: 16px;
+      padding: 8px 20px;
+      -webkit-border-top-left-radius: 10px;
+      -webkit-border-top-right-radius: 10px;
+      -moz-border-radius-topleft: 10px;
+      -moz-border-radius-topright: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+  }
+
+  #errorExplanation {
+    width: auto;
+    padding: 7px;
+    padding-bottom: 10px;
+    margin: 10px 10px 20px 10px;
+    background: #f0f0f0 image-url('/layouts/ui-bg_diagonals-thick_21_666666_40x40.png') 50% 50% repeat;
+
+    h2 {
+      text-align: left;
+      font-weight: bold;
+      padding: 5px 5px 5px 15px;
+      font-size: 12px;
+      margin: -7px;
+      background: #f0f0f0 image-url('layouts/ui-bg_diagonals-thick_18_b81900_40x40.png') 50% 50% repeat;
+      color: #fff;
+    }
+    p {
+      color: #333;
+      margin-bottom: 0;
+      padding: 5px;
+      padding-top: 20px;
+    }
+
+    ul {
+      list-style: square;
+      margin: 0 10px 5px 25px;
+
+      li {
+        font-size: 12px;
+        list-style: square;
+      }
+    }
+  }
 }

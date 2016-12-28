@@ -33,12 +33,7 @@ module ApplicationHelper
     title t
 
     content_for :heading do
-      content_tag :div, class: 'heading' do
-          concat content_tag :div, image_tag(icon), class: 'icon'
-          concat content_tag :h1, t
-          concat content_tag :h2, subtitle
-          concat content_tag :blockquote, quote if quote
-      end
+      render partial: 'layouts/heading', locals: { t: t, subtitle: subtitle, icon: icon, quote: quote }
     end
   end
 end

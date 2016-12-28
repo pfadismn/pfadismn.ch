@@ -2,7 +2,7 @@
   - divisions = { biberstufe: '5 bis 7 Jahre', wolfsstufe: '8 bis 10 Jahre', pfadistufe: '11 bis 15 Jahre' }
   - divisions.each do |division, description|
     - path = organisational_unit_path(division)
-    div class="division #{division}"
+    .col-md-4.text-center class="division #{division}"
       = link_to(image_tag("stufen/#{division}.png"), path)
       .name
         = link_to division.to_s.capitalize, path

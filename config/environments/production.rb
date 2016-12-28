@@ -84,4 +84,5 @@ Rails.application.configure do
         exception_recipients: %w{webmaster@pfadismn.ch}
     }
 
+  config.lograge.enabled = true
 end
