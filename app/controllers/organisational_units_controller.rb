@@ -7,6 +7,7 @@ class OrganisationalUnitsController < ApplicationController
 
   def show
     @ou = OrganisationalUnit.by_name(params[:id])
+    raise ActionController::RoutingError.new('Not Found') unless @ou
   end
 
   def rheinfallmarsch
