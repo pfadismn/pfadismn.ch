@@ -10,12 +10,6 @@
 #navbar.collapse.navbar-collapse
   ul.nav.navbar-nav
 
-    li[class=(params[:controller] == 'index' && params[:action] == 'index' ? 'active' : nil)]
-      = link_to "Home", index_path
-
-    li[class=(params[:controller] == 'events' ? 'active' : nil)]
-      = link_to "Events",organisational_unit_events_path('abteilung')
-
     li[class=(params[:controller] == 'organisational_units' && params[:action] != 'index' ? 'active' : nil)]
       = link_to "Abteilung", organisational_units_path
 
@@ -34,6 +28,9 @@
       li.small[class=(ou == 'apv' ? 'active' : nil)]
         = link_to "APV", organisational_unit_path('apv')
 
+    li[class=(params[:controller] == 'events' ? 'active' : nil)]
+      = link_to "Events",organisational_unit_events_path('abteilung')
+
     li[class=((params[:controller] == 'pfadilife' ||  params[:controller] == 'photos') ? 'active' : nil )]
       = link_to "Pfadi Life", pfadilife_index_path
 
@@ -49,4 +46,5 @@
       = link_to "Infos A-Z", faq_path
 
     - if current_user.present?
-      li= link_to "Admin", dashboard_path
+      li
+        = link_to '⚙', dashboard_path, title: 'Admin'
