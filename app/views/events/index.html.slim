@@ -6,23 +6,23 @@
 h2
   | Übersicht der Events
 - if @events.any?
-  .table-responsive
-    table.events.table
+    .events
       - @events.each do |event|
-        tr
-          td
-            = l event.start_time
-          td
+        .events-row.row
+          .events-cell.col-md-7
+            => link_to organisational_unit_event_path(@ou, event) do
+              = l event.start_time
+            ' –
             - if !event.start_place.blank?
               = link_to event.start_place, event.start_place
             - else
               | siehe Beschreibung
-          td
-            = event.organisational_unit.name
-          td
+          .events-cell.col-md-5
             = event.name
-          td
-            = link_to "Details »", organisational_unit_event_path(@ou, event)
+            .pull-right.hidden-sm.hidden-xs
+              = link_to organisational_unit_event_path(@ou, event)
+                | Details »
+
 - else
   i
     | Derzeit sind keine Informationen zu kommenden Anlässen verfügbar.
