@@ -9,14 +9,17 @@ h2
     .events
       - @events.each do |event|
         .events-row.row
-          .events-cell.col-md-7
+          .events-cell.col-md-5
             => link_to organisational_unit_event_path(@ou, event) do
-              = l event.start_time
+              = l event.start_time, format: :short
             ' –
             - if !event.start_place.blank?
               = link_to event.start_place, event.start_place
             - else
               | siehe Beschreibung
+          .events-cell.col-md-2
+            = link_to organisational_unit_events_path(event.organisational_unit)
+              = event.organisational_unit.name
           .events-cell.col-md-5
             = event.name
             .pull-right.hidden-sm.hidden-xs
