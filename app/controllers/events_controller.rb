@@ -1,7 +1,7 @@
 # encoding: UTF-8
 class EventsController < ApplicationController
-  before_filter :inject_publish, only: [ :create, :update ]
-  before_filter :load_parent_resource
+  before_action :inject_publish, only: [ :create, :update ]
+  before_action :load_parent_resource
   load_and_authorize_resource except: [:show, :index, :quartalsprogramm, :image]
 #  load_and_authorize_resource
 

@@ -1,5 +1,5 @@
 class ContactFormsController < ApplicationController
-  before_filter :load_parent_resource
+  before_action :load_parent_resource
 
   def index
     redirect_to action: 'new'

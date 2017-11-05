@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-  before_filter :load_parent_resource
+  before_action :load_parent_resource
   load_resource
   authorize_resource except: [:avatar]
 
