@@ -7,6 +7,9 @@ Bundler.require(*Rails.groups)
 
 module Pfadismn
   class Application < Rails::Application
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 5.1
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -20,15 +23,10 @@ module Pfadismn
     config.i18n.default_locale = :de
     config.assets.paths << "#{Rails.root}/app/assets/downloads"
 
-    # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
-
     # Active Job Adapter
     config.active_job.queue_adapter = :delayed_job
 
     # To be replaced!
     config.action_controller.permit_all_parameters = true
-
-    ActiveSupport.halt_callback_chains_on_return_false = false
   end
 end

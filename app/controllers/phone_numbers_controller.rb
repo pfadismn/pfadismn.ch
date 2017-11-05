@@ -1,7 +1,7 @@
 class PhoneNumbersController < ApplicationController
-  before_filter :set_phonable
+  before_action :set_phonable
   load_and_authorize_resource
-  
+
   def show
     respond_to do |format|
       format.json { render json: @phone_number }

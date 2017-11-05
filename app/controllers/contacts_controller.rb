@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   load_and_authorize_resource
-  before_filter :load_parent_resource
+  before_action :load_parent_resource
 
   def index
     redirect_to [@ou, @member]

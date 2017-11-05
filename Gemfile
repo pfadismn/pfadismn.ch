@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
 ruby File.read('.ruby-version').strip
-gem 'rails', '~> 5.0'
+gem 'rails', '~> 5.1'
 
 # Authentication & authorisation
-gem 'cancan'
+gem 'cancancan'
 gem 'authlogic'
 
 gem 'mysql2'
@@ -39,6 +39,7 @@ group :development do
   gem 'letter_opener'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'listen'
 end
 
 group :test do

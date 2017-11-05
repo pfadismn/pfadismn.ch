@@ -1,13 +1,13 @@
 # encoding: UTF-8
 
 class PasswordResetsController < ApplicationController
-  before_filter :load_user, only: [:update]
+  before_action :load_user, only: [:update]
   def new
   end
-  
+
   def create
     @user = User.where(email: params[:user][:email]).first
-    
+
     respond_to do |format|
       if @user.present?
         @user.reset_password
@@ -21,14 +21,14 @@ class PasswordResetsController < ApplicationController
   def edit
     @user = User.new
   end
- 
+
   def update
     respond_to do |format|
       if @user.present? && params[:user][:email] == @user.email
         @user.password = params[:user][:password]
         @user.password_confirmation = params[:user][:password_confirmation]
-    
-      
+
+
         if @user.save
           format.html { redirect_to index_path, notice: 'Passwort erfolgreich zurückgesetzt.' }
         else
@@ -42,7 +42,7 @@ class PasswordResetsController < ApplicationController
       end
     end
   end
-    
+
   private
   def load_user
     @token = params[:id]
