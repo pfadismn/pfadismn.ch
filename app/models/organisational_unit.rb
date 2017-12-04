@@ -31,6 +31,7 @@ class OrganisationalUnit < ActiveRecord::Base
   end
 
   def team
+    return Member.none unless responsible_function
     members.by_function(responsible_function.to_sym) if MemberFunction::FUNCTIONS.index(responsible_function.to_sym)
   end
 
