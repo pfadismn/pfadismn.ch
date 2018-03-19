@@ -1,25 +1,24 @@
 = heading("Fotos", "Impressionen aus der Pfadi SMN", icon: 'pfadilife/photos/icon_gallery.png')
-- if can? :create, PhotoCollection::AlbumUpload
-  ul.buttons[style="float: right;"]
-    li
-      = link_to 'Album hochladen', new_photo_path, class: 'new' if can? :create, PhotoCollection::AlbumUpload
 .albums
-  - @album_years.sort.reverse.each do |year, albums|
-    h2
-      | Alben 
-      = year
-    ul
-      - albums.each do |album|
-        li
-          = link_to photo_album_path(year: year, id: album.id[:id]) do
-            = image_tag album.thumbnail.url if album.thumbnail.present?
-            div
-              = album.name
-    = clearer
+  / - @album_years.sort.reverse.each do |year, albums|
+  /   h2
+  /     | Alben
+  /     = year
+  /   ul
+  /     - albums.each do |album|
+  /       li
+  /         = link_to photo_album_path(year: year, id: album.id[:id]) do
+  /           = image_tag album.thumbnail.url if album.thumbnail.present?
+  /           div
+  /             = album.name
+  /   = clearer
+  #flickrembed
+  script src="https://flickrembed.com/embed_v2.js.php?source=flickr&layout=responsive&input=138925206@N07&sort=0&by=user&theme=tiles&scale=fill&limit=50&skin=default&autoplay=true"
+
 - content_for :sidebar do
-  h2
-    | Fotos zum Veröffentlichen?
+
+  h2 Fotos zum Veröffentlichen?
   p
-    |  Du hast noch Fotos welche nicht auf der Webseite sind? Dann melde dich bitte unter 
+    '  Du hast noch Fotos welche nicht auf der Webseite sind? Dann melde dich bitte unter
     = link_to 'webmaster@pfadismn.ch', 'mailto:webmaster@pfadismn.ch'
-    | . Wir integrieren gerne deine Fotos, sodass alle Pfadis an den Impressionen teilhaben können!
+    ' . Wir integrieren gerne deine Fotos, sodass alle Pfadis an den Impressionen teilhaben können!
