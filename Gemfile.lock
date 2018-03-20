@@ -49,9 +49,9 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     ansi (1.5.0)
     arel (8.0.0)
-    authlogic (4.0.1)
-      activerecord (>= 4.2, < 5.3)
-      activesupport (>= 4.2, < 5.3)
+    authlogic (3.8.0)
+      activerecord (>= 3.2, < 5.3)
+      activesupport (>= 3.2, < 5.3)
       request_store (~> 1.0)
       scrypt (>= 1.2, < 4.0)
     autoprefixer-rails (8.1.0.1)
@@ -279,7 +279,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
-  authlogic
+  authlogic (~> 3.6)
   awesome_nested_set
   better_errors
   binding_of_caller

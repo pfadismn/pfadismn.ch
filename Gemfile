@@ -5,7 +5,7 @@ gem 'rails', '~> 5.1'
 
 # Authentication & authorisation
 gem 'cancancan'
-gem 'authlogic'
+gem 'authlogic', '~> 3.6'
 
 gem 'mysql2'
 gem 'rails-i18n', '~> 5.1'
