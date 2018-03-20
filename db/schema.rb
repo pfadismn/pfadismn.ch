@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151229130610) do
+ActiveRecord::Schema.define(version: 20180320194102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -151,6 +151,17 @@ ActiveRecord::Schema.define(version: 20151229130610) do
     t.string "number"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "photo_albums", force: :cascade do |t|
+    t.integer "year"
+    t.string "title"
+    t.string "description"
+    t.string "place"
+    t.string "flickr_id"
+    t.string "flickr_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "places", id: :serial, force: :cascade do |t|

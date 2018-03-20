@@ -25,5 +25,8 @@ h3
 ul
   li
     = link_to 'News verwalten', news_index_path if can? :create, News
+  li
+    = link_to 'Photo Album erstellen', new_photo_album_path if can? :create, PhotoAlbum
+
 - content_for :sidebar do
   = render partial: 'stickypost'

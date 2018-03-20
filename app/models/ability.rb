@@ -40,6 +40,7 @@ class Ability
     can :read, Event
     can :read, Place
     can :create, UserSession
+    can :read, PhotoAlbum
   end
 
   def user_privileges user
@@ -68,7 +69,7 @@ class Ability
     can :manage, Address
     can :manage, Contact
     can :manage, PhoneNumber
-    can :manage, PhotoCollection::AlbumUpload
+    can :manage, PhotoAlbum
   end
 
   def admin_privileges user

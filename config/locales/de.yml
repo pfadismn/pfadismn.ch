@@ -189,7 +189,7 @@ de:
 
   activerecord:
     models:
-      member: 
+      member:
         one: Mitglied
         other: Mitglieder
       organisational_unit:
@@ -229,6 +229,12 @@ de:
         vegetarian: Vegetarier/in
       phone:
         phone_numbers: Telefonnummern
+      photo_album:
+        title: Titel
+        description: Beschreibung
+        flickr_id: Flickr Album ID
+        year: Jahr
+        place: Ort
       alumni_address:
         comment: Kommentar
         email: E-Mail
