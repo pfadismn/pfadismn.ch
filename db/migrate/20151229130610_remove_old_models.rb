@@ -1,4 +1,4 @@
-class RemoveOldModels < ActiveRecord::Migration
+class RemoveOldModels < ActiveRecord::Migration[4.2]
   def up
     drop_table :alumni_addresses
     drop_table :meeting_protocols

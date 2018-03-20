@@ -1,4 +1,4 @@
-class CreateMemberFunctions < ActiveRecord::Migration
+class CreateMemberFunctions < ActiveRecord::Migration[4.2]
   def up
     create_table :member_functions do |t|
       t.string :name

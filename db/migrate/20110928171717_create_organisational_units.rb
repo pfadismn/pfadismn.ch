@@ -1,12 +1,12 @@
-class CreateOrganisationalUnits < ActiveRecord::Migration
+class CreateOrganisationalUnits < ActiveRecord::Migration[4.2]
   def change
     create_table :organisational_units do |t|
       t.string :name
       t.string :motto
       t.string :caption
-      
+
       t.string :responsible_function
-      
+
       # Nested set Attributes
       t.integer :parent_id
       t.integer :lft

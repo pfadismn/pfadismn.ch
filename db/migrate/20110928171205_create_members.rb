@@ -1,4 +1,4 @@
-class CreateMembers < ActiveRecord::Migration
+class CreateMembers < ActiveRecord::Migration[4.2]
   def change
     create_table :members do |t|
       t.references :organisational_unit
@@ -14,7 +14,7 @@ class CreateMembers < ActiveRecord::Migration
       t.boolean :vegetarian
       t.date :member_since
       t.text :education
-      
+
       t.string :avatar_file_name
       t.string :avatar_content_type
       t.integer :avatar_file_size

@@ -1,7 +1,0 @@
-= heading(@album.name, @album.place, icon: 'pfadilife/photos/icon_gallery.png')
-- if @album.caption
-  p
-    = @album.caption
-ul.album
-  = render partial: 'photo', collection: @album.photos
-.clear

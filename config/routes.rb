@@ -15,11 +15,8 @@ Pfadismn::Application.routes.draw do
   get 'login' => 'user_sessions#new', as: :login
   match 'logout' => 'user_sessions#destroy', via: [:delete, :get], as: :logout
 
-  match 'photos' => 'photos#destroy', via: [:delete]
-  match 'photos' => 'photos#create', via: [:post] , as: :photo_collection_album_uploads
-  get 'photos/new' => 'photos#new' , as: :new_photo
-  get 'photos/:year' => 'photos#index' , as: :photo_year
-  get 'photos/:year/:id' => 'photos#show', as: :photo_album
+  resources :photo_albums, path: '/photos' do
+  end
 
   resources :organisational_units, path: :abteilung do
     resources :contact_forms

@@ -1,27 +1,31 @@
 = heading("Pfadi Life", "Impressionen aus dem Pfadi-Leben")
-h2
-  | Fotos
-p
-  | In diesem Bereich findest du Fotos von vergangenen Anlässen und Lagern.
+
+= link_to photos_path
+  h2 Fotos
+
+p In diesem Bereich findest du Fotos von vergangenen Anlässen und Lagern.
 p
   = link_to "Hier", photos_path
-  |  findest du die Übersicht über alle Alben.
-h2
-  | Videos
-p
-  | In diesem Bereich findest du Videos von vergangenen Anlässen wie dem Familienabend.
+  '  findest du die Übersicht über alle Alben.
+
+= link_to pfadilife_videos_path
+  h2 Videos
+
+p In diesem Bereich findest du Videos von vergangenen Anlässen wie dem Familienabend.
 p
   = link_to "Hier", pfadilife_videos_path
-  |  findest du die Übersicht über eine Auswahl einiger Videos.
-h2
-  | Skauty
-p
-  | Das Skauty ist die Abteilungs-Zeitschrift von der Pfadi SMN. 
+  '  findest du die Übersicht über eine Auswahl einiger Videos.
+
+= link_to pfadilife_skauty_path
+  h2 Skauty
+
+p Das Skauty ist die Abteilungs-Zeitschrift von der Pfadi SMN.
 p
   = link_to "Hier", pfadilife_skauty_path
-  |  findest du alle Ausgaben seit 2001 zum Download.
+  '  findest du alle Ausgaben seit 2001 zum Download.
+
 - content_for :sidebar do
   h2
     | Über Pfadi Life
   p
-    |  "Pfadi Life" ist der Bereich in dem du vorallem multimediale Inhalte findest. Wie es der Name dieses Bereichs vermuten lässt, soll "Pfadi Life" Eindrücke aus dem Pfadi-Leben vermitteln. 
+    |  "Pfadi Life" ist der Bereich in dem du vorallem multimediale Inhalte findest. Wie es der Name dieses Bereichs vermuten lässt, soll "Pfadi Life" Eindrücke aus dem Pfadi-Leben vermitteln.

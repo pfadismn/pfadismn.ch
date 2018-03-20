@@ -1,0 +1,23 @@
+= heading("Fotos", "Impressionen aus der Pfadi SMN", icon: 'pfadilife/photos/icon_gallery.png')
+.albums
+  - @photo_albums.group_by(&:year).each do |year, albums|
+    h2
+      = year
+    ul
+      - albums.each do |album|
+        li
+          = link_to photo_album_path(album) do
+            / = image_tag album.thumbnail.url if album.thumbnail.present?
+            h3
+              = album.title
+
+            small= album.description
+    = clearer
+
+- content_for :sidebar do
+
+  h2 Fotos zum Veröffentlichen?
+  p
+    '  Du hast noch Fotos welche nicht auf der Webseite sind? Dann melde dich bitte unter
+    = link_to 'webmaster@pfadismn.ch', 'mailto:webmaster@pfadismn.ch'
+    ' . Wir integrieren gerne deine Fotos, sodass alle Pfadis an den Impressionen teilhaben können!
