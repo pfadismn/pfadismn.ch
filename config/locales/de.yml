@@ -204,7 +204,9 @@ de:
         start_time: Start (Zeit)
         end_time: Ende (Zeit)
         start_place: Start (Ort)
+        start_place_description: Start (Zusatzangaben)
         end_place: End (Ort)
+        end_place_description: End (Zusatzangaben)
         description: Beschreibung
         take_along: Mitnehmen
         published: Veröffentlicht

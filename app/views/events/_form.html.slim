@@ -5,8 +5,10 @@
     = f.input :name
     = f.input :start_time, { start_year: Date.today.year, minute_step: 15 }
     = f.input :start_place
+    = f.input :start_place_description
     = f.input :end_time, { start_year: Date.today.year, minute_step: 15 }
     = f.input :end_place
+    = f.input :end_place_description
   = f.inputs t(:Zusatzinfos) do
     = f.input :description
     = f.input :take_along

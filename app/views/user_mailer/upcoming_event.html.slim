@@ -13,15 +13,15 @@ table[border="0"]
       | Beginn:
     td
       = l @event.start_time
-      | , 
-      = link_to @event.start_place, place_url(@event.start_place)
+      | ,
+      == event_place(@event.start_place, @event.start_place_description)
   tr
     td[width="75"]
       | Ende:
     td
       = l @event.end_time
-      | , 
-      = link_to @event.end_place, place_url(@event.end_place)
+      | ,
+      == event_place(@event.end_place, @event.end_place_description)
   tr
     td[width="75"]
       | Rückfragen:
