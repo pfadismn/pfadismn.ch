@@ -9,11 +9,11 @@ div
     | Zugleich ist der Elternrat die Anlaufstelle für Eltern, welche mit Problemen oder Anliegen nicht an die Abteilungsleitung gelangen möchten.
   p
     | Wenn ihr Fragen habt, Verbesserungsvorschläge, Probleme mit der Abteilungsleitung oder Anliegen, die ihr nicht mit dem Leitungsteam besprechen möchtet, dann wendet euch an sie. Ihr könnt entweder auf den Elternrat oder die Elternrätin zugehen (Kontaktangaben in der Seitenleiste), der oder die die Stufe eures Kindes vertritt, oder allen vieren zugleich schreiben: 
-    => link_to 'elternrat@pfadismn.ch', 'mailto:elternrat@pfadismn.ch'
+    => mail_to 'elternrat@pfadismn.ch', 'elternrat@...', encode: 'javascript'
     | (die Abteilungsleitung sieht die Mails, die an diese Adresse gehen, nicht).
   p
     | Interesse, am Elternrat mitzuwirken? Eine kurze Mail an 
-    => link_to 'al@pfadismn.ch', 'mailto:al@pfadismn.ch'
+    => mail_to 'al@pfadismn.ch', 'al@...', encode: 'javascript'
     | reicht!
 
 - content_for :sidebar do
@@ -25,25 +25,25 @@ div
     li
       | Roman Müller v/o Panther (Elternrat Biberli)
       br
-      = link_to 'roman-mueller@gmx.ch', 'mailto:roman-mueller@gmx.ch'
+      => mail_to 'roman-mueller@gmx.ch', nil, encode: 'javascript'
     li
       | Sergej Klammer v/o Diode (Elternrat Bienli)
       br
-      = link_to 'sk@klammer.ch', 'mailto:sk@klammer.ch'
+      => mail_to 'sk@klammer.ch', nil, encode: 'javascript'
     li
       | Marco Soldati (Elternrat Wölfli)
       br
-      = link_to 'mercuron@yahoo.com', 'mailto:mercuron@yahoo.com'
+      => mail_to 'mercuron@yahoo.com', nil, encode: 'javascript'
     li
       | Anita Zoller v/o Skilla (Elternrätin Buebestufe)
       br
-      = link_to 'anikus@gmx.ch', 'mailto:anikus@gmx.ch'
+      => mail_to 'anikus@gmx.ch', nil, encode: 'javascript'
     li
       | Saskia Jenny (Elternrätin Frauenstufe)
       br
-      = link_to 'saskia.jenny@gmail.com', 'mailto:saskia.jenny@gmail.com'
+      => mail_to 'saskia.jenny@gmail.com', nil, encode: 'javascript'
 
 
   |  Mit dem Elternrat kann unter 
-  = link_to 'elternrat@pfadismn.ch', 'mailto:elternrat@pfadismn.ch'
+  => mail_to 'elternrat@pfadismn.ch', 'elternrat@...', encode: 'javascript'
   |  in Kontakt getreten werden.
