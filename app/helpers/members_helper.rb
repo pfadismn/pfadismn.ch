@@ -11,7 +11,7 @@ module MembersHelper
     content_tag :div, class: 'contact-name' do
         concat content_tag :span, member.name, class: 'name'
         concat " "
-        concat content_tag :span, mail_to(member.alias), class: 'email'
+        concat content_tag :span, mail_to(member.alias, member.alias.split('@').first + '@...', encode: 'javascript'), class: 'email'
     end
   end
 end

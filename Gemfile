@@ -7,6 +7,7 @@ gem 'rails', '~> 5.1.5'
 gem 'cancancan'
 gem 'authlogic', '~> 3.6'
 
+gem 'actionview-encoded_mail_to'
 gem 'mysql2'
 gem 'rails-i18n', '~> 5.1'
 gem 'pg'

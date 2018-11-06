@@ -11,10 +11,10 @@ html
     title
       | Pfadi SMN :: Quartalsprogramm
     style
-      |  h1 { margin: 40px 0 20px 0; } table { border-collapse: collapse; width: 100%; font-size: 0.9em; } td { border: 1px solid gray; padding: 3px; } th { text-align: left; border: 1px solid gray; padding: 3px; background: lightgray; } td h2 { margin: 0; } td.title { border:none; } td.time, th.time { width: 40px; text-align: right; border-right: none; } td.place, th.place { width: 100px; border-left: none; } td.take-along { width: 50%; } td.description { width: 50%; } tr.upper td.time, tr.upper td.place { border-bottom: none; } tr.lower td.time, tr.lower td.place { border-top: none; } td.spacer { border:none; height: 1.5em; } blockquote { margin-top: 3em; font-style: italic; } p.team { margin-left: 40px; } 
+      |  h1 { margin: 40px 0 20px 0; } table { border-collapse: collapse; width: 100%; font-size: 0.9em; } td { border: 1px solid gray; padding: 3px; } th { text-align: left; border: 1px solid gray; padding: 3px; background: lightgray; } td h2 { margin: 0; } td.title { border:none; } td.time, th.time { width: 40px; text-align: right; border-right: none; } td.place, th.place { width: 100px; border-left: none; } td.take-along { width: 50%; } td.description { width: 50%; } tr.upper td.time, tr.upper td.place { border-bottom: none; } tr.lower td.time, tr.lower td.place { border-top: none; } td.spacer { border:none; height: 1.5em; } blockquote { margin-top: 3em; font-style: italic; } p.team { margin-left: 40px; }
   body
     h1
-      | Quartalsprogramm 
+      | Quartalsprogramm
       = @ou.name
     table
       thead
@@ -35,13 +35,13 @@ html
             td.title[colspan="4"]
               h2
                 = l event.start_time.to_date, format: :long
-                | : 
+                | :
                 = event.name
           tr.upper
             td.time
               = l event.start_time, format: :time_only
             td.place
-              = link_to event.start_place, event.start_place
+              == event_place(event.start_place, event.start_place_description)
             td.take-along[rowspan="2"]
               = event.take_along.lines.to_a.join(', ')
             td.take-along[rowspan="2"]
@@ -50,7 +50,7 @@ html
             td.time
               = l event.end_time, format: :time_only
             td.place
-              = link_to event.end_place, event.start_place
+              == event_place(event.end_place, event.end_place_description)
     h1
       | Allgemeine Hinweise
     h2

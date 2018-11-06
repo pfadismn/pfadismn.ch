@@ -13,13 +13,13 @@
   h3
     = @event.organisational_unit
   div
-    | Beginn: 
-    = l @event.start_time
-    = "(#{link_to @event.start_place, @event.start_place})".html_safe if @event.start_place
+    | Beginn:
+    =< l @event.start_time
+    ==< " (#{event_place(@event.start_place, @event.start_place_description)})"
   div
-    | Ende: 
-    = l @event.end_time
-    = "(#{link_to @event.end_place, @event.end_place})".html_safe if @event.end_place
+    | Ende:
+    =< l @event.end_time
+    ==< "(#{event_place(@event.end_place, @event.end_place_description)})"
   - if @event.content_image.present?
     .content_image
       = image_tag image_organisational_unit_event_path(@event)

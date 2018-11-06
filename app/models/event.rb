@@ -2,9 +2,9 @@
 class Event < ActiveRecord::Base
   # Relations
   belongs_to :organisational_unit
-  belongs_to :creator, class_name: 'User'
-  belongs_to :start_place, class_name: 'Place'
-  belongs_to :end_place, class_name: 'Place'
+  belongs_to :creator, class_name: :User
+  belongs_to :start_place, class_name: :Place, optional: true
+  belongs_to :end_place, class_name: :Place, optional: true
   attr_accessor :send_reminder
 
   # Attachment
@@ -12,11 +12,8 @@ class Event < ActiveRecord::Base
 
   # Validations
   validates :name, :start_time, :end_time, :organisational_unit, presence: true
-  validate do
-    unless start_time < end_time
-      errors.add :end_time, I18n.t(:date_must_be_later_than)
-    end
-  end
+  validate { errors.add(:end_time, :date_must_be_later_than) unless start_time < end_time }
+  validate { errors.add(:start_place, :blank) unless start_place || start_place_description.present? }
 
   after_save :queue_reminder
 
