@@ -11,6 +11,7 @@ Pfadismn::Application.routes.draw do
   get 'rheinfallmarsch', action: :rheinfallmarsch, controller: :index, as: :rheinfallmarsch
   get 'chronik', action: :chronik, controller: :index, as: :chronik
   get 'faq', action: :faq, controller: :index, as: :faq
+  get 'jubiläum', action: :anniversary, controller: :index, as: :anniversary
 
   get 'login' => 'user_sessions#new', as: :login
   match 'logout' => 'user_sessions#destroy', via: [:delete, :get], as: :logout

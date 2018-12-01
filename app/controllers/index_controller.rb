@@ -17,6 +17,9 @@ class IndexController < ApplicationController
   def chronik
   end
 
+  def anniversary
+  end
+
   def rheinfallmarsch
   end
 

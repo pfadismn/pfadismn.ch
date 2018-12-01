@@ -10,6 +10,9 @@
 #navbar.collapse.navbar-collapse
   ul.nav.navbar-nav
 
+    li[class=(params[:controller] == 'index' && params[:action] == 'anniversary' ? 'active' : nil)]
+      = link_to "75 Jahre", anniversary_path, class: 'special'
+
     li[class=(params[:controller] == 'organisational_units' && params[:action] != 'index' ? 'active' : nil)]
       = link_to "Abteilung", organisational_units_path
 
