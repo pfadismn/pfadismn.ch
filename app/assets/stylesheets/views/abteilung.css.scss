@@ -1,21 +1,21 @@
 .chronik {
     .chronik-slogan {
-        
+
         text-align: center;
         font-weight: normal;
         font-style: italic;
         font-size: 1.3em;
         color: #D6D6D6;
-        
+
         &:before {
             content: "„";
         }
-        
+
         &:after {
             content: "“";
         }
     }
-    
+
 
     p {
         padding-bottom: 15px;

@@ -52,9 +52,37 @@ main {
   }
 }
 
-#navbar .small {
-  font-size: 0.75em;
-  background: #090909;
+@-webkit-keyframes pulsate {
+    0% {
+        opacity: 0.75;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 0.75;
+    }
+}
+
+#navbar {
+
+  .special {
+    color: red;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.25);
+    -webkit-animation: pulsate 3s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.75;
+
+    &:hover {
+      // color: white;
+      opacity: 1;
+    }
+  }
+
+  .small {
+    font-size: 0.75em;
+    background: #090909;
+  }
 }
 
 footer
