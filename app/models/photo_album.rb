@@ -4,6 +4,6 @@ class PhotoAlbum < ApplicationRecord
   before_save :extract_flickr_id
 
   def extract_flickr_id
-    self.flickr_id ||= flickr_url.split('/').last
+    self.flickr_id = flickr_url.split('/').last
   end
 end
