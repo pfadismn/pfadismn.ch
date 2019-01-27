@@ -3,7 +3,9 @@ div
   h2
     | Die Pfadi St. Mauritius Nansen wird 75!
   p
-    | Die Pfadi SMN wird im Jahr 2019 und wir wollen das im Rahmen verschiedener Anlässe feiern! Wer von euch selber einmal bei SMN war oder noch Ehemalige kennt, soll sich unbedingt melden, damit wir möglichst alle erreichen! Wer gerne bei einem der Anlässe in irgendeiner Art mitwirken möchte darf sehr gerne auf uns zu kommen, wir sind dankbar um jede Unterstützung!
+    | Die Pfadi SMN wird im Jahr 2019 75 Jahre alt und wir wollen das im Rahmen verschiedener Anlässe feiern! Wer von euch selber einmal bei SMN war oder noch Ehemalige kennt, soll sich unbedingt melden, damit wir möglichst alle erreichen!
+  p
+    | Wer gerne bei einem der Anlässe in irgendeiner Art mitwirken möchte darf sehr gerne auf uns zu kommen, wir sind dankbar um jede Unterstützung!
 
   p
     ' Bei Fragen dürft ihr euch jederzeit an
@@ -19,10 +21,10 @@ div
         h3= event.name
 
       p
-        =< l event.start_time
+        =<> l event.start_time
         - if event.multi_day?
           | bis
-          =< l event.end_time
+          =<> l event.end_time
 
       = RedCloth.new(event.description).to_html.html_safe
 
