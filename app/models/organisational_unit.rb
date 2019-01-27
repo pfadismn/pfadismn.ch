@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: organisational_units
+#
+#  id                   :integer          not null, primary key
+#  name                 :string
+#  motto                :string
+#  caption              :string
+#  responsible_function :string
+#  parent_id            :integer
+#  lft                  :integer
+#  rgt                  :integer
+#  created_at           :datetime
+#  updated_at           :datetime
+#  active               :boolean          default(TRUE)
+#  email                :string
+#
+
 class OrganisationalUnit < ActiveRecord::Base
   # Relations
   has_many :direct_members, class_name: 'Member'

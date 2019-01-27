@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181106125222) do
+ActiveRecord::Schema.define(version: 20190127134546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20181106125222) do
     t.datetime "content_image_updated_at"
     t.string "start_place_description"
     t.string "end_place_description"
+    t.string "midata_url"
     t.index ["creator_id"], name: "index_events_on_creator_id"
     t.index ["end_place_id"], name: "index_events_on_end_place_id"
     t.index ["organisational_unit_id"], name: "index_events_on_organisational_unit_id"

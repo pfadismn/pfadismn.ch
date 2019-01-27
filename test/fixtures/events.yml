@@ -1,3 +1,29 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id                         :integer          not null, primary key
+#  organisational_unit_id     :integer
+#  creator_id                 :integer
+#  start_place_id             :integer
+#  end_place_id               :integer
+#  start_time                 :datetime
+#  end_time                   :datetime
+#  name                       :string
+#  description                :text
+#  take_along                 :text
+#  content                    :text
+#  published_at               :datetime
+#  created_at                 :datetime
+#  updated_at                 :datetime
+#  content_image_file_name    :string
+#  content_image_content_type :string
+#  content_image_file_size    :integer
+#  content_image_updated_at   :datetime
+#  start_place_description    :string
+#  end_place_description      :string
+#
+
 ---
 Event_1:
   id: 1

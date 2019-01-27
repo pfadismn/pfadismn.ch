@@ -205,13 +205,14 @@ de:
         end_time: Ende (Zeit)
         start_place: Start (Ort)
         start_place_description: Start (Zusatzangaben)
-        end_place: End (Ort)
-        end_place_description: End (Zusatzangaben)
+        end_place: Ende (Ort)
+        end_place_description: Ende (Zusatzangaben)
         description: Beschreibung
         take_along: Mitnehmen
         published: Veröffentlicht
         content_image: Anzeigebild
         send_reminder: Erinnerung verschicken
+        midata_url: Midata URL
       member:
         first_name: Vorname
         last_name: Name

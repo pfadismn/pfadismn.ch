@@ -47,7 +47,3 @@
 
     li[class=(params[:controller] == 'index' && params[:action] == 'faq' ? 'active' : nil)]
       = link_to "Infos A-Z", faq_path
-
-    - if current_user.present?
-      li
-        = link_to '⚙', dashboard_path, title: 'Admin'

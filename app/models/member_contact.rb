@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: member_contacts
+#
+#  contact_id :integer
+#  member_id  :integer
+#  relation   :string
+#
+
 class MemberContact < ActiveRecord::Base
   RELATIONS = [:mother, :father]
 
