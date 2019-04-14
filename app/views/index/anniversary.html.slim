@@ -87,10 +87,10 @@ div
           = event.name
 
         p
-          =< l event.start_time
+          =<> l event.start_time
           - if event.multi_day?
             | bis
-            =< l event.end_time
+            =<> l event.end_time
 
   p
     | Siehe auch
