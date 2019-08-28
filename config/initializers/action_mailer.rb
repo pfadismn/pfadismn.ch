@@ -5,18 +5,17 @@ ActionMailer::Base.default_options = {
   from: ENV['MAIL_SENDER'],
   reply_to: ENV['MAIL_SENDER']
 }
-ActionMailer::Base.default_url_options = { host: ENV['APP_HOST'], port: ENV['APP_PORT'] }
+ActionMailer::Base.default_url_options = { host: ENV['APP_HOST'] }
 
-if ENV['MAIL_USERNAME'].present? && ENV['MAIL_PASSWORD'].present?
-  ActionMailer::Base.smtp_settings = {
-    user_name: ENV['MAIL_USERNAME'],
-    password: ENV['MAIL_PASSWORD'],
-    address: 'smtp.sparkpostmail.com',
-    port: 587,
-    enable_starttls_auto: true,
-    authentication: :login,
-    domain: ENV['APP_HOST']
-  }
+if mailer = URI(ENV['MAILER_URL'])
+  delivery_method = mailer.scheme.to_sym
+  settings = { address: mailer.host, user_name: mailer.user, password: mailer.password, port: mailer.port }
+  settings = settings.merge(Hash[mailer.query&.split('&')&.map { |option| option.split('=') }] || [])
+
+  ActionMailer::Base.delivery_method = delivery_method
+  ActionMailer::Base.try("#{delivery_method}_settings=", settings.symbolize_keys)
 elsif Rails.env.development?
   ActionMailer::Base.delivery_method = :letter_opener
+else
+  ActionMailer::Base.delivery_method = :test
 end
