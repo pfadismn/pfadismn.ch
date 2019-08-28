@@ -25,9 +25,25 @@ body {
   background: image-url('layouts/background.png') repeat center center;
 }
 
-div.cb, div.clear
+.cb, .clear
 {
   clear: both;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-3 {
+  margin-bottom: 4em;
+}
+
+.mb-5 {
+  margin-bottom: 5em;
+}
+
+.text-center {
+  text-align: center;
 }
 
 main {

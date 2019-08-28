@@ -10,7 +10,6 @@ gem 'authlogic', '~> 3.6'
 gem 'actionview-encoded_mail_to'
 gem 'mysql2'
 gem 'rails-i18n', '~> 5.1'
-gem 'pg'
 gem 'awesome_nested_set'
 gem 'paperclip', '~> 5.2.0'
 gem 'delayed_job_active_record'
@@ -42,6 +41,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'listen'
+  gem 'annotate'
 end
 
 group :test do

@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: contacts
+#
+#  id            :integer          not null, primary key
+#  first_name    :string
+#  last_name     :string
+#  relation_mask :integer
+#  remarks       :text
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 class Contact < ActiveRecord::Base
 
   # Relations

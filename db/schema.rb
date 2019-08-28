@@ -10,12 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181106125222) do
+ActiveRecord::Schema.define(version: 20190127134546) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "addresses", id: :serial, force: :cascade do |t|
+  create_table "addresses", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "addressable_id"
     t.string "addressable_type"
     t.string "line1"
@@ -27,7 +24,7 @@ ActiveRecord::Schema.define(version: 20181106125222) do
     t.datetime "updated_at"
   end
 
-  create_table "contacts", id: :serial, force: :cascade do |t|
+  create_table "contacts", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "first_name"
     t.string "last_name"
     t.integer "relation_mask"
@@ -36,7 +33,7 @@ ActiveRecord::Schema.define(version: 20181106125222) do
     t.datetime "updated_at"
   end
 
-  create_table "delayed_jobs", id: :serial, force: :cascade do |t|
+  create_table "delayed_jobs", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "priority", default: 0, null: false
     t.integer "attempts", default: 0, null: false
     t.text "handler", null: false
@@ -51,7 +48,7 @@ ActiveRecord::Schema.define(version: 20181106125222) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
-  create_table "events", id: :serial, force: :cascade do |t|
+  create_table "events", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "organisational_unit_id"
     t.integer "creator_id"
     t.integer "start_place_id"
@@ -71,32 +68,33 @@ ActiveRecord::Schema.define(version: 20181106125222) do
     t.datetime "content_image_updated_at"
     t.string "start_place_description"
     t.string "end_place_description"
+    t.string "midata_url"
     t.index ["creator_id"], name: "index_events_on_creator_id"
     t.index ["end_place_id"], name: "index_events_on_end_place_id"
     t.index ["organisational_unit_id"], name: "index_events_on_organisational_unit_id"
     t.index ["start_place_id"], name: "index_events_on_start_place_id"
   end
 
-  create_table "meeting_protocols_members", id: false, force: :cascade do |t|
+  create_table "meeting_protocols_members", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "participant_id"
     t.integer "meeting_protocol_id"
     t.index ["meeting_protocol_id"], name: "index_meeting_protocols_members_on_meeting_protocol_id"
     t.index ["participant_id"], name: "index_meeting_protocols_members_on_participant_id"
   end
 
-  create_table "member_contacts", id: false, force: :cascade do |t|
+  create_table "member_contacts", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "contact_id"
     t.integer "member_id"
     t.string "relation"
   end
 
-  create_table "member_functions", id: :serial, force: :cascade do |t|
+  create_table "member_functions", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "email"
     t.integer "mask"
   end
 
-  create_table "members", id: :serial, force: :cascade do |t|
+  create_table "members", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "organisational_unit_id"
     t.string "first_name"
     t.string "last_name"
@@ -120,7 +118,7 @@ ActiveRecord::Schema.define(version: 20181106125222) do
     t.index ["organisational_unit_id"], name: "index_members_on_organisational_unit_id"
   end
 
-  create_table "news", id: :serial, force: :cascade do |t|
+  create_table "news", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "creator_id"
     t.string "title"
     t.text "body"
@@ -131,7 +129,7 @@ ActiveRecord::Schema.define(version: 20181106125222) do
     t.index ["creator_id"], name: "index_news_on_creator_id"
   end
 
-  create_table "organisational_units", id: :serial, force: :cascade do |t|
+  create_table "organisational_units", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "motto"
     t.string "caption"
@@ -146,7 +144,7 @@ ActiveRecord::Schema.define(version: 20181106125222) do
     t.index ["parent_id"], name: "index_organisational_units_on_parent_id"
   end
 
-  create_table "phone_numbers", id: :serial, force: :cascade do |t|
+  create_table "phone_numbers", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "phonable_id"
     t.string "phonable_type"
     t.string "phone_type"
@@ -155,7 +153,7 @@ ActiveRecord::Schema.define(version: 20181106125222) do
     t.datetime "updated_at"
   end
 
-  create_table "photo_albums", force: :cascade do |t|
+  create_table "photo_albums", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "year"
     t.string "title"
     t.string "description"
@@ -166,7 +164,7 @@ ActiveRecord::Schema.define(version: 20181106125222) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "places", id: :serial, force: :cascade do |t|
+  create_table "places", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "address_id"
     t.string "name"
     t.text "description"
@@ -175,7 +173,7 @@ ActiveRecord::Schema.define(version: 20181106125222) do
     t.datetime "updated_at"
   end
 
-  create_table "sessions", id: :serial, force: :cascade do |t|
+  create_table "sessions", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "session_id", null: false
     t.text "data"
     t.datetime "created_at"
@@ -184,7 +182,7 @@ ActiveRecord::Schema.define(version: 20181106125222) do
     t.index ["updated_at"], name: "index_sessions_on_updated_at"
   end
 
-  create_table "users", id: :serial, force: :cascade do |t|
+  create_table "users", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "member_id"
     t.string "email", null: false
     t.string "crypted_password", null: false

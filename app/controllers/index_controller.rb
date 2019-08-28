@@ -14,10 +14,15 @@ class IndexController < ApplicationController
     send_file "#{Rails.root}/public/jahresprogramm.pdf", type: 'application/pdf', disposition: 'inline'
   end
 
+  def jahresprogramm_leiter
+    send_file "#{Rails.root}/public/jahresprogramm_leiter.pdf", type: 'application/pdf', disposition: 'inline'
+  end
+
   def chronik
   end
 
   def anniversary
+    @events = Event.where(id: [5131, 5141, 5151, 5161])
   end
 
   def rheinfallmarsch

@@ -1,19 +1,41 @@
-# Loads action_mailer settings from email.yml
-# and turns deliveries on if configuration file is found
+class MailerSettings
+  attr_reader :settings
+  delegate :[], :fetch, to: :settings
 
-ActionMailer::Base.default_options = {
-  from: ENV['MAIL_SENDER'],
-  reply_to: ENV['MAIL_SENDER']
-}
-ActionMailer::Base.default_url_options = { host: ENV['APP_HOST'] }
+  def initialize(url)
+    uri = URI(url)
+    @settings = {
+                  address: uri.host,
+                  user_name: URI.unescape(uri.user),
+                  password: uri.password,
+                  port: uri.port,
+                  delivery_method: uri.scheme.to_sym
+                 }.merge(extract_options(uri.query))
+  end
 
-if mailer = URI(ENV['MAILER_URL'])
-  delivery_method = mailer.scheme.to_sym
-  settings = { address: mailer.host, user_name: mailer.user, password: mailer.password, port: mailer.port }
-  settings = settings.merge(Hash[mailer.query&.split('&')&.map { |option| option.split('=') }] || [])
+  def to_h
+    settings
+  end
 
-  ActionMailer::Base.delivery_method = delivery_method
-  ActionMailer::Base.try("#{delivery_method}_settings=", settings.symbolize_keys)
+  private
+
+  def extract_options(query)
+    options = Hash[query&.split('&')&.map { |option| option.split('=') }] || []
+    options.symbolize_keys.transform_values { |option| URI.unescape(option) }
+  end
+end
+
+if ENV['MAILER_URL'].present?
+  settings = MailerSettings.new(ENV['MAILER_URL'])
+  ActionMailer::Base.tap do |config|
+    config.default(
+      from: settings.fetch(:from, 'no-reply@pfadismn.ch'),
+      bcc: settings.fetch(:bcc, 'bcc@pfadismn.ch')
+    )
+    config.default_url_options = { host: ENV['APP_HOST'] }
+    config.delivery_method = settings[:delivery_method]
+    config.try("#{settings[:delivery_method]}_settings=", settings.to_h)
+  end
 elsif Rails.env.development?
   ActionMailer::Base.delivery_method = :letter_opener
 else

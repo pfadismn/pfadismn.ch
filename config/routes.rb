@@ -7,6 +7,7 @@ Pfadismn::Application.routes.draw do
   get 'dashboard', action: :dashboard, controller: :index, as: :dashboard
   get 'downloads', action: :downloads, controller: :index, as: :downloads
   get 'jahresprogramm', action: :jahresprogramm, controller: :index, as: :jahresprogramm
+  get 'jahresprogramm_leiter', action: :jahresprogramm_leiter, controller: :index, as: :jahresprogramm_leiter
   get 'impressum', action: :impressum, controller: :index, as: :impressum
   get 'rheinfallmarsch', action: :rheinfallmarsch, controller: :index, as: :rheinfallmarsch
   get 'chronik', action: :chronik, controller: :index, as: :chronik

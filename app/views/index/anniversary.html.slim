@@ -1,14 +1,99 @@
-= heading("Jubiläum", "75 Jahre")
+= heading("75 Jahre", "Jubiläum")
 div
   h2
     | Die Pfadi St. Mauritius Nansen wird 75!
   p
-    | Infos folgen
+    | Die Pfadi SMN wird im Jahr 2019 75 Jahre alt und wir wollen das im Rahmen verschiedener Anlässe feiern! Wer von euch selber einmal bei SMN war oder noch Ehemalige kennt, soll sich unbedingt melden, damit wir möglichst alle erreichen!
+  p
+    | Wer gerne bei einem der Anlässe in irgendeiner Art mitwirken möchte darf sehr gerne auf uns zu kommen, wir sind dankbar um jede Unterstützung!
+
+  p
+    ' Bei Fragen dürft ihr euch jederzeit an
+    => mail_to 'al@pfadismn.ch', 'al@...', encode: 'javascript'
+    ' wenden.
+
+  h2
+    | Anlässe
+
+  - @events.each do |event|
+    article.mb-5
+      =link_to organisational_unit_event_path(event.organisational_unit, event)
+        h3= event.name
+
+      p
+        =<> l event.start_time
+        - if event.multi_day?
+          | bis
+          =<> l event.end_time
+
+      = RedCloth.new(event.description).to_html.html_safe
+
+      - if event.midata_url.present?
+        p= link_to(event.midata_url)
+          | Anmeldung auf der Midata
+
+  h1.text-center
+    | M.E.R.C.I
+
+  p
+    | Wir danken unseren SponsorInnen für ihre unglaublich grosszügige Unterstützung!
   br
+
+  div[style="display: flex; justify-content: space-between;"]
+    = link_to 'https://kathhoengg.ch', style: "width: 30%; display: block; border-bottom: none;"
+      = image_tag 'index/jubi75/sponsor_hg.png'
+    = link_to 'http://www.gwunderfizz.ch/', style: "width: 30%; display: block; border-bottom: none;"
+      = image_tag 'index/jubi75/sponsor_gf.png'
+    = link_to 'http://www.caseri.ch/', style: "width: 30%; display: block; border-bottom: none;"
+      = image_tag 'index/jubi75/sponsor_caseri.png'
+
+  ul
+    li
+      | Thomas Freuler
+    li
+      | Simone Caseri
+    li
+      | Reto Caseri
+
   br
+  p
+    | Wir danken ebenfalls dem Höngger für die Möglichkeit Werbung zu machen und unser Erlebtes mit dem Quartier zu teilen.
+
+  p
+    | Für das Organisieren und die Unterstützung bei unseren Events bedanken wir uns speziell bei
+    ul
+      li
+        | Bruno Zimmermann v/o Dachs
+      li
+        | Fabian Rohrer v/o Penalty
+      li
+        | Jan Meier v/o Prometheus
+      li
+        | Juliette Holzgang v/o Ramira
+      li
+        | Dimitri Tanner v/o Kondor
+      li
+        | Und bei unserem Leitungsteam ❤
+
+
 - content_for :sidebar do
   h2
     | Nächste Anlässe
+
+  ul
+    - @events.upcoming.chronological.each do |event|
+      li
+        =link_to organisational_unit_event_path(event.organisational_unit, event)
+          = event.name
+
+        p
+          =<> l event.start_time
+          - if event.multi_day?
+            | bis
+            =<> l event.end_time
+
   p
-    | Siehe
+    | Siehe auch
     =<> link_to 'Jahresprogramm', jahresprogramm_path
+    | und
+    =<> link_to 'Jahresprogramm für Leiter', jahresprogramm_leiter_path

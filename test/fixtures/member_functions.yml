@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: member_functions
+#
+#  id    :integer          not null, primary key
+#  name  :string
+#  email :string
+#  mask  :integer
+#
+
 ---
 MemberFunction_1:
   id: 1

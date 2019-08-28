@@ -12,6 +12,7 @@
   = f.inputs t(:Zusatzinfos) do
     = f.input :description
     = f.input :take_along
+    = f.input :midata_url
     = f.input :published, as: :boolean
     = f.input :send_reminder, as: :boolean
   - if current_user.has_role? [:manager, :admin]
