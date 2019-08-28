@@ -6,11 +6,12 @@ class MailerSettings
     uri = URI(url)
     @settings = {
                   address: uri.host,
-                  user_name: URI.unescape(uri.user),
                   password: uri.password,
                   port: uri.port,
                   delivery_method: uri.scheme.to_sym
-                 }.merge(extract_options(uri.query))
+                 }
+    @settings[:user_name] = URI.unescape(uri.user) if uri.user.present?
+    @settings = settings.merge(extract_options(uri.query))
   end
 
   def to_h
