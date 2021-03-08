@@ -23,10 +23,12 @@
 
 body {
   background: image-url('layouts/background.png') repeat center center;
+  background-color: #d7d7d7;
+  background-blend-mode: hard-light;
 }
 
-.cb, .clear
-{
+.cb,
+.clear {
   clear: both;
 }
 
@@ -57,7 +59,8 @@ main {
   a {
     border-bottom: 1px dotted #000;
 
-    &:active, &:hover {
+    &:active,
+    &:hover {
       color: #555555;
       border-bottom: 1px dotted #555555;
     }
@@ -69,15 +72,17 @@ main {
 }
 
 @-webkit-keyframes pulsate {
-    0% {
-        opacity: 0.75;
-    }
-    50% {
-        opacity: 0.9;
-    }
-    100% {
-        opacity: 0.75;
-    }
+  0% {
+    opacity: 0.75;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0.75;
+  }
 }
 
 #navbar {
@@ -101,8 +106,7 @@ main {
   }
 }
 
-footer
-{
+footer {
   position: absolute;
   bottom: 0;
   width: 100%;

@@ -22,8 +22,7 @@ p
 - content_for :sidebar do
   h2
     | Abteilungsleitung
-  - @ou.team.each do |member|
-    = render partial: 'members/contact', locals: { member: member }
+  = render partial: 'members/contact', collection: @ou.team
   br
   p
     = link_to 'Kontakt aufnehmen »', organisational_unit_contact_forms_path(@ou)
@@ -33,7 +32,7 @@ p
     | Dachorganisationenen
   p
     | Die Pfadi SMN gehört den folgenden Dachorganisationen an:
-    
+
   ul
     li
       = link_to 'Korps Limmat', 'http://www.korpslimmat.ch'

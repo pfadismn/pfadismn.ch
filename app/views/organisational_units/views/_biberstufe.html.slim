@@ -12,8 +12,7 @@ p
 - content_for :sidebar do
   h2
     | Stufenleitung
-  - @ou.team.each do |member|
-    = render partial: 'members/contact', locals: { member: member }
+  = render partial: 'members/contact', collection: @ou.team
   h2
     | Events
   ul
