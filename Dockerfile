@@ -6,6 +6,7 @@ RUN apk add --no-cache --update build-base \
   mysql-dev \
   nodejs \
   yarn \
+  gnupg \
   tzdata
 RUN mkdir -p /app
 WORKDIR /app
