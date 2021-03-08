@@ -20,8 +20,16 @@ services:
     environment:
       DATABASE_URL: mysql2://root@db/pfadismn_development
       RAILS_ENV: development
+      APP_HOST: "pfadismn.localhost:3000"
+      MAILER_URL: "smtp://mail"
     depends_on:
       - db
+      - mail
+
+  mail:
+    image: tophfr/mailcatcher
+    ports:
+      - "1080:80"
 
 volumes:
   bundle:

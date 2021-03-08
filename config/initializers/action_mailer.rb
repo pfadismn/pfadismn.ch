@@ -21,7 +21,7 @@ class MailerSettings
   private
 
   def extract_options(query)
-    options = Hash[query&.split('&')&.map { |option| option.split('=') }] || []
+    options = (query&.split('&')&.map { |option| option.split('=') }).to_h
     options.symbolize_keys.transform_values { |option| URI.unescape(option) }
   end
 end
@@ -30,8 +30,7 @@ if ENV['MAILER_URL'].present?
   settings = MailerSettings.new(ENV['MAILER_URL'])
   ActionMailer::Base.tap do |config|
     config.default(
-      from: settings.fetch(:from, 'no-reply@pfadismn.ch'),
-      bcc: settings.fetch(:bcc, 'bcc@pfadismn.ch')
+      from: settings.fetch(:from, 'no-reply@pfadismn.ch')
     )
     config.default_url_options = { host: ENV['APP_HOST'] }
     config.delivery_method = settings[:delivery_method]
