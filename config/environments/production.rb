@@ -79,14 +79,6 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
-
-  Pfadismn::Application.config.middleware.use ExceptionNotification::Rack,
-                                              email: {
-                                                email_prefix: '[Exception] ',
-                                                sender_address: %("Pfadismn Exception Notifier" <exception_notifier@pfadismn.ch>),
-                                                exception_recipients: %w[webmaster@pfadismn.ch]
-                                              }
-
   if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
@@ -94,6 +86,12 @@ Rails.application.configure do
   end
 
   config.lograge.enabled = true
+  config.middleware.use ExceptionNotification::Rack,
+                                              email: {
+                                                email_prefix: '[Exception] ',
+                                                sender_address: %("Pfadismn Exception Notifier" <exception_notifier@pfadismn.ch>),
+                                                exception_recipients: %w[webmaster@pfadismn.ch]
+                                              }
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false

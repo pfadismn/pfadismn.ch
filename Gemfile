@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
 ruby File.read('.ruby-version').strip
-gem 'rails', '~> 5.1.5'
+gem 'rails', '~> 5.1'
 
 # Authentication & authorisation
+gem 'bootsnap'
 gem 'cancancan'
 gem 'authlogic', '~> 3.6'
 
@@ -26,7 +27,7 @@ gem 'wkhtmltopdf-heroku'
 gem 'rubyzip'
 gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'sass-rails', '>= 3.2'
+gem 'sass-rails'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
