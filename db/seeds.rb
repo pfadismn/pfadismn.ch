@@ -1,5 +1,5 @@
 # encoding: UTF-8
-password = ENV['DEFAULT_PASSWORD']
+password = ENV.fetch('DEFAULT_PASSWORD', "pfadiischseil")
 
 ou = {}
 ou[:abteilung] = OrganisationalUnit.create!(name: 'Abteilung', responsible_function: 'al')
