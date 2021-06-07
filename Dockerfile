@@ -7,7 +7,8 @@ RUN apk add --no-cache --update build-base \
   nodejs \
   yarn \
   gnupg \
-  tzdata
+  tzdata \
+  shared-mime-info
 RUN mkdir -p /app
 WORKDIR /app
 
