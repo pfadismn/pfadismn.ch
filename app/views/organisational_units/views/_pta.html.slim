@@ -1,0 +1,27 @@
+div
+  h2
+    | Pfadi Trotz Allem
+  p
+    | Wir sind eine Gruppe von Pfadileitenden aus Höngg und haben in unserer Pfadi die Dinogruppe gegründet. Die Dinogruppe ist eine PTA („Pfadi Trotz Allem“). Das heisst wir bieten Pfadiaktivitäten für Kinder und Jugendliche mit Behinderung an.
+
+  p 
+    | Wir suchen Kinder und Jugendliche zwischen 8 und 15 Jahren, die Freude daran hätten in unsere Pfadi zu kommen. Wir werden etwa alle zwei Wochen zusammen in den Wald gehen. Dort spielen wir Spiele, singen, tanzen oder zeichnen. Wichtig ist, dass wir dabei Spass haben!
+  br
+  = image_tag image_path('abteilung/pta/collage_pta.jpg')
+
+- content_for :sidebar do
+  h2
+    | Leitungsteam
+  = render partial: 'members/contact', collection: @ou.team
+  h2
+    | Events
+  ul
+    li
+      = link_to "Alle Events »", organisational_unit_events_path(@ou)
+    - if @ou.inherited_and_propageted_events.upcoming.active.any?
+      li
+        = link_to "Quartalsprogramm als PDF", quartalsprogramm_organisational_unit_events_path(@ou, format: :pdf)
+  = render partial: 'events/sidebar_event', locals: { event: @ou.events.upcoming.first }
+  br
+  p
+    = link_to 'Kontakt aufnehmen »', organisational_unit_contact_forms_path(@ou)

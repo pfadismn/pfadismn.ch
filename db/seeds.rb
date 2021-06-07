@@ -18,6 +18,7 @@ ou[:maitliwoelfe] = OrganisationalUnit.create!(name: 'Maitliwoelfe', responsible
 
 ou[:apv] = OrganisationalUnit.create!(name: 'APV', caption: 'Verein der Ehemaligen der Pfadi SMN', parent: ou[:abteilung])
 ou[:elternrat] = OrganisationalUnit.create!(name: 'Elternrat', caption: 'Die Elternvertretung in der Pfadi SMN', parent: ou[:abteilung])
+ou[:pta] = OrganisationalUnit.create!(name: 'PTA', caption: 'Pfadi Trotz Allem', parent: ou[:abteilung])
 
 filou = Member.create!(first_name: 'Diego', last_name: 'Steiner', scout_name: 'Filou', email: 'filou@pfadismn.ch', alias: 'filou@pfadismn.ch', birthdate: 23.years.ago, gender: 0, member_since: 14.years.ago, education: "Pano (2010)", organisational_unit: ou[:abteilung])
 gulli = Member.create!(first_name: 'André', last_name: 'Bürkler', scout_name: 'Gulli', email: 'gulli@pfadismn.ch', alias: 'gulli@pfadismn.ch', birthdate: 24.years.ago, gender: 0, organisational_unit: ou[:abteilung])
