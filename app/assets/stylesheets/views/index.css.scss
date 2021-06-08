@@ -61,16 +61,13 @@
 
 .stickypost-container {
     font-size: $font-size-small;
-    background: image-url('index/post/stickypost-narrow.jpg') top center repeat-y;
     padding: 0 0 180px 0;
     position: relative;
     .stickypost-top {
-        background: image-url('index/post/stickypost-top.jpg') top center no-repeat;
         height: 75px;
         width: 100%;
     }
     .stickypost-bottom {
-        background: image-url('index/post/stickypost-bottom.png') bottom center no-repeat;
         height: 75px;
         width: 100%;
         position: absolute;
@@ -95,7 +92,8 @@
             background-size: contain;
             h2 {
                 text-align: center;
-                margin: 16px 0;
+                margin: 12px 0 8px 0;
+                color: white;
             }
             ul {
                 margin-left: 20px;
